@@ -1,0 +1,26 @@
+
+<% title ("New User") %>  
+
+<h3>We will add LDAP support later - for now please use the form below </h3>
+
+<% form_for @user do |form| %>  
+<%= form.error_messages %>  
+<ul class="formList">  
+  <li>  
+    <%= form.label :email, "Email" %>  <br/>
+    <%= form.text_field :email %>  
+  </li>  
+  <li>  
+    <%= form.label :password, "Password" %>  <br/>
+    <%= form.password_field :password %>  
+  </li>  
+  <li>  
+    <%= form.label :password_confirmation, "Password confirmation" %>  <br/>
+    <%= form.password_field :password_confirmation %>  
+  </li>  
+  
+    <%= form.submit "Submit" %>  
+  
+</ul>  
+<% end %> 
+

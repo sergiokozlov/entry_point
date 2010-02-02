@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title> Forgot to register? </title>
+  </head>
+  <body>
+    
+    <h3> Hmm... looks like your forgot to register. Hey - don't your forgot your head as well?  </h3>
+    <h2> Use the form below - and listen - don't cheat OK? </h2>
+    <% form_for @record do |f| %>
+
+    <%=   f.label :click_date %>
+   <%=    f.text_field :click_date %>
+
+   <%=    f.submit "Add Record" %>
+ <% end %> 
+  </body>
+</html>

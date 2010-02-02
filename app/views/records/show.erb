@@ -1,0 +1,19 @@
+<% title 'log for your records' %>
+ 
+<%= link_to "Add New Row", :controller => "upload", :action => "row" %>
+<br/>
+<br/>
+    <table border="1">
+      <tr>
+        <th>User</th>
+        <th>Time Of Entry</th>
+      </tr>
+      
+      <% @logged_records.each do |rec| %>
+        <tr>
+          <td> <%=rec.login %> </td> 
+          <td> <%=rec.click_date %> </td>
+        </tr>
+    <% end %>
+   </table>
+
