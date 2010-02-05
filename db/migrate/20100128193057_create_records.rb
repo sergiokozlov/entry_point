@@ -3,6 +3,7 @@ class CreateRecords < ActiveRecord::Migration
     create_table :records do |t|
       t.string :login
       t.datetime :click_date
+      t.integer :working_day_id
       t.timestamps
     end
   end

@@ -17,6 +17,6 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.find  
     @user_session.destroy  
     flash[:notice] = "Successfully logged out."  
-    redirect_to :controller => 'upload', :action => 'row' 
+    redirect_to root_path 
   end
 end

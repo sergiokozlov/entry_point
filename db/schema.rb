@@ -9,11 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100130104206) do
+ActiveRecord::Schema.define(:version => 20100204151449) do
 
   create_table "records", :force => true do |t|
     t.string   "login"
     t.datetime "click_date"
+    t.integer  "working_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +25,16 @@ ActiveRecord::Schema.define(:version => 20100130104206) do
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "working_days", :force => true do |t|
+    t.string   "login"
+    t.time     "check_in"
+    t.time     "check_out"
+    t.integer  "duration"
+    t.date     "wday"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

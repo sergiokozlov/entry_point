@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  login: MyString
+  check_in: 2010-02-04 18:14:49
+  check_out: 2010-02-04 18:14:49
+  duration: 1
+  wday: 2010-02-04
+
+two:
+  login: MyString
+  check_in: 2010-02-04 18:14:49
+  check_out: 2010-02-04 18:14:49
+  duration: 1
+  wday: 2010-02-04

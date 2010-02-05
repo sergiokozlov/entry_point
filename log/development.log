@@ -4326,3 +4326,2670 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-02 15:35:17) [GE
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 51ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-03 19:43:13) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 6358ms (View: 6097, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-03 19:43:29) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 405ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:43:31) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 654ms (View: 579, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 19:43:33) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 52ms (View: 15, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 19:43:43) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 11:31"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 16:43:43', '2010-01-01 08:31:00', 'skozlov@enkata.com', '2010-02-03 16:43:43')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 101ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:43:44) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 50ms (View: 8, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 19:43:58) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 52ms (View: 8, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 19:44:02) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"abcd"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 16:44:02', '2010-02-03 16:44:02', 'skozlov@enkata.com', '2010-02-03 16:44:02')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 79ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:44:03) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (2.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 53ms (View: 9, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:51:00) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 499ms (View: 398, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-02-03 19:51:04) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/upload/row
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 19:51:06) [GET]
+Redirected to http://localhost:3000/user_sessions/new
+Completed in 37ms (DB: 0) | 302 Found [http://localhost/upload/row]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-03 19:51:07) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 60ms (View: 17, DB: 0) | 200 OK [http://localhost/user_sessions/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-03 19:51:19) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 281ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:51:19) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (1.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 52ms (View: 10, DB: 1) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 19:51:24) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 53ms (View: 15, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 19:51:32) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 11:32"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 16:51:32', '2010-01-01 08:32:00', 'skozlov@enkata.com', '2010-02-03 16:51:32')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 69ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:51:33) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 54ms (View: 11, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 19:51:44) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 165ms (View: 15, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 19:51:49) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"abcd"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (2.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 16:51:49', '2010-02-03 16:51:49', 'skozlov@enkata.com', '2010-02-03 16:51:49')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 90ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:51:50) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 80ms (View: 21, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 19:56:32) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 50ms (View: 9, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 19:56:37) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"$#%\#$%^"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 16:56:37', '2010-02-03 16:56:37', 'skozlov@enkata.com', '2010-02-03 16:56:37')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 66ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:56:37) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (2.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 54ms (View: 10, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:56:42) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (2.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 133ms (View: 8, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 19:59:33) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 55ms (View: 9, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 19:59:38) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"Aug 31"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 16:59:38', '2010-08-30 20:00:00', 'skozlov@enkata.com', '2010-02-03 16:59:38')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 80ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 19:59:38) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 55ms (View: 11, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:04:02) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 51ms (View: 9, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:04:10) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-05-99"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ArgumentError (argument out of range):
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `local'
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `make_time'
+  C:/Ruby/lib/ruby/1.8/time.rb:243:in `parse'
+  app/controllers/records_controller.rb:5:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (149.0ms)
+Rendered rescues/_request_and_response (4.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:04:24) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"WTF"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 17:04:24', '2010-02-03 17:04:24', 'skozlov@enkata.com', '2010-02-03 17:04:24')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 97ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:04:26) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 53ms (View: 10, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:04:39) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:04:47) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 31:30"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ArgumentError (argument out of range):
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `local'
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `make_time'
+  C:/Ruby/lib/ruby/1.8/time.rb:243:in `parse'
+  app/controllers/records_controller.rb:5:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:05:01) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:30"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ArgumentError (argument out of range):
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `local'
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `make_time'
+  C:/Ruby/lib/ruby/1.8/time.rb:243:in `parse'
+  app/controllers/records_controller.rb:5:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:05:16) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"201001 01 15:30"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 17:05:16', '2020-09-30 21:30:00', 'skozlov@enkata.com', '2010-02-03 17:05:16')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 69ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:05:17) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 68ms (View: 16, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:06:37) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 50ms (View: 8, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:07:08) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"18:56"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 17:07:08', '2010-02-03 15:56:00', 'skozlov@enkata.com', '2010-02-03 17:07:08')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 68ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:07:08) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 54ms (View: 11, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:21:03) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 49ms (View: 7, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:21:11) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:77"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 17:21:11', NULL, 'skozlov@enkata.com', '2010-02-03 17:21:11')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 80ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:21:12) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (2.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 52ms (View: 10, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:23:12) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 51ms (View: 8, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:23:14) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template records/create.erb in view path app/views):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:34:44) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 49ms (View: 7, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:34:54) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"Feb 01"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template records/create.erb in view path app/views):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:35:08) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"21/01/2010 11:20"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 43ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:35:09) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 11, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:35:14) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 50ms (View: 8, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:35:22) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 11:33"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template records/create.erb in view path app/views):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:35:46) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 11:33"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template records/create.erb in view path app/views):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:36:45) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-02 08:35"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 17:36:45', '2010-01-02 05:35:00', 'skozlov@enkata.com', '2010-02-03 17:36:45')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 56ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:36:46) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 13, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:36:59) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 44ms (View: 7, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:37:04) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"ABRF"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 17:37:04', '2010-02-03 17:37:04', 'skozlov@enkata.com', '2010-02-03 17:37:04')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 76ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:37:06) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 11, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:43:24) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:43:36) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:30"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 46ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:43:37) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 13, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:43:44) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 46ms (View: 9, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:43:57) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:3e"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template records/create.erb in view path app/views):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:44:31) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:3ee"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 17:44:31', NULL, 'skozlov@enkata.com', '2010-02-03 17:44:31')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 59ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 20:44:31) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 55ms (View: 11, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 20:45:10) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:3ee"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ArgumentError (argument out of range):
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `local'
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `make_time'
+  C:/Ruby/lib/ruby/1.8/time.rb:243:in `parse'
+  app/controllers/records_controller.rb:5:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-02-03 20:49:54) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:3ee"}}
+
+NameError (undefined local variable or method `click_date_is_invalid' for RecordsController:Class):
+  app/controllers/records_controller.rb:2
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-02-03 20:51:11) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:3ee"}}
+
+NameError (undefined local variable or method `click_date_is_invalid' for RecordsController:Class):
+  app/controllers/records_controller.rb:2
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (122.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-02-03 20:51:32) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 31:3ee"}}
+
+NameError (undefined local variable or method `click_date_is_invalid' for RecordsController:Class):
+  app/controllers/records_controller.rb:2
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 20:58:49) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 185ms (View: 86, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-02-03 20:58:55) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"12:44"}}
+
+NoMethodError (undefined method `click_date_is_invalid' for RecordsController:Class):
+  app/controllers/records_controller.rb:2
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-02-03 20:59:44) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"12:44"}}
+
+NoMethodError (undefined method `a' for RecordsController:Class):
+  app/controllers/records_controller.rb:2
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 21:00:15) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 53ms (View: 9, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 21:00:25) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:00"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (2.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 18:00:26', '2010-01-01 15:00:00', 'skozlov@enkata.com', '2010-02-03 18:00:26')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 409ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 21:00:26) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 151ms (View: 27, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 21:00:31) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 45ms (View: 7, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 21:00:39) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:77"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ArgumentError (argument out of range):
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `local'
+  C:/Ruby/lib/ruby/1.8/time.rb:184:in `make_time'
+  C:/Ruby/lib/ruby/1.8/time.rb:243:in `parse'
+  app/controllers/records_controller.rb:6:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 21:01:24) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"Oct 21"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 18:01:24', '2010-10-20 20:00:00', 'skozlov@enkata.com', '2010-02-03 18:01:24')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 69ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 21:01:25) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 65ms (View: 17, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 21:06:45) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 21:06:52) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:77"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/upload/row
+Completed in 33ms (DB: 0) | 302 Found [http://localhost/records]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 21:06:53) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 51ms (View: 9, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 21:07:25) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:78"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/upload/row
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-03 21:07:26) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 52ms (View: 7, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-03 21:07:37) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-03 18:07:37', '2009-12-31 21:00:00', 'skozlov@enkata.com', '2010-02-03 18:07:37')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 62ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-03 21:07:38) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 137ms (View: 13, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:34:54) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+
+ActionView::TemplateError (undefined method `errors' for #<ActionView::Helpers::FormBuilder:0x82ab3d8>) on line #10 of app/views/upload/row.erb:
+7:     <h3> Hmm... looks like your forgot to register. Hey - don't your forgot your head as well?  </h3>
+8:     <h2> Use the form below - and listen - don't cheat OK? </h2>
+9:     <% form_for @record do |f| %>
+10:       <%= f.errors %>
+11: 
+12:     <%=   f.label :click_date %>
+13:    <%=    f.text_field :click_date %>
+
+    app/views/upload/row.erb:10
+    app/views/upload/row.erb:9
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:37:03) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 59ms (View: 16, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:38:32) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:05"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 08:38:32', '2010-01-01 15:05:00', 'skozlov@enkata.com', '2010-02-04 08:38:32')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 148ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:38:33) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 54ms (View: 13, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:39:22) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 49ms (View: 8, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:39:24) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 08:39:24', '2010-02-04 08:39:24', 'skozlov@enkata.com', '2010-02-04 08:39:24')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 71ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:39:24) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (10.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 70ms (View: 19, DB: 10) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:39:37) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 45ms (View: 8, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:42:43) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"as"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 120ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:42:44) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 53ms (View: 11, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:43:20) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 49ms (View: 9, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:44:14) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 46ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:44:15) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 13, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:45:44) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:45:50) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"ererer"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 124ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:45:51) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 58ms (View: 13, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:47:00) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 49ms (View: 7, DB: 1) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:47:12) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:46"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 08:47:12', '2010-01-01 18:46:00', 'skozlov@enkata.com', '2010-02-04 08:47:12')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 67ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:47:12) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 12, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:48:51) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering upload/row
+Completed in 49ms (View: 8, DB: 0) | 200 OK [http://localhost/upload/row]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:48:54) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 126ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:48:55) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (4.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 61ms (View: 12, DB: 5) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 11:49:06) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 53ms (View: 15, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:49:08) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 41ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:49:09) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 58ms (View: 14, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-02-04 11:53:16) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/upload/row
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UploadController#row (for 127.0.0.1 at 2010-02-04 11:53:17) [GET]
+Redirected to http://localhost:3000/user_sessions/new
+Completed in 119ms (DB: 0) | 302 Found [http://localhost/upload/row]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-04 11:53:18) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 60ms (View: 31, DB: 0) | 200 OK [http://localhost/user_sessions/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-04 11:55:20) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;36;1mUser Load (19.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 378ms (DB: 19) | 302 Found [http://localhost/user_sessions]
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-02-04 11:55:21) [GET]
+  Parameters: {"id"=>"show"}
+
+SyntaxError (c:/Sergio/EntryPoint/mc_and_dj/app/controllers/records_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+    flash[:notice] = "Thanks #{@user.lo...
+         ^):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-04 11:56:18) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:56:19) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (4.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 71ms (View: 26, DB: 4) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 11:56:22) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 46ms (View: 8, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 11:56:26) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"hey"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 08:56:26', '2010-02-04 08:56:26', 'skozlov@enkata.com', '2010-02-04 08:56:26')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 67ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:56:26) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 149ms (View: 13, DB: 4) | 200 OK [http://localhost/records/show]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100130104206)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100130104206'[0m
+Migrating to CreateRecords (20100128193057)
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "records"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100128193057'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecords (20100128193057)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "click_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100128193057')[0m
+Migrating to CreateUsers (20100130104206)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100130104206')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-02-04 11:58:31) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.destroy):
+  app/controllers/user_sessions_controller.rb:18:in `destroy'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-04 11:58:39) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 60ms (View: 36, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-02-04 11:58:42) [GET]
+Rendering template within layouts/application
+Rendering users/new
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 66ms (View: 47, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-02-04 11:58:52) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"admin", "password"=>"admin", "email"=>"skozlov@enkata.com"}, "commit"=>"Submit", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Create (2.0ms)[0m   [0mINSERT INTO "users" ("updated_at", "crypted_password", "password_salt", "persistence_token", "login", "email", "created_at") VALUES('2010-02-04 08:58:58', '7e4dd2e869365708261cba0f3066bc646e657d683a6acb88cd3157c9efdf9d0500a9969e548cb97953aa2be8ab364c97076e83e37b921a7c1eabc90ee60a4caa', '9TlPbsn0raDw-A1YKaeM', 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f', 'skozlov@enkata.com', 'skozlov@enkata.com', '2010-02-04 08:58:58')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 6288ms (DB: 2) | 302 Found [http://localhost/users]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 11:58:59) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (0.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 16, DB: 1) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 11:59:02) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 52ms (View: 14, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 12:00:43) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:77"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 36ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 12:00:44) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 12:04:54) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"s"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 09:04:55', '2010-02-04 09:04:55', 'skozlov@enkata.com', '2010-02-04 09:04:55')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 779ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 12:04:56) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 56ms (View: 9, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-02-04 12:50:33) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'd8257cba5da527e1d2b49a40d84a7c8422817644476082360ffc903ac51b8601f2a40d3fdca98aefbe25856085f3db7ef7bbd2a9016de44bbf6ee4930b278b2f') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 91ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-04 12:50:34) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 117ms (View: 90, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-04 12:50:44) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 219ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 12:50:45) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+SyntaxError (c:/Sergio/EntryPoint/mc_and_dj/app/models/record.rb:8: syntax error, unexpected kEND, expecting ')'):
+  app/controllers/records_controller.rb:33:in `show'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (151.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-04 12:51:03) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 55ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 12:51:05) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (0.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 386ms (View: 342, DB: 1) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 12:51:07) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 54ms (View: 15, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 12:51:22) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"es"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 143ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 12:51:23) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (1.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 61ms (View: 12, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 12:53:47) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 12:53:50) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"we"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/records/new.erb:
+1:  <h3> Hmm... looks like your forgot to register. Hey - don't your forgot your head as well?  </h3>
+2:     <h2> Use the form below - and listen - don't cheat OK? </h2>
+3:     <% form_for @record do |f| %>
+4:       <%= f.error_messages %>
+5: 
+6:     <%=   f.label :click_date %>
+
+    app/views/records/new.erb:3
+    app/controllers/records_controller.rb:19:in `create'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (69.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 12:55:12) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"wes"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 45ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 12:55:13) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 12:57:23) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 18:05"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 46ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 12:57:24) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 8, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-02-04 13:08:17) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 34ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-04 13:08:18) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 35ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-02-04 13:08:20) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 140ms (View: 120, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-02-04 13:08:25) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>"", "email"=>"asas"}, "commit"=>"Submit", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'asas') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'asas') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '72f85c5742798377135c2d770fc910ac26ff25a559d8affa538b9945d425a2cdd5d4a585d91eed555812196a5f1e1a8cad7a2247c247399c3b84ec0b3e1101b6') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14645ms (View: 37, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing RecordsController#index (for 127.0.0.1 at 2010-02-04 13:10:07) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-02-04 13:10:14) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 35ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-02-04 13:10:17) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, and new):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-02-04 13:10:26) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 35ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-02-04 13:10:31) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "password"=>"", "email"=>"aaa"}, "commit"=>"Submit", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'aaa') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'aaa') LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '0c634795b3d1819bcf7ac91caa5f0a74f2ed24d97691b5e07348b4e86e9c568c058d56bcedc555a92b6d14098a7b15ba2c6cb472933c3aacee0339673e6c62c9') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 77ms (View: 49, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-04 13:12:12) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 130ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-04 13:12:21) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8="}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 31ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 13:12:23) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (1.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 50ms (View: 8, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:12:36) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 45ms (View: 7, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:12:42) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"qq"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+NoMethodError (undefined method `stringify_keys!' for Thu Feb 04 13:12:42 +0300 2010:Time):
+  app/controllers/records_controller.rb:14:in `new'
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:13:25) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 11:31"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+NoMethodError (undefined method `stringify_keys!' for Fri Jan 01 11:31:00 +0300 2010:Time):
+  app/controllers/records_controller.rb:14:in `new'
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:16:58) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 11:31"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 40ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:16:59) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 49ms (View: 8, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:17:13) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 18:00"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 38ms (DB: 0) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:17:14) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 9, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:17:22) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"asas"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 40ms (DB: 1) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:17:22) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 7, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:21:04) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"nn"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 42ms (DB: 0) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:21:05) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 9, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:25:25) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"sd"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 45ms (DB: 0) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:25:25) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 9, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:26:22) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"sdsd"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 144ms (View: 9, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:40:25) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-02-04 10:26:22 UTC"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 53ms (View: 8, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:40:35) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-02-04 10:26:22"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 52ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:40:42) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"hehe"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 46ms (View: 7, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:40:49) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"hehe"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 48ms (View: 8, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:40:58) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-02-04 10:40:50 UTC"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 48ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:40:59) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-02-04 10:40:50 UTC"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 140ms (View: 9, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:41:01) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-02-04 10:40:50 UTC"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 48ms (View: 8, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:41:02) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-02-04 10:40:50 UTC"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 48ms (View: 7, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:41:56) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 48ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:42:01) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"hehe"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:43:43) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:43:55) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-02 10:30"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 10:43:56', '2010-01-02 07:30:00', 'skozlov@enkata.com', '2010-02-04 10:43:56')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 151ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 13:43:56) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (0.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 48ms (View: 8, DB: 1) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:43:59) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 44ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:44:10) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01-01 18:77"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/records/new
+Completed in 39ms (DB: 0) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:44:11) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 9, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:49:41) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"2010-01 01 18:00"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 56ms (View: 9, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:49:46) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 48ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:49:52) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:50:22) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 9, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:50:27) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"hehe"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 10:50:27', '2010-02-04 10:50:27', 'skozlov@enkata.com', '2010-02-04 10:50:27')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 54ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 13:50:28) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (1.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 48ms (View: 7, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:54:42) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 9, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:54:51) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+TypeError (can't dup NilClass):
+  C:/Ruby/lib/ruby/1.8/date/format.rb:959:in `dup'
+  C:/Ruby/lib/ruby/1.8/date/format.rb:959:in `_parse'
+  C:/Ruby/lib/ruby/1.8/time.rb:240:in `parse'
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (145.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:55:24) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"sdsd"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+TypeError (can't dup NilClass):
+  C:/Ruby/lib/ruby/1.8/date/format.rb:959:in `dup'
+  C:/Ruby/lib/ruby/1.8/date/format.rb:959:in `_parse'
+  C:/Ruby/lib/ruby/1.8/time.rb:240:in `parse'
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:56:33) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"sdsd"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+TypeError (can't dup NilClass):
+  C:/Ruby/lib/ruby/1.8/date/format.rb:959:in `dup'
+  C:/Ruby/lib/ruby/1.8/date/format.rb:959:in `_parse'
+  C:/Ruby/lib/ruby/1.8/time.rb:240:in `parse'
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:56:59) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 9, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:57:01) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+NameError (undefined local variable or method `record_time' for #<Record:0x825e894>):
+  app/models/record.rb:6:in `always_false'
+  app/controllers/records_controller.rb:15:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (73.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:58:12) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:58:15) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+NameError (undefined local variable or method `record_time' for #<Record:0x80663ac>):
+  app/models/record.rb:6:in `always_false'
+  app/controllers/records_controller.rb:15:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (161.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:58:37) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 54ms (View: 8, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:58:40) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 54ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 13:58:50) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 70ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 13:58:59) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"wTF"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 54ms (View: 10, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:00:14) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 143ms (View: 8, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:00:17) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"ww"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 11:00:17', '2010-02-04 11:00:17', 'skozlov@enkata.com', '2010-02-04 11:00:17')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 67ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 14:00:17) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 49ms (View: 8, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:00:52) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:00:56) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"sd"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 53ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:01:35) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:01:38) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"wTF"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 147ms (View: 8, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:03:33) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 53ms (View: 11, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:03:36) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"qq"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 7, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:21:38) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:21:42) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"ss"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 11:21:42', '2010-02-04 11:21:42', 'skozlov@enkata.com', '2010-02-04 11:21:42')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 67ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 14:21:43) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (1.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 51ms (View: 9, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:21:55) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 45ms (View: 7, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:21:58) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 11:21:58', '2010-02-04 11:21:58', 'skozlov@enkata.com', '2010-02-04 11:21:58')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 58ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 14:21:59) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 52ms (View: 9, DB: 1) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:24:33) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:24:35) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>""}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: check):
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:25:42) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"s"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: check):
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:26:32) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:26:35) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date"=>"we"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: check):
+  app/controllers/records_controller.rb:14:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:49:24) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #7 of app/views/records/new.erb:
+4:       <%= f.error_messages %>
+5: 
+6:     <%=   f.label :click_date_string %>
+7:    <%=    f.text_field :click_date_string %>
+8: 
+9:    <%=    f.submit "Add Record" %>
+10:  <% end %>
+
+    app/models/record.rb:5:in `to_s'
+    app/models/record.rb:5:in `click_date_string'
+    app/views/records/new.erb:7
+    app/views/records/new.erb:3
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:50:46) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 56ms (View: 15, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:51:33) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #7 of app/views/records/new.erb:
+4:       <%= f.error_messages %>
+5: 
+6:     <%=   f.label :click_date_string %>
+7:    <%=    f.text_field :click_date_string %>
+8: 
+9:    <%=    f.submit "Add Record" %>
+10:  <% end %>
+
+    app/models/record.rb:5:in `to_s'
+    app/models/record.rb:5:in `click_date_string'
+    app/views/records/new.erb:7
+    app/views/records/new.erb:3
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (167.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:52:27) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:52:40) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>""}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 11:52:41', '2010-02-04 11:52:41', 'skozlov@enkata.com', '2010-02-04 11:52:41')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 125ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 14:52:42) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 52ms (View: 9, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:52:50) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 45ms (View: 7, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:52:56) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"11:53"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 11:52:56', '2010-02-04 08:53:00', 'skozlov@enkata.com', '2010-02-04 11:52:56')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 68ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 14:52:57) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (2.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 13, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:53:07) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 45ms (View: 8, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:53:18) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2011-56-56"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 70ms (View: 15, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:54:09) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 11:54:09', '2010-02-04 11:54:09', 'skozlov@enkata.com', '2010-02-04 11:54:09')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 68ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 14:54:10) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 52ms (View: 10, DB: 1) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 14:59:50) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 51ms (View: 9, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 14:59:56) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2011-56-56"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 11:59:56', NULL, 'skozlov@enkata.com', '2010-02-04 11:59:56')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 90ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 14:59:57) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 53ms (View: 10, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 15:00:46) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mRecord Load (2.0ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 57ms (View: 15, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 15:02:58) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+
+SyntaxError (c:/Sergio/EntryPoint/mc_and_dj/app/models/record.rb:16: syntax error, unexpected kEND):
+  app/controllers/records_controller.rb:7:in `new'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (152.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 15:03:22) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 15:03:27) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2011-56-56"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 47ms (View: 7, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 15:04:10) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2011-56-56"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 53ms (View: 9, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 15:04:36) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2011-56-56"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 55ms (View: 10, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 15:13:13) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (1.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "login", "created_at") VALUES('2010-02-04 12:13:13', '2010-02-04 12:13:13', 'skozlov@enkata.com', '2010-02-04 12:13:13')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 58ms (DB: 2) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-04 15:13:14) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (2.0ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Completed in 53ms (View: 9, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 15:16:01) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 50ms (View: 9, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 15:16:04) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>""}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 56ms (View: 8, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 15:16:28) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2010-02-99"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 53ms (View: 9, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 15:17:03) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>""}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 54ms (View: 9, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 16:46:41) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>""}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 75ms (View: 10, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 16:50:21) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2010-02-99"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NameError (undefined local variable or method `click_date_emptiness' for #<Class:0x83511c0>):
+  app/models/record.rb:2
+  app/controllers/records_controller.rb:13:in `create'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (73.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 16:51:20) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2010-02-99"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 54ms (View: 9, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 16:51:22) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>""}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 48ms (View: 7, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-04 16:51:31) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 45ms (View: 7, DB: 1) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-04 16:51:39) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"j3nZALzv8Sj2Xmnp0qM43t5KareyRF/J5e91l1eKfv8=", "record"=>{"click_date_string"=>"2010-02-99"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 55ms (View: 8, DB: 1) | 200 OK [http://localhost/records]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100130104206)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100130104206'[0m
+Migrating to CreateRecords (20100128193057)
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "records"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100128193057'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecords (20100128193057)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "click_date" datetime, "working_day_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100128193057')[0m
+Migrating to CreateUsers (20100130104206)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100130104206')[0m
+Migrating to CreateWorkingDays (20100204151449)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "working_days" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "check_in" time, "check_out" time, "duration" integer, "wday" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100204151449')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("working_days")[0m
