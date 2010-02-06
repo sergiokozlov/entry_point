@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20100204151449) do
 
   create_table "working_days", :force => true do |t|
     t.string   "login"
-    t.time     "check_in"
-    t.time     "check_out"
+    t.datetime "check_in"
+    t.datetime "check_out"
     t.integer  "duration"
     t.date     "wday"
     t.datetime "created_at"

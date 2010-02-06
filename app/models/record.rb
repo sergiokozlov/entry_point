@@ -1,6 +1,6 @@
 class Record < ActiveRecord::Base
   belongs_to :working_day
-  belongs_to :user, :foreign_key => "login"
+  belongs_to :user, :foreign_key => "login",:primary_key => "login"
   
   validate :click_date_emptiness, :message => "Entered Date is Empty"
 
@@ -27,10 +27,16 @@ class Record < ActiveRecord::Base
 
   # assosiation logic
   def first?
-   if self.user.working_days.exist?(:wday_string => click_date.strftime("%m/%d/%Y"))
-     true
-   else
+   if self.user.working_days.exists?(:wday => click_date.to_date)
      false
+   else
+     true
    end
   end
+
+  def tagged_working_day
+    self.user.working_days.find(:first, :conditions => {:wday => click_date.to_date})
+  end
+
 end
+
