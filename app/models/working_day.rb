@@ -16,6 +16,7 @@ class WorkingDay < ActiveRecord::Base
     end
 
     self.duration = (self.check_out.to_i - self.check_in.to_i).floor/60
+    #big question about saving for "today" activity!
     self.save
   end
 end

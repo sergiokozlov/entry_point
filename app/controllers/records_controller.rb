@@ -38,6 +38,7 @@ class RecordsController < ApplicationController
     require_user
     @user = current_user
     
+    # No recalculation required - just pass @var with current Duration
     if @working_today = @user.working_days.find(:first, :conditions => {:wday => Time.now.to_date})
          @working_today.recalculate('today')
     end
