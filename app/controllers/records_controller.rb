@@ -14,18 +14,8 @@ class RecordsController < ApplicationController
     @user = current_user
     @record =  @user.records.build(params[:record])
        if @record.save
-=begin        
-        if @record.first?
-            @processed_day = @record.create_working_day(:login => @user.login,:wday => @record.click_date.strftime("%m/%d/%Y"))
-            @record.working_day = @processed_day
-            @record.save
-         else
-            @record.working_day =@record.tagged_working_day
-            @record.save
-          @record.working_day.recalculate   
-         end 
-=end
-          @record.process(@user)
+
+          @record.process
           flash[:notice] = "Thanks #{@user.login}- we will check this record"
           redirect_to :action => 'show'
        else

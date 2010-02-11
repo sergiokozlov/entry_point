@@ -39,9 +39,9 @@ class Record < ActiveRecord::Base
   end
 
   # processing logic
-  def process (user)
+  def process 
      if first?
-          @processed_day = create_working_day(:login => user.login,:wday => click_date.strftime("%m/%d/%Y"))
+          @processed_day = create_working_day(:login => self.login,:wday => click_date.strftime("%m/%d/%Y"))
           self.working_day = @processed_day
           self.save
      else

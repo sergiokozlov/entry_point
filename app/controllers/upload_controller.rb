@@ -8,17 +8,16 @@ class UploadController < ApplicationController
  
   
   def table
-      fields = [:login, :click_date]
-      @data = Array.new
-      
+        
        File.open(DATA_DIR+"/snapshot.txt") do |file|
-         file.each_line {|line| @data << line.split(",") }
+         file.each_line do |line|
+            @record = Record.new ( :login => line.split(",")[0], :click_date => line.split(",")[1] )
+            @record.process if @record.save
+         end
        end
       
-      Record.import (fields,@data)
-
-      flash[:notice] = "#{@data[1]} found" if UploadController.check_for_new_file
-      redirect_to :controller =>'records', :action => 'show'
+       flash[:notice] = "File was found" if UploadController.check_for_new_file
+       redirect_to :controller =>'records', :action => 'show'
   end
 
 end

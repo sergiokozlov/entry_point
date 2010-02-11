@@ -9016,3 +9016,159 @@ Rendering template within layouts/application
 Rendering records/show
   [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
 Completed in 96ms (View: 24, DB: 5) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-02-11 18:59:39) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 65ms (View: 10, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-02-11 18:59:50) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"5UTMkGYavJChcLyOwkaH1PYZzjP5IC34muPOgMpeKRk=", "record"=>{"click_date_string"=>"2010-02-09 15:49"}}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-02-11 15:59:51', '2010-02-09 12:49:00', NULL, 'skozlov@enkata.com', '2010-02-11 15:59:51')[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-02-09') AND ("working_days".login = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-09')) LIMIT 1[0m
+  [4;36;1mRecord Update (1.0ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 2, "updated_at" = '2010-02-11 15:59:51' WHERE "id" = 22[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 2) [0m
+  [4;35;1mWorkingDay Update (4.0ms)[0m   [0mUPDATE "working_days" SET "duration" = 425, "check_out" = '2010-02-09 12:49:00', "updated_at" = '2010-02-11 15:59:51' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/records/show
+Completed in 253ms (DB: 12) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-11 18:59:52) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-11')) LIMIT 1[0m
+  [4;36;1mRecord Load (5.0ms)[0m   [0;1mSELECT * FROM "records" [0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 98ms (View: 24, DB: 8) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#table (for 127.0.0.1 at 2010-02-11 19:06:52) [GET]
+
+NoMethodError (undefined method `build' for #<Record:0x911e910>):
+  app/controllers/upload_controller.rb:15:in `table'
+  app/controllers/upload_controller.rb:13:in `each_line'
+  app/controllers/upload_controller.rb:13:in `table'
+  app/controllers/upload_controller.rb:12:in `open'
+  app/controllers/upload_controller.rb:12:in `table'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UploadController#table (for 127.0.0.1 at 2010-02-11 19:11:55) [GET]
+
+NoMethodError (undefined method `stringify_keys!' for ["skozlov@enkata.com", "2010-02-11 11:30\n"]:Array):
+  app/controllers/upload_controller.rb:14:in `new'
+  app/controllers/upload_controller.rb:14:in `table'
+  app/controllers/upload_controller.rb:13:in `each_line'
+  app/controllers/upload_controller.rb:13:in `table'
+  app/controllers/upload_controller.rb:12:in `open'
+  app/controllers/upload_controller.rb:12:in `table'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (167.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-11 19:13:37) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-11')) LIMIT 1[0m
+  [4;36;1mRecord Load (3.0ms)[0m   [0;1mSELECT * FROM "records" [0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 96ms (View: 23, DB: 6) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#table (for 127.0.0.1 at 2010-02-11 19:13:53) [GET]
+
+NoMethodError (undefined method `to_hash' for ["skozlov@enkata.com", "2010-02-11 11:30\n"]:Array):
+  app/controllers/upload_controller.rb:14:in `table'
+  app/controllers/upload_controller.rb:13:in `each_line'
+  app/controllers/upload_controller.rb:13:in `table'
+  app/controllers/upload_controller.rb:12:in `open'
+  app/controllers/upload_controller.rb:12:in `table'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UploadController#table (for 127.0.0.1 at 2010-02-11 19:17:01) [GET]
+  [4;36;1mRecord Create (2.0ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-02-11 16:17:01', '2010-02-11 11:30:00', NULL, 'skozlov@enkata.com', '2010-02-11 16:17:01')[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.0ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-02-11') AND ("working_days".login = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Create (2.0ms)[0m   [0mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-02-11 16:17:01', NULL, 'skozlov@enkata.com', NULL, '2010-02-11', NULL, '2010-02-11 16:17:01')[0m
+  [4;36;1mRecord Update (2.0ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 3, "updated_at" = '2010-02-11 16:17:01' WHERE "id" = 23[0m
+  [4;35;1mRecord Create (1.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-02-11 16:17:01', '2010-02-11 13:30:00', NULL, 'skozlov@enkata.com', '2010-02-11 16:17:01')[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-02-11') AND ("working_days".login = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-11')) LIMIT 1[0m
+  [4;35;1mRecord Update (2.0ms)[0m   [0mUPDATE "records" SET "working_day_id" = 3, "updated_at" = '2010-02-11 16:17:01' WHERE "id" = 24[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 3) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 3) [0m
+  [4;36;1mWorkingDay Update (2.0ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 120, "check_in" = '2010-02-11 11:30:00', "check_out" = '2010-02-11 13:30:00', "updated_at" = '2010-02-11 16:17:01' WHERE "id" = 3[0m
+  [4;35;1mRecord Create (2.0ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-02-11 16:17:01', '2010-02-11 15:30:00', NULL, 'skozlov@enkata.com', '2010-02-11 16:17:01')[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-02-11') AND ("working_days".login = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-11')) LIMIT 1[0m
+  [4;35;1mRecord Update (2.0ms)[0m   [0mUPDATE "records" SET "working_day_id" = 3, "updated_at" = '2010-02-11 16:17:01' WHERE "id" = 25[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 3) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 3) [0m
+  [4;36;1mWorkingDay Update (2.0ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 240, "check_out" = '2010-02-11 15:30:00', "updated_at" = '2010-02-11 16:17:01' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/records/show
+Completed in 246ms (DB: 24) | 302 Found [http://localhost/upload/table]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-11 19:17:02) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-11')) LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 3) [0m
+  [4;36;1mWorkingDay Update (2.0ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 287, "check_out" = '2010-02-11 16:17:03', "updated_at" = '2010-02-11 16:17:03' WHERE "id" = 3[0m
+  [4;35;1mRecord Load (3.0ms)[0m   [0mSELECT * FROM "records" [0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mWorkingDay Load (2.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 226ms (View: 20, DB: 9) | 200 OK [http://localhost/records/show]
