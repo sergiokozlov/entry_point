@@ -47,9 +47,8 @@ class Record < ActiveRecord::Base
      else
           self.working_day = tagged_working_day
           self.save
-          self.working_day.recalculate   
      end
-
+        return @working_day
   end
 
 end

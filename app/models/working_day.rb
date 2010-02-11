@@ -6,17 +6,20 @@ class WorkingDay < ActiveRecord::Base
     wday.strftime("%m/%d/%Y")
   end
 
-  def recalculate(whn = 'pasttime')
+  def recalculate
     self.check_in = Record.minimum(:click_date, :conditions => {:working_day_id => self.id})
-
-    if whn =='today'
-      self.check_out = Time.now
-    else
-      self.check_out = Record.maximum(:click_date, :conditions => {:working_day_id => self.id})
-    end
+    self.check_out = Record.maximum(:click_date, :conditions => {:working_day_id => self.id})
 
     self.duration = (self.check_out.to_i - self.check_in.to_i).floor/60
     #big question about saving for "today" activity!
     self.save
   end
+    
+  def self.stat_refresh(days)
+    days.each { |day| day.recalculate  }
+  end
+  
+  
 end
+
+

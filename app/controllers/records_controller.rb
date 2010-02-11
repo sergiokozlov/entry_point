@@ -16,6 +16,7 @@ class RecordsController < ApplicationController
        if @record.save
 
           @record.process
+          @record.working_day.recalculate 
           flash[:notice] = "Thanks #{@user.login}- we will check this record"
           redirect_to :action => 'show'
        else
@@ -32,14 +33,15 @@ class RecordsController < ApplicationController
     
     # No recalculation required - just pass @var with current Duration
     if @working_today = @user.working_days.find(:first, :conditions => {:wday => Time.now.to_date})
-         @working_today.recalculate('today')
+         @distance_walked = (Time.now.to_i - @working_day.check_in.to_i).floor/60
     end
 
-    #@logged_records =  @user.records
-    @logged_records = Record.find(:all)
+    @logged_records =  @user.records
+    #@logged_records = Record.find(:all)
     @logged_working_days = @user.working_days
        
   end
+  
   
   
 
