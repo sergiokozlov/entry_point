@@ -38,5 +38,19 @@ class Record < ActiveRecord::Base
     self.user.working_days.find(:first, :conditions => {:wday => click_date.to_date})
   end
 
+  # processing logic
+  def process (user)
+     if first?
+          @processed_day = create_working_day(:login => user.login,:wday => click_date.strftime("%m/%d/%Y"))
+          self.working_day = @processed_day
+          self.save
+     else
+          self.working_day = tagged_working_day
+          self.save
+          self.working_day.recalculate   
+     end
+
+  end
+
 end
 
