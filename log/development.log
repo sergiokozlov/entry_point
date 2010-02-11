@@ -9348,3 +9348,83 @@ Rendering records/show
   [4;36;1mRecord Load (1.3ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
   [4;35;1mWorkingDay Load (0.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
 Completed in 103ms (View: 9, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-12 00:37:52) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-12')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.2ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+  [4;35;1mWorkingDay Load (0.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 37ms (View: 14, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-12 00:38:19) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-12')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;36;1mRecord Load (1.2ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+  [4;35;1mWorkingDay Load (0.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 36ms (View: 13, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-12 00:39:18) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-12')) LIMIT 1[0m
+  [4;36;1mRecord Load (1.2ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mWorkingDay Load (0.7ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 36ms (View: 13, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-12 00:42:40) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-12')) LIMIT 1[0m
+  [4;36;1mRecord Load (1.2ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') [0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mWorkingDay Load (0.7ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 103ms (View: 8, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-12 00:47:13) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-12')) LIMIT 1[0m
+  [4;36;1mRecord Load (1.7ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY working_day_id[0m
+Rendering template within layouts/application
+Rendering records/show
+  [4;35;1mWorkingDay Load (0.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') [0m
+Completed in 37ms (View: 8, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-12 00:48:16) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-12')) LIMIT 1[0m
+  [4;36;1mRecord Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: click_time: SELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_time[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: click_time: SELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com')  ORDER BY click_time):
+  app/controllers/records_controller.rb:39:in `show'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-02-12 00:48:57) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (69.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-02-12')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.7ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.8ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 104ms (View: 9, DB: 72) | 200 OK [http://localhost/records/show]

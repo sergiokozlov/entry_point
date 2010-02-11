@@ -3,6 +3,28 @@
 <%= link_to "Add New Row", :action => "new" %>
 <br/>
 <br/>
+
+  <h3>Working days </h3>
+	<table border="1">
+    <tr>
+		<th>User</th>
+		<th>Working Day</th>
+    	<th>Check In Time</th>
+		<th>Check Out Time</th>
+		<th>Duration in Minutes</th>
+    </tr>
+  <% @logged_working_days.each do |lwd| %>
+	<tr>
+   		<td> <%=lwd.login %></td>
+    	<td> <%=lwd.wday %></td>
+    	<td> <%=lwd.check_in %></td>
+    	<td><%=lwd.check_out %></td>
+    	<td><%=lwd.duration %></td>
+	</tr>
+  <%end%>
+</table>
+
+<h3> Detailed Records </h3>
     <table border="1">
       <tr>
         <th>User</th>
@@ -19,13 +41,5 @@
   </table>
   <br/>
 
-  <h3>Working days </h3>
-  <% @logged_working_days.each do |lwd| %>
-    <%=lwd.login %>
-    <%=lwd.wday %>
-    <%=lwd.check_in %>
-    <%=lwd.check_out %>
-    <%=lwd.duration %>
-    <br/>
-  <%end%>
+
 
