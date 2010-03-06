@@ -24,7 +24,6 @@ class RecordsController < ApplicationController
         end
    
   end 
-
   
   
   def show
@@ -41,8 +40,7 @@ class RecordsController < ApplicationController
     @logged_working_days = @user.working_days.find(:all, :order => 'wday')
        
   end
-  
-  
+ 
   
 
    

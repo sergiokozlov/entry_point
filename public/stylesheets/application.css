@@ -85,3 +85,12 @@ a {
   font-size: 12px;
   margin-bottom: 30px;
 }
+
+#greeting {
+  margin: 0 auto;
+  width: 75%;
+  padding: 5px 40px;
+  background-color: #EEE;
+  font: Verdana;
+}
+

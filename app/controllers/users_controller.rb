@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-     @user = User.new(params[:user])
+    @user = User.new(params[:user])
     @user.login = (params[:user][:email])
       if @user.save  
         flash[:notice] = "Registration successful."  
