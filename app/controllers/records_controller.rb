@@ -36,8 +36,7 @@ class RecordsController < ApplicationController
     end
 
     @logged_records =  @user.records.find(:all, :order => 'click_date')
-    #@logged_records = Record.find(:all)
-    @logged_working_days = @user.working_days.find(:all, :order => 'wday')
+    @logged_working_days = @user.logged_working_days
        
   end
  
