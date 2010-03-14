@@ -11,5 +11,10 @@ class User < ActiveRecord::Base
   def weeked_working_days(week_number)
      logged_working_days.select {|day| day.wday.cweek == week_number} 
   end 
+  
+  def working_today
+    self.working_days.find(:first, :conditions => {:wday => Date.today})
+  end
+  
 
 end

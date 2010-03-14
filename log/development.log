@@ -11100,3 +11100,855 @@ Rendering dashboard/index
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
 Rendered dashboard/_week_report (20.0ms)
 Completed in 58ms (View: 22, DB: 1) | 200 OK [http://localhost/dashboard]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-13 15:09:35) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 201ms (View: 52, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-13 15:09:44) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"NJmdrdVmZTdu4wMAW0e0nSpH0YvBfefyHOn84EssAGM="}
+  [4;36;1mUser Load (13.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 199ms (DB: 14) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:09:45) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (2.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 250ms (View: 178, DB: 5) | 200 OK [http://localhost/records/show]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:09:59) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (71.9ms)
+Completed in 104ms (View: 81, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:40:47) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #2 of app/views/dashboard/_day_report.erb:
+1: 
+2: <%=today_completed(5) %>
+3: <%=today_to_go(5) %>
+
+    app/views/dashboard/_day_report.erb:2:in `today_completed'
+    app/views/dashboard/_day_report.erb:2
+    app/views/dashboard/index.erb:4
+
+Rendered rescues/_trace (50.1ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:41:03) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+
+ActionView::TemplateError (undefined method `working_today' for #<User:0x2315f2c>) on line #2 of app/views/dashboard/_day_report.erb:
+1: 
+2: <%=today_completed %>
+3: <%=today_to_go %>
+
+    app/helpers/dashboard_helper.rb:19:in `today_completed'
+    app/views/dashboard/_day_report.erb:2
+    app/views/dashboard/index.erb:4
+
+Rendered rescues/_trace (46.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:41:53) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `check_in' for nil:NilClass) on line #2 of app/views/dashboard/_day_report.erb:
+1: 
+2: <%=today_completed %>
+3: <%=today_to_go %>
+
+    app/helpers/dashboard_helper.rb:19:in `today_completed'
+    app/views/dashboard/_day_report.erb:2
+    app/views/dashboard/index.erb:4
+
+Rendered rescues/_trace (116.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:44:02) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+
+ActionView::TemplateError (undefined local variable or method `day_distance' for #<ActionView::Base:0x2563284>) on line #3 of app/views/dashboard/_day_report.erb:
+1: 
+2: <%=today_completed %>
+3: <%=today_to_go %>
+
+    app/helpers/dashboard_helper.rb:31:in `today_to_go'
+    app/views/dashboard/_day_report.erb:3
+    app/views/dashboard/index.erb:4
+
+Rendered rescues/_trace (44.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:44:25) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (73.8ms)
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (4.4ms)
+Completed in 94ms (View: 79, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:45:34) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.7ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 32ms (View: 8, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#new (for 127.0.0.1 at 2010-03-13 15:45:36) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering records/new
+Completed in 44ms (View: 26, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-03-13 15:46:00) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"NJmdrdVmZTdu4wMAW0e0nSpH0YvBfefyHOn84EssAGM=", "record"=>{"click_date_string"=>"13-03-2010 14:45"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mRecord Create (0.4ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-13 12:46:00', '2010-03-13 11:45:00', NULL, 'skozlov@enkata.com', '2010-03-13 12:46:00')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.1ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-13') AND ("working_days".login = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.5ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-13 12:46:01', NULL, 'skozlov@enkata.com', NULL, '2010-03-13', NULL, '2010-03-13 12:46:01')[0m
+  [4;35;1mRecord Update (0.5ms)[0m   [0mUPDATE "records" SET "working_day_id" = 5, "updated_at" = '2010-03-13 12:46:01' WHERE "id" = 31[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 5) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 5) [0m
+  [4;36;1mWorkingDay Update (0.4ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 0, "check_in" = '2010-03-13 11:45:00', "check_out" = '2010-03-13 11:45:00', "updated_at" = '2010-03-13 12:46:01' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/records/show
+Completed in 412ms (DB: 3) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:46:01) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+
+NoMethodError (undefined method `check_in' for nil:NilClass):
+  app/controllers/records_controller.rb:35:in `show'
+
+Rendered rescues/_trace (100.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:47:11) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+
+NoMethodError (undefined method `check_in' for nil:NilClass):
+  app/controllers/records_controller.rb:35:in `show'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#create (for 127.0.0.1 at 2010-03-13 15:49:05) [POST]
+  Parameters: {"commit"=>"Add Record", "authenticity_token"=>"NJmdrdVmZTdu4wMAW0e0nSpH0YvBfefyHOn84EssAGM=", "record"=>{"click_date_string"=>"13-03-2010 18:45"}}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-13 12:49:05', '2010-03-13 15:45:00', NULL, 'skozlov@enkata.com', '2010-03-13 12:49:05')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-13') AND ("working_days".login = 'skozlov@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (1.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.4ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 5, "updated_at" = '2010-03-13 12:49:05' WHERE "id" = 32[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 5) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 5) [0m
+  [4;35;1mWorkingDay Update (0.3ms)[0m   [0mUPDATE "working_days" SET "duration" = 240, "check_out" = '2010-03-13 15:45:00', "updated_at" = '2010-03-13 12:49:05' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/records/show
+Completed in 44ms (DB: 4) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:49:05) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+
+NoMethodError (undefined method `check_in' for nil:NilClass):
+  app/controllers/records_controller.rb:35:in `show'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:49:41) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mRecord Load (1.8ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;35;1mWorkingDay Load (0.9ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 34ms (View: 8, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:50:21) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (7.9ms)
+  [4;35;1mWorkingDay Load (1.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.6ms)
+Completed in 27ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:52:32) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+
+ActionView::TemplateError (undefined local variable or method `dashboard_path' for #<ActionView::Base:0x233aa0c>) on line #30 of app/views/layouts/application.html.erb:
+27:       <% if current_user %>  
+28:         <%= link_to "Edit profile", edit_user_path(:current) %>  
+29:         <%= link_to "Logout", logout_path %>  
+30: 		<%= link_to "Dashboard", dashboard_path %>  
+31:       <% else %>  
+32:         <%= link_to "Register", new_user_path %>  
+33:         <%= link_to "Log in", login_path %>  
+
+    app/views/layouts/application.html.erb:30
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:52:50) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+
+ActionView::TemplateError (undefined local variable or method `index_dashboard_path' for #<ActionView::Base:0x2454d34>) on line #30 of app/views/layouts/application.html.erb:
+27:       <% if current_user %>  
+28:         <%= link_to "Edit profile", edit_user_path(:current) %>  
+29:         <%= link_to "Logout", logout_path %>  
+30: 		<%= link_to "Dashboard", index_dashboard_path %>  
+31:       <% else %>  
+32:         <%= link_to "Register", new_user_path %>  
+33:         <%= link_to "Log in", login_path %>  
+
+    app/views/layouts/application.html.erb:30
+
+Rendered rescues/_trace (106.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 15:53:15) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 38ms (View: 12, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:53:24) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (7.8ms)
+  [4;36;1mWorkingDay Load (1.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.9ms)
+Completed in 27ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:56:49) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.4ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.1ms)
+  [4;35;1mWorkingDay Load (1.1ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.6ms)
+Completed in 28ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:56:50) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (7.9ms)
+  [4;36;1mWorkingDay Load (1.1ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.6ms)
+Completed in 34ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 15:56:51) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.2ms)
+  [4;35;1mWorkingDay Load (1.1ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.8ms)
+Completed in 32ms (View: 13, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 16:02:05) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (7.9ms)
+  [4;36;1mWorkingDay Load (1.1ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.6ms)
+Completed in 28ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 16:02:07) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (7.9ms)
+  [4;35;1mWorkingDay Load (1.1ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.6ms)
+Completed in 27ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 16:02:08) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (7.8ms)
+  [4;36;1mWorkingDay Load (1.1ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.6ms)
+Completed in 27ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 16:02:34) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.0ms)
+  [4;35;1mWorkingDay Load (1.1ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (3.6ms)
+Completed in 28ms (View: 12, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:03:24) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 37ms (View: 8, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:12:42) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 38ms (View: 12, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:14:15) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
+/Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:30: syntax error, unexpected '=', expecting kEND
+= link_to "Dashboard", :control...
+ ^
+Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n"
+@output_buffer.concat "  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+@output_buffer.concat "<html>\n"
+@output_buffer.concat "  <head>\n"
+@output_buffer.concat "    <title>"; @output_buffer.concat(( h(yield(:title) || "Untitled") ).to_s); @output_buffer.concat "</title>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( stylesheet_link_tag 'application' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( yield(:head) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </head>\n"
+@output_buffer.concat "  <body>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <div id=\"greeting\">\n"
+@output_buffer.concat "      "; if @user = current_user; @output_buffer.concat "\n"
+@output_buffer.concat "        <h3>"; @output_buffer.concat(("Hi #{@user.login} ").to_s); @output_buffer.concat " </h3>\n"
+@output_buffer.concat "        <p>Work better dude! </p>\n"
+@output_buffer.concat "      "; end; @output_buffer.concat "\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    <div id=\"container\">\n"
+ flash.each do |name, msg| 
+@output_buffer.concat "        "; @output_buffer.concat(( content_tag :div, msg, :id => "flash_#{name}" ).to_s); @output_buffer.concat "\n"
+ end 
+@output_buffer.concat "      \n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    <div id=\"user_nav\">  \n"
+@output_buffer.concat "      ";  if current_user ; @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Edit profile", edit_user_path(:current) ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Logout", logout_path ).to_s); @output_buffer.concat "  \n"
+= link_to "Dashboard", :controller => 'dashboard' ; @output_buffer.concat "  \n"
+@output_buffer.concat "      ";  else ; @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Register", new_user_path ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Log in", login_path ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "  \n"
+@output_buffer.concat "    </div> \n"
+@output_buffer.concat "     \n"
+@output_buffer.concat "      \n"
+@output_buffer.concat "      "; @output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "      \n"
+@output_buffer.concat "  </body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:48:in `compile!'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:352:in `_render_with_layout'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/diana/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:30: syntax error, unexpected '=', expecting kEND
+= link_to "Dashboard", :control...
+ ^) on line #30 of app/views/layouts/application.html.erb:
+27:       <% if current_user %>  
+28:         <%= link_to "Edit profile", edit_user_path(:current) %>  
+29:         <%= link_to "Logout", logout_path %>  
+30: 		<%-= link_to "Dashboard", :controller => 'dashboard' -%>  
+31:       <% else %>  
+32:         <%= link_to "Register", new_user_path %>  
+33:         <%= link_to "Log in", login_path %>  
+
+    app/views/layouts/application.html.erb:48:in `compile!'
+
+Rendered rescues/_trace (104.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:14:23) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
+/Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:30: syntax error, unexpected tSTRING_BEG, expecting kDO or '{' or '('
+...put_buffer.concat((- link_to "Dashboard", :controller => 'da...
+                              ^
+/Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:30: syntax error, unexpected ',', expecting ')'
+...concat((- link_to "Dashboard", :controller => 'dashboard' )....
+                              ^
+Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n"
+@output_buffer.concat "  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+@output_buffer.concat "<html>\n"
+@output_buffer.concat "  <head>\n"
+@output_buffer.concat "    <title>"; @output_buffer.concat(( h(yield(:title) || "Untitled") ).to_s); @output_buffer.concat "</title>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( stylesheet_link_tag 'application' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( yield(:head) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </head>\n"
+@output_buffer.concat "  <body>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <div id=\"greeting\">\n"
+@output_buffer.concat "      "; if @user = current_user; @output_buffer.concat "\n"
+@output_buffer.concat "        <h3>"; @output_buffer.concat(("Hi #{@user.login} ").to_s); @output_buffer.concat " </h3>\n"
+@output_buffer.concat "        <p>Work better dude! </p>\n"
+@output_buffer.concat "      "; end; @output_buffer.concat "\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    <div id=\"container\">\n"
+ flash.each do |name, msg| 
+@output_buffer.concat "        "; @output_buffer.concat(( content_tag :div, msg, :id => "flash_#{name}" ).to_s); @output_buffer.concat "\n"
+ end 
+@output_buffer.concat "      \n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    <div id=\"user_nav\">  \n"
+@output_buffer.concat "      ";  if current_user ; @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Edit profile", edit_user_path(:current) ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Logout", logout_path ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "\t\t"; @output_buffer.concat((- link_to "Dashboard", :controller => 'dashboard' ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "      ";  else ; @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Register", new_user_path ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to "Log in", login_path ).to_s); @output_buffer.concat "  \n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "  \n"
+@output_buffer.concat "    </div> \n"
+@output_buffer.concat "     \n"
+@output_buffer.concat "      \n"
+@output_buffer.concat "      "; @output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "      \n"
+@output_buffer.concat "  </body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:48:in `compile!'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:352:in `_render_with_layout'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/diana/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/diana/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/diana/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Users/diana/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/diana/.gem/ruby/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:30: syntax error, unexpected tSTRING_BEG, expecting kDO or '{' or '('
+...put_buffer.concat((- link_to "Dashboard", :controller => 'da...
+                              ^
+/Users/diana/Sergio/entry_point/app/views/layouts/application.html.erb:30: syntax error, unexpected ',', expecting ')'
+...concat((- link_to "Dashboard", :controller => 'dashboard' )....
+                              ^) on line #30 of app/views/layouts/application.html.erb:
+27:       <% if current_user %>  
+28:         <%= link_to "Edit profile", edit_user_path(:current) %>  
+29:         <%= link_to "Logout", logout_path %>  
+30: 		<%=- link_to "Dashboard", :controller => 'dashboard' -%>  
+31:       <% else %>  
+32:         <%= link_to "Register", new_user_path %>  
+33:         <%= link_to "Log in", login_path %>  
+
+    app/views/layouts/application.html.erb:48:in `compile!'
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:14:28) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 40ms (View: 13, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:14:37) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (1.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 41ms (View: 14, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:15:05) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 39ms (View: 12, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:15:17) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 40ms (View: 13, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:15:36) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 106ms (View: 80, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:15:37) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 35ms (View: 8, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-13 16:15:50) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mRecord Load (1.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (0.9ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 39ms (View: 13, DB: 3) | 200 OK [http://localhost/records/show]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-13 16:21:17) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-13')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.0ms)
+  [4;36;1mWorkingDay Load (1.1ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday[0m
+Rendered dashboard/_week_report (5.4ms)
+Completed in 33ms (View: 17, DB: 2) | 200 OK [http://localhost/dashboard]
