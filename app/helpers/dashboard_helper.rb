@@ -19,6 +19,9 @@ module DashboardHelper
     week_completed(number)/5
   end
   
+  def week_percent
+    week_completed*100/week_distance
+  end
   
   
   # Daily Reports
@@ -38,4 +41,8 @@ module DashboardHelper
   def today_to_go
     today_distance - today_completed
   end 
+  
+  def today_percent
+    today_completed*100/today_distance
+  end
 end

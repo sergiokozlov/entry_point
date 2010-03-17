@@ -7,7 +7,7 @@
 		<div class="box">
 			<div class="inner">
 				<h3><%=today_completed / 60  %><small>h</small> <%=today_completed % 60 %><small>min</small></h3>
-				<div class="progress"><div>&nbsp;</div></div>
+				<div class="progress"><div style=<%="width:#{today_percent}%"%>>&nbsp;</div></div>
 				<p><strong><%= today_to_go / 60 %></strong> hours <strong><%= today_to_go % 60 %></strong> minutes to go</p>
 			</div> <!-- end .inner -->
 		</div> <!-- end .box -->

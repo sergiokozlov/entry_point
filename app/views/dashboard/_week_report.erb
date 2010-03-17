@@ -8,7 +8,7 @@
 		<div class="box">
 			<div class="inner">
 				<h3><%=week_completed / 60  %><small>h</small> <%=week_completed % 60 %><small>min</small></h3>
-				<div class="progress"><div>&nbsp;</div></div>
+				<div class="progress"><div style=<%="width:#{week_percent}%"%>>&nbsp;</div></div>
 				<p><strong><%= week_to_go / 60 %></strong> hours <strong><%= week_to_go % 60 %></strong> minutes to go</p>
 			</div> <!-- end .inner -->
 		</div> <!-- end .box -->
