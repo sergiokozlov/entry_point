@@ -3,8 +3,9 @@
     <% form_for @record do |f| %>
       <%= f.error_messages %>
 
-    <%=   f.label :click_date_string %>
-   <%=    f.text_field :click_date_string %>
+    <%=   f.label :click_date %>
+   <%=    f.text_field :click_date %>
 
    <%=    f.submit "Add Record" %>
  <% end %>
+

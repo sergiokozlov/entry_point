@@ -1,21 +1,26 @@
 module DashboardHelper
 
   # Weekly Reports
-  def week_completed(number)
+  
+  def week_completed(number = Date.today.cweek)
     @user.weeked_working_days(number).map{|day| day.duration}.inject(0) {|x,y| x+y}  
   end 
 
   def week_distance
-    2700
+    5*9*60
   end
 
-  def week_to_go(number)
+  def week_to_go(number = Date.today.cweek)
     week_distance - week_completed(number)  
   end
   
   
-
-
+  def week_average(number = Date.today.cweek)
+    week_completed(number)/5
+  end
+  
+  
+  
   # Daily Reports
   # Today:
   def today_completed

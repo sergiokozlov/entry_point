@@ -1,5 +1,22 @@
 
 
-<%=week_completed(5) %>
-<%=week_to_go(5) %>
-<%=distance_of_time_in_words(week_completed(5), week_distance)%>
+
+<div class="report this-week">
+	<h2>This Week</h2>
+	<% if true %>
+		<p class="info">Your daily average is <strong><%=week_average / 60 %></strong>h <strong><%=week_average % 60 %></strong>min</p>
+		<div class="box">
+			<div class="inner">
+				<h3><%=week_completed / 60  %><small>h</small> <%=week_completed % 60 %><small>min</small></h3>
+				<div class="progress"><div>&nbsp;</div></div>
+				<p><strong><%= week_to_go / 60 %></strong> hours <strong><%= week_to_go % 60 %></strong> minutes to go</p>
+			</div> <!-- end .inner -->
+		</div> <!-- end .box -->
+	<%else  %>
+		<div class="box">
+			<div class="inner">
+				<h3> No Records for This Week  </h3>
+			</div> <!-- end .inner -->
+		</div> <!-- end .box -->
+	<% end %>		
+</div> <!-- end .report -->

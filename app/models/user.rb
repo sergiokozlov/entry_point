@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 
   def logged_working_days
-     self.working_days.find(:all, :order => 'wday')  
+     self.working_days.find(:all, :order => 'wday desc')  
   end 
 
   def weeked_working_days(week_number)
@@ -16,5 +16,7 @@ class User < ActiveRecord::Base
     self.working_days.find(:first, :conditions => {:wday => Date.today})
   end
   
-
+  def logged_working_weeks
+    logged_working_days.map{|day| day.wday.cweek}.uniq
+  end
 end
