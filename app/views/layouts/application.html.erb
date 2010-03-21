@@ -5,6 +5,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><%= h(yield(:title) || "|")  %> Enkata Entrypoint</title>
     <%= stylesheet_link_tag 'application' %>
+	<%= javascript_include_tag 'jquery'  %>
+	<%= javascript_include_tag 'enumerable'  %>
+	<%= javascript_include_tag 'tufte-graph'  %>
+	<%= javascript_include_tag 'raphael' %>
     <%= yield(:head) %>
   </head>
 

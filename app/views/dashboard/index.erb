@@ -4,7 +4,44 @@
 
 <%= render (:partial => 'day_report')%>
 
+<script type="text/javascript">
+     $(document).ready(function () {
+       jQuery('#daily-bars').tufteBar({
+         data: [
+           [1.0, {label: 'Monday'}, {flag : 'Red'}],
+           [1.0, {label: 'Tuesday'}, {flag : 'Red'}],
+           [5.0, {label: 'Wednesday'}, {flag : 'Gray'}],
+           [3.0, {label: 'Thursday'}, {flag : 'Gray'}],
+           [2.2, {label: 'Friday'}, {flag : 'Red'}],
+		   [0, {label: 'Saturday'}, {flag : 'White'}],
+		   [0, {label: 'Sunday'}, {flag : 'White'}],
+		   [5.0, {label: 'Monday'}, {flag : 'Grey'}],
+           [2.0, {label: 'Tuesday'}, {flag : 'Red'}]
+         ],
+         barWidth: 0.8,
+         barLabel:  function(index) { return '' },
+         axisLabel: function(index) { return this[1].label },
+         color:     function(index) { 
+			switch (this[2].flag)
+			{
+			case 'Red':
+			 return '#8B0000'
+			  break;
+			case 'White':
+			 return '#000000'
+			  break;
+			default:
+			 return '#828282'
+			}; 
+		}
+       });
+     });
+   </script>
 
+<br/>
+<div class="clear"></div>
+
+<div id='daily-bars' class='graph' style='width: 580px; height: 150px; margin: 20px;'></div>
 
 <div class="clear"></div>
 

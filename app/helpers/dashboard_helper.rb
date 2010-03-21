@@ -26,9 +26,11 @@ module DashboardHelper
   
   # Daily Reports
   # Today:
+  # Time is set to UTC - for synchronization reasons
   def today_completed
     if @user.working_today
-      (Time.now.to_i - @user.working_today.check_in.to_i).floor/60
+      tnow = Time.now
+      (tnow.to_i - @user.working_today.check_in.to_i + tnow.utc_offset ).floor/60
     else
       0
     end  
