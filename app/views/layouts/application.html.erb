@@ -27,11 +27,11 @@
 					<%= link_to "Edit profile", edit_user_path(:current) %>  
 					<%= link_to "Logout", logout_path %>
 					<%= link_to "Dashboard", :controller => 'dashboard' %>  
-				<% else %>  
-					<%= link_to "Register", new_user_path %>  
-					<%= link_to "Log in", login_path %>  
 				<% end %>
 			</ul>
+			<% else %>  
+				<%= link_to "Register", new_user_path %>  
+				<%= link_to "Log in", login_path %>
 			<%end%>			
 		</div>
 

@@ -9,8 +9,8 @@ class UploadController < ApplicationController
   
   def table
       processed_days = Array.new
-        
-       File.open(DATA_DIR+"/snapshot.txt") do |file|
+      #TODO: Made chomp on the file  
+       File.open(DATA_DIR+"/snapshot2.txt") do |file|
          file.each_line do |line|
             @record = Record.new ( :login => line.split(",")[0], :click_date => line.split(",")[1] )
            processed_days << @record.process if @record.save

@@ -8,15 +8,11 @@
      $(document).ready(function () {
        jQuery('#daily-bars').tufteBar({
          data: [
-           [1.0, {label: 'Monday'}, {flag : 'Red'}],
-           [1.0, {label: 'Tuesday'}, {flag : 'Red'}],
-           [5.0, {label: 'Wednesday'}, {flag : 'Gray'}],
-           [3.0, {label: 'Thursday'}, {flag : 'Gray'}],
-           [2.2, {label: 'Friday'}, {flag : 'Red'}],
-		   [0, {label: 'Saturday'}, {flag : 'White'}],
-		   [0, {label: 'Sunday'}, {flag : 'White'}],
-		   [5.0, {label: 'Monday'}, {flag : 'Grey'}],
-           [2.0, {label: 'Tuesday'}, {flag : 'Red'}]
+		
+      	<% @user.logged_working_days.each do |lwd| %>
+			<%="[#{lwd.duration},{label:'#{ApplicationHelper::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{if lwd.duration < 420; 'Red'; else;'Grey'; end}'}]," %>
+		<%end%>
+		  [0, {label: ''}, {flag: 'White'}]
          ],
          barWidth: 0.8,
          barLabel:  function(index) { return '' },
@@ -38,10 +34,15 @@
      });
    </script>
 
-<br/>
+<!--div id="test">
+	<% @user.logged_working_days.each do |lwd| %>
+		<%="[#{lwd.duration},{label:'#{ApplicationHelper::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{if lwd.duration < 300; 'Red'; else;'Grey'; end}'}]," %>
+	<%end%>
+</div-->
+
 <div class="clear"></div>
 
-<div id='daily-bars' class='graph' style='width: 580px; height: 150px; margin: 20px;'></div>
+<div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
 
 <div class="clear"></div>
 

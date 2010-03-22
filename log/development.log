@@ -18714,3 +18714,1435 @@ Rendered dashboard/_day_report (9.0ms)
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
 Completed in 155ms (View: 60, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:31:02) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.4ms)
+  [4;36;1mWorkingDay Load (0.4ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 73ms (View: 57, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:31:03) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.3ms)
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 66ms (View: 50, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:39:08) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.2ms)
+  [4;36;1mWorkingDay Load (0.4ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 150ms (View: 61, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:39:49) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.4ms)
+  [4;35;1mWorkingDay Load (0.4ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 75ms (View: 59, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:40:36) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.8ms)
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::ABBR_DAYNAMES) on line #43 of app/views/dashboard/index.erb:
+40: 
+41: <div id="test">
+42: 	<% @user.logged_working_days.each do |lwd| %>
+43: 		<%="[#{lwd.duration},{label:'#{ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{'Red' if lwd.duration < 3}'}]" %>
+44: 	<%end%>
+45: </div>
+46: 
+
+    app/views/dashboard/index.erb:43
+    app/views/dashboard/index.erb:42:in `each'
+    app/views/dashboard/index.erb:42
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:41:40) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.3ms)
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::ABBR_DAYNAMES) on line #43 of app/views/dashboard/index.erb:
+40: 
+41: <div id="test">
+42: 	<% @user.logged_working_days.each do |lwd| %>
+43: 		<%="[#{lwd.duration},{label:'#{ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{'Red' if lwd.duration < 3}'}]" %>
+44: 	<%end%>
+45: </div>
+46: 
+
+    app/views/dashboard/index.erb:43
+    app/views/dashboard/index.erb:42:in `each'
+    app/views/dashboard/index.erb:42
+
+Rendered rescues/_trace (118.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:41:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.9ms)
+  [4;36;1mWorkingDay Load (0.4ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::ABBR_DAYNAMES) on line #43 of app/views/dashboard/index.erb:
+40: 
+41: <div id="test">
+42: 	<% @user.logged_working_days.each do |lwd| %>
+43: 		<%="[#{lwd.duration},{label:'#{ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{'Red' if lwd.duration < 3}'}]" %>
+44: 	<%end%>
+45: </div>
+46: 
+
+    app/views/dashboard/index.erb:43
+    app/views/dashboard/index.erb:42:in `each'
+    app/views/dashboard/index.erb:42
+
+Rendered rescues/_trace (38.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-21 22:42:27) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.6ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.2ms)
+  [4;35;1mWorkingDay Load (0.4ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-21')) LIMIT 1[0m
+Rendered dashboard/_day_report (8.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 147ms (View: 131, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:02:43) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (22.0ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+
+ActionView::TemplateError (uninitialized constant ActionView::ABBR_DAYNAMES) on line #43 of app/views/dashboard/index.erb:
+40: 
+41: <div id="test">
+42: 	<% @user.logged_working_days.each do |lwd| %>
+43: 		<%="[#{lwd.duration},{label:'#{ActionView::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{'Red' if lwd.duration < 3}'}]" %>
+44: 	<%end%>
+45: </div>
+46: 
+
+    app/views/dashboard/index.erb:43
+    app/views/dashboard/index.erb:42:in `each'
+    app/views/dashboard/index.erb:42
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:03:18) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.8ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (92.1ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 139ms (View: 124, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:03:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.1ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 61ms (View: 45, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:04:20) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.7ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (22.1ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 69ms (View: 53, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:07:08) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.6ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 141ms (View: 125, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:08:09) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.0ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 70ms (View: 54, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:12:01) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.8ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 69ms (View: 53, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:12:59) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (94.4ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 143ms (View: 127, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:13:18) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.7ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (22.1ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 73ms (View: 48, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:17:09) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.7ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 70ms (View: 54, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:18:16) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.6ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (95.6ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 144ms (View: 129, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:22:34) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.4ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 70ms (View: 54, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:23:44) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.3ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 69ms (View: 54, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:24:27) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.7ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.9ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 144ms (View: 127, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:24:31) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.0ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 63ms (View: 47, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:25:45) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.7ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.9ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 69ms (View: 53, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:25:46) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (92.9ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 135ms (View: 119, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:25:47) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.8ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 62ms (View: 47, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:26:38) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.6ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.1ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 69ms (View: 53, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:27:08) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (94.6ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 144ms (View: 128, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:27:28) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.7ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.3ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 71ms (View: 55, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:27:58) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.1ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 69ms (View: 53, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:29:53) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (94.2ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 137ms (View: 121, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing UploadController#table (for 127.0.0.1 at 2010-03-22 00:43:39) [GET]
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:43:39', '2010-03-09 11:33:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:43:39')[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+
+NoMethodError (undefined method `working_days' for nil:NilClass):
+  app/models/record.rb:30:in `first?'
+  app/models/record.rb:43:in `process'
+  app/controllers/upload_controller.rb:16:in `table'
+  app/controllers/upload_controller.rb:14:in `each_line'
+  app/controllers/upload_controller.rb:14:in `table'
+  app/controllers/upload_controller.rb:13:in `open'
+  app/controllers/upload_controller.rb:13:in `table'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-22 00:44:05) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-22 00:44:05) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-22 00:44:20) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"admin", "login"=>"skozlov@enkata.com"}, "authenticity_token"=>"h2v+OGRZcvSW3g5/8xbu7MUM9Y4JEskC00e+udsHfRo="}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'skozlov@enkata.com') LIMIT 1[0m
+Redirected to http://localhost:3000/records/show
+Completed in 84ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-22 00:44:20) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+  [4;36;1mRecord Load (3.2ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'skozlov@enkata.com') ORDER BY click_date[0m
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 43ms (View: 13, DB: 5) | 200 OK [http://localhost/records/show]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:44:27) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.5ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (20.9ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'skozlov@enkata.com') ORDER BY wday desc[0m
+Completed in 62ms (View: 46, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-22 00:46:22) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-22 00:46:23) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-22 00:46:28) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 93ms (View: 85, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-22 00:46:42) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"admin", "password"=>"admin", "email"=>"ibabko@enkata.com"}, "commit"=>"Submit", "authenticity_token"=>"h2v+OGRZcvSW3g5/8xbu7MUM9Y4JEskC00e+udsHfRo="}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("updated_at", "crypted_password", "password_salt", "persistence_token", "login", "email", "created_at") VALUES('2010-03-21 21:46:42', '09412424a47a62819f6e2469b61b38f2dcafb9aebdbc75b29579644b1e1bf99eec3c505522c9deae550b125f4fdc63d0ec565704a447015c62c49ada3f0c2837', 'tyWZILNZbA1y3bUUwCzA', '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258', 'ibabko@enkata.com', 'ibabko@enkata.com', '2010-03-21 21:46:42')[0m
+Redirected to http://localhost:3000/records/show
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-22 00:46:42) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+  [4;36;1mRecord Load (0.7ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records".login = 'ibabko@enkata.com') ORDER BY click_date[0m
+  [4;35;1mWorkingDay Load (0.4ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 29ms (View: 5, DB: 2) | 200 OK [http://localhost/records/show]
+
+
+Processing UploadController#table (for 127.0.0.1 at 2010-03-22 00:47:08) [GET]
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-09 11:33:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-09') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Create (0.3ms)[0m   [0mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-09', NULL, '2010-03-21 21:47:08')[0m
+  [4;36;1mRecord Update (0.4ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 10, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 49[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-09 15:20:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-09') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-09')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 10, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 50[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-10 11:30:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-10') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Create (0.3ms)[0m   [0mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-10', NULL, '2010-03-21 21:47:08')[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 11, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 51[0m
+  [4;35;1mRecord Create (0.4ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-11 13:33:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.1ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-11') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.3ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-11', NULL, '2010-03-21 21:47:08')[0m
+  [4;35;1mRecord Update (0.4ms)[0m   [0mUPDATE "records" SET "working_day_id" = 12, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 52[0m
+  [4;36;1mRecord Create (0.5ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-11 21:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-11') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-11')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 12, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 53[0m
+  [4;35;1mRecord Create (0.4ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-12 11:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.1ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-12') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.3ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-12', NULL, '2010-03-21 21:47:08')[0m
+  [4;35;1mRecord Update (0.4ms)[0m   [0mUPDATE "records" SET "working_day_id" = 13, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 54[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-12 19:25:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-12') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-12')) LIMIT 1[0m
+  [4;36;1mRecord Update (1.0ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 13, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 55[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-15 10:38:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-15') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.3ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-15', NULL, '2010-03-21 21:47:08')[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 14, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 56[0m
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-15 19:45:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-15') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-15')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 14, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 57[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-16 11:30:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.1ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-16') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.3ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-16', NULL, '2010-03-21 21:47:08')[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 15, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 58[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-16 20:01:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-16') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-16')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 15, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 59[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-17 11:15:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.1ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-17') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.3ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-17', NULL, '2010-03-21 21:47:08')[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 16, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 60[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-17 20:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.4ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-17') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-17')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 16, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 61[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-18 11:05:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-18') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.4ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-18', NULL, '2010-03-21 21:47:08')[0m
+  [4;35;1mRecord Update (0.4ms)[0m   [0mUPDATE "records" SET "working_day_id" = 17, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 62[0m
+  [4;36;1mRecord Create (0.5ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-18 17:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-18') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-18')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 17, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 63[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-19 13:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-19') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Create (0.3ms)[0m   [0;1mINSERT INTO "working_days" ("updated_at", "check_out", "login", "duration", "wday", "check_in", "created_at") VALUES('2010-03-21 21:47:08', NULL, 'ibabko@enkata.com', NULL, '2010-03-19', NULL, '2010-03-21 21:47:08')[0m
+  [4;35;1mRecord Update (0.6ms)[0m   [0mUPDATE "records" SET "working_day_id" = 18, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 64[0m
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', '2010-03-19 20:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:47:08')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-19') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-19')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 18, "updated_at" = '2010-03-21 21:47:08' WHERE "id" = 65[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:47:08', NULL, NULL, '
+', '2010-03-21 21:47:08')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = '
+') LIMIT 1[0m
+
+NoMethodError (undefined method `working_days' for nil:NilClass):
+  app/models/record.rb:30:in `first?'
+  app/models/record.rb:43:in `process'
+  app/controllers/upload_controller.rb:16:in `table'
+  app/controllers/upload_controller.rb:14:in `each_line'
+  app/controllers/upload_controller.rb:14:in `table'
+  app/controllers/upload_controller.rb:13:in `open'
+  app/controllers/upload_controller.rb:13:in `table'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UploadController#table (for 127.0.0.1 at 2010-03-22 00:50:48) [GET]
+  [4;35;1mRecord Create (0.5ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-09 11:33:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-09') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-09')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 10, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 67[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-09 15:20:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-09') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-09')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 10, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 68[0m
+  [4;35;1mRecord Create (0.5ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-10 11:30:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.6ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-10') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-10')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 11, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 69[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-11 13:33:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-11') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-11')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 12, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 70[0m
+  [4;35;1mRecord Create (0.5ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-11 21:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-11') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-11')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 12, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 71[0m
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-12 11:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-12') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-12')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 13, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 72[0m
+  [4;35;1mRecord Create (0.4ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-12 19:25:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-12') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.4ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-12')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 13, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 73[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-15 10:38:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-15') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-15')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 14, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 74[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-15 19:45:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-15') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-15')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 14, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 75[0m
+  [4;36;1mRecord Create (0.5ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-16 11:30:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.5ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-16') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-16')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 15, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 76[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-16 20:01:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-16') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.8ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-16')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 15, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 77[0m
+  [4;36;1mRecord Create (0.3ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-17 11:15:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-17') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-17')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 16, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 78[0m
+  [4;35;1mRecord Create (0.4ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-17 20:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.5ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-17') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-17')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 16, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 79[0m
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-18 11:05:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-18') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-18')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 17, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 80[0m
+  [4;35;1mRecord Create (0.5ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-18 17:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-18') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.4ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-18')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 17, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 81[0m
+  [4;36;1mRecord Create (0.4ms)[0m   [0;1mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-19 13:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-19') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.9ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-19')) LIMIT 1[0m
+  [4;36;1mRecord Update (0.3ms)[0m   [0;1mUPDATE "records" SET "working_day_id" = 18, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 82[0m
+  [4;35;1mRecord Create (0.3ms)[0m   [0mINSERT INTO "records" ("updated_at", "click_date", "working_day_id", "login", "created_at") VALUES('2010-03-21 21:50:48', '2010-03-19 20:00:00', NULL, 'ibabko@enkata.com', '2010-03-21 21:50:48')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;35;1mWorkingDay Load (0.3ms)[0m   [0mSELECT "working_days".id FROM "working_days" WHERE ("working_days"."wday" = '2010-03-19') AND ("working_days".login = 'ibabko@enkata.com') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.3ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-19')) LIMIT 1[0m
+  [4;35;1mRecord Update (0.3ms)[0m   [0mUPDATE "records" SET "working_day_id" = 18, "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 83[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 10) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 10) [0m
+  [4;36;1mWorkingDay Update (0.3ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 227, "check_in" = '2010-03-09 11:33:00', "check_out" = '2010-03-09 15:20:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 10[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 11) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 11) [0m
+  [4;35;1mWorkingDay Update (0.3ms)[0m   [0mUPDATE "working_days" SET "duration" = 0, "check_in" = '2010-03-10 11:30:00', "check_out" = '2010-03-10 11:30:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 11[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 12) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 12) [0m
+  [4;36;1mWorkingDay Update (0.3ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 447, "check_in" = '2010-03-11 13:33:00', "check_out" = '2010-03-11 21:00:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 12[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 13) [0m
+  [4;35;1mWorkingDay Update (0.3ms)[0m   [0mUPDATE "working_days" SET "duration" = 505, "check_in" = '2010-03-12 11:00:00', "check_out" = '2010-03-12 19:25:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 13[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 14) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 14) [0m
+  [4;36;1mWorkingDay Update (0.3ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 547, "check_in" = '2010-03-15 10:38:00', "check_out" = '2010-03-15 19:45:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 14[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 15) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 15) [0m
+  [4;35;1mWorkingDay Update (0.3ms)[0m   [0mUPDATE "working_days" SET "duration" = 511, "check_in" = '2010-03-16 11:30:00', "check_out" = '2010-03-16 20:01:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 15[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 16) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 16) [0m
+  [4;36;1mWorkingDay Update (0.3ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 525, "check_in" = '2010-03-17 11:15:00', "check_out" = '2010-03-17 20:00:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 16[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 17) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 17) [0m
+  [4;35;1mWorkingDay Update (0.3ms)[0m   [0mUPDATE "working_days" SET "duration" = 355, "check_in" = '2010-03-18 11:05:00', "check_out" = '2010-03-18 17:00:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 17[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT min("records".click_date) AS min_click_date FROM "records" WHERE ("records"."working_day_id" = 18) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT max("records".click_date) AS max_click_date FROM "records" WHERE ("records"."working_day_id" = 18) [0m
+  [4;36;1mWorkingDay Update (0.3ms)[0m   [0;1mUPDATE "working_days" SET "duration" = 420, "check_in" = '2010-03-19 13:00:00', "check_out" = '2010-03-19 20:00:00', "updated_at" = '2010-03-21 21:50:48' WHERE "id" = 18[0m
+Redirected to http://localhost:3000/records/show
+Completed in 308ms (DB: 40) | 302 Found [http://localhost/upload/table]
+
+
+Processing RecordsController#show (for 127.0.0.1 at 2010-03-22 00:50:48) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258') LIMIT 1[0m
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+  [4;35;1mRecord Load (3.8ms)[0m   [0mSELECT * FROM "records" WHERE ("records".login = 'ibabko@enkata.com') ORDER BY click_date[0m
+  [4;36;1mWorkingDay Load (1.4ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Rendering template within layouts/application
+Rendering records/show
+Completed in 43ms (View: 14, DB: 6) | 200 OK [http://localhost/records/show]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:51:04) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.5ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (21.3ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Completed in 61ms (View: 40, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 00:52:54) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;35;1mWorkingDay Load (1.6ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (22.3ms)
+  [4;36;1mWorkingDay Load (0.2ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Completed in 63ms (View: 47, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#index (for 127.0.0.1 at 2010-03-22 01:03:19) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/index
+  [4;36;1mWorkingDay Load (1.7ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Rendered dashboard/_week_report (22.4ms)
+  [4;35;1mWorkingDay Load (0.2ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com' AND ("working_days"."wday" = '2010-03-22')) LIMIT 1[0m
+Rendered dashboard/_day_report (1.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "working_days" WHERE ("working_days".login = 'ibabko@enkata.com') ORDER BY wday desc[0m
+Completed in 127ms (View: 42, DB: 2) | 200 OK [http://localhost/dashboard]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-22 01:03:32) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '524bf9dfdbb13c945dd71e0132f167434449207e4c842d7202f1bda7a7a3da149ebc8a0abe13f1ab2b11785d97b3a6bc3f84c24058bf0f1aa44681737d85e258') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-22 01:03:32) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
