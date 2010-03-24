@@ -19,4 +19,6 @@ class User < ActiveRecord::Base
   def logged_working_weeks
     logged_working_days.map{|day| day.wday.cweek}.uniq
   end
+  
+  
 end

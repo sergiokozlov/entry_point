@@ -1,16 +1,15 @@
 
-
-<%= render(:partial => "week_report") %>
-
-<%= render (:partial => 'day_report')%>
-
 <script type="text/javascript">
-     $(document).ready(function () {
+     function dailychart() {
        jQuery('#daily-bars').tufteBar({
          data: [
 		
-      	<% @user.logged_working_days.each do |lwd| %>
-			<%="[#{lwd.duration},{label:'#{ApplicationHelper::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{if lwd.duration < 420; 'Red'; else;'Grey'; end}'}]," %>
+      	<% days_array(@length,@lag).each do |day| %>
+			<% if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]   %>
+				<%="[#{lwd.duration},{label:'#{ApplicationHelper::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{if lwd.duration < 420; 'Red'; else;'Grey'; end}'}]," %>
+			<% else  %>
+				[0, {label: ''}, {flag: 'White'}],
+			<% end  %>
 		<%end%>
 		  [0, {label: ''}, {flag: 'White'}]
          ],
@@ -31,18 +30,33 @@
 			}; 
 		}
        });
-     });
+     }
    </script>
 
-<!--div id="test">
-	<% @user.logged_working_days.each do |lwd| %>
-		<%="[#{lwd.duration},{label:'#{ApplicationHelper::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{if lwd.duration < 300; 'Red'; else;'Grey'; end}'}]," %>
-	<%end%>
-</div-->
+<script type="text/javascript">
+     $(document).ready( function () {
+       dailychart()
+     });
+</script>
+
+
+
+<%= render(:partial => "week_report") %>
+
+<%= render (:partial => 'day_report')%>
+
 
 <div class="clear"></div>
 
-<div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
+<%= render (:partial => 'daily_bars')%>
+
+<% form_remote_tag :url => {:action => 'daily_bar_forward'} do  %>
+	<%= submit_tag "Scroll Forward" %>
+<% end %>	
+
+<%= link_to_remote('Scroll Forward',
+                               :url => {:action => 'daily_bar_forward'}) 
+      %>
 
 <div class="clear"></div>
 
