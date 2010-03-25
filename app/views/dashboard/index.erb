@@ -1,14 +1,110 @@
 
-<div id="today_report">
-  Today's Report:
+<script type="text/javascript">
+     function dailychart() {
+       jQuery('#daily-bars').tufteBar({
+         data: [
+		
+      	<% days_array(@length,@lag).each do |day| %>
+			<% if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]   %>
+				<%="[#{lwd.duration},{label:'#{ApplicationHelper::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{if lwd.duration < 420; 'Red'; else;'Grey'; end}'}]," %>
+			<% else  %>
+				[0, {label: ''}, {flag: 'White'}],
+			<% end  %>
+		<%end%>
+		  [0, {label: ''}, {flag: 'White'}]
+         ],
+         barWidth: 0.8,
+         barLabel:  function(index) { return '' },
+         axisLabel: function(index) { return this[1].label },
+         color:     function(index) { 
+			switch (this[2].flag)
+			{
+			case 'Red':
+			 return '#8B0000'
+			  break;
+			case 'White':
+			 return '#000000'
+			  break;
+			default:
+			 return '#828282'
+			}; 
+		}
+       });
+     }
+   </script>
+
+<script type="text/javascript">
+     $(document).ready( function () {
+       dailychart()
+     });
+</script>
+
+
+
+<%= render(:partial => "week_report") %>
+
+<%= render (:partial => 'day_report')%>
+
+
+<div class="clear"></div>
+
+<%= render (:partial => 'daily_bars')%>
+
+<% form_remote_tag :url => {:action => 'daily_bar_forward'} do  %>
+	<%= submit_tag "Scroll Forward" %>
+<% end %>	
+
+<%= link_to_remote('Scroll Forward',
+                               :url => {:action => 'daily_bar_forward'}) 
+      %>
+
+<div class="clear"></div>
+
+<div class="report daily">
+	<h2>Your Daily Stats</h2>
+	<table cellspacing="0">
+		<thead>
+			<th>Working Day</th>
+			<th>Check In Time</th>
+			<th>Check Out Time</th>
+			<th>Duration in Minutes</th>
+		</thead>
+		<tbody>
+			<% @user.logged_working_days.each do |lwd| %>
+			<tr class = "<%= cycle("alt","white") -%>">
+				<td> <%=lwd.wday %></td>
+				<td> <%=lwd.check_in.strftime("%H:%M") %></td>
+				<td><%=lwd.check_out.strftime("%H:%M") %></td>
+				<td><%=lwd.duration %></td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
 </div>
 
-<div id="week_report">
-  This Week Report:
-  <%= render(:partial => "week_report") %>
+<div class="clear"></div>
+<% reset_cycle %>
+<div class="report weekly">
+	<h2>Your Weekly Stats </h2>
+	<table cellspacing="0">
+		<thead>
+			<th>Week</th>
+			<th># Working Days</th>
+			<th># Hours Spent</th>
+			<th>Daily Average</th>
+		</thead>
+		<tbody>
+			<% @user.logged_working_weeks.each do |lww| %>
+			<tr class = "<%= cycle("alt","white") -%>">
+				<td> <%= lww %></td>
+				<td> 5 </td>
+				<td><%=to_time(week_completed(lww))%> </td>
+				<td><%=to_time(week_average(lww))%></td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
 </div>
-
-
 
 
 

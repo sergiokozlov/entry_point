@@ -32,7 +32,7 @@ class RecordsController < ApplicationController
     
     # No recalculation required - just pass @var with current Duration
     if @working_today = @user.working_days.find(:first, :conditions => {:wday => Time.now.to_date})
-         @distance_walked = (Time.now.to_i - @working_day.check_in.to_i).floor/60
+         @distance_walked = (Time.now.to_i - @working_today.check_in.to_i).floor/60
     end
 
     @logged_records =  @user.records.find(:all, :order => 'click_date')

@@ -1,0 +1,48 @@
+
+<script type="text/javascript">
+     function dailychart(returnedData) {
+	     jQuery('#daily-bars').tufteBar({
+         data: returnedData,
+         barWidth: 0.8,
+         barLabel:  function(index) { return this[0] },
+         axisLabel: function(index) { return this[1].label },
+         color:     function(index) { 
+			switch (this[2].flag)
+			{
+			case 'Red':
+			 return '#8B0000'
+			  break;
+			case 'White':
+			 return '#000000'
+			  break;
+			default:
+			 return '#828282'
+			}; 
+		}
+       });
+     }
+   </script>
+
+<script type="text/javascript">
+	function getData() {
+	 jQuery.getJSON('../data/dailydata.txt', function(data) {
+         alert(data.message);
+         dailychart(data.data);
+		});
+	
+	}
+</script>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+   /* 	var dataArray = [
+		  [15, {label: ''}, {flag: 'Grey'}],
+      	  [10, {label: ''}, {flag: 'Red'}],
+		  [10, {label: ''}, {flag: 'White'}]
+         ]
+       dailychart(dataArray); */
+	  getData();
+     });
+</script>
+
+<div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
