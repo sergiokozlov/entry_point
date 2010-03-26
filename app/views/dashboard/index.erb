@@ -4,7 +4,7 @@
        jQuery('#daily-bars').tufteBar({
          data: [
 		
-      	<% days_array(@length,@lag).each do |day| %>
+      	<% days_array(10,1).each do |day| %>
 			<% if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]   %>
 				<%="[#{lwd.duration},{label:'#{ApplicationHelper::ABBR_DAYNAMES[lwd.wday.wday]}'}, {flag:'#{if lwd.duration < 420; 'Red'; else;'Grey'; end}'}]," %>
 			<% else  %>

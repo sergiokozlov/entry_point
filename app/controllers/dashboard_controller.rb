@@ -3,15 +3,18 @@ class DashboardController < ApplicationController
   def index
     require_user
     @user = current_user
-    @length = 10
-    @lag = 1    
   end
   
-  def daily_bar_forward
-    @lag = 2
-    respond_to do |format|
-        format.js
-    end
+  def daily_bars
+@data = '{
+  "message": "Hi There",
+  "data": [
+		  [15, {"label": ""}, {"flag": "Grey"}],
+      	  [10, {"label": ""}, {"flag": "Red"}],
+		  [10, {"label": ""}, {"flag": "White"}]
+         ]
+}'
+   render :layout => false
   end
   
   def index2
