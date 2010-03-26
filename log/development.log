@@ -25449,6 +25449,7 @@ Processing DashboardController#index2 (for 127.0.0.1 at 2010-03-25 00:59:22) [GE
 Rendering template within layouts/application
 Rendering dashboard/index2
 Completed in 25ms (View: 10, DB: 0) | 200 OK [http://localhost/dashboard/index2]
+<<<<<<< HEAD
 
 
 Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-25 11:08:36) [GET]
@@ -25767,3 +25768,5 @@ Processing DashboardController#index2 (for 127.0.0.1 at 2010-03-25 12:46:35) [GE
 Rendering template within layouts/application
 Rendering dashboard/index2
 Completed in 66ms (View: 16, DB: 1) | 200 OK [http://localhost/dashboard/index2]
+=======
+>>>>>>> ecd9badeac6f65275ebbe627e7e166f9b5add62e
