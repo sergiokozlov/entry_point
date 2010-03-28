@@ -5,9 +5,18 @@
       // jQuery.getJSON('../data/dailydata.txt', function(data) {
          jQuery.getJSON('/dashboard/daily_bars', function(data) {
           dailychart(data.data);
-		});
+          });
+         $("#scrollF").click(function() {
+          jQuery.getJSON('/dashboard/daily_bars/3', function(data) {
+               dailychart(data.data);
+               });    
+          alert("Hi There");
+          });
      });
 </script>
 
+
 <div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
 
+
+<button id="scrollF" type="button">Scroll Forward</button>

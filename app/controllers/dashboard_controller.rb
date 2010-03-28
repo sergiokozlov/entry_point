@@ -6,14 +6,25 @@ class DashboardController < ApplicationController
   end
   
   def daily_bars
-@data = '{
-  "message": "Hi There",
-  "data": [
-		  [15, {"label": ""}, {"flag": "Grey"}],
-      	  [10, {"label": ""}, {"flag": "Red"}],
-		  [10, {"label": ""}, {"flag": "White"}]
-         ]
-}'
+    require_user
+    @user = current_user  
+    bars_data = "["
+
+    days_array(10,params[:id].to_i||0).each do |day|
+	  if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]
+	    bars_data << %Q/[#{lwd.duration},{"label":"#{lwd.label}"}, {"flag":"#{lwd.color}"}],/
+	  else
+	    bars_data << '[0, {"label": ""}, {"flag": "White"}],'
+	  end
+	end
+
+	bars_data << '[0, {"label": ""}, {"flag": "White"}]]'
+    
+    @data = %Q/{
+      "message": "Hi There",
+      "data": #{bars_data}
+    }/
+ 
    render :layout => false
   end
   
@@ -21,6 +32,7 @@ class DashboardController < ApplicationController
     require_user
     @user = current_user   
   end
+
 end
 
 

@@ -1,5 +1,6 @@
 # Can ignore specific files
 .DS_Store
+log/
 
 # Use wildcards as well
 *~

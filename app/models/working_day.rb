@@ -1,4 +1,5 @@
 class WorkingDay < ActiveRecord::Base
+
   has_many :records
  # virtual attributes
 
@@ -6,6 +7,20 @@ class WorkingDay < ActiveRecord::Base
     wday.strftime("%m/%d/%Y")
   end
 
+  def color
+    if duration < 420
+      "Red" 
+    else
+      "Grey"
+    end
+  end
+
+  def label
+    ApplicationHelper::ABBR_DAYNAMES[wday.wday]
+  end
+
+
+  # processing instructions
   def recalculate
     self.check_in = Record.minimum(:click_date, :conditions => {:working_day_id => self.id})
     self.check_out = Record.maximum(:click_date, :conditions => {:working_day_id => self.id})

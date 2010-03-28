@@ -33,5 +33,11 @@ class ApplicationController < ActionController::Base
       session[:return_to] = request.request_uri
   end
   
-  
+ # charts related
+  def days_array(length,lag=0)
+    a = Array.new
+    d = Date.today
+    (-length..-lag).each {|i| a << d + i}
+    return a
+  end 
 end
