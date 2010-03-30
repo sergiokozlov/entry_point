@@ -6,12 +6,12 @@
           dailychart(data.data);
           });
          $("#scrollF").click(function() {
-          jQuery.getJSON('/dashboard/daily_bars/3', function(data) {
+           jQuery.getJSON('/dashboard/daily_bars/forward', function(data) {
                dailychart(data.data);
                });    
           });
          $("#scrollB").click(function() {
-          jQuery.getJSON('/dashboard/daily_bars', function(data) {
+          jQuery.getJSON('/dashboard/daily_bars/back', function(data) {
                dailychart(data.data);
                });    
           });
@@ -24,7 +24,7 @@
 
 
 <div class="clear"></div>
-
+<%=session[:point] %>
 <div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
 
 <button id="scrollB" type="button">Scroll Back</button>

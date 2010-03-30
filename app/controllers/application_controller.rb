@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   def days_array(length,lag=0)
     a = Array.new
     d = Date.today
-    (-length..-lag).each {|i| a << d + i}
+    (-length..0).each {|i| a << d + i + lag}
     return a
-  end 
+  end
 end

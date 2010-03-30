@@ -22,11 +22,4 @@ module ApplicationHelper
     leading_zero(h60(minutes)) + ':' + leading_zero(m60(minutes))
   end
   
-  # array of days starting from today going backwards for lag days
-  def days_array(length,lag=0)
-    a = Array.new
-    d = Date.today
-    (-length..-lag).each {|i| a << d + i}
-    return a
-  end
 end
