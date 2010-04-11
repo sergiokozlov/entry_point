@@ -20,7 +20,11 @@ module DashboardHelper
   end
   
   def week_percent
-    week_completed*100/week_distance
+    if week_to_go > 0
+      week_completed*100/week_distance
+    else
+      100
+    end    
   end
   
   
@@ -45,6 +49,10 @@ module DashboardHelper
   end 
   
   def today_percent
-    today_completed*100/today_distance
+    if today_to_go > 0
+      today_completed*100/today_distance
+    else
+      100
+    end    
   end
 end
