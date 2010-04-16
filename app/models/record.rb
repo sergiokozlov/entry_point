@@ -26,26 +26,26 @@ class Record < ActiveRecord::Base
   end
 
   # assosiation logic
-  def first?
-   if self.user.working_days.exists?(:wday => click_date.to_date)
-     false
-   else
-     true
-   end
-  end
+ # def first?
+ #  if self.working_day.exists?(:login => self.login, :wday => click_date.to_date)
+ #    true
+ #  else
+ #    false
+ #  end
+ # end
 
-  def tagged_working_day
-    self.user.working_days.find(:first, :conditions => {:wday => click_date.to_date})
+  def working_day_to_match
+    WorkingDay.find(:first, :conditions => {:login => login,:wday => click_date.to_date})
   end
 
   # processing logic
   def process 
-     if first?
+     unless working_day_to_match
           @processed_day = create_working_day(:login => self.login,:wday => click_date.strftime("%m/%d/%Y"))
           self.working_day = @processed_day
           self.save
      else
-          self.working_day = tagged_working_day
+          self.working_day = working_day_to_match
           self.save
      end
         return @working_day

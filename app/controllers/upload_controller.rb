@@ -9,15 +9,18 @@ class UploadController < ApplicationController
   
   def table
       processed_days = Array.new
+
+      Dir.glob(DATA_DIR+"/snapshot*.txt").each do |snp|
       #TODO: Made chomp on the file  
-       File.open(DATA_DIR+"/snapshot2.txt") do |file|
+       File.open(snp) do |file|
          file.each_line do |line|
             @record = Record.new ( :login => line.split(",")[0], :click_date => line.split(",")[1] )
            processed_days << @record.process if @record.save
            
          end
+      end
         WorkingDay.stat_refresh(processed_days.uniq)
-       end
+      end
       
        flash[:notice] = "File was found" if UploadController.check_for_new_file
        redirect_to :controller =>'records', :action => 'show'
