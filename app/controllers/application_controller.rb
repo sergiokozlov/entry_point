@@ -44,18 +44,21 @@ class ApplicationController < ActionController::Base
   end
 
  # users identification
-  def user_type(login)
+  def user_type_manager(login)
     
     File.open(HRH_DIR+"/enkata.yml") do |file|
       arr = YAML::load(file)
       arr.each do |h|
           if h['manager'] == login
-            result = 'Manager'
+            result = ['Manager',nil]
             return result
+          elsif h['developers'].include?(login) 
+             result = ['Developer',h['manager']]
+             return result
           end
        end
     end 
-      result ||= 'Developer'
+      result ||= ['User',nil]
   end  
 
 end
