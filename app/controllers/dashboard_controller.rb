@@ -5,7 +5,12 @@ class DashboardController < ApplicationController
     require_user
     @user = current_user
   end
-  
+ 
+  def manage
+    require_manager
+    @user = current_user
+  end
+
   def daily_bars
     require_user
     @user = current_user

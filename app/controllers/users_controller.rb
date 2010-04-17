@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
       if @user.save  
         flash[:notice] = "Registration successful."  
-        redirect_to :controller => 'records', :action => 'show' 
+        redirect_to :controller => 'dashboard' 
       else  
         render :action => 'new'  
       end

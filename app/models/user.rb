@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :working_days, :foreign_key => "login", :primary_key => "login"
   acts_as_authentic
 
-
+  # statistics information
   def logged_working_days
      self.working_days.find(:all, :order => 'wday desc')  
   end 
@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
   
   def logged_working_weeks
     logged_working_days.map{|day| day.wday.cweek}.uniq
+  end
+
+  # role validation logic
+  def manager?
+    false
+    true if self.class == Manager
   end
   
 end

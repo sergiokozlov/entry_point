@@ -29,7 +29,15 @@ class ApplicationController < ActionController::Base
         redirect_to new_user_session_url
         return false
       end
-    end
+  end
+
+  def require_manager
+      require_user
+      unless current_user.manager?
+        flash[:notice] = "Only Managers can access this page"
+        redirect_to :controller => 'dashboard'
+      end
+  end
 
   def store_location
       session[:return_to] = request.request_uri
