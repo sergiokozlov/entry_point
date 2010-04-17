@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   #
-  helper_method :current_user  
+  helper_method :current_user 
+
+  HRH_DIR = File.dirname(__FILE__) + "/../../public/hierarchy" 
   
   private  
   def current_user_session  
@@ -40,4 +42,20 @@ class ApplicationController < ActionController::Base
     (-length..0).each {|i| a << d + i + lag}
     return a
   end
+
+ # users identification
+  def user_type(login)
+    
+    File.open(HRH_DIR+"/enkata.yml") do |file|
+      arr = YAML::load(file)
+      arr.each do |h|
+          if h['manager'] == login
+            result = 'Manager'
+            return result
+          end
+       end
+    end 
+      result ||= 'Developer'
+  end  
+
 end

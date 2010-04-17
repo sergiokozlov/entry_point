@@ -20,5 +20,14 @@ class User < ActiveRecord::Base
     logged_working_days.map{|day| day.wday.cweek}.uniq
   end
   
-  
+end
+
+class Developer < User
+  belongs_to :manager, :foreign_key => :reports_to
+end
+
+class Manager < User
+end
+
+class Admin < User
 end
