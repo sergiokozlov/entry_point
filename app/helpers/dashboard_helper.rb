@@ -2,26 +2,26 @@ module DashboardHelper
 
   # Weekly Reports
   
-  def week_completed(number = Date.today.cweek)
-    @user.weeked_working_days(number).map{|day| day.duration}.inject(0) {|x,y| x+y}  
+  def week_completed(number = Date.today.cweek,user = current_user)
+    user.weeked_working_days(number).map{|day| day.duration}.inject(0) {|x,y| x+y}  
   end 
 
   def week_distance
     5*9*60
   end
 
-  def week_to_go(number = Date.today.cweek)
-    week_distance - week_completed(number)  
+  def week_to_go(number = Date.today.cweek,user = current_user)
+    week_distance - week_completed(number, user)  
   end
   
   
-  def week_average(number = Date.today.cweek)
-    week_completed(number)/5
+  def week_average(number = Date.today.cweek,user = current_user)
+    week_completed(number, user)/5
   end
   
-  def week_percent
-    if week_to_go > 0
-      week_completed*100/week_distance
+  def week_percent(number = Date.today.cweek,user = current_user)
+    if week_to_go(number,user) > 0
+      week_completed(number,user)*100/week_distance
     else
       100
     end    
@@ -31,10 +31,10 @@ module DashboardHelper
   # Daily Reports
   # Today:
   # Time is set to UTC - for synchronization reasons
-  def today_completed
-    if @user.working_today
+  def today_completed(user = current_user)
+    if user.working_today
       tnow = Time.now
-      (tnow.to_i - @user.working_today.check_in.to_i + tnow.utc_offset ).floor/60
+      (tnow.to_i - user.working_today.check_in.to_i + tnow.utc_offset ).floor/60
     else
       0
     end  
@@ -44,13 +44,13 @@ module DashboardHelper
     540
   end
 
-  def today_to_go
-    today_distance - today_completed
+  def today_to_go(user = current_user)
+    today_distance - today_completed(user)
   end 
   
-  def today_percent
-    if today_to_go > 0
-      today_completed*100/today_distance
+  def today_percent(user= current_user)
+    if today_to_go(user) > 0
+      today_completed(user)*100/today_distance
     else
       100
     end    

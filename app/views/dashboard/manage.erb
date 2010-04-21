@@ -1,5 +1,27 @@
-<p> Hello <%=@user.class%> </p>
 
-<% if @user.manager? %>
-  <p> Yes you are real Manager </p>
+<%  @user.developers.each do |dev| %>
+  <div class="clear"></div>
+
+  <div class="report weekly">
+    <h2><%=dev.name%> Weekly Stats </h2>
+	<table cellspacing="0">
+		<thead>
+			<th>Week</th>
+			<th># Working Days</th>
+			<th># Hours Spent</th>
+			<th>Daily Average</th>
+		</thead>
+		<tbody>
+			<% dev.logged_working_weeks.each do |lww| %>
+			<tr class = "<%= cycle("alt","white") -%>">
+				<td> <%= lww %></td>
+				<td> 5 </td>
+				<td><%=to_time(week_completed(lww,dev))%> </td>
+				<td><%=to_time(week_average(lww,dev))%></td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
+  </div>
+  
 <% end %>

@@ -29,10 +29,11 @@ class User < ActiveRecord::Base
 end
 
 class Developer < User
-  belongs_to :manager, :foreign_key => :reports_to
+  belongs_to :manager, :foreign_key => :reports_to, :primary_key => :login
 end
 
 class Manager < User
+  has_many :developers, :foreign_key => :reports_to, :primary_key => :login
 end
 
 class Admin < User
