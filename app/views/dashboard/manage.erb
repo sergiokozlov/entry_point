@@ -1,27 +1,32 @@
 
-<%  @user.developers.each do |dev| %>
+
   <div class="clear"></div>
 
   <div class="report weekly">
-    <h2><%=dev.name%> Weekly Stats </h2>
+    <h2>My Team Weekly Stats </h2>
+    <br/>
 	<table cellspacing="0">
-		<thead>
+        <thead>
+            <th>Team Member</th>
 			<th>Week</th>
 			<th># Working Days</th>
 			<th># Hours Spent</th>
 			<th>Daily Average</th>
 		</thead>
-		<tbody>
+        <tbody>
+          <%  @user.developers.each do |dev| %>
 			<% dev.logged_working_weeks.each do |lww| %>
-			<tr class = "<%= cycle("alt","white") -%>">
+            <tr class = "<%= cycle("alt","white") -%>">
+                <td> <%=dev.name %> </td>
 				<td> <%= lww %></td>
-				<td> 5 </td>
+                <td> <%=dev.weeked_working_days(lww).length%> </td>
 				<td><%=to_time(week_completed(lww,dev))%> </td>
 				<td><%=to_time(week_average(lww,dev))%></td>
 			</tr>
-			<%end%>
+            <%end%>
+          <% end %>
 		</tbody>
 	</table>
   </div>
   
-<% end %>
+

@@ -68,8 +68,8 @@
 		<tbody>
 			<% @user.logged_working_weeks.each do |lww| %>
 			<tr class = "<%= cycle("alt","white") -%>">
-				<td> <%= lww %></td>
-				<td> 5 </td>
+				<td><%= lww %></td>
+                <td><%=@user.weeked_working_days(lww).length%> </td>
 				<td><%=to_time(week_completed(lww))%> </td>
 				<td><%=to_time(week_average(lww))%></td>
 			</tr>

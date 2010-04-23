@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><%= h(yield(:title) || "|")  %> Enkata Entrypoint</title>
+    <title><%=(current_user.name + " | " if current_user) %> Enkata Entrypoint</title>
     <%= stylesheet_link_tag 'application' %>
 
 	<%= javascript_include_tag 'jquery'  %>
@@ -24,7 +24,7 @@
 
 		<div id="header">
 			<%if @user = current_user%>
-			<h1><%="#{@user.login} "%></h1>
+			<h1><%="#{@user.name} "%></h1>
 			<ul>
 				<% if current_user %>  
 					<%= link_to "Edit profile", edit_user_path(:current) %>  

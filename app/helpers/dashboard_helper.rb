@@ -26,6 +26,7 @@ module DashboardHelper
       100
     end    
   end
+
   
   
   # Daily Reports
