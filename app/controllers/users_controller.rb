@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.login = (params[:user][:email])
-    @user[:type], @user[:reports_to] = user_type_manager(@user.login)
+    harr = users_hierarchy
+    @user[:type], @user[:reports_to] = user_type_manager(@user.login,harr)
 
       if @user.save  
         flash[:notice] = "Registration successful."  

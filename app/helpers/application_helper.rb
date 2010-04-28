@@ -23,8 +23,9 @@ module ApplicationHelper
   end
  
   #date helpers
+  #TODO correct code to work not only during current year
   def jan1
-    Date.parse("#{today.year}-01-01")
+    Date.parse("#{Date.today.year}-01-01")
   end
 
   def week_last_day(week)
@@ -32,6 +33,6 @@ module ApplicationHelper
   end 
 
   def week_first_day(week)
-    jan1 + 7*week - jan1.cwday
+    week_last_day(week) - 6
   end
 end

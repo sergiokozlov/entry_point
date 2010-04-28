@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
   
   def logged_working_weeks
-    logged_working_days.map{|day| day.wday.cweek}.uniq
+    logged_working_days.map{|day| [day.wday.cweek,day.wday.year]}.uniq
   end
 
   # role validation logic

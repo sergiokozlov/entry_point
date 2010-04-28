@@ -68,10 +68,10 @@
 		<tbody>
 			<% @user.logged_working_weeks.each do |lww| %>
 			<tr class = "<%= cycle("alt","white") -%>">
-				<td><%= lww %></td>
-                <td><%=@user.weeked_working_days(lww).length%> </td>
-				<td><%=to_time(week_completed(lww))%> </td>
-				<td><%=to_time(week_average(lww))%></td>
+              <td><%= "#{week_first_day(lww[0]).to_s} - #{week_last_day(lww[0])}" %></td>
+                <td><%=@user.weeked_working_days(lww[0]).length%> </td>
+				<td><%=to_time(week_completed(lww[0]))%> </td>
+				<td><%=to_time(week_average(lww[0]))%></td>
 			</tr>
 			<%end%>
 		</tbody>

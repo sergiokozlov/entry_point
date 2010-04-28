@@ -52,10 +52,13 @@ class ApplicationController < ActionController::Base
   end
 
  # users identification
-  def user_type_manager(login)
-    
+  def users_hierarchy
     File.open(HRH_DIR+"/enkata.yml") do |file|
-      arr = YAML::load(file)
+     return  arr = YAML::load(file)
+    end
+  end
+
+  def user_type_manager(login,arr)
       arr.each do |h|
           if h['manager'] == login
             result = ['Manager',nil]
@@ -65,7 +68,7 @@ class ApplicationController < ActionController::Base
              return result
           end
        end
-    end 
+   
       result ||= ['User',nil]
   end  
 
