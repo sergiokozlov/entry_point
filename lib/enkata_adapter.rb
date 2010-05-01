@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module ProcessFile
 # This module takes the input file, validates it and returns:
 # array of records: [dt,login]
@@ -39,10 +41,12 @@ module ProcessFile
 		end
 	end
 
-    def self.cleanup
-
+    def self.cleanup (csv_chunk)
+      destination = File.dirname(csv_chunk) + '/processed/'
+      #destination = '/processed/'
+      FileUtils.mv(csv_chunk, destination)
     end
 
 end
 
-#puts ProcessFile.process("1222-1225-628.csv")
+#ProcessFile.cleanup("1222-1225-628.csv")

@@ -25,6 +25,21 @@ class User < ActiveRecord::Base
     false
     true if self.class == Manager
   end
+
+  # setting up user hierarchy [ToBeChanged]
+  def self.user_type_manager(login,arr)
+      arr.each do |h|
+          if h['manager'] == login
+            result = ['Manager',nil]
+            return result
+          elsif h['developers'].include?(login) 
+             result = ['Developer',h['manager']]
+             return result
+          end
+       end
+   
+      result ||= ['User',nil]
+  end
   
 end
 

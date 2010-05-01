@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   #
-  helper_method :current_user, :days_array 
+  helper_method :current_user, :days_array, :users_hierarchy 
 
   HRH_DIR = File.dirname(__FILE__) + "/../../public/hierarchy" 
   
