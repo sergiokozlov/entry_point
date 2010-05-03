@@ -22,7 +22,7 @@ module ProcessFile
 		records = Array.new()
 		
 		File.open(csv_chunk) do |file|
-		puts "processing ... #{file}"
+		puts "processing ... #{file.path}"
 			events = file.readlines
 			#events.delete_if { |x|   not(x =~ /¬ход разрешен/) }
 			

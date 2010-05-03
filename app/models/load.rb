@@ -1,17 +1,18 @@
 require 'enkata_adapter'
 
 
-class Load 
+class Load
+  attr_reader :chunk
 
  DATA_DIR = File.dirname(__FILE__) + "/../../public/data"
  HRH_DIR = File.dirname(__FILE__) + "/../../public/hierarchy" 
 
- def initialize
+  def initialize(chunk)
+     @chunk = chunk
+  end
 
- end
-
-  def check_for_new_file
-     true if Dir[DATA_DIR+"/1222-1225-628.csv"]
+  def self.new_files_to_process
+     Dir.glob(DATA_DIR+"/*.csv")
   end
  
   def self.users_hierarchy
@@ -23,7 +24,7 @@ class Load
   def run!
       processed_days = Array.new
 
-       users,records = ProcessFile.process(DATA_DIR+"/1222-1225-628.csv")
+       users,records = ProcessFile.process(@chunk)
        hrr = Load::users_hierarchy
 
        users.each do |u|
@@ -48,13 +49,13 @@ class Load
          print "."
          processed_days << @record.process if @record.save
        end
-
+       puts ''
        puts "Refreshing Daily Statistics"
        WorkingDay.stat_refresh(processed_days.uniq)
 
        puts "Load Completed"
 
-      ProcessFile.cleanup(DATA_DIR+"/1222-1225-628.csv")
+      ProcessFile.cleanup(@chunk)
        puts "Cleanup Completed"
   end
 

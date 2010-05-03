@@ -14,9 +14,13 @@ while($running) do
   
   # TODO: Add logging
   # ActiveRecord::Base.logger.info "This daemon is still running at #{Time.now}.\n"
-   next_load = Load.new
-   if next_load.check_for_new_file
-    next_load.run!
+   ffs =  Load.new_files_to_process
+
+   unless ffs.blank?
+    ffs.each do |file| 
+      next_load = Load.new(file) 
+      next_load.run!
+    end
    else
     sleep 600
    end 
