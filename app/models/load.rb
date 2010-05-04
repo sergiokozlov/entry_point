@@ -28,14 +28,15 @@ class Load
        hrr = Load::users_hierarchy
 
        users.each do |u|
-        puts "Adding #{u[:login]}"
+        
+        unless User.find(:first, :conditions => {:login => u[:login]})
+          puts "Adding #{u[:login]}" 
 
-        unless User.find(:first, :conditions => {:login => u[:login]}) 
           user = User.new(u)
           user.email = user.login
-
-          user[:type], user[:reports_to] = User::user_type_manager(user.login,hrr)
+          user.set_type_and_manager(hrr)
           user.password_confirmation = user.password = 'Password10'
+
           begin
             user.save!
           rescue ActiveRecord::RecordInvalid
