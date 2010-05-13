@@ -45,6 +45,15 @@ end
 
 class Manager < User
   has_many :developers, :foreign_key => :reports_to, :primary_key => :login
+  
+  def weeks_to_analyze
+    result = Array.new
+
+    self.developers.each do |dev| 
+      result += dev.logged_working_weeks
+    end
+    result.uniq
+  end
 end
 
 class Admin < User

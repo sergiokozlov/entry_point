@@ -1,32 +1,21 @@
-
+<script type="text/javascript">
+  $(document).ready( function () {
+      $('#week_id option[value="'+<%=(params[:id]).to_i%>+'"]').attr('selected', 'selected');
+      $("#week_id").change ( function () {
+        var url = "/dashboard/manage/"+$(this).find("option:selected").val();
+        window.location.replace(url);
+      });
+  });
+</script>
 
   <div class="clear"></div>
 
-  <div class="report weekly">
-    <h2>My Team Weekly Stats </h2>
-    <br/>
-	<table cellspacing="0">
-        <thead>
-            <th>Team Member</th>
-			<th>Week</th>
-			<th># Working Days</th>
-			<th># Hours Spent</th>
-			<th>Daily Average</th>
-		</thead>
-        <tbody>
-          <%  @user.developers.each do |dev| %>
-			<% dev.logged_working_weeks.each do |lww| %>
-            <tr class = "<%= cycle("alt","white") -%>">
-                <td> <%=dev.name %> </td>
-				<td> <%= "#{week_first_day(lww[0]).to_s} - #{week_last_day(lww[0])}" %></td>
-                <td> <%=dev.weeked_working_days(lww[0]).length%> </td>
-				<td><%=to_time(week_completed(lww[0],dev))%> </td>
-				<td><%=to_time(week_average(lww[0],dev))%></td>
-			</tr>
-            <%end%>
-          <% end %>
-		</tbody>
-	</table>
-  </div>
-  
+  <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
+  <div class="clear"></div>
+  <h2>My Team Stats </h2>
+  <br/>
+
+  <div id="mwr">
+    <%= render(:partial => "manager_week", :object => [(params[:id] || @weeks[0][0]).to_i ,2010]) %>
+  </div> 
 

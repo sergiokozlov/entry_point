@@ -35,4 +35,8 @@ module ApplicationHelper
   def week_first_day(week)
     week_last_day(week) - 6
   end
+
+  def week_value(week)
+    "#{week_first_day(week).to_s} - #{week_last_day(week)}"
+  end
 end

@@ -9,6 +9,8 @@ class DashboardController < ApplicationController
   def manage
     require_manager
     @user = current_user
+
+    @weeks  = @user.weeks_to_analyze
   end
 
   def daily_bars

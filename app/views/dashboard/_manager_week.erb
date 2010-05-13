@@ -1,0 +1,3 @@
+<div class="report weekly"><%=-%>
+<table cellspacing="0"><thead><tr><th>Team Member</th>		<th>Week</th><th># Working Days</th><th># Hours Spent</th><th>Daily Average</th></tr>		</thead><tbody><%  @user.developers.each do |dev| -%><tr class = "<%= cycle("alt","white") -%>"><td> <%=dev.name %> </td><td> <%= week_value(manager_week[0]) %></td>      <td> <%=dev.weeked_working_days(manager_week[0]).length%> </td>				<td><%=to_time(week_completed(manager_week[0],dev))%> </td>				<td><%=to_time(week_average(manager_week[0],dev))%></td></tr><% end -%></tbody></table></div><%=-%>
+
