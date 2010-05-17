@@ -16,7 +16,11 @@ module DashboardHelper
   
   
   def week_average(number = Date.today.cweek,user = current_user)
-    week_completed(number, user)/5
+    if l = user.weeked_working_days(number).length > 0
+      week_completed(number, user)/l
+    else
+      nil
+    end  
   end
   
   def week_percent(number = Date.today.cweek,user = current_user)

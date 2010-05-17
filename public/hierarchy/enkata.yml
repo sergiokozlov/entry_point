@@ -1,10 +1,50 @@
 -
- manager: azhuk@enkata.com 
- developers: 
-  - myavon@enkata.com 
+ manager: azhuk@enkata.com
+ developers:
+  - myavon@enkata.com
   - ibabko@enkata.com
+  - ysanjiev@enkata.com
+  - jvasilkova@enkata.com
+  - jpivovarova@enkata.com
 -
- manager: pegorov@enkata.com 
- developers: 
-  - skozlov@enkata.com 
+ manager: pegorov@enkata.com
+ developers:
   - apanin@enkata.com
+  - araskin@enkata.com
+  - dkuchugurov@enkata.com
+  - dlupin@enkata.com
+  - ayasinskiy@enkata.com
+  - ngracheva@enkata.com
+  - afyodorov@enkata.com
+  - ylitvinov@enkata.com
+  - ppolushkin@enkata.com
+-
+ manager: vstrigun@enkata.com
+ developers:
+  - kbarzakovsky@enkata.com
+  - oukolova@enkata.com
+  - sovcharova@enkata.com
+  - rsitdikova@enkata.com
+  - azavarzin@enkata.com
+  - arazgulyaev@enkata.com
+-
+ manager: vzinoviev@enkata.com
+ developers:
+  - pbalakshin@enkata.com
+  - anaumov@enkata.com
+  - aognev@enkata.com
+  - apytkin@enkata.com
+  - kserditov@enkata.com
+-
+ manager: abespalov@enkata.com
+ developers:
+  - schurbanov@enkata.com
+  - azolotuhin@enkata.com
+  - lyulenets@enkata.com
+  - smescheryakov@enkata.com
+-
+ manager: alavrov@enkata.com
+ developers:
+  - mshatrova@enkata.com
+  - vlitovchenko@enkata.com
+  - lmiroshnichenko@enkata.com

@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
   # setting up user hierarchy
   def set_type_and_manager(arr)
       arr.each do |h|
+         
           if h['manager'] == login
             self.type = 'Manager'
           elsif h['developers'].include?(login)

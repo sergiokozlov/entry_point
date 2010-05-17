@@ -1,6 +1,6 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-
+/*
     function dailychart(returnedData) {
 	     jQuery('#daily-bars').tufteBar({
          data: returnedData,
@@ -21,5 +21,13 @@
 			}; 
 		}
        });
-     }
+     } */
 
+	  $(document).ready( function () {
+	     $('#week_id option[value="15"]').attr('selected', 'selected');
+	
+	      $("#week_id").change ( function () {
+	        var url = "/dashboard/manage/"+$(this).find("option:selected").val();
+	        window.location.replace(url);
+	      });
+	  });
