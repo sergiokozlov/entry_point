@@ -16,10 +16,10 @@ module DashboardHelper
   
   
   def week_average(number = Date.today.cweek,user = current_user)
-    if l = user.weeked_working_days(number).length > 0
+    if (l = user.weeked_working_days(number).length) > 0
       week_completed(number, user)/l
     else
-      nil
+      0
     end  
   end
   

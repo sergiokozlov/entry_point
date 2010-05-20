@@ -49,9 +49,29 @@ class DashboardController < ApplicationController
   
   def index2
     require_user
-    @user = current_user   
+    @user = current_user
+   
+    @data = JSON.generate([1, 2, {"a"=>3.141}, false, true, nil])
+    # => "[1,2,{\"a\":3.141},false,true,null,\"4..10\"]"
+      
+    render :layout => false 
+  end
+  
+  def team_data_by_week
+    require_manager
+    @user = current_user
+    @week_id  = (params[:id] || (@user.weeks_to_analyze)[0]).to_i
+    
+    render :layout => false 
   end
 
+  def user_data_for_range
+    require_manager
+    @user = current_user
+    @week_id  = (params[:id] || (@user.weeks_to_analyze)[0]).to_i
+
+    render :layout => false
+  end
 
 end
 

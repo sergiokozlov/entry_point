@@ -1,14 +1,4 @@
-<!--
-<script type="text/javascript">
-  $(document).ready( function () {
-      $('#week_id option[value="'+<%=(params[:id]).to_i%>+'"]').attr('selected', 'selected');
-      $("#week_id").change ( function () {
-        var url = "/dashboard/manage/"+$(this).find("option:selected").val();
-        window.location.replace(url);
-      });
-  });
-</script>
--->
+
   <div class="clear"></div>
 
   <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
@@ -16,7 +6,8 @@
   <h2>My Team Stats </h2>
   <br/>
 
-  <div id="mwr">
-    <%= render(:partial => "manager_week", :object => [(params[:id] || @weeks[0][0]).to_i ,2010]) %>
-  </div> 
+  <div id="ajax_week">
+    <p>If you do not see your agents breakdown here - please check that javascript is turned on</p>
+  </div>
+
 

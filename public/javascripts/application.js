@@ -1,6 +1,6 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-/*
+
     function dailychart(returnedData) {
 	     jQuery('#daily-bars').tufteBar({
          data: returnedData,
@@ -21,13 +21,23 @@
 			}; 
 		}
        });
-     } */
+     } 
 
 	  $(document).ready( function () {
-	     $('#week_id option[value="15"]').attr('selected', 'selected');
-	
+
+        // Select correct value for selector 
+        var pm_id = $.url.param("id");
+          $('#week_id option[value='+pm_id+']').attr('selected', 'selected');
+
+        // Load team table for current week
+        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
+          $('#ajax_week').load(url);
+
+	    // On selector change update week
 	      $("#week_id").change ( function () {
-	        var url = "/dashboard/manage/"+$(this).find("option:selected").val();
-	        window.location.replace(url);
+	        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
+            $('#ajax_week').load(url);
 	      });
+        //
+             
 	  });
