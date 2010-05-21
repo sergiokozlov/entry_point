@@ -4,9 +4,14 @@
 <script type="text/javascript">
   $(document).ready( function () {
       $(".link_to_chart").click(function() {
-           //jQuery.getJSON('/dashboard/daily_bars/forward', function(data) {
-           //    dailychart(data.data);
-            alert($(this).parents("tr").get(0).rowIndex);
+           
+            var row_number = $(this).parents("tr").get(0).rowIndex + 1;
+            var x = $("#team_table").get(0).insertRow(row_number);
+            // switch to jQuery style
+            x.innerHTML="<td colspan='6'><div id='daily-bars' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>";
+            jQuery.getJSON('/dashboard/daily_bars/forward', function(data) {
+              dailychart(data.data);
+            }); 
         });
      });
 </script>          

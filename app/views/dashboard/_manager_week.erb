@@ -6,7 +6,8 @@
 				<th>Week</th>
 				<th># Working Days</th>
 				<th># Hours Spent</th>
-				<th>Daily Average</th>
+                <th>Daily Average</th>
+                <th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -16,7 +17,8 @@
 				<td> <%= week_value(manager_week[0]) %></td>
 				<td> <%=dev.weeked_working_days(manager_week[0]).length%> </td>
 				<td><%=to_time(week_completed(manager_week[0],dev))%> </td>
-				<td><%=to_time(week_average(manager_week[0],dev))%></td>
+                <td><%=to_time(week_average(manager_week[0],dev))%></td>
+                <td> <button id="<%=dev.id%>" class="link_to_chart" type="button">&gt;</button></td>
 			</tr>
 		<% end -%>
 		</tbody>

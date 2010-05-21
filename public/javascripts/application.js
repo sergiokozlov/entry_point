@@ -30,14 +30,18 @@
           $('#week_id option[value='+pm_id+']').attr('selected', 'selected');
 
         // Load team table for current week
-        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
-          $('#ajax_week').load(url);
+       // var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
+         // $('#ajax_week').load(url);
 
 	    // On selector change update week
 	      $("#week_id").change ( function () {
 	        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
             $('#ajax_week').load(url);
 	      });
+
+          var myOffset = $('#week_id').offset();
+          alert(myOffset.top);
+          alert(myOffset.left);
         //
              
 	  });
