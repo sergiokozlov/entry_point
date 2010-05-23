@@ -39,9 +39,17 @@
             $('#ajax_week').load(url);
 	      });
 
-          var myOffset = $('#week_id').offset();
-          alert(myOffset.top);
-          alert(myOffset.left);
-        //
-             
-	  });
+        // Manage clicking on drill button
+		$(".link_to_chart").click(function() {
+
+	            var row_number = $(this).parents("tr").get(0).rowIndex + 1;
+	            var x = $("#team_table").get(0).insertRow(row_number);
+				var url = "/dashboard/user_data_for_range/?week="+$("#week_id").find("option:selected").val();
+	            // switch to jQuery style
+	            x.innerHTML="<td colspan='6'><div id='daily-bars' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>";
+	            jQuery.getJSON(url, function(data) {
+	              dailychart(data[0].data);
+	            }); 
+	        }); 
+	 
+       });

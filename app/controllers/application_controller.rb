@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
   def days_array(length,lag=0)
     a = Array.new
     d = Date.today
-    (-length..0).each {|i| a << d + i + lag}
+    (-length+1..0).each {|i| a << d + i + lag}
     return a
   end
 
@@ -57,19 +57,5 @@ class ApplicationController < ActionController::Base
      return  arr = YAML::load(file)
     end
   end
-
-  def user_type_manager(login,arr)
-      arr.each do |h|
-          if h['manager'] == login
-            result = ['Manager',nil]
-            return result
-          elsif h['developers'].include?(login) 
-             result = ['Developer',h['manager']]
-             return result
-          end
-       end
-   
-      result ||= ['User',nil]
-  end  
-
+ 
 end

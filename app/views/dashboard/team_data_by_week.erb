@@ -1,20 +1,9 @@
-
 <%= javascript_include_tag 'jquery'  %>
-
-<script type="text/javascript">
-  $(document).ready( function () {
-      $(".link_to_chart").click(function() {
-           
-            var row_number = $(this).parents("tr").get(0).rowIndex + 1;
-            var x = $("#team_table").get(0).insertRow(row_number);
-            // switch to jQuery style
-            x.innerHTML="<td colspan='6'><div id='daily-bars' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>";
-            jQuery.getJSON('/dashboard/daily_bars/forward', function(data) {
-              dailychart(data.data);
-            }); 
-        });
-     });
-</script>          
+<%= javascript_include_tag 'jquery.url'  %>
+<%= javascript_include_tag 'enumerable'  %>
+<%= javascript_include_tag 'tufte-graph'  %>
+<%= javascript_include_tag 'raphael' %>
+<%= javascript_include_tag 'application' %>
 
 <div class="report weekly">
 	<table id ="team_table" cellspacing="0">

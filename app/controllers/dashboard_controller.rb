@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
-
+  helper ApplicationHelper # include all helpers, all the time
+  
   def index
     session[:point] ||= 0
     require_user
@@ -60,7 +61,7 @@ class DashboardController < ApplicationController
   def team_data_by_week
     require_manager
     @user = current_user
-    @week_id  = (params[:id] || (@user.weeks_to_analyze)[0]).to_i
+    @week_id  = (params[:id] || (@user.weeks_to_analyze)[0][0]).to_i
     
     render :layout => false 
   end
@@ -68,8 +69,18 @@ class DashboardController < ApplicationController
   def user_data_for_range
     require_manager
     @user = current_user
-    @week_id  = (params[:id] || (@user.weeks_to_analyze)[0]).to_i
-
+    @week_id  = (params[:week] || (@user.weeks_to_analyze)[0][0]).to_i
+    @data = Array.new
+     
+    days_array(7,ApplicationHelper.week_last_day(@week_id) - Date.today).each do |day|
+      if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]
+  	    @data << [lwd.duration, {"label" => lwd.label},{"flag" => lwd.color}]
+  	  else
+  	    @data << [0, {"label" => ""}, {"flag" => "White"}]
+  	  end
+    end
+   
+    @jresult = JSON.generate(["data" => @data])
     render :layout => false
   end
 

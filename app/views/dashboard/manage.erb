@@ -6,6 +6,8 @@
   <h2>My Team Stats </h2>
   <br/>
 
+
+ <!-- TODO: DRY violation - different partials for xhr and html calls-->
   <div id="ajax_week">
     <%= render(:partial => "manager_week", :object => [(params[:id] || @weeks[0][0]).to_i ,2010]) %>
   </div>
