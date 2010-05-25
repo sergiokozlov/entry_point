@@ -24,19 +24,11 @@ module ApplicationHelper
  
   #date helpers
   #TODO correct code to work not only during current year
-  #TODO remove duplication of methods
-  def self.jan1
-    Date.parse("#{Date.today.year}-01-01")
-  end
   
   def jan1
     Date.parse("#{Date.today.year}-01-01")
   end
 
-  def self.week_last_day(week)
-    jan1 + 7*week + 7 - jan1.cwday
-  end
-  
   def week_last_day(week)
     jan1 + 7*week + 7 - jan1.cwday
   end 

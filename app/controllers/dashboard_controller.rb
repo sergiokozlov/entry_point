@@ -72,7 +72,7 @@ class DashboardController < ApplicationController
     @week_id  = (params[:week] || (@user.weeks_to_analyze)[0][0]).to_i
     @data = Array.new
      
-    days_array(7,ApplicationHelper.week_last_day(@week_id) - Date.today).each do |day|
+    days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
       if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]
   	    @data << [lwd.duration, {"label" => lwd.label},{"flag" => lwd.color}]
   	  else

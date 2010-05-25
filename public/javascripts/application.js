@@ -28,28 +28,39 @@
         // Select correct value for selector 
         var pm_id = $.url.param("id");
           $('#week_id option[value='+pm_id+']').attr('selected', 'selected');
+        // Hide buttons
+        $(".collapse_chart").hide();
 
-        // Load team table for current week
-       // var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
-         // $('#ajax_week').load(url);
-
-	    // On selector change update week
+        // On selector change update week
 	      $("#week_id").change ( function () {
 	        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
             $('#ajax_week').load(url);
 	      });
 
+          
+          $(".collapse_chart").click(function() {
+	              var row_number = $(this).parents("tr").get(0).rowIndex + 1;
+                  $("#team_table").get(0).deleteRow(row_number);
+                  $(this).hide();
+                  $(this).parents("td").children(".link_to_chart").show();
+          });
+
         // Manage clicking on drill button
-		$(".link_to_chart").click(function() {
+		  $(".link_to_chart").click(function() {
 
 	            var row_number = $(this).parents("tr").get(0).rowIndex + 1;
 	            var x = $("#team_table").get(0).insertRow(row_number);
 				var url = "/dashboard/user_data_for_range/?week="+$("#week_id").find("option:selected").val();
 	            // switch to jQuery style
 	            x.innerHTML="<td colspan='6'><div id='daily-bars' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>";
-	            jQuery.getJSON(url, function(data) {
+                
+                 $(this).hide();
+                 $(this).parents("td").children(".collapse_chart").show();
+             
+                jQuery.getJSON(url, function(data) {
 	              dailychart(data[0].data);
 	            }); 
-	        }); 
-	 
-       });
+	      });
+      }); 
+
+
