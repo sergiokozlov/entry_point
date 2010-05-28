@@ -49,15 +49,17 @@
 		  $(".link_to_chart").click(function() {
 
 	            var row_number = $(this).parents("tr").get(0).rowIndex + 1;
+                var user_id = $(this).attr("id");
+                var week_id = +$("#week_id").find("option:selected").val();
 	            var x = $("#team_table").get(0).insertRow(row_number);
-				var url = "/dashboard/user_data_for_range/?week="+$("#week_id").find("option:selected").val();
+				//var url = "/dashboard/user_data_for_range/?week="+$("#week_id").find("option:selected").val()+"&user="+user_id;
 	            // switch to jQuery style
 	            x.innerHTML="<td colspan='6'><div id='daily-bars' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>";
                 
                  $(this).hide();
                  $(this).parents("td").children(".collapse_chart").show();
              
-                jQuery.getJSON(url, function(data) {
+                jQuery.getJSON("/dashboard/user_data_for_range", {week : week_id, user : user_id}, function(data) {
 	              dailychart(data[0].data);
 	            }); 
 	      });

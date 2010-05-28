@@ -68,19 +68,22 @@ class DashboardController < ApplicationController
 
   def user_data_for_range
     require_manager
-    @user = current_user
-    @week_id  = (params[:week] || (@user.weeks_to_analyze)[0][0]).to_i
+    @dev = current_user.developers.find(:first, :conditions => {:id => params[:user].to_i})
+    @week_id  = params[:week].to_i
     @data = Array.new
-     
+    
+   if @dev 
     days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
-      if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]
+      if lwd = @dev.logged_working_days.select{|d| d.wday == day}[0]
   	    @data << [lwd.duration, {"label" => lwd.label},{"flag" => lwd.color}]
   	  else
   	    @data << [0, {"label" => ""}, {"flag" => "White"}]
   	  end
     end
-   
-    @jresult = JSON.generate(["data" => @data])
+     @jresult = JSON.generate(["data" => @data])
+   else
+     @jresult = nil  
+   end
     render :layout => false
   end
 
