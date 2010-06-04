@@ -1,8 +1,8 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
-    function dailychart(returnedData) {
-	     jQuery('#daily-bars').tufteBar({
+    function dailychart(divId,returnedData) {
+	     jQuery(divId).tufteBar({
          data: returnedData,
          barWidth: 0.8,
          barLabel:  function(index) { return this[0] },
@@ -37,7 +37,7 @@
             $('#ajax_week').load(url);
 	      });
 
-          
+          // TODO: Switch to $.live events
           $(".collapse_chart").click(function() {
 	              var row_number = $(this).parents("tr").get(0).rowIndex + 1;
                   $("#team_table").get(0).deleteRow(row_number);
@@ -48,19 +48,20 @@
         // Manage clicking on drill button
 		  $(".link_to_chart").click(function() {
 
-	            var row_number = $(this).parents("tr").get(0).rowIndex + 1;
-                var user_id = $(this).attr("id");
-                var week_id = +$("#week_id").find("option:selected").val();
+	            var user_id = $(this).attr("id");
+                var week_id = $("#week_id").find("option:selected").val();
+                var div_id =  'daily-bars-' + user_id
+
+                var row_number = $(this).parents("tr").get(0).rowIndex + 1;
 	            var x = $("#team_table").get(0).insertRow(row_number);
-				//var url = "/dashboard/user_data_for_range/?week="+$("#week_id").find("option:selected").val()+"&user="+user_id;
-	            // switch to jQuery style
-	            x.innerHTML="<td colspan='6'><div id='daily-bars' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>";
+               
+                $(x).html("<td colspan='6'><div id='"+div_id+"' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>");
                 
                  $(this).hide();
                  $(this).parents("td").children(".collapse_chart").show();
              
                 jQuery.getJSON("/dashboard/user_data_for_range", {week : week_id, user : user_id}, function(data) {
-	              dailychart(data[0].data);
+	              dailychart('#'+div_id,data[0].data);
 	            }); 
 	      });
       }); 
