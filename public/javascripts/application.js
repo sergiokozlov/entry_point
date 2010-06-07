@@ -34,11 +34,13 @@
         // On selector change update week
 	      $("#week_id").change ( function () {
 	        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
-            $('#ajax_week').load(url);
+            $('#ajax_week').load(url, function() {
+				$(".collapse_chart").hide();
+			});
 	      });
+	
 
-          // TODO: Switch to $.live events
-          $(".collapse_chart").click(function() {
+          $(".collapse_chart").live("click", function() {
 	              var row_number = $(this).parents("tr").get(0).rowIndex + 1;
                   $("#team_table").get(0).deleteRow(row_number);
                   $(this).hide();
@@ -46,7 +48,7 @@
           });
 
         // Manage clicking on drill button
-		  $(".link_to_chart").click(function() {
+		  $(".link_to_chart").live("click",function() {
 
 	            var user_id = $(this).attr("id");
                 var week_id = $("#week_id").find("option:selected").val();
