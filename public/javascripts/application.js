@@ -5,7 +5,7 @@
 	     jQuery(divId).tufteBar({
          data: returnedData,
          barWidth: 0.8,
-         barLabel:  function(index) { return this[0] },
+         barLabel:  function(index) { return this[1].bar_label },
          axisLabel: function(index) { return this[1].label },
          color:     function(index) { 
 			switch (this[2].flag)

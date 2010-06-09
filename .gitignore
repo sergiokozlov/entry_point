@@ -1,6 +1,7 @@
 # Can ignore specific files
 .DS_Store
 log/
+public/data/processed
 
 # Use wildcards as well
 *~

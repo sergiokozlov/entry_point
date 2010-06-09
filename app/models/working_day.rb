@@ -16,7 +16,18 @@ class WorkingDay < ActiveRecord::Base
   end
 
   def label
-    ApplicationHelper::ABBR_DAYNAMES[wday.wday]
+    wday.strftime("%m/%d")
+    #ApplicationHelper::ABBR_DAYNAMES[wday.wday]
+  end
+
+  def bar_label
+   if duration > 0 
+      hh,mm = duration.divmod(60)
+      mm = '0' + mm.to_s if mm < 10
+      return "#{hh}:#{mm}"
+   else
+    return ''
+   end 
   end
 
 

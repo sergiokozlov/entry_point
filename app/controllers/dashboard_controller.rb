@@ -14,6 +14,7 @@ class DashboardController < ApplicationController
     @weeks  = @user.weeks_to_analyze
   end
 
+  # rewrite in JSON style
   def daily_bars
     require_user
     @user = current_user
@@ -33,7 +34,7 @@ class DashboardController < ApplicationController
 	  if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]
 	    bars_data << %Q/[#{lwd.duration},{"label":"#{lwd.label}"}, {"flag":"#{lwd.color}"}],/
 	  else
-	    bars_data << '[0, {"label": ""}, {"flag": "White"}],'
+	    bars_data << "['', {'label': '#{day.strftime("%m/%d")}'}, {'flag': 'White'}],"
 	  end
 	end
 
@@ -75,9 +76,9 @@ class DashboardController < ApplicationController
    if @dev 
     days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
       if lwd = @dev.logged_working_days.select{|d| d.wday == day}[0]
-  	    @data << [lwd.duration, {"label" => lwd.label},{"flag" => lwd.color}]
+  	    @data << [lwd.duration, {"label" => lwd.label, "bar_label" => lwd.bar_label},{"flag" => lwd.color}]
   	  else
-  	    @data << [0, {"label" => ""}, {"flag" => "White"}]
+  	    @data << ['', {"label" => day.strftime("%m/%d"),  "bar_label" => ''}, {"flag" => "White"}]
   	  end
     end
      @jresult = JSON.generate(["data" => @data])
