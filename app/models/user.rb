@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   end 
 
   def weeked_working_days(week_number)
-     logged_working_days.select {|day| day.wday.cweek == week_number} 
+     logged_working_days.select {|day| day.wday.cweek == week_number and day.duration > 0} 
   end 
   
   def working_today
