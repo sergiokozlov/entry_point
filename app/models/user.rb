@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
       arr.each do |h|
          
           if h['manager'] == login
-            self.type = 'Manager'
+            self.type, self.reports_to = 'Manager', nil
           elsif h['developers'].include?(login)
             self.type, self.reports_to = ['Developer',h['manager']]
           end
