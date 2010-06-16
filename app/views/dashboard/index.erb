@@ -3,16 +3,16 @@
 <script type="text/javascript">
   $(document).ready( function () {
          jQuery.getJSON('/dashboard/daily_bars', function(data) {
-          dailychart(data.data);
+          dailychart("#daily-bars",data[0].data);
           });
-         $("#scrollF").click(function() {
+            $("#scrollF").click(function() {
            jQuery.getJSON('/dashboard/daily_bars/forward', function(data) {
-               dailychart(data.data);
+               dailychart("#daily-bars",data[0].data);
                });    
           });
          $("#scrollB").click(function() {
           jQuery.getJSON('/dashboard/daily_bars/back', function(data) {
-               dailychart(data.data);
+               dailychart("#daily-bars",data[0].data);
                });    
           });
      });
@@ -24,38 +24,15 @@
 
 
 <div class="clear"></div>
-<%=session[:point] %>
+<h2>Your Daily Stats </h2>
+
 <div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
 
-<button id="scrollB" type="button">Scroll Back</button>
-<button id="scrollF" type="button">Scroll Forward</button>
+<button id="scrollB" type="button">&lt;&lt;</button>
+<button id="scrollF" type="button">&gt;&gt;</button>
 
 <div class="clear"></div>
-
-<div class="report daily">
-	<h2>Your Daily Stats</h2>
-	<table cellspacing="0">
-		<thead>
-			<th>Working Day</th>
-			<th>Check In Time</th>
-			<th>Check Out Time</th>
-			<th>Duration in Minutes</th>
-		</thead>
-		<tbody>
-			<% @user.logged_working_days.each do |lwd| %>
-			<tr class = "<%= cycle("alt","white") -%>">
-				<td> <%=lwd.wday %></td>
-				<td> <%=lwd.check_in.strftime("%H:%M") %></td>
-				<td><%=lwd.check_out.strftime("%H:%M") %></td>
-				<td><%=lwd.duration %></td>
-			</tr>
-			<%end%>
-		</tbody>
-	</table>
-</div>
-
-<div class="clear"></div>
-<% reset_cycle %>
+<br/>
 <div class="report weekly">
 	<h2>Your Weekly Stats </h2>
 	<table cellspacing="0">
@@ -65,8 +42,9 @@
 			<th># Hours Spent</th>
 			<th>Daily Average</th>
 		</thead>
-		<tbody>
-			<% @user.logged_working_weeks.each do |lww| %>
+        <tbody>
+          <!--TODO: Performace optimization required -->
+			<% @user.logged_working_weeks.slice(0,5).each do |lww| %>
 			<tr class = "<%= cycle("alt","white") -%>">
               <td><%= "#{week_first_day(lww[0]).to_s} - #{week_last_day(lww[0])}" %></td>
                 <td><%=@user.weeked_working_days(lww[0]).length%> </td>

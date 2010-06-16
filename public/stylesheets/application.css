@@ -175,6 +175,10 @@ table {
   float: right;
 }
 
+#daily-bars {
+  text-align:center;
+}
+
 
 /*----------------------------------------------------------
                            @Rails

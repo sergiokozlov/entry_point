@@ -27,11 +27,12 @@
 			<%if @user = current_user%>
 			<h1><%="#{@user.name} "%></h1>
 			<ul>
-				<% if current_user %>  
-					<%= link_to "Edit profile", edit_user_path(:current) %>  
-					<%= link_to "Logout", logout_path %>
-					<%= link_to "Dashboard", :controller => 'dashboard' %>  
-				<% end %>
+				<%= link_to "Edit profile", edit_user_path(:current) %>  
+				<%= link_to "Logout", logout_path %>
+				<%= link_to "Dashboard", :controller => 'dashboard' %>  
+                <%if @user.manager?%>
+                  <%= link_to "Manage", :controller => 'dashboard', :action => 'manage' %>
+                <%end%>
 			</ul>
 			<% else %>  
 				<%= link_to "Register", new_user_path %>  

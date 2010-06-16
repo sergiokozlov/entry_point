@@ -14,10 +14,11 @@ class DashboardController < ApplicationController
     @weeks  = @user.weeks_to_analyze
   end
 
-  # rewrite in JSON style
+  #TODO: follow DRY for daily_bars and user_data_for_range
   def daily_bars
     require_user
     @user = current_user
+    @data = Array.new
 
     if params[:id] == 'forward'
       shift = 1
@@ -28,24 +29,16 @@ class DashboardController < ApplicationController
     end
 
     session[:point] +=shift
-    bars_data = "["
 
-    days_array(10,session[:point]).each do |day|
-	  if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]
-	    bars_data << %Q/[#{lwd.duration},{"label":"#{lwd.label}"}, {"flag":"#{lwd.color}"}],/
-	  else
-	    bars_data << "['', {'label': '#{day.strftime("%m/%d")}'}, {'flag': 'White'}],"
-	  end
-	end
-
-    bars_data[-1]=']'
-    
-    @data = %Q/{
-      "message": "#{days_array(5,session[:point]).length}",
-      "point": "#{session[:point]}",
-      "data": #{bars_data}
-    }/
- 
+   days_array(10,session[:point]).each do |day|
+      if lwd = @user.logged_working_days.select{|d| d.wday == day}[0]
+  	    @data << [lwd.duration, {"label" => lwd.label, "bar_label" => lwd.bar_label},{"flag" => lwd.color}]
+  	  else
+  	    @data << ['', {"label" => day.strftime("%m/%d"),  "bar_label" => ''}, {"flag" => "White"}]
+  	  end
+    end
+     @jresult = JSON.generate(["data" => @data])
+  
    render :layout => false
   end
   
