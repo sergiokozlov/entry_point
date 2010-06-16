@@ -29,20 +29,23 @@ class Load
 
        users.each do |u|
         
-        unless User.find(:first, :conditions => {:login => u[:login]})
+        unless user = User.find(:first, :conditions => {:login => u[:login]})
           puts "Adding #{u[:login]}" 
 
           user = User.new(u)
           user.email = user.login
           user.set_type_and_manager(hrr)
           user.password_confirmation = user.password = 'Password10'
-
-          begin
-            user.save!
-          rescue ActiveRecord::RecordInvalid
-            puts "#{u[:login]} doesn't pass validation"
-          end
+        else
+          user.set_type_and_manager(hrr) 
         end
+        
+        begin
+          user.save!
+        rescue ActiveRecord::RecordInvalid
+          puts "#{u[:login]} doesn't pass validation"
+        end
+        
        end
 
        records.each do |rec| 
