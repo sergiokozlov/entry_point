@@ -53,7 +53,7 @@ class Manager < User
     self.developers.each do |dev| 
       result += dev.logged_working_weeks
     end
-    result.uniq
+    result.uniq.sort {|a,b| b<=> a}
   end
 end
 
