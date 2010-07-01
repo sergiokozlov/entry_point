@@ -26,7 +26,8 @@
     legend: {
       color: function(index, options) { return options.colors[index % options.colors.length]; },
       label: function(index) { return this; }
-    }
+    },
+	showtooltip: true
   }
 
   $.tufteBar = {
@@ -132,7 +133,19 @@
         var color = optionResolver(options.color);
         var coords = [t.X(left), t.Y(top), t.W(width), t.H(height)];
 
-        ctx.rect(coords[0], coords[1], coords[2], coords[3]).attr({stroke: color, fill: color});
+        var r = ctx.rect(coords[0], coords[1], coords[2], coords[3]).attr({stroke: color, fill: color});
+
+		//if we want to show tooltips, bind the rectangle's onmouseover method to call the showBarToolTip function - lpa - 6/15/09
+			//Sergio - why do we need coords? seems to be obsolete
+             if (optionResolver(options.showtooltip)) {
+                 r[0].onmouseover = function() {
+                     $("#tooltip").remove();
+                     showBarToolTip(coords[0], coords[1], 'Data Goes Here');
+                 };
+                 r[0].onmouseout = function() {
+                     $("#tooltip").remove();
+                 };
+             }
 
         lastY = lastY + y;
       });
@@ -158,6 +171,23 @@
     });
     addLegend(plot, options);
   }
+
+ //basic function to show message when the user mouses over an area on the chart - lpa - 6/15/09
+ //this is modified from a Flot example (http://code.google.com/p/flot/)
+  function showBarToolTip(x, y, contents) {
+      var x = window.event.clientX;
+      var y = window.event.clientY;
+      $('<div id="tooltip">' + contents + '</div>').css({
+          position: 'absolute',
+          top: y + 5,
+          left: x + 5,
+          border: '1px solid #fdd',
+          padding: '2px',
+         	'background-color': '#fee',
+          opacity: 0.80
+      }).appendTo("body").fadeIn(200);
+  }
+
 
   // If legend data has been provided, transform it into an 
   // absolutely positioned table placed at the top right of the graph
