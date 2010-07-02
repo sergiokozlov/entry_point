@@ -140,7 +140,7 @@
              if (optionResolver(options.showtooltip)) {
                  r[0].onmouseover = function() {
                      $("#tooltip").remove();
-                     showBarToolTip(coords[0], coords[1], 'Data Goes Here');
+                     showBarToolTip(coords[0], coords[1], element[3].check_in + '---' + element[3].check_out);
                  };
                  r[0].onmouseout = function() {
                      $("#tooltip").remove();
@@ -180,12 +180,12 @@
       $('<div id="tooltip">' + contents + '</div>').css({
           position: 'absolute',
           top: y + 5,
-          left: x + 5,
+          left: x - 10,
           border: '1px solid #fdd',
           padding: '2px',
-         	'background-color': '#fee',
+         	'background-color': '#fff',
           opacity: 0.80
-      }).appendTo("body").fadeIn(200);
+      }).appendTo("body").fadeIn(500);
   }
 
 

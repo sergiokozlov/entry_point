@@ -69,7 +69,7 @@ class DashboardController < ApplicationController
    if @dev 
     days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
       if lwd = @dev.logged_working_days.select{|d| d.wday == day}[0]
-  	    @data << [lwd.duration, {"label" => lwd.label, "bar_label" => lwd.bar_label},{"flag" => lwd.color}]
+  	    @data << [lwd.duration, {"label" => lwd.label, "bar_label" => lwd.bar_label},{"flag" => lwd.color},{"check_in" => lwd.check_in.strftime("%H:%M"),"check_out" =>lwd.check_out.strftime("%H:%M")}]
   	  else
   	    @data << ['', {"label" => day.strftime("%m/%d"),  "bar_label" => ''}, {"flag" => "White"}]
   	  end
