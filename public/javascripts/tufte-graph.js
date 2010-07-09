@@ -135,13 +135,12 @@
 
         var r = ctx.rect(coords[0], coords[1], coords[2], coords[3]).attr({stroke: color, fill: color});
 
-		//if we want to show tooltips, bind the rectangle's onmouseover method to call the showBarToolTip function - lpa - 6/15/09
-			//Sergio - why do we need coords? seems to be obsolete
              if (optionResolver(options.showtooltip)) {
-                 r[0].onmouseover = function() {
-                     $("#tooltip").remove();
-                     showBarToolTip(coords[0], coords[1], element[3].check_in + '---' + element[3].check_out);
-                 };
+                $(r[0]).mousemove(function(e){
+                   $("#tooltip").remove(); 
+                   showBarToolTip(e.pageX,e.pageY,element[3].check_in + '---' + element[3].check_out);
+                 }); 
+                  
                  r[0].onmouseout = function() {
                      $("#tooltip").remove();
                  };
@@ -174,16 +173,15 @@
 
  //basic function to show message when the user mouses over an area on the chart - lpa - 6/15/09
  //this is modified from a Flot example (http://code.google.com/p/flot/)
-  function showBarToolTip(x, y, contents) {
-      var x = window.event.clientX;
-      var y = window.event.clientY;
+  function showBarToolTip(x,y,contents) {
       $('<div id="tooltip">' + contents + '</div>').css({
           position: 'absolute',
-          top: y + 5,
-          left: x - 10,
-          border: '1px solid #fdd',
+          top: y - 15,
+          left: x + 10,
+          border: '1px solid #ddd',
           padding: '2px',
-         	'background-color': '#fff',
+         	'background-color': '#333',
+            'color': '#fff',
           opacity: 0.80
       }).appendTo("body").fadeIn(500);
   }
