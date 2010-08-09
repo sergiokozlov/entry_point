@@ -179,6 +179,29 @@ table {
   text-align:center;
 }
 
+.green-message {
+  float: left;
+  background-color: #DCF7DD;
+  border: solid 1px #6C6;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px; 
+  width: 450px; 
+}
+
+.red-message {
+  float: right;
+  background-color: #FEE0C6;
+  border: solid 1px #CCC;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px; 
+  width: 230px;
+}
+
+#daily-broadcast {
+  float: left;
+}
 
 /*----------------------------------------------------------
                            @Rails

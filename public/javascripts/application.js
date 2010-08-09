@@ -23,7 +23,13 @@
        });
      } 
 
-	  $(document).ready( function () {
+$(document).ready( function () {
+
+    $('b.hide').click ( function() {
+      $(this).parent("div").fadeOut('slow', function() {
+            $(this).remove();
+        });
+    });
 
         // Select correct value for selector 
         var pm_id = $.url.param("id");

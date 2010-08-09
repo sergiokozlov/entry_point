@@ -1,11 +1,24 @@
 
-  <div class="clear"></div>
 
-  <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
-  <div class="clear"></div>
+  <div class="green-message">
+    <b style="float: right" class="hide"> X </b>
+    <b>Sergey Kozlov</b> is working just great - no late commings in last 15 days <BR/>
+    <b>Mister Twister</b> is late every second day - please pay attention to it
+
+  </div>
+
+<div class="red-message">
+  <b style="float: right" class="hide"> X </b>
+  Still not in the office: <b>Jim Beam </b>
+
+</div>
+
+
+
+ <div class="clear"></div>
+   <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
   <h2>My Team Stats </h2>
-  <br/>
-
+ <br/>
 
  <!-- TODO: DRY violation - different partials for xhr and html calls-->
   <div id="ajax_week">
