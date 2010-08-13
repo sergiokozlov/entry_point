@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :working_days, :foreign_key => "login", :primary_key => "login"
   acts_as_authentic
 
-  # statistics information
+  # selection of working days
   def logged_working_days
      self.working_days.find(:all, :order => 'wday desc')  
   end 
@@ -20,6 +20,17 @@ class User < ActiveRecord::Base
     logged_working_days.map{|day| [day.wday.cweek,day.wday.year]}.uniq
   end
 
+  # Aggregation logic
+  def has_late_commings(last_x_days=14)
+   lc = logged_working_days.select {|day| day.late_comming? and (Date.today - day.wday < last_x_days)}.length 
+   lc if lc > 1
+  end
+
+  def has_short_days(last_x_days=14)
+   sd = logged_working_days.select {|day| day.short_day? and (Date.today - day.wday < last_x_days)}.length 
+   sd if sd > 1
+  end
+  
   # role validation logic
   def manager?
     false

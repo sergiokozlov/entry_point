@@ -7,17 +7,25 @@ class WorkingDay < ActiveRecord::Base
     wday.strftime("%m/%d/%Y")
   end
 
+  def short_day?
+    true if duration < 480 and duration > 0
+  end
+
+  # move color to javascript UI
   def color
-    if duration < 420
+    if short_day?
       "Red" 
     else
       "Grey"
     end
   end
 
+  def late_comming?
+    true if check_in.strftime("%H:%M") > "11:45"
+  end
+
   def label
     wday.strftime("%m/%d")
-    #ApplicationHelper::ABBR_DAYNAMES[wday.wday]
   end
 
   def bar_label

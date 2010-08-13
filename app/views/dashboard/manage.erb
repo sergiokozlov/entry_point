@@ -2,8 +2,13 @@
 
   <div class="green-message">
     <b style="float: right" class="hide"> X </b>
-    <b>Sergey Kozlov</b> is working just great - no late commings in last 15 days <BR/>
-    <b>Mister Twister</b> is late every second day - please pay attention to it
+  
+    <!-- TODO: Use Partials-->
+    <%  @user.developers.each do |dev| %>
+      <%if dev.has_late_commings or dev.has_short_days  then %>
+        <b> <%=dev.name%> </b><%= green_message(dev) %> during last two weeks <BR/>
+      <%end%>
+    <%end%> 
 
   </div>
 
