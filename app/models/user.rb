@@ -66,6 +66,10 @@ class Manager < User
     end
     result.uniq.sort {|a,b| b<=> a}
   end
+
+  def should_worry?
+    true unless developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
+  end
 end
 
 class Admin < User

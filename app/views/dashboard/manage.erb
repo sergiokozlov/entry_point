@@ -2,17 +2,21 @@
 
   <div class="green-message">
     <b style="float: right" class="hide"> X </b>
-  
+
     <!-- TODO: Use Partials-->
-    <%  @user.developers.each do |dev| %>
-      <%if dev.has_late_commings or dev.has_short_days  then %>
-        <b> <%=dev.name%> </b><%= green_message(dev) %> during last two weeks <BR/>
+    <% if @user.should_worry? then %>
+      <%  @user.developers.each do |dev| %>
+        <%if line = green_message(dev)  then %>
+          <%= line %> <BR/>
+        <%end%>
       <%end%>
+    <%else%>
+      <%= "Your team is Working Great"%>
     <%end%> 
 
   </div>
 
-<div class="red-message">
+  <div class="red-message">
   <b style="float: right" class="hide"> X </b>
   Still not in the office: <b>Jim Beam </b>
 
