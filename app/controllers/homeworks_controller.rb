@@ -7,14 +7,20 @@ class HomeworksController < ApplicationController
 
    def create
     @user = current_user
-    @homework =  Homework.new(params[:homework])
-       if @record.save
-
+    @homework = @user.homeworks.build(params[:homework])
+       if @homework.save
           redirect_to :action => 'show'
        else
           render :action => 'new'
        end
    end
+    
+  def show
+    require_user
+    @user = current_user
+
+    @logged_homeworks =  @user.homeworks.find(:all, :order => 'check_in')
+  end
 
 
 end

@@ -1,6 +1,7 @@
 class Homework < ActiveRecord::Base
   belongs_to :working_day
-  # direct link to :user can be added
+  belongs_to :user, :foreign_key => "login",:primary_key => "login"
+
 
   # Validation Logic
   # Use Meta programming to follow DRY
@@ -9,8 +10,8 @@ class Homework < ActiveRecord::Base
   end  
   
   def check_in_string=(str)
-    @blank = str.blank?  
-    self.check_in = Time.parse(str)
+    @blank_check_in = str.blank?  
+    self.check_in = DateTime.parse(str)
   rescue ArgumentError  
     @invalid_check_in = true
   end
@@ -21,15 +22,15 @@ class Homework < ActiveRecord::Base
   end  
   
   def check_out_string=(str)
-    @blank = str.blank?  
-    self.check_out = Time.parse(str)
+    @blank_check_out = str.blank?  
+    self.check_out = DateTime.parse(str)
   rescue ArgumentError  
     @invalid_check_out = true
   end
 
   def validate
-     errors.add(:check_in, "is invalid") if @invalid_check_in
-     errors.add(:check_out, "is invalid") if @invalid_check_out
+     errors.add(:check_in, "is invalid") if @invalid_check_in or @blanck_check_in
+     errors.add(:check_out, "is invalid") if @invalid_check_out or @blanck_check_out
   end
 
   def working_day_to_match

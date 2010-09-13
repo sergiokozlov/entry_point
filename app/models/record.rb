@@ -2,8 +2,6 @@ class Record < ActiveRecord::Base
   belongs_to :working_day
   belongs_to :user, :foreign_key => "login",:primary_key => "login"
   
-  validate :click_date_emptiness, :message => "Entered Date is Empty"
-
  # virtal attributes
   def click_date_string  
     click_date.to_s  
@@ -11,18 +9,14 @@ class Record < ActiveRecord::Base
   
   def click_date_string=(str)
     @blank = str.blank?  
-    self.click_date = Time.parse(str)
+    self.click_date = DateTime.parse(str)
   rescue ArgumentError  
     @invalid = true
   end 
  
   # validation logic  
-  def click_date_emptiness
-     errors.add(:click_date, "is empty") if @blank
-  end
-
   def validate
-     errors.add("Entered Date") if @invalid
+    errors.add(:click_date, "is invalid") if @blank or @invalid
   end
 
   # assosiation logic
