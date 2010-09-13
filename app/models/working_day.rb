@@ -1,6 +1,7 @@
 class WorkingDay < ActiveRecord::Base
 
   has_many :records
+  has_many :homeworks
  # virtual attributes
 
   def wday_string  

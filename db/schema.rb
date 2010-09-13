@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100204151449) do
+ActiveRecord::Schema.define(:version => 20100913103334) do
+
+  create_table "homeworks", :force => true do |t|
+    t.datetime "check_in"
+    t.datetime "check_out"
+    t.integer  "working_day_id"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "records", :force => true do |t|
     t.string   "login"
