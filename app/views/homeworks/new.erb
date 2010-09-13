@@ -1,0 +1,16 @@
+
+    <h2> Use the form below to submit your homework </h2>
+    <% form_for @homework do |f| %>
+      <%= f.error_messages %>
+
+    <%=   f.label :check_in %>
+    <%=    f.text_field :check_in %>
+  
+
+     <%=   f.label :check_out %>
+     <%=    f.text_field :check_out %>
+ 
+
+   <%=    f.submit "Add HomeWork" %>
+ <% end %>
+
