@@ -26,13 +26,20 @@
 		<div id="header">
 			<%if @user = current_user%>
 			<h1><%="#{@user.name} "%></h1>
-			<ul>
-				<%= link_to "Edit profile", edit_user_path(:current) %>  
-				<%= link_to "Logout", logout_path %>
-				<%= link_to "Dashboard", :controller => 'dashboard' %>  
-                <%if @user.manager?%>
-                  <%= link_to "Manage", :controller => 'dashboard', :action => 'manage' %>
+			<ul id="menu">
+             <li><%= link_to "Dashboard", :controller => 'dashboard' %></li>  
+             <%if @user.manager?%>
+                  <li><%= link_to "Manage", :controller => 'dashboard', :action => 'manage' %></li>
                 <%end%>
+  <li><a href="#">Log</a> 
+        <ul> 
+          <li><%= link_to "Entry Record", :controller => 'records', :action =>'new' %></li> 
+          <li><%= link_to "Work From Home", :controller => 'homeworks', :action =>'new' %></li> 
+        </ul> 
+    </li>
+                
+              <li><%= link_to "Edit profile", edit_user_path(:current) %> </li> 
+              <li><%= link_to "Logout", logout_path %></li>
 			</ul>
 			<% else %>  
 				<%= link_to "Register", new_user_path %>  

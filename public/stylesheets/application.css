@@ -41,18 +41,20 @@ a:hover {text-decoration:none;}
 	width:100%;
 	color:#fff;
 	background:#828282;
-	overflow:hidden;
-	line-height:52px;
+	/*overflow:hidden;*/
+	height:52px;
+    line-height:52px;
 	position:relative;
 	}
 	#header h1,
-	#header ul {
+/*	#header ul {
 		padding:0 20px 0;
-		}
+		} */
 	#header h1 {
 		float:left;
 		font-size:32px;
 		letter-spacing:-1.3px;
+        padding:0 20px 0;
 		}
 	#header ul {
 		float:right;
@@ -170,6 +172,26 @@ table {
   font-size: 12px;
   margin-bottom: 30px;
 }
+
+/* menu */
+#menu a { color:#fff; text-decoration:none; } 
+#menu > li {background:#172322; cursor:pointer; float:left; position:relative; 
+    padding:0px 10px;} 
+#menu > li a:hover {color:#6C6;}
+
+/* submenu */
+ 
+#menu ul { padding:0px; margin:0px; display:inline;} 
+#menu li ul { position:absolute; left:-80px; top:-10px; margin-top:45px; width:230px; line-height:16px; 
+    background-color:#172322; color:#0395CC; /* for IE */ display:none; z-index:5; border-radius: 25px;} 
+#menu li:hover ul { display:block;} 
+#menu li ul li{ display:block; margin:5px 15px; padding: 5px 0px; float:left; border-top: dotted 1px #606060; 
+    list-style-type:none; } 
+#menu li ul li a:hover { color:#6C6; } 
+
+
+
+
 
 #week_id {
   float: right;
