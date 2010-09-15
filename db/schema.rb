@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20100913124909) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "login"
+    t.integer  "duration"
+    t.string   "status"
   end
 
   create_table "records", :force => true do |t|

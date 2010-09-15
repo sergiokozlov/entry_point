@@ -61,9 +61,8 @@ class Homework < ActiveRecord::Base
           self.working_day = working_day_to_match
      end
 
-     #self.duration = (self.check_out.to_i - self.check_in.to_i).floor/60
+     self.duration = (self.check_out - self.check_in)/60
      self.save
-     return working_day
   end
 
 end
