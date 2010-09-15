@@ -1,7 +1,8 @@
 class Homework < ActiveRecord::Base
   belongs_to :working_day
   belongs_to :user, :foreign_key => "login",:primary_key => "login"
-  validate   :check_in_out_validity, :check_in_earlier_than_check_out, :check_in_out_cannot_be_too_far
+  validate   :dates_are_valid?
+  validate :check_in_earlier_than_check_out, :check_in_out_cannot_be_too_far, :if => "check_in and check_out"
 
 
 
@@ -12,7 +13,6 @@ class Homework < ActiveRecord::Base
   end  
   
   def check_in_string=(str)
-    @blank_check_in = str.blank?  
     self.check_in = DateTime.parse(str)
   rescue ArgumentError  
     @invalid_check_in = true
@@ -24,16 +24,15 @@ class Homework < ActiveRecord::Base
   end  
   
   def check_out_string=(str)
-    @blank_check_out = str.blank?  
     self.check_out = DateTime.parse(str)
   rescue ArgumentError  
     @invalid_check_out = true
   end
 
   # Validation Logic
-  def check_in_out_validity
-     errors.add(:check_in, "is invalid") if @invalid_check_in or @blanck_check_in
-     errors.add(:check_out, "is invalid") if @invalid_check_out or @blanck_check_out
+  def dates_are_valid?
+     errors.add(:check_in, "is invalid") if @invalid_check_in 
+     errors.add(:check_out, "is invalid") if @invalid_check_out
   end
 
   def check_in_earlier_than_check_out
@@ -41,9 +40,7 @@ class Homework < ActiveRecord::Base
   end
 
   def check_in_out_cannot_be_too_far
-   unless check_in.strftime("%m/%d/%Y") == check_out.strftime("%m/%d/%Y") or check_in.next.strftime("%m/%d/%Y") == check_out.strftime("%m/%d/%Y")
-     errors.add(:check_in, "cannot be that far from Check out time")
-   end 
+     errors.add(:check_out, "is more than 24 later than Check in") if  (check_in.next-check_out) <=0
   end
 
 

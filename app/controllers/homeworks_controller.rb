@@ -8,7 +8,9 @@ class HomeworksController < ApplicationController
    def create
     @user = current_user
     @homework = @user.homeworks.build(params[:homework])
-       if @homework.process
+       if @homework.valid?
+          
+          @homework.process
           redirect_to :action => 'show'
        else
           render :action => 'new'
