@@ -19,7 +19,7 @@ module DashboardHelper
   # Weekly Reports
   
   def week_completed(number = Date.today.cweek,user = current_user)
-    user.weeked_working_days(number).map{|day| day.duration}.inject(0) {|x,y| x+y}  
+    user.weeked_working_days(number).map{|day| day.total_duration}.inject(0) {|x,y| x+y}  
   end 
 
   def week_distance
