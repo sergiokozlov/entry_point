@@ -7,17 +7,17 @@
          barWidth: 0.8,
          barLabel:  function(index) { return this[1].bar_label },
          axisLabel: function(index) { return this[1].label },
-         color:     function(index) { 
+         color:     function(index, stackedIndex) { 
 			switch (this[2].flag)
 			{
 			case 'Red':
-			 return '#8B0000'
+			 return ['#8B0000','#000'][stackedIndex % 2] 
 			  break;
 			case 'White':
-			 return '#FFFFFF'
+			 return ['#FFFFFF','#000'][stackedIndex % 2] 
 			  break;
 			default:
-			 return '#828282'
+			 return ['#828282','#000'][stackedIndex % 2] 
 			}; 
 		}
        });

@@ -1,7 +1,7 @@
 class WorkingDay < ActiveRecord::Base
 
   has_many :records
-  has_many :homeworks
+  has_one :homework
  # virtual attributes
 
   def wday_string  
@@ -10,6 +10,14 @@ class WorkingDay < ActiveRecord::Base
 
   def short_day?
     true if duration < 480 and duration > 0
+  end
+
+  def homework_duration
+    if homework
+      homework.duration
+    else
+     0
+    end 
   end
 
   # move color to javascript UI
@@ -30,8 +38,8 @@ class WorkingDay < ActiveRecord::Base
   end
 
   def bar_label
-   if duration > 0 
-      hh,mm = duration.divmod(60)
+   if duration + homework_duration > 0 
+      hh,mm = (duration + homework_duration).divmod(60)
       mm = '0' + mm.to_s if mm < 10
       return "#{hh}:#{mm}"
    else
