@@ -1,16 +1,19 @@
 
     <h2> Use the form below to submit your homework </h2>
-    <% form_for @homework do |f| %>
+	<br/>
+    <% form_for @homework, :html => {:class => 'input_form'} do |f| %>
       <%= f.error_messages %>
 
-    <%=   f.label :check_in %>
-    <%=    f.text_field :check_in_string %>
-  
+	<p>
+		<%=   f.text_field :check_in_string %>
+    	<%=   f.label :check_in %>
+  	</p>
 
+	<p>
+	 <%=    f.text_field :check_out_string %>	
      <%=   f.label :check_out %>
-     <%=    f.text_field :check_out_string %>
- 
+ 	</p>
 
-   <%=    f.submit "Add HomeWork" %>
+   <%=    f.submit "Add HomeWork"%>
  <% end %>
 
