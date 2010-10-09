@@ -5,12 +5,12 @@
       <%= f.error_messages %>
 
 	<p>
-		<%=   f.text_field :check_in_string %>
+		<%=   f.text_field :check_in_string, :placeholder =>  "2010-09-23 11:30" %>
     	<%=   f.label :check_in %>
   	</p>
 
 	<p>
-	 <%=    f.text_field :check_out_string %>	
+	 <%=    f.text_field :check_out_string, :placeholder =>  "2010-09-23 20:30" %>	
      <%=   f.label :check_out %>
  	</p>
 
