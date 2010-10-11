@@ -190,8 +190,26 @@ table {
 #menu li ul li a:hover { color:#6C6; } 
 
 
+/* form styling */
+.input_form p {
+	margin: 10px;
+}
 
+.input_form input {  
+    padding: 5px;  
+    border: solid 1px #E5E5E5;  
+ 	font: normal 13px/100%;
+    }
 
+.input_form input[type="submit"] {  
+	    cursor: pointer;
+		border-radius: 5px;
+		margin-left: 10px;
+	    }
+
+.input_form label {
+	margin-left:5px ;
+}
 
 #week_id {
   float: right;
