@@ -1,29 +1,28 @@
-<% form_for @user do |form| %>  
-<%= form.error_messages %>  
-<ul class="formList">  
-   <li>  
+
+<% form_for @user,:as => :user, :url => user_path(@user), :html => {:class => 'input_form'} do |form| %>  
+  <%= form.error_messages %>  
+  <p>  
+    <%= form.text_field :login %>
     <%= form.label :login, "Login" %>  <br/>
-    <%= form.text_field :login %>  
-  </li>
-  <li>  
+  </p>
+  <p>  
+    <%= form.text_field :name %>
     <%= form.label :name, "Name" %>  <br/>
-    <%= form.text_field :name %>  
-  </li>
-  <li>  
+  </p>
+  <p>  
+    <%= form.text_field :email %>
     <%= form.label :email, "Email" %>  <br/>
-    <%= form.text_field :email %>  
-  </li>  
-  <li>  
+  </p>  
+  <p>  
+    <%= form.password_field :password %>
     <%= form.label :password, "Password" %>  <br/>
-    <%= form.password_field :password %>  
-  </li>  
-  <li>  
-    <%= form.label :password_confirmation, "Password confirmation" %>  <br/>
+  </p>  
+  <p>  
     <%= form.password_field :password_confirmation %>  
-  </li>  
-  
-    <%= form.submit "Submit" %>  
-  
-</ul>  
+    <%= form.label :password_confirmation, "Password confirmation" %>  <br/>
+  </p>  
+
+  <%= form.submit "Submit" %>  
+
 <% end %> 
 

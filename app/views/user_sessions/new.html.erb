@@ -1,16 +1,16 @@
 <% title "Log in" %>  
   
-<% form_for @user_session do |form| %>  
+<% form_for @user_session, :html => {:class => 'input_form'} do |form| %>  
 <%= form.error_messages %>  
 <ul class="formList">  
-  <li>  
+ <p>  
     <%= form.label :login, "Username" %>  <br/>
     <%= form.text_field :login %>  
-  </li>  
-  <li>  
+  </p>  
+  <p>  
     <%= form.label :password, "Password" %>  <br/>
     <%= form.password_field :password %>  
-  </li>  
+  </p>  
  
     <%= form.submit "Submit" %>  
  
