@@ -13,11 +13,14 @@
 			case 'Red':
 			 return ['#8B0000','#000'][stackedIndex % 2] 
 			  break;
+            case 'Green':
+			 return ['#509721','#000'][stackedIndex % 2] 
+			  break;
 			case 'White':
 			 return ['#FFFFFF','#000'][stackedIndex % 2] 
 			  break;
 			default:
-			 return ['#828282','#000'][stackedIndex % 2] 
+			 return ['#FFC000','#000'][stackedIndex % 2] 
 			}; 
 		}
        });
