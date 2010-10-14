@@ -1,6 +1,14 @@
 class UserSessionsController < ApplicationController
   def new
-    @user_session = UserSession.new
+    unless current_user
+      @user_session = UserSession.new
+    else
+      if current_user.manager?  
+        redirect_to :controller => 'dashboard', :action => 'manage'
+      else
+        redirect_to :controller => 'dashboard'
+      end  
+    end  
   end
 
   def create  
