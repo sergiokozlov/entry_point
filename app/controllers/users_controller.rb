@@ -23,4 +23,14 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def update
+    @user = current_user
+    if @user.update_attributes( params[:user] || params[:manager]) #TODO: understand how to pass user here
+      flash[:notice] = "Account updated!"
+      redirect_to :controller => 'dashboard'
+    else
+      render :action => :edit
+    end
+  end
+
 end
