@@ -24,6 +24,29 @@
 
 
 <div class="clear"></div>
+<div class="report weekly">
+	<h2>Your Weekly Stats </h2>
+	<table cellspacing="0">
+		<thead>
+          <th>Week</th>
+          <th>Daily Average</th>
+          <th># Working Days</th>
+		  <th># Hours Spent</th>
+		</thead>
+        <tbody>
+          <!--TODO: Performace optimization required -->
+			<% @user.logged_working_weeks.slice(0,5).each do |lww| %>
+			<tr class = "<%= cycle("alt","white") -%>">
+                <td><%= "#{week_first_day(lww[0]).to_s} - #{week_last_day(lww[0])}" %></td>
+              	<td><%=to_time(week_average(lww[0]))%></td>
+                <td><%=@user.weeked_working_days(lww[0]).length%> </td>
+				<td><%=to_time(week_completed(lww[0]))%> </td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
+  </div>
+
 <h2>Your Daily Stats </h2>
 
 <div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
@@ -32,29 +55,7 @@
 <button id="scrollF" type="button">&gt;&gt;</button>
 
 <div class="clear"></div>
-<br/>
-<div class="report weekly">
-	<h2>Your Weekly Stats </h2>
-	<table cellspacing="0">
-		<thead>
-			<th>Week</th>
-			<th># Working Days</th>
-			<th># Hours Spent</th>
-			<th>Daily Average</th>
-		</thead>
-        <tbody>
-          <!--TODO: Performace optimization required -->
-			<% @user.logged_working_weeks.slice(0,5).each do |lww| %>
-			<tr class = "<%= cycle("alt","white") -%>">
-              <td><%= "#{week_first_day(lww[0]).to_s} - #{week_last_day(lww[0])}" %></td>
-                <td><%=@user.weeked_working_days(lww[0]).length%> </td>
-				<td><%=to_time(week_completed(lww[0]))%> </td>
-				<td><%=to_time(week_average(lww[0]))%></td>
-			</tr>
-			<%end%>
-		</tbody>
-	</table>
-</div>
+
 
 
 

@@ -12,7 +12,7 @@ class WorkingDay < ActiveRecord::Base
   def type
    if duration > 0 and homework
      "normal with homework"
-   elsif duration =0 and homework
+   elsif duration == 0 and homework
      "just homework"
    else
       "normal"
@@ -29,7 +29,11 @@ class WorkingDay < ActiveRecord::Base
 
   # properties 
   def short_day?
-    true if total_duration < 480 and duration > 0
+    true if total_duration < 480+30 and duration > 0
+  end
+
+  def hard_day?
+    true if total_duration > 540 and duration >0
   end
  
   def late_comming?
@@ -43,9 +47,11 @@ class WorkingDay < ActiveRecord::Base
   # control javascript UI
   def color
     if short_day?
-      "Red" 
+      "Red"
+    elsif hard_day?
+      "Green"  
     else
-      "Grey"
+      "Yellow"
     end
   end
 
