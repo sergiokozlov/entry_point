@@ -1,3 +1,4 @@
+
 # Settings specified here will take precedence over those in config/environment.rb
 
 # In the development environment your application's code is reloaded on
@@ -15,3 +16,8 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+# Travel to the the date where data is present - in order to support calm development
+require 'delorean'
+past_date = Time.utc(2010,10,15,15,30)
+Delorean.time_travel_to past_date
