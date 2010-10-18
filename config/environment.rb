@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
     config.gem "authlogic"
     config.gem "ar-extensions"
     config.gem "json"
+    config.gem "delorean"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
