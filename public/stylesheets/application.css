@@ -21,7 +21,7 @@ a:focus {outline:none;}
                           @GENERAL
 -----------------------------------------------------------*/
 body {
-	background:#c6c9cc url(/images/bg.png);
+	background:#c6c9cc url(/images/bg.jpg);
 	font:12px/1.3 Arial, Helvetica, sans-serif;
 	color:#333;
 	text-align:center;
@@ -44,108 +44,144 @@ a:hover {text-decoration:none;}
 /*----------------------------------------------------------
                            @LOGIN
 -----------------------------------------------------------*/
-#login-container {
-	width:500px;
-	height:300px;
-	position:absolute;
-	top:42%;
-	left:50%;
-	margin:-100px 0 0 -250px;
-	}
-	#login-container img {
-		margin:0 auto 15px;
-		}
 
-#login{
-	width:400px;
-	height:260px;
-	overflow:hidden;
-	background:#e3e5e6 url(/images/login.png) repeat-x top left;
-	border:1px solid #999b9e; 
-	margin:0 auto;
-	text-align:left;
-	border-radius:5px;  
-	-moz-border-radius:5px;  
-	-webkit-border-radius:5px;
-	box-shadow:0 0 3px rgba(0, 0, 0, 0.2);  
-	-moz-box-shadow:0 0 3px rgba(0, 0, 0, 0.2);  
-	-webkit-box-shadow:0 0 3px rgba(0, 0, 0, 0.2); 
-	}
+	/* Centered login box
+	---------------------------------------- */
+	#login-container {
+		width:500px;
+		height:300px;
+		position:absolute;
+		top:42%;
+		left:50%;
+		margin:-100px 0 0 -250px;
+		}
+		
+	/* Login header
+	---------------------------------------- */
+	header {
+		width:100%;
+		height:52px;
+		background: #484c55 url(/images/login-header.png) repeat-x top;
+		display:block;
+		text-align:center;
+		/*
+		border-bottom:1px solid #fff;
+		border-top-right-radius:6px;
+		-moz-border-radius-topright:6px;
+		-webkit-border-top-right-radius:6px;
+		border-top-left-radius:6px;
+		-moz-border-radius-topleft:6px;
+		-webkit-border-top-left-radius:6px;
+		*/
+		}
+		#login header img {
+			margin:9px 0 0;
+			}
+			
+	/* Login box
+	---------------------------------------- */
+	#login {
+		width:400px;
+		height:290px;
+		overflow:hidden;
+		background:#e3e5e6 url(/images/login.png) repeat-x top;
+		border:1px solid #999b9e;
+		border-top:0;
+		margin:0 auto;
+		text-align:left;
+		/*
+		border-radius:6px;  
+		-moz-border-radius:6px;  
+		-webkit-border-radius:6px;
+		*/
+		box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+		-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+		-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25); 
+		}
+		
+	/* Login form elements
+	---------------------------------------- */
 	#login form {
-		padding:10px 30px 30px;
+		padding:5px 30px 30px;
 		}
 		#login form div {
-			margin:15px 0 0;
+			margin:10px 0 0;
 			}
-			#login label {
+			/* Labels */
+			#login label { 
 				display:block;
 				font-size:18px;
-				color:#666;
+				color:#555;
 				text-shadow:0 1px 0 #fff;
 				margin:0 0 3px;
 				}
-				#login input.text { 
-					font:24px Georgia, serif;
-					width:330px;
-					height:28px;
-					padding:5px;
-					border:1px solid #a1a3a6;
-					color:#222;
-					background:#fff url(/images/input.png) repeat-x top;
+			/* Login & Password inputs */
+			#login input.text { 
+				font:16px Arial, Helvetica, sans-serif;
+				width:330px;
+				height:28px;
+				padding:5px;
+				border:1px solid #a1a3a6;
+				color:#666;
+				background:#fff url(/images/input.png) repeat-x top;
+				line-height:1.7;
+				}
+				#login input.text:focus {
+					/*background-color:#fff9ec;*/
+					border:1px solid #6a6f7b;
+					color:#333;
+					outline:none;
 					}
-					#login input.text:focus {
-						background-color:#fff9ec;
-						border:1px solid #9b9da0;
-						outline:none;
-						}
-				#login input.button {
-					cursor: pointer;
-					float:left;
-					border:0;
-					font-size:18px;
-					margin:5px 0 0;
-					color: #fff;
-					padding: 7px 15px;
-					background: #222 url(/images/button.png) repeat-x;
-					border-bottom: 1px solid #222;
-					position: relative;
-					border-radius:6px;
-					-moz-border-radius: 6px;
-					-webkit-border-radius: 6px;
-					box-shadow: 0 1px 3px #999;;
-					-moz-box-shadow: 0 1px 3px #999;
-					-webkit-box-shadow: 0 1px 3px #999;
-					text-shadow: 0 -1px 1px #222;
+			/* Sign In button */
+			#login input.button {
+				cursor: pointer;
+				float:left;
+				border:0;
+				font-size:18px;
+				margin:7px 0 0;
+				color: #fff;
+				padding: 7px 15px;
+				background: #222 url(/images/button.png) repeat-x;
+				border-bottom: 1px solid #222;
+				position: relative;
+				border-radius:6px;
+				-moz-border-radius: 6px;
+				-webkit-border-radius: 6px;
+				box-shadow: 0 1px 3px #999;;
+				-moz-box-shadow: 0 1px 3px #999;
+				-webkit-box-shadow: 0 1px 3px #999;
+				text-shadow: 0 -1px 1px #222;
+				}
+				#login input.button:hover,
+				#login input.button:focus {
+					background-color: #111; 
 					}
-					#login input.button:hover,
-					#login input.button:focus {
-						background-color: #111; 
-						}
-					#login input.button:active {
-						top: 1px; 
-						}
+				#login input.button:active {
+					top: 1px; 
+					}
 
-					
-	/* Notifications
-	---------------------------------------- */
-	.alert {
-		padding:10px 12px;
-		font-size:24px;
-		font-weight:normal;
-		text-align:center;
+
+/*----------------------------------------------------------
+                           @ALERTS
+-----------------------------------------------------------*/
+.alert {
+	padding:10px 12px;
+	font-size:24px;
+	font-weight:normal;
+	text-align:center;
+	color:#fff;
+	background:#df3b3b url(/images/alert.png) repeat-x top left;
+	border-bottom:1px solid #e4e5e6;
+	display:none;
+	}
+	.alert a:link,
+	.alert a:visited {
 		color:#fff;
-		background:#df3b3b url(/images/alert.png) repeat-x top left;
-		border-bottom:1px solid #fff;
-		display:none;
+		text-decoration:underline;
 		}
-		.alert a:link,
-		.alert a:visited {
-			color:#fff;
-			text-decoration:underline;
-			}
-		.error {background-color:#df3b3b;}
-		.info {background-color:#618fb9;}
-		.success {background-color:#83b452;}
+	.error {background-color:#df3b3b;}
+	.info {background-color:#618fb9;}
+	.success {background-color:#83b452;}
 
 	
 /*----------------------------------------------------------

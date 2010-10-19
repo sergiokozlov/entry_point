@@ -20,19 +20,19 @@
 			<header>
 				<img src="/images/logo.png" alt="EntryPoint" />
 			</header>
-			<form action="/user_sessions" id="new_user_session" method="post">
+			<% form_for @user_session do |form| %> 
 				<div>
-					<label for="user_session_login">Username</label>
-					<input id="user_session_login" name="user_session[login]" type="text" class="text" />
+					<%= form.label :login, "Username" %>
+					<%= form.text_field :login, :class => 'text' %>  
 				</div>
 				<div>
-					<label for="user_session_password">Password</label>
-					<input id="user_session_password" name="user_session[password]" type="password" class="text" />
+					<%= form.label :password, "Password" %>
+					<%= form.password_field :password, :class => 'text' %>  
 				</div>
 				<div>
-					<input id="user_session_submit" name="commit" type="submit" value="Sign In" class="button" />
+					<%= form.submit "Submit", :class => 'button' %>
 				</div>
-			</form>
+			<% end %>
 		</div> <!-- end #login -->
 	
 	</div> <!-- end #login-container -->
