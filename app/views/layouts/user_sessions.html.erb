@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/application.css" />
+	<link rel="stylesheet" href="/stylesheets/application.css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<script src="/javascripts/jquery.js"></script>
 	<script src="/javascripts/login.js"></script>
@@ -17,20 +17,18 @@
 	<div id="login-container">
 		
 		<div id="login">
-			<header>
-				<img src="/images/logo.png" alt="EntryPoint" />
-			</header>
+			<header><img src="/images/logo.png" alt="EntryPoint" /></header>
 			<% form_for @user_session do |form| %> 
 				<div>
 					<%= form.label :login, "Username" %>
-					<%= form.text_field :login, :class => 'text' %>  
+					<span class="username"><%= form.text_field :login %></span>
 				</div>
 				<div>
 					<%= form.label :password, "Password" %>
-					<%= form.password_field :password, :class => 'text' %>  
+					<span class="password"><%= form.password_field :password %></span>
 				</div>
 				<div>
-					<%= form.submit "Submit", :class => 'button' %>
+					<%= form.submit "Sign In", :class => 'button' %>
 				</div>
 			<% end %>
 		</div> <!-- end #login -->
