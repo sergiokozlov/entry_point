@@ -1,7 +1,9 @@
 <% title "Log in" %>  
+
+<div class="alert error">Username/password combination not found :-(</div>
   
 <% form_for @user_session, :html => {:class => 'input_form'} do |form| %>  
-<%= form.error_messages %>  
+ 
 <ul class="formList">  
  <p>  
     <%= form.label :login, "Username" %>  <br/>

@@ -27,7 +27,11 @@ module DashboardHelper
   end
 
   def week_to_go(number = Date.today.cweek,user = current_user)
-    week_distance - week_completed(number, user)  
+    if week_distance - week_completed(number, user)  > 0
+      week_distance - week_completed(number, user)
+    else  
+      0
+    end
   end
   
   
@@ -66,7 +70,11 @@ module DashboardHelper
   end
 
   def today_to_go(user = current_user)
-    today_distance - today_completed(user)
+    if  today_distance - today_completed(user) > 0
+      today_distance - today_completed(user)
+    else
+      0
+    end
   end 
   
   def today_percent(user= current_user)
