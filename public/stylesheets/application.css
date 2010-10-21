@@ -35,6 +35,28 @@ a:hover {text-decoration:none;}
 }
 
 /*----------------------------------------------------------
+                           @ALERTS
+-----------------------------------------------------------*/
+.alert {
+	padding:10px 12px;
+	font-size:24px;
+	font-weight:normal;
+	text-align:center;
+	color:#fff;
+	background:#df3b3b url(/images/alert.png) repeat-x top left;
+	border-bottom:1px solid #e4e5e6;
+	display:none;
+	}
+	.alert a:link,
+	.alert a:visited {
+		color:#fff;
+		text-decoration:underline;
+		}
+	.error {background-color:#df3b3b;}
+	.info {background-color:#618fb9;}
+	.success {background-color:#83b452;}
+
+/*----------------------------------------------------------
                            @HEADER
 -----------------------------------------------------------*/
 #header {

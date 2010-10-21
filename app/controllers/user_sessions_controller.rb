@@ -15,13 +15,27 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])  
     if @user_session.save  
      flash[:notice] = "Successfully logged in."
-      if current_user.manager?  
-        redirect_to :controller => 'dashboard', :action => 'manage'
+     @manager_url = url_for(:controller => 'dashboard', :action => 'manage', :only_path => false)
+     @user_url = url_for(:controller => 'dashboard', :only_path => false)
+
+      if current_user.manager?
+          respond_to do |format|
+            format.html { redirect_to :controller => 'dashboard', :action => 'manage'}
+            format.js { render :js => "window.location.replace('#{@manager_url}')"}
+             #format.all {render :controller => 'dashboard', :action => 'manage'}
+          end
       else
-        redirect_to :controller => 'dashboard'
+         respond_to do |format|
+            format.html { redirect_to :controller => 'dashboard'}
+            format.js { render :js => "window.location.replace('#{@user_url}')"}
+          end
       end  
     else  
-     render :action => 'new'  
+       respond_to do |format|
+            format.html {  render :action => 'new'}
+            format.js { render :text => "Bad" }
+          end
+   
    end  
   end
  
