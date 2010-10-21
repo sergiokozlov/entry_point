@@ -33,17 +33,6 @@ jQuery.ajaxSetup({
 
 $(document).ready( function () {
 
-$('#new_user_session').submit(function (){  
-    $.post($(this).attr('action'), $(this).serialize(), function(msg){
-      if (msg == 'Bad') {
-      //alert( "Data Saved: " + msg );
-     $('.alert').show(); }
-   });  
-  return false;
-});
-
-
-
     $('b.hide').click ( function() {
       $(this).parent("div").fadeOut('slow', function() {
             $(this).remove();
