@@ -116,8 +116,8 @@ a:hover {text-decoration:none;}
 			#login div span {
 				display:block;
 				}
-				#login div span.username {background:#fff url(/images/input-username.png) 10px center no-repeat;}
-				#login div span.password {background:#fff url(/images/input-password.png) 10px center no-repeat;}
+				#login div span.username {background:#fff url(/images/input-username2.png) 10px center no-repeat;}
+				#login div span.password {background:#fff url(/images/input-password2.png) 10px center no-repeat;}
 				
 			/* Login & Password inputs */
 			#login span input { 
@@ -131,7 +131,7 @@ a:hover {text-decoration:none;}
 				line-height:1.7;
 				}
 				#login span input:focus {
-					/*background-color:#fff9ec;*/
+					/*background-color:#f9ffb7;*/
 					border:1px solid #6a6f7b;
 					color:#333;
 					outline:none;
