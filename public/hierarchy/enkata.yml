@@ -1,51 +1,134 @@
+# TODO: Remove directors and department duplication
+# PM & Docs
 -
- manager: azhuk@enkata.com
- developers:
-  - myavon@enkata.com
-  - ibabko@enkata.com
-  - ysanjiev@enkata.com
-  - jvasilkova@enkata.com
-  - apanin@enkata.com
+ directors:
+  - dstamm@enkata.com
+  - rhildebrandt@enkata.com
+  - alavrov@enkata.com
+ department: PM and Docs
+ structure:
+  -
+   group: PM
+   manager: azhuk@enkata.com
+   developers:
+    - regiazarian@enkata.com
+    - ibabko@enkata.com
+    - ysanjiev@enkata.com
+    - jpivovarova@enkata.com
+  -    
+   group: Docs 
+   manager: evolodko@enkata.com
+   developers:
+    - jvasilkova@enkata.com
+# PSO
 -
- manager: pegorov@enkata.com
- developers:
-
-  - araskin@enkata.com
-  - dkuchugurov@enkata.com
-  - dlupin@enkata.com
-  - ayasinskiy@enkata.com
-  - ngracheva@enkata.com
-  - afyodorov@enkata.com
-  - ylitvinov@enkata.com
-  - ppolushkin@enkata.com
-  - jpivovarova@enkata.com
+ directors:
+  - dstamm@enkata.com
+  - rhildebrandt@enkata.com
+  - alavrov@enkata.com
+  - dhui@enkata.com
+ department: PSO
+ structure:
+  -
+   group: Technical 
+   manager: vzinoviev@enkata.com
+   developers:
+    - pbalakshin@enkata.com
+    - anaumov@enkata.com
+    - aognev@enkata.com
+    - apytkin@enkata.com
+    - kserditov@enkata.com
+  -    
+   group: BA    
+   manager: gpetrov@enkata.com
+   developers:
+    - adudakov@enkata.com
+    - mishkhanova@enkata.com
+# Operations
 -
- manager: vstrigun@enkata.com
- developers:
-  - kbarzakovsky@enkata.com
-  - oukolova@enkata.com
-  - sovcharova@enkata.com
-  - rsitdikova@enkata.com
-  - azavarzin@enkata.com
-  - arazgulyaev@enkata.com
+ directors:
+  - dstamm@enkata.com
+  - adelarue@enkata.com
+  - alavrov@enkata.com
+  - areznik@enkata.com
+ department: Operations
+ structure:
+  -  
+   group: Operations
+   manager: abespalov@enkata.com
+   developers:
+    - schurbanov@enkata.com
+    - azolotuhin@enkata.com
+    - lyulenets@enkata.com
+    - smescheryakov@enkata.com
+# IT
 -
- manager: vzinoviev@enkata.com
- developers:
-  - pbalakshin@enkata.com
-  - anaumov@enkata.com
-  - aognev@enkata.com
-  - apytkin@enkata.com
-  - kserditov@enkata.com
+ directors:
+  - dstamm@enkata.com
+  - adelarue@enkata.com
+  - alavrov@enkata.com
+  - areznik@enkata.com
+ department: IT
+ structure:
+  -
+   group: IT       
+   manager: vlitovchenko@enkata.com
+   developers:
+    - itarakanov@enkata.com
+# G&A  
 -
- manager: abespalov@enkata.com
- developers:
-  - schurbanov@enkata.com
-  - azolotuhin@enkata.com
-  - lyulenets@enkata.com
-  - smescheryakov@enkata.com
+ directors:
+  - dstamm@enkata.com
+  - alavrov@enkata.com
+ department: GA
+ structure:
+  -
+   group: GA            
+   manager: alavrov@enkata.com
+   developers:
+    - mshatrova@enkata.com
+    - lmiroshnichenko@enkata.com  
+# Engineering
 -
- manager: alavrov@enkata.com
- developers:
-  - mshatrova@enkata.com
-  - vlitovchenko@enkata.com
-  - lmiroshnichenko@enkata.com
+ directors:
+  - dstamm@enkata.com
+  - alavrov@enkata.com
+  - oprikhodko@enkata.com
+ department: Engineering
+ structure:
+  -
+   group: CCPM         
+   manager: pegorov@enkata.com
+   developers:
+    - araskin@enkata.com
+    - dkuchugurov@enkata.com
+    - ngracheva@enkata.com
+    - ylitvinov@enkata.com
+    - kbarzakovsky@enkata.com
+    - oukolova@enkata.com
+    - arazgulyaev@enkata.com   
+    - rsitdikova@enkata.com
+  -    
+   group: AT
+   manager: agodin@enkata.com
+   developers:
+    - aivanov@enkata.com
+    - akravchenko@enkata.com
+    - slukayanov@enkata.com
+    - ainzhebeikin@enkata.com
+    - rmostyka@enkata.com
+    - ppolushkin@enkata.com
+    - ayasinsky@enkata.com   
+    - istolyarov@enkata.com
+    - aupadyshev@enkata.com
+    - enovikov@enkata.com
+    - vkoblyakov@enkata.com   
+    - afyodorov@enkata.com
+  -    
+   group: Apps   
+   manager: skozlov@enkata.com
+   developers:
+    - aizumov@enkata.com  
+# question about
+#  - dlupin@enkata.com
+#  - azavarzin@enkata.com
