@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :records, :foreign_key => "login", :primary_key => "login"
   has_many :homeworks, :foreign_key => "login", :primary_key => "login"
   has_many :working_days, :foreign_key => "login", :primary_key => "login"
+  belongs_to :group
   acts_as_authentic
 
   # selection of working days
@@ -53,11 +54,12 @@ class User < ActiveRecord::Base
 end
 
 class Developer < User
-  belongs_to :manager, :foreign_key => :reports_to, :primary_key => :login
+  #has_one :manager, through => :group
 end
 
 class Manager < User
-  has_many :developers, :foreign_key => :reports_to, :primary_key => :login
+  has_one :group, foreign_key => 'manager_id'
+  #has_many :developers, :through => :group, foreign_key => 'manager_id'
   
   def weeks_to_analyze
     result = Array.new
