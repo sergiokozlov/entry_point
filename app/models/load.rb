@@ -20,6 +20,49 @@ class Load
      return  arr = YAML::load(file)
     end
   end
+
+  def self.load_hr!
+    hrr = Load::users_hierarchy
+
+    hrr.each do |department|
+      department['structure'].each do |group|
+        # check for the manager and link group to a manager
+        unless m = User.find(:first, :conditions => {:login => group['manager'], :type => 'Manager'})
+          puts "Adding #{group['manager']}" 
+
+          m = Manager.new
+          m.email = m.login = group['manager']
+          m.password_confirmation = m.password = 'Password10'
+          m.create_group (:name => group['group'], :department => department['department'])
+
+          begin
+            m.save!
+          rescue ActiveRecord::RecordInvalid
+            puts "#{m.login} doesn't pass validation"
+          end
+        end
+
+        # check developers and update position in hierarchy  
+        group['developers'].each do |dev|
+          unless user = User.find(:first, :conditions => {:login => dev})
+            puts "Adding #{dev}" 
+
+            user = Developer.new
+            user.email = user.login = dev
+            user.password_confirmation = user.password = 'Password10'
+            user.group = m.group
+
+            begin
+              user.save!
+            rescue ActiveRecord::RecordInvalid
+              puts "#{dev.login} doesn't pass validation"
+            end
+          end
+        end
+    end
+   end 
+
+  end
   
   def run!
       processed_days = Array.new
@@ -34,10 +77,7 @@ class Load
 
           user = User.new(u)
           user.email = user.login
-          user.set_type_and_manager(hrr)
           user.password_confirmation = user.password = 'Password10'
-        else
-          user.set_type_and_manager(hrr) 
         end
         
         begin
@@ -45,7 +85,6 @@ class Load
         rescue ActiveRecord::RecordInvalid
           puts "#{u[:login]} doesn't pass validation"
         end
-        
        end
 
        records.each do |rec| 

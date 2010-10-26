@@ -58,7 +58,7 @@ class Developer < User
 end
 
 class Manager < User
-  has_one :group, foreign_key => 'manager_id'
+  has_one :group, :foreign_key => 'manager_id'
   #has_many :developers, :through => :group, foreign_key => 'manager_id'
   
   def weeks_to_analyze
