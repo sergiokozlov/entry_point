@@ -2,133 +2,133 @@
 # PM & Docs
 -
  directors:
-  - dstamm@enkata.com
-  - rhildebrandt@enkata.com
-  - alavrov@enkata.com
+  - Dave Stamm
+  - Ron Hhildebrandt
+  - Alexey Lavrov
  department: PM and Docs
  structure:
   -
    group: PM
-   manager: azhuk@enkata.com
+   manager: Alexey Zhuk
    developers:
-    - regiazarian@enkata.com
-    - ibabko@enkata.com
-    - ysanjiev@enkata.com
-    - jpivovarova@enkata.com
+    - Raphael Egiazarian
+    - Ivan Babko
+    - Yuri Sanjiev
+    - Julia Pivovarova
   -    
    group: Docs 
-   manager: evolodko@enkata.com
+   manager: Ekaterina Volodko
    developers:
-    - jvasilkova@enkata.com
+    - Julia Vasilkova
 # PSO
 -
  directors:
-  - dstamm@enkata.com
-  - rhildebrandt@enkata.com
-  - alavrov@enkata.com
-  - dhui@enkata.com
+  - Dave Stamm
+  - Ron Hhildebrandt
+  - Alexey Lavrov
+  - David Hui
  department: PSO
  structure:
   -
    group: Technical 
-   manager: vzinoviev@enkata.com
+   manager: Vitaly Zinoviev
    developers:
-    - pbalakshin@enkata.com
-    - anaumov@enkata.com
-    - aognev@enkata.com
-    - apytkin@enkata.com
-    - kserditov@enkata.com
+    - Pavel Balakshin
+    - Alexey Naumov
+    - Alex Ognev
+    - Andery Pytkin
+    - Kostya Serditov
   -    
    group: BA    
-   manager: gpetrov@enkata.com
+   manager: Grigory Petrov
    developers:
-    - adudakov@enkata.com
-    - mishkhanova@enkata.com
+    - Andrey Dudakov
+    - Marina Ishkhanova
 # Operations
 -
  directors:
-  - dstamm@enkata.com
-  - adelarue@enkata.com
-  - alavrov@enkata.com
-  - areznik@enkata.com
+  - Dave Stamm
+  - Alexandre Delarue
+  - Alexey Lavrov
+  - Arkadiy Reznik
  department: Operations
  structure:
   -  
    group: Operations
-   manager: abespalov@enkata.com
+   manager: Andrey Bespalov
    developers:
-    - schurbanov@enkata.com
-    - azolotuhin@enkata.com
-    - lyulenets@enkata.com
-    - smescheryakov@enkata.com
+    - Sergey Churbanov
+    - Andrey Zolotuhin
+    - Leonid Yulenets
+    - Sergey Mescheryakov
 # IT
 -
  directors:
-  - dstamm@enkata.com
-  - adelarue@enkata.com
-  - alavrov@enkata.com
-  - areznik@enkata.com
+  - Dave Stamm
+  - Alexandre Delarue
+  - Alexey Lavrov
+  - Arkadiy Reznik
  department: IT
  structure:
   -
    group: IT       
-   manager: vlitovchenko@enkata.com
+   manager: Vitaly Litovchenko
    developers:
-    - itarakanov@enkata.com
+    - Igor Tarakanov
 # G&A  
 -
  directors:
-  - dstamm@enkata.com
-  - alavrov@enkata.com
+  - Dave Stamm
+  - Alexey Lavrov
  department: GA
  structure:
   -
    group: GA            
-   manager: alavrov@enkata.com
+   manager: Alexey Lavrov
    developers:
-    - mshatrova@enkata.com
-    - lmiroshnichenko@enkata.com  
+    - Marina Shatrova
+    - Ludmila Miroshnichenko  
 # Engineering
 -
  directors:
-  - dstamm@enkata.com
-  - alavrov@enkata.com
-  - oprikhodko@enkata.com
+  - Dave Stamm
+  - Alexey Lavrov
+  - Oleg Prikhodko
  department: Engineering
  structure:
   -
    group: CCPM         
-   manager: pegorov@enkata.com
+   manager: Peter Egorov
    developers:
-    - araskin@enkata.com
-    - dkuchugurov@enkata.com
-    - ngracheva@enkata.com
-    - ylitvinov@enkata.com
-    - kbarzakovsky@enkata.com
-    - oukolova@enkata.com
-    - arazgulyaev@enkata.com   
-    - rsitdikova@enkata.com
+    - Alexey Raskin
+    - Denis Kuchugurov
+    - Nina Gracheva
+    - Yuri Litvinov
+    - Kostya Barzakovsky
+    - Olga Ukolova
+    - Alexey Razgulyaev   
+    - Raida Sitdikova
   -    
    group: AT
-   manager: agodin@enkata.com
+   manager: Alex Godin
    developers:
-    - aivanov@enkata.com
-    - akravchenko@enkata.com
-    - slukayanov@enkata.com
-    - ainzhebeikin@enkata.com
-    - rmostyka@enkata.com
-    - ppolushkin@enkata.com
-    - ayasinsky@enkata.com   
-    - istolyarov@enkata.com
-    - aupadyshev@enkata.com
-    - enovikov@enkata.com
-    - vkoblyakov@enkata.com   
-    - afyodorov@enkata.com
+    - Anton Ivanov
+    - Alex Kravchenko
+    - Sergey Lukayanov
+    - Alexey Inzhebeikin
+    - Roman Mostyka
+    - Pavel Polushkin
+    - Andrey Yasinsky   
+    - Igor Stolyarov
+    - Andrey Upadyshev
+    - Eugene Novikov
+    - Vladimir Koblyakov   
+    - Alex Fyodorov
   -    
    group: Apps   
-   manager: skozlov@enkata.com
+   manager: Sergey Kozlov
    developers:
-    - aizumov@enkata.com  
+    - Alex Izumov  
 # question about
-#  - dlupin@enkata.com
-#  - azavarzin@enkata.com
+#  - Demid Lupin
+#  - Alexey Zavarzin

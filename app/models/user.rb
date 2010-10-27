@@ -1,9 +1,28 @@
 class User < ActiveRecord::Base
+  
+  before_validation :set_login_from_name, :set_email_from_name, :set_default_password, :on => :save
+
   has_many :records, :foreign_key => "login", :primary_key => "login"
   has_many :homeworks, :foreign_key => "login", :primary_key => "login"
   has_many :working_days, :foreign_key => "login", :primary_key => "login"
   belongs_to :group
+
   acts_as_authentic
+
+ 
+
+  # setting login and email from User Name and default password during initial user creation
+  def set_login_from_name
+    self.login = (name.split(' ')[0][0,1] + name.split(' ')[1]).downcase unless login
+  end
+
+  def set_email_from_name
+    self.email = (name.split(' ')[0][0,1] + name.split(' ')[1]).downcase + '@enkata.com' unless email
+  end
+
+  def set_default_password
+    self.password = self.password_confirmation = 'Password10' unless password
+  end
 
   # selection of working days
   def logged_working_days
