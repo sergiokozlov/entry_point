@@ -30,8 +30,8 @@ class Load
         unless m = User.find(:first, :conditions => {:name => group['manager'], :type => 'Manager'})
           puts "Adding #{group['manager']}" 
 
-          m = Manager.new (:name => group['manager'])
-          m.create_group (:name => group['group'], :department => department['department'])
+          m = Manager.new(:name => group['manager'])
+          m.create_group(:name => group['group'], :department => department['department'])
 
           begin
             m.save!
@@ -67,7 +67,7 @@ class Load
 
        users.each do |u|
         unless user = User.find(:first, :conditions => {:login => u[:login]})
-          puts "Adding #{u[:name]}"
+          puts "Adding #{u[:name]} that wasn't found in hierarchy"
 
           user = User.new(u)
         end
@@ -75,7 +75,7 @@ class Load
         begin
           user.save!
         rescue ActiveRecord::RecordInvalid
-          puts "#{u[:name]} doesn't pass validation"
+          puts "#{u[:name]} raw data doesn't pass validation"
         end
        end
 

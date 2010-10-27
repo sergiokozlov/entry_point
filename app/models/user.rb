@@ -57,18 +57,6 @@ class User < ActiveRecord::Base
     false
     true if self.class == Manager
   end
-
-  # setting up user hierarchy
-  def set_type_and_manager(arr)
-      arr.each do |h|
-         
-          if h['manager'] == login
-            self.type, self.reports_to = 'Manager', nil
-          elsif h['developers'].include?(login)
-            self.type, self.reports_to = ['Developer',h['manager']]
-          end
-       end
-  end
   
 end
 
@@ -83,14 +71,14 @@ class Manager < User
   def weeks_to_analyze
     result = Array.new
 
-    self.developers.each do |dev| 
+    self.group.developers.each do |dev| 
       result += dev.logged_working_weeks
     end
     result.uniq.sort {|a,b| b<=> a}
   end
 
   def should_worry?
-    true unless developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
+    true unless group.developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
   end
 end
 
