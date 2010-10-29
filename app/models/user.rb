@@ -1,8 +1,28 @@
 class User < ActiveRecord::Base
+  
+  before_validation :set_login_from_name, :set_email_from_name, :set_default_password, :on => :save
+
   has_many :records, :foreign_key => "login", :primary_key => "login"
   has_many :homeworks, :foreign_key => "login", :primary_key => "login"
   has_many :working_days, :foreign_key => "login", :primary_key => "login"
+  belongs_to :group
+
   acts_as_authentic
+
+ 
+
+  # setting login and email from User Name and default password during initial user creation
+  def set_login_from_name
+    self.login = (name.split(' ')[0][0,1] + name.split(' ')[1]).downcase unless login
+  end
+
+  def set_email_from_name
+    self.email = (name.split(' ')[0][0,1] + name.split(' ')[1]).downcase + '@enkata.com' unless email
+  end
+
+  def set_default_password
+    self.password = self.password_confirmation = 'Password10' unless password
+  end
 
   # selection of working days
   def logged_working_days
@@ -37,39 +57,28 @@ class User < ActiveRecord::Base
     false
     true if self.class == Manager
   end
-
-  # setting up user hierarchy
-  def set_type_and_manager(arr)
-      arr.each do |h|
-         
-          if h['manager'] == login
-            self.type, self.reports_to = 'Manager', nil
-          elsif h['developers'].include?(login)
-            self.type, self.reports_to = ['Developer',h['manager']]
-          end
-       end
-  end
   
 end
 
 class Developer < User
-  belongs_to :manager, :foreign_key => :reports_to, :primary_key => :login
+  #has_one :manager, through => :group
 end
 
 class Manager < User
-  has_many :developers, :foreign_key => :reports_to, :primary_key => :login
+  has_one :group, :foreign_key => 'manager_id'
+  #has_many :developers, :through => :group, foreign_key => 'manager_id'
   
   def weeks_to_analyze
     result = Array.new
 
-    self.developers.each do |dev| 
+    self.group.developers.each do |dev| 
       result += dev.logged_working_weeks
     end
     result.uniq.sort {|a,b| b<=> a}
   end
 
   def should_worry?
-    true unless developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
+    true unless group.developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
   end
 end
 

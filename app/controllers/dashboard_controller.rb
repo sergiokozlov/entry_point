@@ -52,7 +52,7 @@ class DashboardController < ApplicationController
 
   def user_data_for_range
     require_manager
-    @dev = current_user.developers.find(:first, :conditions => {:id => params[:user].to_i})
+    @dev = current_user.group.developers.find(:first, :conditions => {:id => params[:user].to_i})
     @week_id  = params[:week].to_i
     @data = Array.new
 

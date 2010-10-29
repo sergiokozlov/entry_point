@@ -5,7 +5,7 @@
 
     <!-- TODO: Use Partials-->
     <% if @user.should_worry? then %>
-      <%  @user.developers.each do |dev| %>
+      <%  @user.group.developers.each do |dev| %>
         <%if line = green_message(dev)  then %>
           <%= line %> <BR/>
         <%end%>
