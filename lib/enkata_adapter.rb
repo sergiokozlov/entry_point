@@ -13,7 +13,7 @@ module ProcessFile
 	end
 	
 	def self.record_dt(date,time)
-		DateTime.parse(date.gsub('.','-') + 'T' + time)
+		DateTime.parse(date.gsub('.','-') + 'T' + time) unless date =~ /2000/
 	rescue ArgumentError
 		nil
 	end
