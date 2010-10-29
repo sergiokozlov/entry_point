@@ -17,6 +17,8 @@ while($running) do
    ffs =  Load.new_files_to_process
 
    unless ffs.blank?
+    Load.load_hr!
+
     ffs.each do |file| 
       next_load = Load.new(file) 
       next_load.run!

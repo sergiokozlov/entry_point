@@ -5,14 +5,15 @@ module ProcessFile
 # array of records: [dt,login]
 # array of users: [name,login]
 
+  #TODO: Dry Violation - but it's adapter so ...
 	def self.login_from_name(name)
-	  (name.split(' ')[1][0,1] + name.split(' ')[0]).downcase + '@enkata.com'
+	  (name.split(' ')[1][0,1] + name.split(' ')[0]).downcase
     rescue
       nil
 	end
 	
 	def self.record_dt(date,time)
-		DateTime.parse(date.gsub('.','-') + 'T' + time)
+		DateTime.parse(date.gsub('.','-') + 'T' + time) unless date =~ /2000/
 	rescue ArgumentError
 		nil
 	end

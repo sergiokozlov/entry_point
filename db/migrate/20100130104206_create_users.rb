@@ -14,8 +14,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :persistence_token
 
       # attributes for type = Developer
-      t.string  :reports_to
-      t.string  :department
+      t.integer  :group_id
 
       # others  
       t.timestamps  
