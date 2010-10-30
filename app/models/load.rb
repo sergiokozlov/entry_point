@@ -39,6 +39,8 @@ class Load
           rescue ActiveRecord::RecordInvalid
             puts "#{m.name} doesn't pass validation"
           end
+        else
+          g = m.group
         end
 
         #check for the director and link groups to them
@@ -47,7 +49,6 @@ class Load
             puts "Adding #{director}" 
 
             d = Director.new(:name => director)
-            d.groups << g
 
             begin
               d.save!
@@ -55,6 +56,7 @@ class Load
               puts "#{d.name} doesn't pass validation"
             end
           end
+          d.groups << g
         end
 
           # check developers and update position in hierarchy  
@@ -70,6 +72,8 @@ class Load
               rescue ActiveRecord::RecordInvalid
                 puts "#{dev.name} doesn't pass validation"
               end
+            else
+              user.group = g
             end
           end
         end
