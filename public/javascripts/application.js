@@ -42,9 +42,13 @@ $(document).ready( function () {
         // Select correct value for selector 
         var pm_id = $.url.param("id");
           $('#week_id option[value='+pm_id+']').attr('selected', 'selected');
-        // Hide buttons
-        $(".collapse_chart").hide();
 
+
+		// load last available week
+        $('#ajax_week').load("/dashboard/team_data_by_week/", function() {
+			$(".collapse_chart").hide();
+		});
+		
         // On selector change update week
 	      $("#week_id").change ( function () {
 	        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
