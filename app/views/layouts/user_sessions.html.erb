@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Enkata EntryPoint | Sign In</title>
+	<link rel="stylesheet" href="/stylesheets/application.css" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+</head>
+<body>
+
+	<div class="alert error">Username/password combination not found :-(</div>
+
+	<div id="login-container">
+		
+		<div id="login">
+			<header>
+				<img src="/images/logo.png" alt="EntryPoint" />
+			</header>
+			<% form_for @user_session do |form| %> 
+				<div>
+					<%= form.label :login, "Username" %>
+					<span class="username"><%= form.text_field :login %></span>
+				</div>
+				<div>
+					<%= form.label :password, "Password" %>
+					<span class="password"><%= form.password_field :password %></span>
+				</div>
+				<div>
+					<%= form.submit "Sign In", :class => 'button' %>
+				</div>
+			<% end %>
+		</div> <!-- end #login -->
+	
+	</div> <!-- end #login-container -->
+	
+	<script src="/javascripts/jquery.js"></script>
+	<script src="/javascripts/login.js"></script>
+	
+</body>
+</html>
