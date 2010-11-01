@@ -38,6 +38,14 @@ class ApplicationController < ActionController::Base
         redirect_to :controller => 'dashboard'
       end
   end
+  
+  def require_director
+      require_user
+      unless current_user.director?
+        flash[:notice] = "Only Directors can access this page"
+        redirect_to :controller => 'dashboard'
+      end
+  end
 
   def store_location
       session[:return_to] = request.request_uri

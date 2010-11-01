@@ -1,0 +1,9 @@
+<div class="clear"></div>
+  <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
+ <h2>My Team Stats </h2>
+<br/>
+
+<!-- TODO: DRY violation - different partials for xhr and html calls-->
+ <div id="ajax_week">
+
+ </div>

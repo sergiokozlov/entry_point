@@ -11,9 +11,17 @@ class DashboardController < ApplicationController
   def manage
     require_manager
     @user = current_user
-
-    @weeks  = @user.weeks_to_analyze
+  
+    @weeks  = @user.group.weeks_to_analyze
   end
+  
+  def overview
+    require_director
+    @user = current_user
+    
+    @weeks = @user.groups.first.weeks_to_analyze
+  end
+  
 
   #TODO: follow DRY for daily_bars and user_data_for_range
   def daily_bars
@@ -45,7 +53,7 @@ class DashboardController < ApplicationController
   def team_data_by_week
     require_manager
     @user = current_user
-    @week_id  = (params[:id] || (@user.weeks_to_analyze)[0][0]).to_i
+    @week_id  = (params[:id] || (@user.group.weeks_to_analyze)[0][0]).to_i
 
     render :layout => false 
   end
