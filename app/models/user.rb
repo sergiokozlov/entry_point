@@ -75,10 +75,18 @@ class Manager < User
   def should_worry?
     true unless group.developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
   end
+
+  def worse_group
+    group
+  end
 end
 
 class Director < User
   has_and_belongs_to_many :groups
+
+  def worse_group
+    groups.first
+  end
 
 end
 
