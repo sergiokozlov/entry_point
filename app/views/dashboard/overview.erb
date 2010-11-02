@@ -1,6 +1,15 @@
+
+<div id="group_line">
+  <ul id="group_list">
+  <% @user.groups.each do |group| -%>
+    <li> <a class="group_link" id=<%=group.id%>><%= group.name%></a></li>
+  <% end-%>
+  </ul>
+</div>
+<br/>
 <div class="clear"></div>
   <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
- <h2>My Team Stats </h2>
+  <h2><%= %> </h2>
 <br/>
 
 <!-- TODO: DRY violation - different partials for xhr and html calls-->

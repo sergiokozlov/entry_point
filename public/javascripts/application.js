@@ -84,6 +84,11 @@ $(document).ready( function () {
 	              dailychart('#'+div_id,data[0].data);
 	            }); 
 	      });
+          // Manage clicking on group update
+          $(".group_link").click( function() {
+           // alert($(this).attr("id"));
+            $(this).parents("li").addClass('chosen_group');
+          });
       }); 
 
 
