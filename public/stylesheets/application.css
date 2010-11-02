@@ -420,6 +420,20 @@ table {
   float: left;
 }
 
+#group_line {
+
+	clear:left;
+	background-color:#172322;
+	height:32px;
+    line-height:32px;
+    
+	margin-left: auto;   margin-right: auto;
+	border-radius: 5px;
+	text-align: center;
+	}
+	
+#group_line	a { color:#fff; text-decoration:none; padding: 0px 15px; } 
+
 /*----------------------------------------------------------
                            @Rails
 -----------------------------------------------------------*/
