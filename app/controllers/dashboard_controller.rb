@@ -54,7 +54,7 @@ class DashboardController < ApplicationController
     require_manager
     @user = current_user
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
-    @week_id  = (params[:id] || (@selected_group.weeks_to_analyze)[0][0]).to_i
+    @week_id  = (params[:week] || (@selected_group.weeks_to_analyze)[0][0]).to_i
  
 
     render :layout => false 

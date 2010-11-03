@@ -26,6 +26,11 @@
        });
      }
 
+  function chosenGroup () {
+   var group_id =  $('#group_list').children(".chosen_group").attr("id");
+   return group_id;
+  }
+
 jQuery.ajaxSetup({  
     'beforeSend': function (xhr) {xhr.setRequestHeader("Accept", "text/javascript")}  
 });
@@ -51,10 +56,11 @@ $(document).ready( function () {
 		
         // On selector change update week
 	      $("#week_id").change ( function () {
-	        var url = "/dashboard/team_data_by_week/?id="+$(this).find("option:selected").val();
-            $('#ajax_week').load(url, function() {
-				$(".collapse_chart").hide();
-			});
+
+	        var week_id = $(this).find("option:selected").val();
+            $('#ajax_week').load("/dashboard/team_data_by_week", {week: week_id, group: chosenGroup}, function() {
+                  $(".collapse_chart").hide();
+                });
 	      });
 	
 
@@ -80,13 +86,20 @@ $(document).ready( function () {
                  $(this).hide();
                  $(this).parents("td").children(".collapse_chart").show();
              
-                jQuery.getJSON("/dashboard/user_data_for_range", {week : week_id, user : user_id}, function(data) {
+                jQuery.getJSON("/dashboard/user_data_for_range", {week : week_id, user : user_id, group : chosenGroup}, function(data) {
 	              dailychart('#'+div_id,data[0].data);
 	            }); 
 	      });
+          
           // Manage clicking on group update
           $("a.group_link").click( function() {
-           // alert($(this).attr("id"));
+            var group_id = $(this).parents("li").attr("id");
+            var week_id = $("#week_id").find("option:selected").val();
+
+            $('#ajax_week').load("/dashboard/team_data_by_week", {group: group_id, week: week_id}, function() {
+                  $(".collapse_chart").hide();
+                });
+
             $(this).parents("li").siblings().removeClass('chosen_group');
             $(this).parents("li").addClass('chosen_group');
 

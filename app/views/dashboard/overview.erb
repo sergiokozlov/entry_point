@@ -2,7 +2,7 @@
 <div id="group_line">
   <ul id="group_list">
   <% @user.groups.each do |group| -%>
-    <li> <a class="group_link" id=<%=group.id%>><%= group.name%></a></li>
+    <li  id=<%=group.id%>> <a class="group_link"><%= group.name%></a></li>
   <% end-%>
   </ul>
 </div>
