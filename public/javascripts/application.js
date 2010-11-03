@@ -85,9 +85,11 @@ $(document).ready( function () {
 	            }); 
 	      });
           // Manage clicking on group update
-          $(".group_link").click( function() {
+          $("a.group_link").click( function() {
            // alert($(this).attr("id"));
+            $(this).parents("li").siblings().removeClass('chosen_group');
             $(this).parents("li").addClass('chosen_group');
+
           });
       }); 
 
