@@ -43,6 +43,15 @@ function loadWeek(params) {
 		$(".collapse_chart").hide();
 	});
 }
+// This function shows dailychart for a specified user id
+function expandDailyChart(user_id) {
+	var x = $("#"+user_id);
+	alert(x.attr('id'));
+	var div_id =  'daily-bars-' + user_id
+	$.getJSON("/dashboard/user_data_for_range", {week : chosenWeek, user : user_id, group : chosenGroup}, function(data) {
+		dailychart('#'+div_id,data[0].data);
+	});
+} 
 
 jQuery.ajaxSetup({  
 	'beforeSend': function (xhr) {xhr.setRequestHeader("Accept", "text/javascript")}  
@@ -82,8 +91,7 @@ $(document).ready( function () {
 	$(".link_to_chart").live("click",function() {
 
 		var user_id = $(this).attr("id");
-		var div_id =  'daily-bars-' + user_id
-
+		var div_id =  'daily-bars-' + user_id;
 		var row_number = $(this).parents("tr").get(0).rowIndex + 1;
 		var x = $("#team_table").get(0).insertRow(row_number);
 
@@ -92,9 +100,7 @@ $(document).ready( function () {
 		$(this).hide();
 		$(this).parents("td").children(".collapse_chart").show();
 
-		jQuery.getJSON("/dashboard/user_data_for_range", {week : chosenWeek, user : user_id, group : chosenGroup}, function(data) {
-			dailychart('#'+div_id,data[0].data);
-		}); 
+		expandDailyChart(user_id); 
 	});
 
 	// Manage clicking on group update
