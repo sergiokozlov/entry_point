@@ -23,15 +23,13 @@
 </div>
 
 
-
  <div class="clear"></div>
    <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
   <h2>My Team Stats </h2>
  <br/>
 
- <!-- TODO: DRY violation - different partials for xhr and html calls-->
   <div id="ajax_week">
-    <%= render(:partial => "manager_week", :object => [(params[:id] || @weeks[0][0]).to_i ,2010]) %>
+	<p> My Team Data for the week </p>
   </div>
 
 

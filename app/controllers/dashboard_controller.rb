@@ -12,8 +12,16 @@ class DashboardController < ApplicationController
     require_manager
     @user = current_user
 
-    @weeks  = @user.weeks_to_analyze
+    @weeks  = @user.group.weeks_to_analyze
   end
+  
+  def overview
+    require_director
+    @user = current_user
+ 
+    @weeks = @user.groups.first.weeks_to_analyze
+  end
+  
 
   #TODO: follow DRY for daily_bars and user_data_for_range
   def daily_bars
@@ -45,14 +53,17 @@ class DashboardController < ApplicationController
   def team_data_by_week
     require_manager
     @user = current_user
-    @week_id  = (params[:id] || (@user.weeks_to_analyze)[0][0]).to_i
+    @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
+    @week_id  = (params[:week] || (@selected_group.weeks_to_analyze)[0][0]).to_i
+ 
 
     render :layout => false 
   end
 
   def user_data_for_range
     require_manager
-    @dev = current_user.group.developers.find(:first, :conditions => {:id => params[:user].to_i})
+    @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)
+    @dev = @selected_group.developers.find(:first, :conditions => {:id => params[:user].to_i})
     @week_id  = params[:week].to_i
     @data = Array.new
 

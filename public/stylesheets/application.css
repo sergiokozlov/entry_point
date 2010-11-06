@@ -529,6 +529,26 @@ table {
 }
 
 
+/* group selector styling */
+.chosen_group {background-color:grey; border-radius: 5px;}
+
+#group_line {
+
+	clear:left;
+	background-color:#172322;
+	height:32px;
+    line-height:32px;
+    text-align: center;
+	margin-left: auto;   margin-right: auto;
+	border-radius: 5px;
+}
+	
+#group_list > li a { color:#fff;} 
+#group_list ul { padding:0px; margin:0px; }
+#group_list > li {cursor:pointer; padding:3px 10px; display:inline;} 
+#group_list > li a:hover {color:#6C6;}
+
+
 /*----------------------------------------------------------
                            @Rails
 -----------------------------------------------------------*/

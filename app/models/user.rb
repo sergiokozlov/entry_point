@@ -58,7 +58,11 @@ class User < ActiveRecord::Base
     true if self.class == Manager
   end
   
-end
+  def director?
+    false
+    true if self.class == Director    
+  end
+end  
 
 class Developer < User
   #has_one :manager, through => :group
@@ -67,19 +71,23 @@ end
 class Manager < User
   has_one :group, :foreign_key => 'manager_id'
   #has_many :developers, :through => :group, foreign_key => 'manager_id'
-  
-  def weeks_to_analyze
-    result = Array.new
-
-    self.group.developers.each do |dev| 
-      result += dev.logged_working_weeks
-    end
-    result.uniq.sort {|a,b| b<=> a}
-  end
 
   def should_worry?
     true unless group.developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
   end
+
+  def worse_group
+    group
+  end
+end
+
+class Director < User
+  has_and_belongs_to_many :groups
+
+  def worse_group
+    groups.first
+  end
+
 end
 
 class Admin < User

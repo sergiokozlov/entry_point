@@ -33,8 +33,16 @@ class ApplicationController < ActionController::Base
 
   def require_manager
       require_user
-      unless current_user.manager?
+      unless current_user.manager? or current_user.director?
         flash[:notice] = "Only Managers can access this page"
+        redirect_to :controller => 'dashboard'
+      end
+  end
+  
+  def require_director
+      require_user
+      unless current_user.director?
+        flash[:notice] = "Only Directors can access this page"
         redirect_to :controller => 'dashboard'
       end
   end

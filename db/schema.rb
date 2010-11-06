@@ -11,6 +11,13 @@
 
 ActiveRecord::Schema.define(:version => 20101015153012) do
 
+  create_table "directors_groups", :id => false, :force => true do |t|
+    t.integer  "group_id"
+    t.string   "director_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "groups", :force => true do |t|
     t.string   "department"
     t.string   "name"

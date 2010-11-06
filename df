@@ -1,0 +1,60 @@
+[33mcommit 3338b564ac45b9228320d4634ffc50cfa1c20f64[m
+Author: Sergey Kozlov <diana@pppoe.178-66-10-35.dynamic.avangarddsl.ru>
+Date:   Mon Nov 1 10:11:32 2010 +0300
+
+    building similiar workflow for manage and overview - part 1
+
+[33mcommit 9e5c457b972323f9c0774aa47ce55a29b0f55ff9[m
+Author: Sergey Kozlov <diana@pppoe.178-66-66-73.dynamic.avangarddsl.ru>
+Date:   Sun Oct 31 00:51:39 2010 +0400
+
+    ajaxify manager_week
+
+[33mcommit 1ed2607633da518a47aa6684c6f84b1ca7e24604[m
+Merge: f8e67b6 4a0f72c
+Author: Sergey Kozlov <diana@pppoe.178-66-30-72.dynamic.avangarddsl.ru>
+Date:   Sat Oct 30 17:19:39 2010 +0400
+
+    Merge branch 'ui10' of git@github.com:sergiokozlov/entry_point into 3l_hierarchy
+
+[33mcommit f8e67b69f5c04919b23d9c7ad7a1133a61a03c81[m
+Author: Sergey Kozlov <diana@pppoe.178-66-30-72.dynamic.avangarddsl.ru>
+Date:   Sat Oct 30 17:14:04 2010 +0400
+
+    Support Hierarchy Update
+
+[33mcommit 8ba69340ca88c5969334a758672663c806e9e134[m
+Author: Sergey Kozlov <diana@pppoe.178-66-30-72.dynamic.avangarddsl.ru>
+Date:   Sat Oct 30 16:37:15 2010 +0400
+
+    initial Director handling
+
+[33mcommit 4a0f72c910cd0498863a1b0bb6b6195831dd2098[m
+Merge: ec0a298 32e8950
+Author: ivanbabko <ivan.babko@gmail.com>
+Date:   Fri Oct 29 14:52:49 2010 +0400
+
+    Merge branch 'ui10' of github.com:sergiokozlov/entry_point into ui10
+
+[33mcommit ec0a298248e9ab71f813784ff6697db21b52b7c1[m
+Author: ivanbabko <ivan.babko@gmail.com>
+Date:   Fri Oct 29 14:51:53 2010 +0400
+
+    Updated login error message behavior to be more user friendly
+
+[33mcommit 32e8950074411b51df2fd717dd006c22a95a52ce[m
+Merge: bdd1072 c04b148
+Author: sergiokozlov <sn.kozlov@yahoo.com>
+Date:   Fri Oct 29 09:12:36 2010 +0400
+
+    Merge branch 'master' into ui10
+
+[33mcommit c04b148c00b0ecc081b8c3e48bd433c8841e3975[m
+Author: sergiokozlov <sn.kozlov@yahoo.com>
+Date:   Fri Oct 29 09:10:58 2010 +0400
+
+    adding db with new groups schema
+
+[33mcommit 0a9788e965108afb2e5600e383f6e5ab8c6bfbea[m
+Author: sergiokozlov <sn.kozlov@yahoo.com>
+Date:   Fri Oct 29 09:08:13 2010 +0
