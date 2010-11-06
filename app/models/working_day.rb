@@ -57,6 +57,8 @@ class WorkingDay < ActiveRecord::Base
 
   def label
     wday.strftime("%m/%d")
+    #@template.day_value(wday)
+    #TODO
   end
 
   def bar_label

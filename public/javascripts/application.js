@@ -116,6 +116,30 @@ $(document).ready( function () {
 
 	// Hover for table rows  
 		$("tr").mouseover(function() {$(this).addClass("hover");}).mouseout(function() {$(this).removeClass("hover");});
+ 	// Weeks Forward Backward Scrolling
+    $.getJSON('/dashboard/my_data_for_range', function(data) {
+     	dailychart("#daily-bars",data[0].data);
+     });
+
+    $("#scrollF").click(function() {
+      $.getJSON('/dashboard/my_data_for_range/forward', function(data) {
+          dailychart("#daily-bars",data[0].data);
+          });    
+			return false;
+    });
+    $("#scrollB").click(function() {
+     $.getJSON('/dashboard/daily_bars/back', function(data) {
+          dailychart("#daily-bars",data[0].data);
+          });
+		return false;
+     });
+	// Week update by clicking on table row
+	$("tr").click (function() {
+		week_id = $(this).attr("id");
+		$.getJSON('/dashboard/my_data_for_range', {week : week_id}, function(data) { 
+	     	dailychart("#daily-bars",data[0].data);
+	     });
+	})
 }); 
 
 

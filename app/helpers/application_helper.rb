@@ -1,6 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   ABBR_DAYNAMES = %w(Sun Mon Tue Wed Thu Fri Sat)
+  ABBR_MONTHNAMES = %w(Jan Feb Mar Apr May Jun July Aug Sep Oct Nov Dec)
   # Hours and minutes arithmetics
   def h60  (i)
     i / 60
@@ -36,8 +37,12 @@ module ApplicationHelper
   def week_first_day(week)
     week_last_day(week) - 6
   end
-
+  
+   def day_value(d)
+     d.day.to_s + ' '+ ABBR_MONTHNAMES[d.month-1]
+   end
+   
   def week_value(week)
-    "#{week_first_day(week).to_s} - #{week_last_day(week)}"
+    "#{day_value(week_first_day(week))} - #{day_value(week_last_day(week))}"
   end
 end

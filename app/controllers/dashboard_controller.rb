@@ -3,9 +3,9 @@ class DashboardController < ApplicationController
 
 
   def index
-    session[:point] ||= 0
     require_user
     @user = current_user
+    session[:week] = @week_id = @user.logged_working_weeks.first[0].to_i
   end
 
   def manage
@@ -23,23 +23,14 @@ class DashboardController < ApplicationController
   end
   
 
-  #TODO: follow DRY for daily_bars and user_data_for_range
-  def daily_bars
+  #TODO: follow DRY for my_data_for_range and user_data_for_range
+  def my_data_for_range
     require_user
     @user = current_user
     @data = Array.new
-
-    if params[:id] == 'forward'
-      shift = 1
-    elsif params[:id] == 'back'
-      shift = -1
-    else
-      shift = 0 
-    end
-
-    session[:point] +=shift
-
-    days_array(10,session[:point]).each do |day|
+    @week_id = (params[:week] || session[:week]).to_i
+    
+    days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
       @data << pj(day,@user)
     end
 
