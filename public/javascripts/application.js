@@ -80,6 +80,11 @@ $(document).ready( function () {
 	              dailychart('#'+div_id,data[0].data);
 	            }); 
 	      });
+		  
+		// Hover for table rows  
+		$("tr").mouseover(function() {$(this).addClass("hover");}).mouseout(function() {$(this).removeClass("hover");});
+		
+		  
       }); 
 
 
