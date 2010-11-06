@@ -111,8 +111,12 @@ $(document).ready( function () {
 
 		$(this).parents("li").siblings().removeClass('chosen_group');
 		$(this).parents("li").addClass('chosen_group');
+ 
+      }); 
 
-	});
+	// Hover for table rows  
+		$("tr").mouseover(function() {$(this).addClass("hover");}).mouseout(function() {$(this).removeClass("hover");});
 }); 
+
 
 

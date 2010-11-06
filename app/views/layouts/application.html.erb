@@ -5,14 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><%=(current_user.name + " | " if current_user) %> Enkata Entrypoint</title>
     <%= stylesheet_link_tag 'application' %>
-
     <%= javascript_include_tag 'jquery'  %>
     <%= javascript_include_tag 'jquery.url'  %>
     <%= javascript_include_tag 'enumerable'  %>
     <%= javascript_include_tag 'tufte-graph'  %>
     <%= javascript_include_tag 'raphael' %>
     <%= javascript_include_tag 'application' %>
-
     <%= yield(:head) %>
   </head>
 
@@ -47,12 +45,18 @@
         </div>
 
         <div id="main">
-          <div class="wrap">
+			<div class="wrap">
+				<%= yield %>
+			</div>
+        </div> <!-- end #main -->
+		
+		<div id="footer">
+			<p class="left">Created by <a href="mailto:sn.kozlov@yahoo.com">Sergey Kozlov</a> & <a href="http://www.ivanbabko.com">Ivan Babko</a></p>
+			<p class="right">Built with <a href="http://html5doctor.com">HTML5</a> | <a href="http://css3.info">CSS3</a> | <a href="http://jquery.com">jQuery</a> | <a href="http://rubyonrails.org">Ruby on Rails</a></p>
+		</div> <!-- end #footer -->
+		
+	</div>  <!-- end #container -->
 
-            <%= yield %>
-          </div>
-        </div>
-      </div>    
 
     </body>
   </html>

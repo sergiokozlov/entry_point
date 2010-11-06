@@ -24,6 +24,7 @@
 
 
 <div class="clear"></div>
+
 <div class="report weekly">
 	<h2>Your Weekly Stats </h2>
 	<table cellspacing="0">
@@ -36,7 +37,7 @@
         <tbody>
           <!--TODO: Performace optimization required -->
 			<% @user.logged_working_weeks.slice(0,5).each do |lww| %>
-			<tr class = "<%= cycle("alt","white") -%>">
+			<tr title="Click to update the chart below" class = "<%= cycle("alt","white") -%>">
                 <td><%= "#{week_first_day(lww[0]).to_s} - #{week_last_day(lww[0])}" %></td>
               	<td><%=to_time(week_average(lww[0]))%></td>
                 <td><%=@user.weeked_working_days(lww[0]).length%> </td>
@@ -47,12 +48,22 @@
 	</table>
   </div>
 
-<h2>Your Daily Stats </h2>
-
-<div id='daily-bars' class='graph' style='width: 680px; height: 150px; margin: 20px;'></div>
-
-<button id="scrollB" type="button">&lt;&lt;</button>
-<button id="scrollF" type="button">&gt;&gt;</button>
+ <div class="report daily">
+	<h2>Your Daily Stats</h2>
+	<div class="chart-head">
+		<a id="chart-back" href="#">&laquo;</a> 
+		25 Oct - 31 Oct 
+		<a id="chart-forward" href="#">&raquo;</a>
+	</div>
+	<div class="inner">
+		<img class="ajax-loader" src="/images/ajax-loader.gif" alt="" />
+		<div id="daily-bars" class="graph"></div>
+	</div>
+	<!-- 
+	<button id="scrollB" type="button">&lt;&lt;</button>
+	<button id="scrollF" type="button">&gt;&gt;</button>
+	-->
+ </div> <!-- end .report -->
 
 <div class="clear"></div>
 

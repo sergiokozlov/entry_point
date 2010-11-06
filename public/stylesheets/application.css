@@ -15,6 +15,7 @@ table {border-collapse:collapse; border-spacing:0;}
 fieldset,img {border:0;}
 ul {list-style:none;}
 a:focus {outline:none;}
+html {overflow-y:scroll;}
 
 
 /*----------------------------------------------------------
@@ -58,7 +59,7 @@ a:hover {text-decoration:none;}
 		
 	/* Login header
 	---------------------------------------- */
-	header {
+	#login header {
 		width:100%;
 		height:52px;
 		background: #484c55 url(/images/login-header.png) repeat-x top;
@@ -184,54 +185,42 @@ a:hover {text-decoration:none;}
 		color:#fff;
 		text-decoration:underline;
 		}
-	.error {background-color:#df3b3b;}
-	.info {background-color:#618fb9;}
-	.success {background-color:#83b452;}
-
+	div.error {background-color:#df3b3b;}
+	div.info {background-color:#618fb9;}
+	div.success {background-color:#83b452;}
 	
-/*----------------------------------------------------------
-                           @ALERTS
------------------------------------------------------------*/
-.alert {
-	padding:10px 12px;
-	font-size:24px;
-	font-weight:normal;
-	text-align:center;
-	color:#fff;
-	background:#df3b3b url(/images/alert.png) repeat-x top left;
-	border-bottom:1px solid #e4e5e6;
-	display:none;
-	}
-	.alert a:link,
-	.alert a:visited {
-		color:#fff;
-		text-decoration:underline;
-		}
-	.error {background-color:#df3b3b;}
-	.info {background-color:#618fb9;}
-	.success {background-color:#83b452;}
 
 /*----------------------------------------------------------
                            @HEADER
 -----------------------------------------------------------*/
 #header {
-	width:100%;
-	color:#fff;
-	background:#828282;
+	width:798px;
+	color:#333;
+	background:#fff url(/images/header.png) repeat-x bottom;
 	/*overflow:hidden;*/
-	height:52px;
-    line-height:52px;
+	height:76px;
+    line-height:76px;
 	position:relative;
+	border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	-webkit-border-top-right-radius:6px;
+	border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	-webkit-border-top-left-radius:6px;
+	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
+	border:1px solid #999b9e;
+	border-bottom:1px solid #babdc1;
 	}
-	#header h1,
-/*	#header ul {
-		padding:0 20px 0;
-		} */
 	#header h1 {
 		float:left;
-		font-size:32px;
+		font-size:28px;
 		letter-spacing:-1.3px;
-        padding:0 20px 0;
+        padding-left:60px;
+		margin-left:20px;
+		text-shadow:1px 1px white;
+		background:url(/images/header-h1.png) center left no-repeat;
 		}
 	#header ul {
 		float:right;
@@ -247,14 +236,64 @@ a:hover {text-decoration:none;}
 -----------------------------------------------------------*/
 #main {
 	background:#fff;
-	padding:20px; /*20px 0;*/
-	border:1px solid #999;
+	padding:20px;
+	border:1px solid #999b9e;
+	border-top:0;
+	border-bottom:0;
+	/*
+	border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	-webkit-border-bottom-right-radius:0;
+	border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	-webkit-border-bottom-left-radius:6px;
+	*/
+	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25); 
 	}
 	.wrap {
 		width:100%;
 		overflow:hidden;
 		}
 		
+		
+/*----------------------------------------------------------
+                          @FOOTER
+-----------------------------------------------------------*/
+#footer {
+	width:798px;
+	height:30px;
+	line-height:30px;
+	font-size:10px;
+	text-shadow:1px 1px #e9e9e9;
+	color:#666;
+	background:#fff url(/images/footer.png) repeat-x top;
+	border:1px solid #999b9e;
+	border-top:1px solid #babcc0;
+	border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	-webkit-border-bottom-right-radius:6px;
+	border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	-webkit-border-bottom-left-radius:6px;
+	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25); 
+	}
+	#footer p {
+		margin: 0 20px;
+		}
+		#footer p a {
+			color:#666;
+			text-decoration:none;
+			font-weight:bold;
+			}
+			#footer p a:hover {
+				color:#333;
+				}
+
+
 
 /*----------------------------------------------------------
                         @REPORT LAYOUT
@@ -268,8 +307,8 @@ a:hover {text-decoration:none;}
 		}
 		h2 {
 			font-size:24px;
-			font-weight:normal;
-			color:#000;
+			/*font-weight:normal;*/
+			color:#333;
 			letter-spacing:-1px;
 			line-height:1;
 			margin:0 0 3px;
@@ -284,17 +323,21 @@ a:hover {text-decoration:none;}
 	/* Today and This Week reports
 	---------------------------------------- */
 	.box {
-		background:#f4f4f4;
+		background:#f4f4f4 url(/images/login.png) repeat-x top;
 		border:1px solid #ccc;
 		padding:15px 0 15px 80px;
+		border-radius:6px;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		text-shadow:1px 1px white;
 		}
 		.inner {
 			width:100%;
 			overflow:hidden;
 			}
-		h3 {
+		.box h3 {
 			font-size:26px;
-			color:#000;
+			color:#333;
 			line-height:1;
 			}
 			h3 small {
@@ -310,34 +353,103 @@ a:hover {text-decoration:none;}
 			border:1px solid #999;
 			}
 			.progress div {
-				width:75%;
 				height:100%;
-				background:#000;
+				background:#427fc3 url(/images/progress.png) repeat-x;
 				}
+				.progress .red {background:#af2525 url(/images/progress-red.png) repeat-x;}
+				.progress .yellow {background:#f69d00 url(/images/progress-yellow.png) repeat-x;}
+				.progress .green {background:#4aa70c url(/images/progress-green.png) repeat-x;}
 	
 	.today,.this-week {width:366px;}
 	.today {float:left;}
 	.this-week {float:right;}
 	
-	/* Daily Stats report
+	/* Daily Stats report (Bar Chart)
 	---------------------------------------- */
+	.chart-head {
+		font-weight:bold;
+		color:#fff;
+		background:#444 url(/images/button.png) repeat-x;
+		padding:6px 0;
+		text-align:center;
+		font-size:14px;
+		}
+	.daily {
+		margin-bottom:0;
+		}
+	.daily .inner {
+		border:1px dotted #ddd;
+		overflow:visible;
+		padding:25px 0;
+		background:#f5f5f5;
+		position:relative;
+		}
+	#daily-bars {
+		width:700px;
+		margin:0 auto;
+		text-align:center;
+		border-bottom:1px solid #999;
+		height:170px; 
+		}
+	img.ajax-loader {
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin:-9px 0 0 -110px;
+		display:none;
+		}
 
-
+	
+	/* Weekly Stats report (Weekly Table)
+	---------------------------------------- */
+		
+	
 /*----------------------------------------------------------
                        @TABLE STYLING
 -----------------------------------------------------------*/
 table {
-	width:100%;
+	width:99.9%;
+	margin-left:1px;
+	/*border-bottom:1px solid #999;*/
+	margin-top:5px;
 	}
 	th,td {
-		padding:5px;
+		padding:8px 5px;
 		text-align:center;
 		}
-	tr.alt td,
-	tr.alt th {
-		background:#f4f4f4;
-		border-top: 1px solid #ccc;
-		border-bottom: 1px solid #ccc;		
+	th {
+		color:#fff;
+		background:#444 url(/images/button.png) repeat-x;
+		border-right:1px solid #444;
+		border-left:1px solid #666;	
+		}
+		/*
+		th:first-child {
+			-moz-border-radius-topleft:6px;
+			-webkit-border-top-left-radius:6px;
+			border-top-left-radius:6px;
+			border-left:0;
+			}
+		th:last-child {
+			-moz-border-radius-topright:6px;
+			-webkit-border-top-right-radius:6px;
+			border-top-right-radius:6px;
+			border-right:0;
+			}
+		*/
+	td {
+		border-bottom: 1px dotted #ddd;
+		border-left:1px dotted #ddd;
+		border-right:1px dotted #ddd;
+		}
+	tr.alt td {
+		background:#f5f5f5;
+		/*border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;*/
+		}
+	tr.hover td {
+		background:#dbecff;
+		cursor:pointer;
 		}
 
 
@@ -392,10 +504,6 @@ table {
   float: right;
 }
 
-#daily-bars {
-  text-align:center;
-}
-
 .green-message {
   float: left;
   background-color: #DCF7DD;
@@ -420,17 +528,18 @@ table {
   float: left;
 }
 
+
 /* group selector styling */
 .chosen_group {background-color:grey; border-radius: 5px;}
 
 #group_line {
-
 	clear:left;
 	background-color:#172322;
 	height:32px;
     line-height:32px;
     text-align: center;
-	margin-left: auto;   margin-right: auto;
+	margin-left: auto;   
+	margin-right: auto;
 	border-radius: 5px;
 }
 	
@@ -438,6 +547,7 @@ table {
 #group_list ul { padding:0px; margin:0px; }
 #group_list > li {cursor:pointer; padding:3px 10px; display:inline;} 
 #group_list > li a:hover {color:#6C6;}
+
 
 /*----------------------------------------------------------
                            @Rails
