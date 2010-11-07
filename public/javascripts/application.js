@@ -32,26 +32,38 @@ function chosenGroup() {
 	var group_id =  $('#group_list').children(".chosen_group").attr("id");
 	return group_id;
 }
+
 // This function returns number of week selected for analysis
 function chosenWeek() {
 	var week_id = $("#week_id").find("option:selected").val();
 	return week_id;
 }
+
 // This function loads data table for selected week and group
 function loadWeek(params) {
 	$('#ajax_week').load("/dashboard/team_data_by_week/", params, function() {
 		$(".collapse_chart").hide();
 	});
 }
+
 // This function shows dailychart on Manage/Overview for a specified user id
 function expandDailyChart(user_id) {
-	var x = $("#"+user_id);
-	alert(x.attr('id'));
+	var link = $("#"+user_id);
+	var row_number = link.parents("tr").get(0).rowIndex + 1;
+	//alert(row_number);
 	var div_id =  'daily-bars-' + user_id
+	var x = $("#team_table").get(0).insertRow(row_number);
+
+	$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>");
+
+	link.hide();
+	link.parents("td").children(".collapse_chart").show();
+		
 	$.getJSON("/dashboard/user_data_for_range", {week : chosenWeek, user : user_id, group : chosenGroup}, function(data) {
 		dailychart('#'+div_id,data[0].data);
 	});
 }
+
 // This function shows dailychart for the current_user
 function showWeekByDay(direction, params) {
 	var url = '/dashboard/my_data_for_range/'+direction
@@ -120,14 +132,14 @@ $(document).ready( function () {
 	$(".link_to_chart").live("click",function() {
 
 		var user_id = $(this).attr("id");
-		var div_id =  'daily-bars-' + user_id;
-		var row_number = $(this).parents("tr").get(0).rowIndex + 1;
-		var x = $("#team_table").get(0).insertRow(row_number);
+		//var div_id =  'daily-bars-' + user_id;
+		//var row_number = $(this).parents("tr").get(0).rowIndex + 1;
+	//	var x = $("#team_table").get(0).insertRow(row_number);
 
-		$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>");
+//		$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>");
 
-		$(this).hide();
-		$(this).parents("td").children(".collapse_chart").show();
+//		$(this).hide();
+//		$(this).parents("td").children(".collapse_chart").show();
 
 		expandDailyChart(user_id); 
 	});
