@@ -43,7 +43,7 @@ function loadWeek(params) {
 		$(".collapse_chart").hide();
 	});
 }
-// This function shows dailychart for a specified user id
+// This function shows dailychart on Manage/Overview for a specified user id
 function expandDailyChart(user_id) {
 	var x = $("#"+user_id);
 	alert(x.attr('id'));
@@ -51,7 +51,16 @@ function expandDailyChart(user_id) {
 	$.getJSON("/dashboard/user_data_for_range", {week : chosenWeek, user : user_id, group : chosenGroup}, function(data) {
 		dailychart('#'+div_id,data[0].data);
 	});
-} 
+}
+// This function shows dailychart for the current_user
+function showWeekByDay(direction, params) {
+	var url = '/dashboard/my_data_for_range/'+direction
+	$.getJSON(url, params, function(data) {
+     	dailychart("#daily-bars",data[0].data);
+		$("#week_value").load("/dashboard/get_session_week");
+     });
+	return false;
+}
 
 jQuery.ajaxSetup({  
 	'beforeSend': function (xhr) {xhr.setRequestHeader("Accept", "text/javascript")}  
@@ -60,6 +69,26 @@ jQuery.ajaxSetup({
 
 $(document).ready( function () {
 
+// Actions on "DASHBOARD/INDEX" page for current_user
+	// show last loaded week daily chart for current_user, support "<< >>" moving, refresh week
+	showWeekByDay();
+	
+	$("#scrollF").click(function() {
+      showWeekByDay('forward');
+		return false;
+    });
+    $("#scrollB").click(function() {
+ 		showWeekByDay('backward');
+		return false;
+     });
+
+	// Week update by clicking on table row
+	$("tr").click (function() {
+		week_id = $(this).attr("id");
+	 	showWeekByDay('', {week : week_id});
+	})
+
+// Actions on "DASHBOARD/MANAGE" and "DASHBOARD/OVERVIEW" for the manager and director
 	$('b.hide').click ( function() {
 		$(this).parent("div").fadeOut('slow', function() {
 			$(this).remove();
@@ -116,30 +145,9 @@ $(document).ready( function () {
 
 	// Hover for table rows  
 		$("tr").mouseover(function() {$(this).addClass("hover");}).mouseout(function() {$(this).removeClass("hover");});
- 	// Weeks Forward Backward Scrolling
-    $.getJSON('/dashboard/my_data_for_range', function(data) {
-     	dailychart("#daily-bars",data[0].data);
-     });
 
-    $("#scrollF").click(function() {
-      $.getJSON('/dashboard/my_data_for_range/forward', function(data) {
-          dailychart("#daily-bars",data[0].data);
-          });    
-			return false;
-    });
-    $("#scrollB").click(function() {
-     $.getJSON('/dashboard/daily_bars/back', function(data) {
-          dailychart("#daily-bars",data[0].data);
-          });
-		return false;
-     });
-	// Week update by clicking on table row
-	$("tr").click (function() {
-		week_id = $(this).attr("id");
-		$.getJSON('/dashboard/my_data_for_range', {week : week_id}, function(data) { 
-	     	dailychart("#daily-bars",data[0].data);
-	     });
-	})
+
+
 }); 
 
 
