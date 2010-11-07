@@ -16,49 +16,56 @@
 
 	<div id="container">
 	
-        <div id="header">   
+		<div id="header">   
 			
 			<h1><%="#{@user.name}"%></h1>
 			
 			<ul id="tools">
-				<li class="check-in"><a href="#">Check-in</a></li>
-				<li class="settings"><%= link_to "Settings", edit_user_path(:current) %> </li>
+				<li class="check-in"><a href="#?w=259" rel="check-in" class="dialog-trigger">Check-in</a></li>
+				<li class="settings"><a href="#?w=500" rel="settings" class="dialog-trigger">Settings</a> <!-- <%= link_to "Settings", edit_user_path(:current) %> --> </li>
 				<li class="sign-out"><%= link_to "Sign out", logout_path %></li>
 			</ul> <!-- end #tools -->
-			
 			<%if @user.manager?%>
 			<ul id="nav">
 				<li class="dashboard"><%= link_to "Me", :controller => 'dashboard' %></li> 
 				<li class="manage"><%= link_to "My Team", :controller => 'dashboard', :action => 'manage' %></li>
 			</ul> <!-- end #nav -->
 			<%end%>
-			
 			<!-- 
-            <ul id="menu">
-              <li><a href="#">Log</a> 
-              <ul> 
-                <li><%= link_to "Entry Record", :controller => 'records', :action =>'new' %></li> 
-                <li><%= link_to "Work From Home", :controller => 'homeworks', :action =>'new' %></li> 
-              </ul> 
-              </li>
-            </ul>
+			<ul id="menu">
+				<li><a href="#">Log</a> 
+					<ul> 
+						<li><%= link_to "Entry Record", :controller => 'records', :action =>'new' %></li> 
+						<li><%= link_to "Work From Home", :controller => 'homeworks', :action =>'new' %></li> 
+					</ul> 
+				</li>
+			</ul>
 			-->
 			
-        </div> <!-- end #header -->
+		</div> <!-- end #header -->
 
-        <div id="main">
+		<div id="main">
 			<div class="wrap">
 				<%= yield %>
 			</div> <!-- end .wrap -->
 		</div> <!-- end #main -->
 		
 		<div id="footer">
-			<p class="left">Created by <a href="mailto:sn.kozlov@yahoo.com">Sergey Kozlov</a> & <a href="http://www.ivanbabko.com">Ivan Babko</a></p>
-			<p class="right">Built with <a href="http://html5doctor.com">HTML5</a> | <a href="http://css3.info">CSS3</a> | <a href="http://jquery.com">jQuery</a> | <a href="http://rubyonrails.org">Ruby on Rails</a></p>
+			<p class="left">Created by <a href="mailto:sn.kozlov@yahoo.com">Sergey Kozlov</a> & <a href="http://www.ivanbabko.com">Ivan Babko</a>.</p>
+			<p class="right">Built with <a href="http://html5doctor.com">HTML5</a> | <a href="http://css3.info">CSS3</a> | <a href="http://jquery.com">jQuery</a> | <a href="http://rubyonrails.org">Ruby on Rails</a>. Stored on <a href="https://github.com/sergiokozlov/entry_point">GitHub</a> </p>
 		</div> <!-- end #footer -->
 		
 	</div> <!-- end #container -->
+	
+	<div id="check-in" class="dialog">
+		<a href="" class="close"><img src="/images/modal-test.png" alt="" /></a>
+	</div> <!-- end .dialog #check-in -->
 
+	<div id="settings" class="dialog">
+		Settings
+	</div> <!-- end .dialog #settings -->
+	
+	
 </body>
 </html>
 

@@ -307,25 +307,22 @@ a {
 		margin-bottom:0;
 		}
 		.chart-head {
-			text-shadow:0 1px 0 #fff;
-			background:#d3d3d3 url(/images/th.png) top repeat-x;
-			border:1px solid #c2c4c8;
-			padding:6px 0;
+			background:#444 url(/images/button.png) repeat-x;
 			}
 			.chart-head h3 {
 				font-size:14px;
-				color:#333;
+				height:30px;
+				line-height:30px;
+				color:#fff;
 				text-align:center;
 				margin:0 auto;
-				width:210px;
+				width:160px;
 				}
-				.chart-head h3 span {
-					font-weight:normal;
-					}
 			.chart-head a {
 				display:block;
 				width:20px;
 				height:19px;
+				margin-top:5px;
 				}
 				.chart-head a:active {
 					position:relative;
@@ -411,10 +408,10 @@ table {
 		text-align:center;
 		}
 	th {
-		color:#333;
-		text-shadow:0 1px 0 #fff;
-		background:#d3d3d3 url(/images/th.png) top repeat-x;
-		border:1px solid #c2c4c8;
+		color:#fff;
+		background:#444 url(/images/button.png) repeat-x;
+		border-right:1px solid #444;
+		border-left:1px solid #666;  
 		}
 	td {
 		border: 1px solid #e5e5e5;
@@ -491,7 +488,54 @@ table {
 	div.error {background-color:#df3b3b;}
 	div.info {background-color:#618fb9;}
 	div.success {background-color:#83b452;}		
-		
+
+
+
+/*----------------------------------------------------------
+                         @DIALOGS
+-----------------------------------------------------------*/
+#fade {
+	display:none; 
+	background:#000;
+	position:fixed; 
+	left:0; 
+	top:0;
+	width:100%; 
+	height:100%;
+	opacity:.40;
+	z-index:9999;
+	}
+.dialog {
+	display:none; 
+	background:#fff;
+	float:left;
+	position:fixed;
+	top:48%; 
+	left:52%;
+	z-index:99999;
+	-webkit-box-shadow:0px 0px 10px #000;
+	-moz-box-shadow:0px 0px 10px #000;
+	box-shadow:0px 0px 10px #000;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+
+	}
+
+	
+/* Making IE6 Understand Fixed Positioning */
+*html #fade {position: absolute;}
+*html .dialog {position: absolute;}
+
+
+	/* Check-in
+	---------------------------------------- */
+	
+	
+	
+	/* Settings
+	---------------------------------------- */
+
 
 /*----------------------------------------------------------
                            @Sergio
