@@ -1,0 +1,123 @@
+/*----------------------------------------------------------
+                           @LOGIN
+-----------------------------------------------------------*/
+
+	/* Centered container for login box
+	---------------------------------------- */
+	#login-container {
+		width:500px;
+		height:300px;
+		position:absolute;
+		top:42%;
+		left:50%;
+		margin:-100px 0 0 -250px;
+		}
+		
+	/* Login header
+	---------------------------------------- */
+	#login header {
+		width:100%;
+		height:52px;
+		background: #484c55 url(/images/login-header.png) repeat-x top;
+		display:block;
+		text-align:center;
+		border-top-right-radius:6px;
+		-moz-border-radius-topright:6px;
+		-webkit-border-top-right-radius:6px;
+		border-top-left-radius:6px;
+		-moz-border-radius-topleft:6px;
+		-webkit-border-top-left-radius:6px;
+		}
+		#login header img {
+			margin:9px 0 0;
+			}
+			
+	/* Login box
+	---------------------------------------- */
+	#login {
+		width:400px;
+		height:250px;
+		overflow:hidden;
+		background:#e3e5e6 url(/images/login.png) repeat-x top;
+		border:1px solid #999b9e;
+		border-top:0;
+		margin:0 auto;
+		text-align:left;
+		border-radius:6px;  
+		-moz-border-radius:6px;  
+		-webkit-border-radius:6px;
+		box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+		-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+		-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25); 
+		}
+		
+	/* Login form elements
+	---------------------------------------- */
+	#login form {
+		padding:10px 30px 30px;
+		}
+		#login form div {
+			margin:15px 0 0;
+			}
+			
+			/* Labels */
+			#login label { 
+				display:none;
+				font-size:18px;
+				color:#555;
+				text-shadow:0 1px 0 #fff;
+				margin:0 0 3px;
+				}
+				
+			/* Icons for input fields */
+			#login div span {
+				display:block;
+				}
+				#login div span.username {background:#fff url(/images/input-username2.png) 10px center no-repeat;}
+				#login div span.password {background:#fff url(/images/input-password2.png) 10px center no-repeat;}
+				
+			/* Login & Password inputs */
+			#login span input { 
+				font:16px Arial, Helvetica, sans-serif;
+				width:305px;
+				height:28px;
+				padding:5px 5px 5px 30px;
+				border:1px solid #a1a3a6;
+				color:#666;
+				background:url(/images/input.png) repeat-x top;
+				line-height:1.7;
+				}
+				#login span input:focus {
+					/*background-color:#f9ffb7;*/
+					border:1px solid #6a6f7b;
+					color:#333;
+					outline:none;
+					}
+					
+			/* Sign In button */
+			#login input.button {
+				cursor:pointer;
+				float:left;
+				border:0;
+				font-size:18px;
+				margin:3px 0 0;
+				color:#fff;
+				padding:7px 15px;
+				background:#222 url(/images/button.png) repeat-x;
+				border-bottom:1px solid #222;
+				position:relative;
+				border-radius:6px;
+				-moz-border-radius:6px;
+				-webkit-border-radius:6px;
+				box-shadow:0 1px 3px #999;
+				-moz-box-shadow:0 1px 3px #999;
+				-webkit-box-shadow:0 1px 3px #999;
+				text-shadow:0 -1px 1px #222;
+				}
+				#login input.button:hover,
+				#login input.button:focus {
+					background-color:#111; 
+					}
+				#login input.button:active {
+					top:1px; 
+					}

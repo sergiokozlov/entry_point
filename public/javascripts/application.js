@@ -140,6 +140,11 @@ $(document).ready( function () {
 	     	dailychart("#daily-bars",data[0].data);
 	     });
 	})
+	
+	
+	//Zebra tables
+	$('table tbody tr:odd').addClass('alt')
+	
 }); 
 
 

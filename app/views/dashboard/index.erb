@@ -11,7 +11,7 @@
 	<h2>Your Weekly Stats </h2>
 	<table cellspacing="0">
 		<thead>
-          <th>Week</th>
+          <th class="column-week">Week</th>
           <th>Daily Average</th>
           <th># Working Days</th>
 		  <th># Hours Spent</th>
@@ -19,8 +19,8 @@
         <tbody>
           <!--TODO: Performace optimization required -->
 			<% @user.logged_working_weeks.slice(0,5).each do |lww| %>
-			<tr id="<%=lww[0]%>" title="Click to update the chart below" class = "<%= cycle("alt","white") -%>">
-                <td><%= "#{week_value(lww[0])}" %></td>
+			<tr id="<%=lww[0]%>" title="Click to update the chart below">
+                <td class="column-week"><%= "#{week_value(lww[0])}" %></td>
               	<td><%=to_time(week_average(lww[0]))%></td>
                 <td><%=@user.weeked_working_days(lww[0]).length%> </td>
 				<td><%=to_time(week_completed(lww[0]))%> </td>
@@ -33,16 +33,25 @@
  <div class="report daily">
 	<h2>Your Daily Stats</h2>
 	<div class="chart-head">
-		<a id="scrollB" href="#">&laquo;</a>
-		<!--TODO --> 
-		
-		<%=week_value(@week_id)%> 
-		<a id="scrollF" href="#">&raquo;</a>
+		<h3>
+			<a id="scrollB" href="#"></a>
+			<!--TODO --> 
+			
+			 <span>Week:</span>
+			 <%=week_value(@week_id)%>
+			<a id="scrollF" href="#"></a>
+		</h3>
 	</div>
 	<div class="inner">
 		<img class="ajax-loader" src="/images/ajax-loader.gif" alt="" />
 		<div id="daily-bars" class="graph"></div>
-	</div>
+		<ul class="legend">
+			<li class="red"><div></div>Below 8:30</li>
+			<li class="yellow"><div></div>Between 8:30 and 9:00</li>
+			<li class="green"><div></div>Above 9:00</li>
+			<li class="grey last"><div></div>Weekend</li>
+		</ul> <!-- end .legend -->
+	</div> <!-- end .inner -->
 	<!-- 
 	<button id="scrollB" type="button">&lt;&lt;</button>
 	<button id="scrollF" type="button">&gt;&gt;</button>
