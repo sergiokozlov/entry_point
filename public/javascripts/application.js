@@ -158,8 +158,10 @@ $(document).ready( function () {
 	// Hover for table rows  
 		$("tr").mouseover(function() {$(this).addClass("hover");}).mouseout(function() {$(this).removeClass("hover");});
 
-
-
+	
+	//Zebra tables
+	$('table tbody tr:odd').addClass('alt')
+	
 }); 
 
 

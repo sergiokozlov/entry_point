@@ -1,62 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><%=(current_user.name + " | " if current_user) %> Enkata Entrypoint</title>
-    <%= stylesheet_link_tag 'application' %>
-    <%= javascript_include_tag 'jquery'  %>
-    <%= javascript_include_tag 'jquery.url'  %>
-    <%= javascript_include_tag 'enumerable'  %>
-    <%= javascript_include_tag 'tufte-graph'  %>
-    <%= javascript_include_tag 'raphael' %>
-    <%= javascript_include_tag 'application' %>
-    <%= yield(:head) %>
-  </head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><%=(current_user.name + " | " if current_user) %> Enkata Entrypoint</title>
+	<%= stylesheet_link_tag 'application' %>
+	<%= javascript_include_tag 'jquery'  %>
+	<%= javascript_include_tag 'jquery.url'  %>
+	<%= javascript_include_tag 'enumerable'  %>
+	<%= javascript_include_tag 'tufte-graph'  %>
+	<%= javascript_include_tag 'raphael' %>
+	<%= javascript_include_tag 'application' %>
+	<%= yield(:head) %>
+</head>
+<body id="dashboard" class="manager">
 
-  <body id="home">
-
-    <div id="container">
-     
-        <div id="header">
-          <%if @user = current_user%>
-            <h1><%="#{@user.name} "%></h1>
+	<div id="container">
+	
+        <div id="header">   
+			
+			<h1><%="#{@user.name}"%></h1>
+			
+			<ul id="tools">
+				<li class="check-in"><a href="#">Check-in</a></li>
+				<li class="settings"><%= link_to "Settings", edit_user_path(:current) %> </li>
+				<li class="sign-out"><%= link_to "Sign out", logout_path %></li>
+			</ul> <!-- end #tools -->
+			
+			<%if @user.manager?%>
+			<ul id="nav">
+				<li class="dashboard"><%= link_to "Me", :controller => 'dashboard' %></li> 
+				<li class="manage"><%= link_to "My Team", :controller => 'dashboard', :action => 'manage' %></li>
+			</ul> <!-- end #nav -->
+			<%end%>
+			
+			<!-- 
             <ul id="menu">
-              <li><%= link_to "Dashboard", :controller => 'dashboard' %></li>  
-              <%if @user.manager?%>
-                <li><%= link_to "Manage", :controller => 'dashboard', :action => 'manage' %></li>
-              <%end%>
               <li><a href="#">Log</a> 
               <ul> 
                 <li><%= link_to "Entry Record", :controller => 'records', :action =>'new' %></li> 
                 <li><%= link_to "Work From Home", :controller => 'homeworks', :action =>'new' %></li> 
               </ul> 
               </li>
-
-              <li><%= link_to "Edit profile", edit_user_path(:current) %> </li> 
-              <li><%= link_to "Logout", logout_path %></li>
             </ul>
-          <% else %>
-            <ul id="menu">  
-              <li><%= link_to "Register", new_user_path %> </li> 
-              <li><%= link_to "Log in", login_path %></li>
-            </ul>
-          <%end%>			
-        </div>
+			-->
+			
+        </div> <!-- end #header -->
 
         <div id="main">
 			<div class="wrap">
 				<%= yield %>
-			</div>
-        </div> <!-- end #main -->
+			</div> <!-- end .wrap -->
+		</div> <!-- end #main -->
 		
 		<div id="footer">
 			<p class="left">Created by <a href="mailto:sn.kozlov@yahoo.com">Sergey Kozlov</a> & <a href="http://www.ivanbabko.com">Ivan Babko</a></p>
 			<p class="right">Built with <a href="http://html5doctor.com">HTML5</a> | <a href="http://css3.info">CSS3</a> | <a href="http://jquery.com">jQuery</a> | <a href="http://rubyonrails.org">Ruby on Rails</a></p>
 		</div> <!-- end #footer -->
 		
-	</div>  <!-- end #container -->
+	</div> <!-- end #container -->
+
+</body>
+</html>
 
 
-    </body>
-  </html>
