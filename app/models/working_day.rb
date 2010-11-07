@@ -1,5 +1,4 @@
 class WorkingDay < ActiveRecord::Base
-
   has_many :records
   has_one :homework
  # virtual attributes
@@ -56,9 +55,8 @@ class WorkingDay < ActiveRecord::Base
   end
 
   def label
-    wday.strftime("%m/%d")
-    #@template.day_value(wday)
-    #TODO
+    #wday.strftime("%m/%d")
+    ApplicationController.helpers.day_value(wday)
   end
 
   def bar_label
