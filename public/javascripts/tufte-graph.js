@@ -138,7 +138,7 @@
              if (optionResolver(options.showtooltip)) {
                 $(r[0]).mousemove(function(e){
                    $("#tooltip").remove(); 
-                   showBarToolTip(e.pageX,e.pageY,element[3].check_in + '---' + element[3].check_out);
+                   showBarToolTip(e.pageX,e.pageY,element[3].check_in + ' &ndash; ' + element[3].check_out);
                  }); 
                   
                  r[0].onmouseout = function() {
@@ -179,10 +179,11 @@
           top: y - 15,
           left: x + 10,
           border: '1px solid #ddd',
-          padding: '2px',
+          padding: '7px',
          	'background-color': '#333',
             'color': '#fff',
-          opacity: 0.80
+			'font-weight': 'bold',
+          opacity: 0.90
       }).appendTo("body").fadeIn(500);
   }
 

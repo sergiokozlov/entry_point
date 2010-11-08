@@ -1,23 +1,23 @@
-<div class="report weekly">
-	<table id ="team_table" cellspacing="0">
+<div class="report team-weekly">
+	<table id="team_table" cellspacing="0">
 		<thead>
 			<tr>
-				<th>Team Member</th>
+				<th class="column-name">Team Member</th>
 				<th>Week</th>
+				<th>Daily Average</th>
 				<th># Working Days</th>
 				<th># Hours Spent</th>
-                <th>Daily Average</th>
-                <th></th>
+                <th><img src="/images/bar-chart.png" alt="" /></th>
 			</tr>
 		</thead>
 		<tbody>
 		<%  @selected_group.developers.each do |dev| -%>
-			<tr class = "<%= cycle("alt","white") -%>">
+			<tr class = "<%= cycle("white","alt") -%>">
 				<td> <%=dev.name %> </td>
 				<td> <%= week_value(@week_id) %></td>
+				<td> <%=to_time(week_average(@week_id,dev))%></td>
 				<td> <%=dev.weeked_working_days(@week_id).length%> </td>
 				<td> <%=to_time(week_completed(@week_id,dev))%> </td>
-                <td> <%=to_time(week_average(@week_id,dev))%></td>
                 <td> 
                   <button id="<%=dev.id%>" class="link_to_chart" type="button">&gt;</button>
                   <button class="collapse_chart" type="button">&lt;</button>
@@ -26,6 +26,6 @@
 		<% end -%>
 		</tbody>
 	</table>
-</div>
+</div> <!-- end .report .team-weekly -->
 
 

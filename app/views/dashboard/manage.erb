@@ -1,35 +1,37 @@
-
-
-  <div class="green-message">
-    <b style="float: right" class="hide"> X </b>
-
+  <div id="outliers">
+    <a href="#" class="hide"></a>
     <!-- TODO: Use Partials-->
     <% if @user.should_worry? then %>
+	  <ul>
       <%  @user.group.developers.each do |dev| %>
         <%if line = green_message(dev)  then %>
-          <%= line %> <BR/>
+			<li><%= line %></li>
         <%end%>
       <%end%>
+	  </ul>
     <%else%>
-      <%= "Your team is Working Great"%>
+      <%= "Your team is Working Great" %>
     <%end%> 
+  </div> <!-- end #outliers -->
 
-  </div>
+	<!-- 
+	<div class="red-message">
+	  <b style="float: right" class="hide"> X </b>
+	  Still not in the office: <b>Jim Beam </b>
+	</div>
+	-->
 
-  <div class="red-message">
-  <b style="float: right" class="hide"> X </b>
-  Still not in the office: <b>Jim Beam </b>
+	<div class="clear"></div>
 
-</div>
+	<div class="time-range">
+		<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
+		<label>Week:</label>
+	</div> <!-- end .time-range -->
 
+	<h2>My Team Stats</h2>
 
- <div class="clear"></div>
-   <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
-  <h2>My Team Stats </h2>
- <br/>
-
-  <div id="ajax_week">
-	<p> My Team Data for the week </p>
-  </div>
+	<div id="ajax_week">
+	<!-- <p> My Team Data for the week </p> -->
+	</div> <!-- end #ajax_week -->
 
 

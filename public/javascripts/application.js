@@ -59,7 +59,7 @@ function expandDailyChart(user_id) {
 	var div_id =  'daily-bars-' + user_id
 	var x = $("#team_table").get(0).insertRow(row_number);
 
-	$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>");
+	$(x).html("<td class='chart-container' colspan='6'><div id='"+div_id+"' class='graph'></div></td>");
 
 	link.hide();
 	link.parents("td").children(".collapse_chart").show();
@@ -106,10 +106,11 @@ $(document).ready( function () {
 	})
 
 // Actions on "DASHBOARD/MANAGE" and "DASHBOARD/OVERVIEW" for the manager and director
-	$('b.hide').click ( function() {
+	$('a.hide').click ( function() {
 		$(this).parent("div").fadeOut('slow', function() {
 			$(this).remove();
 		});
+		return false;
 	});
 
 	// Select correct value for selector 
@@ -137,15 +138,16 @@ $(document).ready( function () {
 	$(".link_to_chart").live("click",function() {
 
 		var user_id = $(this).attr("id");
-		//var div_id =  'daily-bars-' + user_id;
-		//var row_number = $(this).parents("tr").get(0).rowIndex + 1;
-	//	var x = $("#team_table").get(0).insertRow(row_number);
+		/*
+		var div_id =  'daily-bars-' + user_id;
+		var row_number = $(this).parents("tr").get(0).rowIndex + 1;
+		var x = $("#team_table").get(0).insertRow(row_number);
 
-//		$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph' style='width: 480px; height: 120px; margin: 20px;'></div></td>");
+		$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph'></div></td>");
 
-//		$(this).hide();
-//		$(this).parents("td").children(".collapse_chart").show();
-
+		$(this).hide();
+		$(this).parents("td").children(".collapse_chart").show();
+		*/
 		expandDailyChart(user_id); 
 	});
 
@@ -155,16 +157,25 @@ $(document).ready( function () {
         $(this).parents("li").siblings().removeClass('chosen_group');
 		$(this).parents("li").addClass('chosen_group');
 	
-		loadWeek({week: chosenWeek, group: });
+		loadWeek({week: chosenWeek, group: group_id });
+
+ 
+		return false;
 
       }); 
 
+	// First group name highlighted
+		$("#group_line li:first-child").addClass('chosen_group');
+	  
 	// Hover for table rows  
-		$("tr").mouseover(function() {$(this).addClass("hover");}).mouseout(function() {$(this).removeClass("hover");});
-
+	$("tr")
+	//.live("mouseover", function() {$(this).addClass("hover");})
+	//.live("mouseout",  function() {$(this).removeClass("hover");});
+	.mouseover(function() {$(this).addClass("hover");})
+	.mouseout(function()  {$(this).removeClass("hover");});
 	
 	//Zebra tables
-	$('table tbody tr:odd').addClass('alt')
+	//$('table tbody tr:odd').addClass('alt')'
 	
 	
 	

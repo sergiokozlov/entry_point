@@ -1,18 +1,24 @@
 
 <div id="group_line">
+
   <ul id="group_list">
   <% @user.groups.each do |group| -%>
-    <li  id=<%="group_"+group.id.to_s%>> <a class="group_link"><%= group.name%></a></li>
+    <li  id=<%="group_"+group.id.to_s%>> <a href="#" class="group_link"><%= group.name%></a></li>
   <% end-%>
   </ul>
+
 </div>
-<br/>
+
 <div class="clear"></div>
-  <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
-  <h2><%= %> </h2>
-<br/>
+
+<div class="time-range">
+	<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
+	<label>Week:</label>
+</div> <!-- end .time-range -->
+
+<h2><%= %> Group Name</h2>
 
 <!-- TODO: DRY violation - different partials for xhr and html calls-->
- <div id="ajax_week">
+<div id="ajax_week">
 
- </div>
+</div>
