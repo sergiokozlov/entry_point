@@ -3,7 +3,12 @@
 
 // This function stripes numeric part from id
 function getId (input) {
-  var id = input.split("_")[1];
+	if (input == undefined) {
+		return null
+	}
+	else {
+		return input.split("_")[1];
+	}
 }
 
 // This function draw bar char with daily data
@@ -35,7 +40,8 @@ function dailychart(divId,returnedData) {
 // This function returns id of group selected for analysis
 function chosenGroup() {
 	var group_id =  $('#group_list').children(".chosen_group").attr("id");
-	return getId(group_id);
+		return getId(group_id);
+	
 }
 
 // This function returns number of week selected for analysis
@@ -154,14 +160,12 @@ $(document).ready( function () {
 	// Manage clicking on group update
 	$("a.group_link").click( function() {
 		//var group_id = $(this).parents("li").attr("id");
-        $(this).parents("li").siblings().removeClass('chosen_group');
+		$(this).parents("li").siblings().removeClass('chosen_group');
 		$(this).parents("li").addClass('chosen_group');
-	
-		loadWeek({week: chosenWeek, group: group_id });
-
+		loadWeek({week: chosenWeek, group: chosenGroup });
+        
  
 		return false;
-
       }); 
 
 	// First group name highlighted

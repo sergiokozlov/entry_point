@@ -12,7 +12,7 @@
 	<%= javascript_include_tag 'application' %>
 	<%= yield(:head) %>
 </head>
-<body id="dashboard" class="manager">
+<body id="<%=params[:action]%>" class="manager">
 
 	<div id="container">
 	
