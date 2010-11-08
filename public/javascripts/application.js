@@ -1,6 +1,11 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
+// This function stripes numeric part from id
+function getId (input) {
+  var id = input.split("_")[1];
+}
+
 // This function draw bar char with daily data
 function dailychart(divId,returnedData) {
 	jQuery(divId).tufteBar({
@@ -30,7 +35,7 @@ function dailychart(divId,returnedData) {
 // This function returns id of group selected for analysis
 function chosenGroup() {
 	var group_id =  $('#group_list').children(".chosen_group").attr("id");
-	return group_id;
+	return getId(group_id);
 }
 
 // This function returns number of week selected for analysis
@@ -48,8 +53,8 @@ function loadWeek(params) {
 
 // This function shows dailychart on Manage/Overview for a specified user id
 function expandDailyChart(user_id) {
-	var link = $("#"+user_id);
-	var row_number = link.parents("tr").get(0).rowIndex + 1;
+	var link = $("#"+user_id).filter(".link_to_chart");
+ 	var row_number = link.parents("tr").get(0).rowIndex + 1;
 	//alert(row_number);
 	var div_id =  'daily-bars-' + user_id
 	var x = $("#team_table").get(0).insertRow(row_number);
@@ -146,13 +151,12 @@ $(document).ready( function () {
 
 	// Manage clicking on group update
 	$("a.group_link").click( function() {
-		var group_id = $(this).parents("li").attr("id");
-	
-		loadWeek({week: chosenWeek, group: group_id});
-
-		$(this).parents("li").siblings().removeClass('chosen_group');
+		//var group_id = $(this).parents("li").attr("id");
+        $(this).parents("li").siblings().removeClass('chosen_group');
 		$(this).parents("li").addClass('chosen_group');
- 
+	
+		loadWeek({week: chosenWeek, group: });
+
       }); 
 
 	// Hover for table rows  
