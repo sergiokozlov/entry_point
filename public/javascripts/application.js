@@ -51,9 +51,14 @@ function chosenWeek() {
 }
 
 // This function loads data table for selected week and group
-function loadWeek(params) {
+function loadWeek(params, ids, f) {
 	$('#ajax_week').load("/dashboard/team_data_by_week/", params, function() {
 		$(".collapse_chart").hide();
+         if (typeof f == "function"  && ids.length > 0) {
+          $.each(ids, function(index, value) {
+             f(value);
+          });
+         };
 	});
 }
 
@@ -74,6 +79,7 @@ function expandDailyChart(user_id) {
 		dailychart('#'+div_id,data[0].data);
 	});
 }
+
 
 // This function shows dailychart for the current_user
 function showWeekByDay(direction, params) {
@@ -129,7 +135,12 @@ $(document).ready( function () {
 
 	// On selector change update week
 	$("#week_id").change ( function () {
-		loadWeek({week: chosenWeek, group: chosenGroup});
+      var hidden_buttons = $('.link_to_chart:hidden'); 
+      var open_ids = $.map(hidden_buttons, function(hb) {
+          return $(hb).attr("id");
+        });
+      
+	  loadWeek({week: chosenWeek, group: chosenGroup}, open_ids, expandDailyChart);
 	});
 
 
