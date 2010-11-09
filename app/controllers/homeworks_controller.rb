@@ -1,8 +1,9 @@
 class HomeworksController < ApplicationController
 
   def new
-      require_user
-      @homework = Homework.new
+	@user = current_user
+	require_user
+	@homework = Homework.new
   end
 
    def create

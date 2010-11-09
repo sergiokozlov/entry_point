@@ -2,9 +2,10 @@ class RecordsController < ApplicationController
 
   #Post entry record
 
-  def new
-      require_user
-       @record = Record.new
+  def new 
+	@user = current_user
+	require_user
+	@record = Record.new
   end
 
 
