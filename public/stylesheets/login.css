@@ -72,6 +72,9 @@
 			/* Icons for input fields */
 			#login div span {
 				display:block;
+				border-radius:6px;
+				-moz-border-radius:6px;
+				-webkit-border-radius:6px;
 				}
 				#login div span.username {background:#fff url(/images/input-username2.png) 10px center no-repeat;}
 				#login div span.password {background:#fff url(/images/input-password2.png) 10px center no-repeat;}
@@ -86,10 +89,13 @@
 				color:#666;
 				background:url(/images/input.png) repeat-x top;
 				line-height:1.7;
+				border-radius:6px;
+				-moz-border-radius:6px;
+				-webkit-border-radius:6px;
 				}
 				#login span input:focus {
 					/*background-color:#f9ffb7;*/
-					border:1px solid #6a6f7b;
+					border:1px solid #6a6f7b; /*#1c87e2*/
 					color:#333;
 					outline:none;
 					}
@@ -98,13 +104,12 @@
 			#login input.button {
 				cursor:pointer;
 				float:left;
-				border:0;
+				border:1px solid #878a8d;
 				font-size:18px;
 				margin:3px 0 0;
-				color:#fff;
-				padding:7px 15px;
-				background:#222 url(/images/button.png) repeat-x;
-				border-bottom:1px solid #222;
+				color:#333;
+				padding:6px 13px;
+				background:#222 url(/images/sign-in.png) top repeat-x;
 				position:relative;
 				border-radius:6px;
 				-moz-border-radius:6px;
@@ -112,12 +117,16 @@
 				box-shadow:0 1px 3px #999;
 				-moz-box-shadow:0 1px 3px #999;
 				-webkit-box-shadow:0 1px 3px #999;
-				text-shadow:0 -1px 1px #222;
+				text-shadow:0 1px 1px #fff;
+				letter-spacing:-.5px;
 				}
 				#login input.button:hover,
 				#login input.button:focus {
-					background-color:#111; 
+					border:1px solid #6a6f7b;
+					color:#111;
 					}
 				#login input.button:active {
-					top:1px; 
+					top:1px;
+					color:#111;
+					/*background-position:bottom;*/
 					}

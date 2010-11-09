@@ -21,11 +21,11 @@
 			<% form_for @user_session do |form| %> 
 				<div>
 					<%= form.label :login, "Username" %>
-					<span class="username"><%= form.text_field :login %></span>
+					<span class="username"><%= form.text_field :login, :placeholder => 'Username' %></span>
 				</div>
 				<div>
 					<%= form.label :password, "Password" %>
-					<span class="password"><%= form.password_field :password %></span>
+					<span class="password"><%= form.password_field :password, :placeholder => 'Password' %></span>
 				</div>
 				<div>
 					<%= form.submit "Sign In", :class => 'button' %>

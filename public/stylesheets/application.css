@@ -160,13 +160,13 @@ a {
 						}
 				
 				/*Highlight current button*/
-				#dashboard #nav li.dashboard a,
+				#index #nav li.dashboard a,
 				#manage #nav li.manage a {
 					color:#fff;
 					text-shadow:none;
 					cursor:default;
 					}
-					#dashboard #nav li.dashboard a {background-position:bottom left;}
+					#index #nav li.dashboard a {background-position:bottom left;}
 					#manage #nav li.manage a {background-position:bottom right;}
 										
 				
@@ -300,6 +300,11 @@ a {
 	.today {float:left;}
 	.this-week {float:right;}
 	
+	.oops {
+		padding-top:40px;
+		padding-bottom:40px;
+		}
+	
 	/* Daily Stats report (Bar Chart)
 	---------------------------------------- */
 	.daily {
@@ -367,7 +372,7 @@ a {
 		overflow:hidden;
 		font-size:10px;
 		padding:5px 0;
-		color:#666;
+		color:#333;
 		}
 		.legend li {
 			float:left;

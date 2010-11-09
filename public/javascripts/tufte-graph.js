@@ -175,15 +175,21 @@
  //this is modified from a Flot example (http://code.google.com/p/flot/)
   function showBarToolTip(x,y,contents) {
       $('<div id="tooltip">' + contents + '</div>').css({
-          position: 'absolute',
-          top: y - 15,
-          left: x + 10,
-          border: '1px solid #ddd',
-          padding: '7px',
-         	'background-color': '#333',
-            'color': '#fff',
+			position: 'absolute',
+			top: y - 10,
+			left: x + 12,
+			border: '1px solid #ddd',
+			padding: '7px 10px',
+			'background-color': '#333',
+			'color': '#fff',
 			'font-weight': 'bold',
-          opacity: 0.90
+			'box-shadow': '0 0 10px rgba(0, 0, 0, 0.25)', 
+			'-moz-box-shadow' : '0 0 10px rgba(0, 0, 0, 0.25)',  
+			'-webkit-box-shadow' : '0 0 10px rgba(0, 0, 0, 0.25)',
+			'border-radius': '6px',
+			'-moz-border-radius': '6px',
+			'-webkit-border-radius': '6px',
+			opacity: 0.90
       }).appendTo("body").fadeIn(500);
   }
 
