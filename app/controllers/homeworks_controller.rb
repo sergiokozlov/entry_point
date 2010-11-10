@@ -1,6 +1,7 @@
 class HomeworksController < ApplicationController
 
   def new
+      @user = current_user
       require_user
       @homework = Homework.new
   end

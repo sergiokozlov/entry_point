@@ -8,7 +8,7 @@
 	<%= javascript_include_tag 'jquery.url'  %>
 	<%= javascript_include_tag 'enumerable'  %>
 	<%= javascript_include_tag 'tufte-graph'  %>
-	<%= javascript_include_tag 'raphael' %>
+	<%= javascript_include_tag 'raphael-min' %>
 	<%= javascript_include_tag 'application' %>
 	<%= yield(:head) %>
 </head>
@@ -20,8 +20,10 @@
 			
 			<h1><%="#{@user.name}"%></h1>
 			
-			<ul id="tools">
-				<li class="check-in"><a href="#?w=259" rel="check-in" class="dialog-trigger">Check-in</a></li>
+            <ul id="tools">
+              <%unless @user.director?%>
+                <li class="check-in"><a href="#?w=259" rel="check-in" class="dialog-trigger">Check-in</a></li>
+              <%end%>  
 				<li class="settings"><a href="#?w=500" rel="settings" class="dialog-trigger">Settings</a> <!-- <%= link_to "Settings", edit_user_path(:current) %> --> </li>
 				<li class="sign-out"><%= link_to "Sign out", logout_path %></li>
 			</ul> <!-- end #tools -->
