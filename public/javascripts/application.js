@@ -65,7 +65,7 @@ function loadWeek(params, ids, f) {
 
 // This function shows dailychart on Manage/Overview for a specified user id
 function expandDailyChart(user_id) {
-	var link = $("#"+user_id).filter(".link_to_chart");
+	var link = $("#user_"+user_id).filter(".link_to_chart");
  	var row_number = link.parents("tr").get(0).rowIndex + 1;
 	//alert(row_number);
 	var div_id =  'daily-bars-' + user_id
@@ -139,7 +139,7 @@ $(document).ready( function () {
       var hidden_buttons = $(':hidden.link_to_chart'); 
       //alert(hidden_buttons.length);
       var open_ids = $.map(hidden_buttons, function(hb) {
-          return $(hb).attr("id");
+          return getId($(hb).attr("id"));
         });
       
 	  loadWeek({week: chosenWeek, group: chosenGroup}, open_ids, expandDailyChart);
@@ -156,7 +156,7 @@ $(document).ready( function () {
 	// Manage clicking on drill button
 	$(".link_to_chart").live("click",function() {
 
-		var user_id = $(this).attr("id");
+		var user_id = getId($(this).attr("id"));
 		expandDailyChart(user_id); 
 	});
 
