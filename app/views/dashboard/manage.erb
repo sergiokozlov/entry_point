@@ -24,7 +24,7 @@
 	<div class="clear"></div>
 
 	<div class="time-range">
-		<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),w[0]]}) %>
+		<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
 		<label>Week:</label>
 	</div> <!-- end .time-range -->
 

@@ -50,6 +50,7 @@ class DashboardController < ApplicationController
   
   def get_session_week
     @a_result = @template.week_value(session[:week])
+    @last_week = current_user.logged_working_weeks.first[0].to_i
     
     render :ajax_result, :layout => false
   end
@@ -59,6 +60,13 @@ class DashboardController < ApplicationController
     @user = current_user
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
     @week_id  = (params[:week] || (@selected_group.weeks_to_analyze)[0][0]).to_i
+    
+    case 
+    when @user.director?
+       @developers = [@selected_group.manager] + @selected_group.developers
+    else
+       @developers = @selected_group.developers
+    end
  
 
     render :layout => false 

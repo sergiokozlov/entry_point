@@ -47,7 +47,7 @@ function chosenGroup() {
 // This function returns number of week selected for analysis
 function chosenWeek() {
 	var week_id = $("#week_id").find("option:selected").val();
-	return week_id;
+	return getId(week_id);
 }
 
 // This function loads data table for selected week and group
@@ -55,6 +55,7 @@ function loadWeek(params, ids, f) {
 	$('#ajax_week').load("/dashboard/team_data_by_week/", params, function() {
 		$(".collapse_chart").hide();
          if (typeof f == "function"  && ids.length > 0) {
+         //alert(ids);
           $.each(ids, function(index, value) {
              f(value);
           });
@@ -64,7 +65,7 @@ function loadWeek(params, ids, f) {
 
 // This function shows dailychart on Manage/Overview for a specified user id
 function expandDailyChart(user_id) {
-	var link = $("#"+user_id).filter(".link_to_chart");
+	var link = $("#user_"+user_id).filter(".link_to_chart");
  	var row_number = link.parents("tr").get(0).rowIndex + 1;
 	//alert(row_number);
 	var div_id =  'daily-bars-' + user_id
@@ -86,7 +87,7 @@ function showWeekByDay(direction, params) {
 	var url = '/dashboard/my_data_for_range/'+direction
 	$.getJSON(url, params, function(data) {
      	dailychart("#daily-bars",data[0].data);
-		$("#week_value").load("/dashboard/get_session_week");
+		$("#week_shower").load("/dashboard/get_session_week");
      });
 	return false;
 }
@@ -102,19 +103,19 @@ $(document).ready( function () {
 	// show last loaded week daily chart for current_user, support "<< >>" moving, refresh week
 	showWeekByDay();
 	
-	$("#scrollF").click(function() {
+	$("#scrollF").live("click", function() {
       showWeekByDay('forward');
 		return false;
     });
-    $("#scrollB").click(function() {
+    $("#scrollB").live("click", function() {
  		showWeekByDay('backward');
 		return false;
      });
 
 	// Week update by clicking on table row
 	$("tr").click (function() {
-		week_id = $(this).attr("id");
-	 	showWeekByDay('', {week : week_id});
+		week_id = getId($(this).attr("id"));
+ 	 	showWeekByDay('', {week : week_id});
 	})
 
 // Actions on "DASHBOARD/MANAGE" and "DASHBOARD/OVERVIEW" for the manager and director
@@ -126,7 +127,7 @@ $(document).ready( function () {
 	});
 
 	// Select correct value for selector 
-	var pm_id = $.url.param("id");
+	var pm_id = 'week_'+$.url.param("id");
 	$('#week_id option[value='+pm_id+']').attr('selected', 'selected');
 
 
@@ -135,9 +136,10 @@ $(document).ready( function () {
 
 	// On selector change update week
 	$("#week_id").change ( function () {
-      var hidden_buttons = $('.link_to_chart:hidden'); 
+      var hidden_buttons = $(':hidden.link_to_chart'); 
+      //alert(hidden_buttons.length);
       var open_ids = $.map(hidden_buttons, function(hb) {
-          return $(hb).attr("id");
+          return getId($(hb).attr("id"));
         });
       
 	  loadWeek({week: chosenWeek, group: chosenGroup}, open_ids, expandDailyChart);
@@ -154,17 +156,7 @@ $(document).ready( function () {
 	// Manage clicking on drill button
 	$(".link_to_chart").live("click",function() {
 
-		var user_id = $(this).attr("id");
-		/*
-		var div_id =  'daily-bars-' + user_id;
-		var row_number = $(this).parents("tr").get(0).rowIndex + 1;
-		var x = $("#team_table").get(0).insertRow(row_number);
-
-		$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph'></div></td>");
-
-		$(this).hide();
-		$(this).parents("td").children(".collapse_chart").show();
-		*/
+		var user_id = getId($(this).attr("id"));
 		expandDailyChart(user_id); 
 	});
 

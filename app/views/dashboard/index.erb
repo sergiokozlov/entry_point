@@ -19,7 +19,7 @@
         <tbody>
           <!--TODO: Performace optimization required -->
 			<% @user.logged_working_weeks.slice(0,5).each do |lww| %>
-			<tr id="<%=lww[0]%>" class = "<%= cycle("white","alt") -%>" title="Click to update the chart below">
+			<tr id="<%='week_'+lww[0].to_s%>" class = "<%= cycle("white","alt") -%>" title="Click to update the chart below">
                 <td class="column-week"><%= "#{week_value(lww[0])}" %></td>
               	<td><%=to_time(week_average(lww[0]))%></td>
                 <td><%=@user.weeked_working_days(lww[0]).length%> </td>
@@ -32,12 +32,8 @@
 
  <div class="report daily">
 	<h2>My Daily Stats</h2>
-	<div class="chart-head">
-		<h3>
-			<a id="scrollB" href="#"></a>
-			<span id="week_value"></span>
-			<a id="scrollF" href="#"></a>
-		</h3>
+	<div id="week_shower" class="chart-head">
+
 	</div> <!-- end .chart-head -->
 	<div class="inner">
 		<img class="ajax-loader" src="/images/ajax-loader.gif" alt="" />

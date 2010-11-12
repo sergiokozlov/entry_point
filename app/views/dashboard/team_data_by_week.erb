@@ -11,7 +11,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		<%  @selected_group.developers.each do |dev| -%>
+		<%  @developers.each do |dev| -%>
 			<tr class = "<%= cycle("white","alt") -%>">
 				<td> <%=dev.name %> </td>
 				<td> <%= week_value(@week_id) %></td>
@@ -19,7 +19,7 @@
 				<td> <%=dev.weeked_working_days(@week_id).length%> </td>
 				<td> <%=to_time(week_completed(@week_id,dev))%> </td>
                 <td> 
-                  <button id="<%=dev.id%>" class="link_to_chart" type="button">&gt;</button>
+                  <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">&gt;</button>
                   <button class="collapse_chart" type="button">&lt;</button>
                 </td>
 			</tr>
