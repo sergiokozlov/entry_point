@@ -47,7 +47,7 @@ function chosenGroup() {
 // This function returns number of week selected for analysis
 function chosenWeek() {
 	var week_id = $("#week_id").find("option:selected").val();
-	return week_id;
+	return getId(week_id);
 }
 
 // This function loads data table for selected week and group
@@ -55,6 +55,7 @@ function loadWeek(params, ids, f) {
 	$('#ajax_week').load("/dashboard/team_data_by_week/", params, function() {
 		$(".collapse_chart").hide();
          if (typeof f == "function"  && ids.length > 0) {
+         //alert(ids);
           $.each(ids, function(index, value) {
              f(value);
           });
@@ -113,8 +114,8 @@ $(document).ready( function () {
 
 	// Week update by clicking on table row
 	$("tr").click (function() {
-		week_id = $(this).attr("id");
-	 	showWeekByDay('', {week : week_id});
+		week_id = getId($(this).attr("id"));
+ 	 	showWeekByDay('', {week : week_id});
 	})
 
 // Actions on "DASHBOARD/MANAGE" and "DASHBOARD/OVERVIEW" for the manager and director
@@ -126,7 +127,7 @@ $(document).ready( function () {
 	});
 
 	// Select correct value for selector 
-	var pm_id = $.url.param("id");
+	var pm_id = 'week_'+$.url.param("id");
 	$('#week_id option[value='+pm_id+']').attr('selected', 'selected');
 
 
@@ -135,7 +136,8 @@ $(document).ready( function () {
 
 	// On selector change update week
 	$("#week_id").change ( function () {
-      var hidden_buttons = $('.link_to_chart:hidden'); 
+      var hidden_buttons = $(':hidden.link_to_chart'); 
+      //alert(hidden_buttons.length);
       var open_ids = $.map(hidden_buttons, function(hb) {
           return $(hb).attr("id");
         });
@@ -155,16 +157,6 @@ $(document).ready( function () {
 	$(".link_to_chart").live("click",function() {
 
 		var user_id = $(this).attr("id");
-		/*
-		var div_id =  'daily-bars-' + user_id;
-		var row_number = $(this).parents("tr").get(0).rowIndex + 1;
-		var x = $("#team_table").get(0).insertRow(row_number);
-
-		$(x).html("<td colspan='6'><div id='"+div_id+"' class='graph'></div></td>");
-
-		$(this).hide();
-		$(this).parents("td").children(".collapse_chart").show();
-		*/
 		expandDailyChart(user_id); 
 	});
 
