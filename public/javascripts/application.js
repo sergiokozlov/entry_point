@@ -87,7 +87,7 @@ function showWeekByDay(direction, params) {
 	var url = '/dashboard/my_data_for_range/'+direction
 	$.getJSON(url, params, function(data) {
      	dailychart("#daily-bars",data[0].data);
-		$("#week_value").load("/dashboard/get_session_week");
+		$("#week_shower").load("/dashboard/get_session_week");
      });
 	return false;
 }
@@ -103,11 +103,11 @@ $(document).ready( function () {
 	// show last loaded week daily chart for current_user, support "<< >>" moving, refresh week
 	showWeekByDay();
 	
-	$("#scrollF").click(function() {
+	$("#scrollF").live("click", function() {
       showWeekByDay('forward');
 		return false;
     });
-    $("#scrollB").click(function() {
+    $("#scrollB").live("click", function() {
  		showWeekByDay('backward');
 		return false;
      });

@@ -1,1 +1,7 @@
-<%=@a_result%>
+
+
+<h3>
+	<a id="scrollB" href="#"></a>
+    <span id=<%="crweek_"+session[:week].to_s%>> <%=@a_result%></span>
+  <%unless @last_week == session[:week] %> <a id="scrollF" href="#"></a> <%end%>
+</h3>
