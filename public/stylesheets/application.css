@@ -79,7 +79,7 @@ a {
 				font-weight:bold
 				}
 				#tools li a:hover {color:#000;}
-				#tools li.check-in a {padding-left:22px; background:url(/images/check-in-toolbar.png) center left no-repeat;}
+				#tools li.checkin a {padding-left:22px; background:url(/images/check-in-toolbar.png) center left no-repeat;}
 				#tools li.settings a {padding-left:20px; background:url(/images/settings.png) center left no-repeat;}
 				#tools li.sign-out a {padding-left:17px; background:url(/images/sign-out.png) center left no-repeat;}
 
@@ -125,7 +125,7 @@ a {
 	---------------------------------------- */	
 	#nav {
 		width:242px;
-		height:28px;
+		height:26px;
 		float:left;
 		margin:25px 0 0 20px;
 		}
@@ -136,7 +136,7 @@ a {
 			#nav li a {
 				display:block;
 				width:70px;
-				height:28px;
+				height:26px;
 				line-height:25px;
 				text-align:center;
 				font-weight:bold;
@@ -146,20 +146,25 @@ a {
 				#nav li a:hover {color:#111;}
 				
 				/* My Attendance button*/
-				#nav li.dashboard a {background-position:top left;}
+				#nav li.dashboard a {
+					background-position:top left;
+					}
 					#nav li.dashboard a:active {
 						position:static;
 						background-position:center left;
 						}
 						
-				/* My Team button*/
-				#nav li.manage a {background-position:top right;}
+				/* My Team button */
+				#nav li.manage a {
+					background-position:top right;
+					border-left:1px solid #a9a9a9;
+					}
 					#nav li.manage a:active {
 						position:static;
 						background-position:center right;
 						}
 				
-				/*Highlight current button*/
+				/*Highlight current button */
 				#index #nav li.dashboard a,
 				#manage #nav li.manage a {
 					color:#fff;
@@ -175,7 +180,7 @@ a {
                   @MANUAL CHECK-IN BUTTON
 -----------------------------------------------------------*/
 /* <a id="check-in" href="#"><span>Check-in manually</span></a> */
-#header #check-in {
+#header #check-in-btn {
 	display:block;
 	width:145px;
 	height:30px;
@@ -195,7 +200,7 @@ a {
 	color:#444;
 	background:#fff url(/images/check-in-bg.png) repeat-x;
 	}
-	#check-in span {
+	#check-in-btn span {
 		margin-left:10px;
 		padding-left:20px;
 		background:url(/images/check-in.png) center left no-repeat;
@@ -373,6 +378,9 @@ a {
 		font-size:10px;
 		padding:5px 0;
 		color:#333;
+		border-radius:6px;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
 		}
 		.legend li {
 			float:left;
@@ -610,8 +618,10 @@ table {
 	height:100%;
 	opacity:.40;
 	z-index:9999;
+	_position: absolute; /* IE6 */
 	}
 .dialog {
+	width:400px;
 	display:none; 
 	background:#fff;
 	float:left;
@@ -625,23 +635,139 @@ table {
 	-webkit-border-radius:6px;
 	-moz-border-radius:6px;
 	border-radius:6px;
-
+	_position: absolute; /* IE6 */
 	}
+	.dialog h2 {
+		height:45px;
+		line-height:45px;
+		font-size:20px;
+		background:#ccc url(/images/header.png) bottom repeat-x;
+		border-bottom:1px solid #babcc0;
+		text-shadow:1px 1px #fff;
+		border-top-right-radius:6px;
+		-moz-border-radius-topright:6px;
+		-webkit-border-top-right-radius:6px;
+		border-top-left-radius:6px;
+		-moz-border-radius-topleft:6px;
+		-webkit-border-top-left-radius:6px;
+		}
+	.dialog .inner {
+		padding:10px 20px 15px;
+		width:auto;
+		text-align:left;
+		}
+	.dialog-footer {
+		width:100%;
+		height:25px;
+		line-height:25px;
+		font-size:11px;
+		font-weight:bold;
+		text-shadow:1px 1px #fff;
+		color:#666;
+		background:#fff url(/images/footer.png) repeat-x top;
+		border-top:1px solid #babcc0;
+		border-bottom-right-radius:6px;
+		-moz-border-radius-bottomright:6px;
+		-webkit-border-bottom-right-radius:6px;
+		border-bottom-left-radius:6px;
+		-moz-border-radius-bottomleft:6px;
+		-webkit-border-bottom-left-radius:6px;
+		}
 
-	
-/* Making IE6 Understand Fixed Positioning */
-*html #fade {position: absolute;}
-*html .dialog {position: absolute;}
-
-
+	/* Form
+	---------------------------------------- */
+	.dialog div.why {
+		overflow:hidden;
+		padding:0 0 0 90px;
+		margin:0 0 0 70px;
+		}
+	.dialog form {
+		width:100%;
+		padding:15px 0 0 0;
+		margin:5px 0 0 0;
+		border-top:1px solid #ccc;
+		}
+	.dialog form div {
+		margin:0 0 10px;
+		overflow:hidden;
+		padding-left:90px;
+		margin-left:70px;
+		}
+		.dialog div.btn{
+			text-align:center;
+			padding:15px 0 0 0;
+			margin:15px 0 0 0;
+			border-top:1px solid #ccc;
+			}
+			.dialog div.btn a {
+				color:#000;
+				text-decoration:underline;
+				}
+		.dialog label {
+			float:left;
+			width:80px; 
+			margin-left:-90px;
+			font-weight:bold;
+			cursor:pointer;
+			font-size:14px;
+			}
+			.dialog li label {
+				float:none;
+				width:auto;
+				margin:0;
+				font-weight:normal;
+				}
+			.dialog form div span {
+				display:block;
+				width:130px;
+				border-radius:6px;
+				-moz-border-radius:6px;
+				-webkit-border-radius:6px;
+				}
+				.dialog form div span.date {background:#fff url(/images/date.png) right center no-repeat;}
+				.dialog form div span.time-checkin {background:#fff url(/images/time-checkin.png) right center no-repeat;}
+				.dialog form div span.time-checkout {background:#fff url(/images/time-checkout.png) right center no-repeat;}
+				
+					.dialog input.text {
+						width:130px;
+						height:20px;
+						padding:3px;
+						border:1px solid #a1a3a6;
+						font:14px Arial, Helvetica, sans-serif;
+						color:#666;
+						background:url(/images/input.png) repeat-x top;
+						line-height:1.4;
+						border-radius:6px;
+						-moz-border-radius:6px;
+						-webkit-border-radius:6px;
+						}				
+						 .dialog input.text:focus {
+							border:1px solid #6a6f7b;
+							color:#333;
+							outline:none;
+							}
+		.dialog input.button {
+			cursor:pointer;
+			padding:3px 8px;
+			font-size:16px;
+			}	
+		.dialog li {
+			margin:0 0 5px; 
+			}
+		
+		
 	/* Check-in
 	---------------------------------------- */
-	
+	#checkin {width:400px;}
+
 	
 	
 	/* Settings
 	---------------------------------------- */
 
+	
+	
+	
 
 /*----------------------------------------------------------
                            @Sergio
