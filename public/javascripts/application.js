@@ -84,10 +84,14 @@ function expandDailyChart(user_id) {
 
 // This function shows dailychart for the current_user
 function showWeekByDay(direction, params) {
+    $(".ajax-loader").show();
+    $("#daily-bars").hide();
 	var url = '/dashboard/my_data_for_range/'+direction
 	$.getJSON(url, params, function(data) {
-     	dailychart("#daily-bars",data[0].data);
+      	dailychart("#daily-bars",data[0].data);
 		$("#week_shower").load("/dashboard/get_session_week");
+           $(".ajax-loader").hide();
+           $("#daily-bars").show();
      });
 	return false;
 }
