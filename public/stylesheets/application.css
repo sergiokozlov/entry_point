@@ -617,7 +617,7 @@ table {
 	width:100%; 
 	height:100%;
 	opacity:.40;
-	z-index:9999;
+	z-index:9;
 	_position: absolute; /* IE6 */
 	}
 .dialog {
@@ -628,7 +628,7 @@ table {
 	position:fixed;
 	top:48%; 
 	left:52%;
-	z-index:99999;
+	z-index:99;
 	-webkit-box-shadow:0px 0px 10px #000;
 	-moz-box-shadow:0px 0px 10px #000;
 	box-shadow:0px 0px 10px #000;
@@ -656,6 +656,10 @@ table {
 		width:auto;
 		text-align:left;
 		}
+		.dialog a {
+			color:#000;
+			text-decoration:underline;
+			}
 	.dialog-footer {
 		width:100%;
 		height:25px;
@@ -699,10 +703,6 @@ table {
 			margin:15px 0 0 0;
 			border-top:1px solid #ccc;
 			}
-			.dialog div.btn a {
-				color:#000;
-				text-decoration:underline;
-				}
 		.dialog label {
 			float:left;
 			width:80px; 
@@ -729,9 +729,9 @@ table {
 				.dialog form div span.time-checkout {background:#fff url(/images/time-checkout.png) right center no-repeat;}
 				
 					.dialog input.text {
-						width:130px;
+						width:110px;
 						height:20px;
-						padding:3px;
+						padding:3px 20px 3px 3px;
 						border:1px solid #a1a3a6;
 						font:14px Arial, Helvetica, sans-serif;
 						color:#666;
@@ -759,13 +759,25 @@ table {
 	/* Check-in
 	---------------------------------------- */
 	#checkin {width:400px;}
-
 	
 	
 	/* Settings
 	---------------------------------------- */
-
-	
+	#settings form {
+		border-top:0;
+		padding:0;
+		}
+		#settings form div {
+			padding-left:120px;
+			}
+			#settings form div.btn {
+				padding:15px 0 0 0;
+				margin:15px 0 0 0;
+				}
+			#settings form div label {
+				font-size:12px;
+				width:120px; 
+				}
 	
 	
 

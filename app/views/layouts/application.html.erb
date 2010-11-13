@@ -4,12 +4,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><%=(current_user.name + " | " if current_user) %> Enkata Entrypoint</title>
 	<%= stylesheet_link_tag 'application' %>
+	<%= stylesheet_link_tag 'datepicker' %>
     <%= javascript_include_tag 'jquery'  %>
     <!--<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js' %>-->
 	<%= javascript_include_tag 'jquery.url'  %>
 	<%= javascript_include_tag 'enumerable'  %>
 	<%= javascript_include_tag 'tufte-graph'  %>
 	<%= javascript_include_tag 'raphael-min' %>
+	<%= javascript_include_tag 'modal'  %>
+	<%= javascript_include_tag 'datepicker'  %>
 	<%= javascript_include_tag 'application' %>
 	<%= yield(:head) %>
 </head>
@@ -60,62 +63,9 @@
 		
 	</div> <!-- end #container -->
 	
-	<div id="checkin" class="dialog">
-		<h2>Manual Check-In</h2>
-		<div class="inner">
-			<div class="why">
-				<label>Why?</label>
-				<ul>
-					<li><label><input id="why_forgot" name="why" size="30" type="radio" class="radio" checked="checked" /> I forgot to register</label></li>
-					<li><label><input id="why_wfh" name="why" size="30" type="radio" class="radio" /> I worked from home</label></li>
-				</ul>
-			</div> <!-- end .why -->
-			<form id="forgot">
-				<div>
-					<label for="forgot_date">Date:</label>
-					<span class="date"><input id="forgot_date" name="forgot_date" size="30" type="text" class="text" title="31/12/2010" /></span>
-				</div>
-				<div>
-					<label for="forgot_checkin">Check-in:</label>
-					<span class="time-checkin"><input id="forgot_checkin" name="forgot_checkin" size="30" type="text" class="text" title="11:30" /></span>
-				</div>
-				<div>
-					<label for="forgot_checkout">Check-out:</label>
-					<span class="time-checkout"><input id="forgot_checkout" name="forgot_checkin" size="30" type="text" class="text" title="20:30" /></span>
-				</div>
-				<div class="btn">
-					<input id="forgot_submit" name="forgot_submit" type="submit" class="button" value="Submit" />
-					or <a class="close" href="#">Cancel</a>
-				</div>
-			</form> <!-- end form#forgot -->
-			<form id="wfh" style="display:none;">
-				<div>
-					<label for="wfh_date">Date:</label>
-					<span class="date"><input id="wfh_date" name="wfh_date" size="30" type="text" class="text" title="31/12/2010" /></span>
-				</div>
-				<div>
-					<label for="wfh_checkin">Check-in:</label>
-					<span class="time-checkin"><input id="wfh_checkin" name="wfh_checkin" size="30" type="text" class="text" title="11:30" /></span>
-				</div>
-				<div>
-					<label for="wfh_checkout">Check-out:</label>
-					<span class="time-checkout"><input id="wfh_checkout" name="wfh_checkin" size="30" type="text" class="text" title="20:30" /></span>
-				</div>
-				<div class="btn">
-					<input id="wfh_submit" name="wfh_submit" type="submit" class="button" value="Submit" />
-					or <a class="close" href="#">Cancel</a>
-				</div>
-			</form> <!-- end form#wfh -->
-		</div> <!-- end .inner -->
-		<div class="dialog-footer">
-			Psst! Don't cheat!
-		</div><!-- end .dialog-footer -->
-	</div> <!-- end .dialog #check-in -->
+	<%= render (:partial => 'checkin')%>
 
-	<div id="settings" class="dialog">
-		Settings
-	</div> <!-- end .dialog #settings -->
-	
+	<%= render (:partial => 'settings')%>
 	
 </body>
 </html>

@@ -176,58 +176,10 @@ $(document).ready( function () {
 	  
 	// Hover for table rows  
 	$("tr")
-	//.live("mouseover", function() {$(this).addClass("hover");})
-	//.live("mouseout",  function() {$(this).removeClass("hover");});
 	.mouseover(function() {$(this).addClass("hover");})
 	.mouseout(function()  {$(this).removeClass("hover");});
 	
-	//Zebra tables
-	//$('table tbody tr:odd').addClass('alt')'
-	
-	
-	
-	//**************** START MODAL DIALOG *******************//
-	
-	//When you click on a link with class of dialog-trigger and the href starts with a # 
-	$('a.dialog-trigger[href^=#]').click(function() {
-		var popID = $(this).attr('rel'); //Get Popup Name
-		var popURL = $(this).attr('href'); //Get Popup href to define size
 
-		//Pull Query & Variables from href URL
-		var query= popURL.split('?');
-		var dim= query[1].split('&');
-		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
-
-		//Fade in the Popup
-		$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) });
-
-		//Define margin for center alignment (vertical   horizontal)
-		var popMargTop = ($('#' + popID).height() ) / 2;
-		var popMargLeft = ($('#' + popID).width() ) / 2;
-
-		//Apply Margin to Popup
-		$('#' + popID).css({
-			'margin-top' : -popMargTop,
-			'margin-left' : -popMargLeft
-		});
-
-		//Show Background
-		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
-		$('#fade').css({'filter' : 'alpha(opacity=40)'}).show(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies 
-
-		return false;
-	});
-
-	//Close Popups and Fade Layer
-	$('a.close, #fade').live('click', function() { //When clicking on the close or fade layer...
-		$('#fade , .dialog').fadeOut(function() {
-			//$('#fade, a.close').remove();  //fade them both out
-		});
-		return false;
-	});
-	
-	//**************** END MODAL DIALOG *******************//
-	
 	
 	//**************** START HINTS IN INPUTS *******************//
 	jQuery.fn.hint = function (blurClass) {
@@ -268,8 +220,36 @@ $(document).ready( function () {
 	
 	// find all the input elements with title attributes
 	$('input.text[title!=""]').hint();
-
 	//**************** END HINTS IN INPUTS *******************//
+	
+	
+	// Show different froms for different Check In radio buttons
+	$('.why .radio').click(function () {
+	
+		if ($('#why_forgot').is(":checked")) {
+			$('#forgot').show();
+		}
+		else {
+			$("#forgot").hide();
+		}
+		
+		if ($('#why_wfh').is(":checked")) {
+			$('#wfh').show();
+		}
+		else {
+			$("#wfh").hide();
+		}
+		
+	}).filter(':first').click();
+	
+
+	// jQuery UI Datepicker
+	$( "span.date input" ).datepicker({ 
+		defaultDate: -1,
+		firstDay: 1,
+		duration: 'fast',
+		dateFormat: 'dd/mm/yy'
+	});
 	
 	
 }); 
