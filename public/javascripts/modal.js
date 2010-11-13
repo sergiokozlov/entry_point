@@ -32,7 +32,7 @@ $(document).ready( function () {
 
 	//Close Popups and Fade Layer
 	$('a.close').live('click', function() { //When clicking on the close or fade layer...
-		$('#fade , .dialog').hide(/*function() {	$('#fade, a.close').remove(); }*/ );
+		$('#fade , .dialog').hide(/*function() { $('#fade, a.close').remove(); }*/);
 		return false;
 	});
 	

@@ -310,7 +310,27 @@ a {
 		padding-bottom:40px;
 		}
 	
-	/* Daily Stats report (Bar Chart)
+	/* General bar chart settings
+	---------------------------------------- */
+	.chart-container {
+		margin:0 auto;
+		text-align:center;
+		position:relative;
+	}
+	.graph {
+		border-bottom:1px solid #999;
+		width:100%;
+		height:100%;
+		}
+	img.ajax-loader {
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin:-9px 0 0 -110px;
+		display:none;
+		}
+	
+	/* Daily Stats (bar chart) report on personal dashboard 
 	---------------------------------------- */
 	.daily {
 		margin-bottom:0;
@@ -346,63 +366,53 @@ a {
 					float:left;
 					}
 
-	.daily .inner {
-		border:1px solid #e5e5e5;
-		border-top:0;
-		overflow:visible;
-		padding:25px 0 15px;
-		background:#f5f5f5;
-		position:relative;
-		width:756px;
-		}
-	#daily-bars {
-		width:700px;
-		margin:0 auto;
-		text-align:center;
-		border-bottom:1px solid #999;
-		height:160px; 
-		}
-	img.ajax-loader {
-		position:absolute;
-		top:50%;
-		left:50%;
-		margin:-9px 0 0 -110px;
-		display:none;
-		}
-	.legend {
-		border:1px solid #ccc;
-		background:#fff;
-		margin:30px auto 0;
-		width:402px;
-		overflow:hidden;
-		font-size:10px;
-		padding:5px 0;
-		color:#333;
-		border-radius:6px;
-		-moz-border-radius:6px;
-		-webkit-border-radius:6px;
-		}
-		.legend li {
-			float:left;
-			padding-left:15px;
+		.daily .inner {
+			border:1px solid #e5e5e5;
+			border-top:0;
+			overflow:visible;
+			padding:25px 0 15px;
+			background:#f5f5f5;
 			position:relative;
-			margin:0 10px;
+			width:756px;
 			}
-			.legend li.last {
-				margin-right:0;
+			.daily .chart-container {
+				width:700px;
+				height:160px;
 				}
-			.legend li div {
-				width:10px;
-				height:9px;
-				position:absolute;
-				top:2px;
-				left:0;
+		.legend {
+			border:1px solid #ccc;
+			background:#fff;
+			margin:30px auto 0;
+			width:402px;
+			overflow:hidden;
+			font-size:10px;
+			padding:5px 0;
+			color:#333;
+			border-radius:6px;
+			-moz-border-radius:6px;
+			-webkit-border-radius:6px;
+			}
+			.legend li {
+				float:left;
+				padding-left:15px;
+				position:relative;
+				margin:0 10px;
 				}
-				.legend li.red div {background:#8b0000;}
-				.legend li.yellow div {background:#ffc000;}
-				.legend li.green div {background:#509721;}
-				.legend li.grey div {background:#ccc;}
-		
+				.legend li.last {
+					margin-right:0;
+					}
+				.legend li div {
+					width:10px;
+					height:9px;
+					position:absolute;
+					top:2px;
+					left:0;
+					}
+					.legend li.red div {background:#8b0000;}
+					.legend li.yellow div {background:#ffc000;}
+					.legend li.green div {background:#509721;}
+					.legend li.grey div {background:#ccc;}
+			
 	
 	/* Weekly Stats report (Weekly Table)
 	---------------------------------------- */
@@ -412,16 +422,15 @@ a {
 		
 	/* Weekly report on Manage/Overview */
 	.team-weekly {margin-bottom:0;}
-	.team-weekly .graph {
-		width: 670px; 
-		height: 150px; 
-		margin: 0 auto;
-		border-bottom:1px solid #999;
-		}
-	th.column-name {width:200px;}
-	td.chart-container {
+	.team-weekly th.column-week {width:100px;}
+	.team-weekly th.column-name {width:200px;}
+	td.chart {
 		padding:40px 20px;
 		}
+		.team-weekly .chart-container {
+			width:670px;
+			height:150px;
+			}
 	.link_to_chart,
 	.collapse_chart {
 		cursor:pointer;
@@ -663,8 +672,8 @@ table {
 	.dialog-footer {
 		width:100%;
 		height:25px;
-		line-height:25px;
-		font-size:11px;
+		line-height:24px;
+		font-size:10px;
 		font-weight:bold;
 		text-shadow:1px 1px #fff;
 		color:#666;
