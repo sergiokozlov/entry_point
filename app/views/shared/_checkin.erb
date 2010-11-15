@@ -1,0 +1,47 @@
+<div id="checkin" class="dialog">
+	<h2>Manual Check-In</h2>
+	<div class="inner">
+		<div class="why">
+			<label>Reason:</label>
+			<ul>
+				<li><label><input id="why_forgot" name="why" size="30" type="radio" class="radio" checked="checked" /> I forgot to register</label></li>
+				<li><label><input id="why_wfh" name="why" size="30" type="radio" class="radio" /> I worked from home</label></li>
+			</ul>
+		</div> <!-- end .why -->
+		<form action="/records"  method="post" id="forgot">
+			<%=@record.errors%>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div>
+				<label for="forgot_date">Date:</label>
+				<span class="date"><input id="forgot_date" name="record[check_date]" size="30" type="text" class="text" title="yyyy-mm-dd" /></span>
+			</div>
+			<div>
+				<label for="forgot_checkin">Check-in:</label>
+				<span class="time-checkin"><input id="forgot_checkin" name="record[check_time]" size="30" type="text" class="text" title="hh:mm" /></span>
+			</div>
+			<div class="btn">
+				<input id="forgot_submit" name="forgot_submit" type="submit" class="button" value="Submit" />
+				or <a class="close" href="#">Cancel</a>
+			</div>
+		</form> <!-- end form#forgot -->
+		<form id="wfh">
+			<div>
+				<label for="wfh_date">Date:</label>
+				<span class="date"><input id="wfh_date" name="wfh_date" size="30" type="text" class="text" title="dd/mm/yyyy" /></span>
+			</div>
+			<div>
+				<label for="wfh_checkin">Check-in:</label>
+				<span class="time-checkin"><input id="wfh_checkin" name="wfh_checkin" size="30" type="text" class="text" title="hh:mm" /></span>
+			</div>
+			<div>
+				<label for="wfh_checkout">Check-out:</label>
+				<span class="time-checkout"><input id="wfh_checkout" name="wfh_checkin" size="30" type="text" class="text" title="hh:mm" /></span>
+			</div>
+			<div class="btn">
+				<input id="wfh_submit" name="wfh_submit" type="submit" class="button" value="Submit" />
+				or <a class="close" href="#">Cancel</a>
+			</div>
+		</form> <!-- end form#wfh -->
+	</div> <!-- end .inner -->
+	<div class="dialog-footer">Psst! Don't cheat!</div>
+</div> <!-- end .dialog #check-in -->

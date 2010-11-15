@@ -252,7 +252,7 @@ $(document).ready( function () {
 		defaultDate: -1,
 		firstDay: 1,
 		duration: 'fast',
-		dateFormat: 'dd/mm/yy'
+		dateFormat: 'yy-mm-dd'
 	});
 	
 	

@@ -13,7 +13,11 @@ class RecordsController < ApplicationController
 
   def create
     @user = current_user
-    @record =  @user.records.build(params[:record])
+    
+    @click_date_string = params[:record][:check_date] + ' ' + params[:record][:check_time] 
+    #render :action => 'show'
+
+    @record =  @user.records.build({:click_date_string => @click_date_string})
        if @record.save
 
           @record.process
@@ -21,9 +25,9 @@ class RecordsController < ApplicationController
           flash[:notice] = "Thanks #{@user.login}- we will check this record"
           redirect_to :action => 'show'
        else
-          render :action => 'new'
+          render :controller => 'dashboard'
         end
-   
+
   end 
   
   
