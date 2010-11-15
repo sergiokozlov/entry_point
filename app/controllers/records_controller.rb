@@ -22,10 +22,11 @@ class RecordsController < ApplicationController
 
           @record.process
           @record.working_day.recalculate 
-          flash[:notice] = "Thanks #{@user.login}- we will check this record"
-          redirect_to :action => 'show'
+          flash[:notice] = "Thanks you we will check this record"
+          redirect_to :controller => 'dashboard'
        else
-          render :controller => 'dashboard'
+          flash[:error] = @record.errors[:base]
+          redirect_to :controller => 'dashboard', :action => 'index'
         end
 
   end 

@@ -8,15 +8,14 @@ class Record < ActiveRecord::Base
   end  
   
   def click_date_string=(str)
-    @blank = str.blank?  
-    self.click_date = DateTime.parse(str)
+     self.click_date = DateTime.strptime(str,'%Y-%m-%d %H:%M')
   rescue ArgumentError  
     @invalid = true
   end 
  
   # validation logic  
   def validate
-    errors.add(:click_date, "is invalid") if @blank or @invalid
+    errors.add_to_base("Date and Time provided are invalid") if @invalid
   end
 
   # assosiation logic

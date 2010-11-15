@@ -9,7 +9,7 @@
 			</ul>
 		</div> <!-- end .why -->
 		<form action="/records"  method="post" id="forgot">
-			<%=@record.errors%>
+	<%= flash[:error] || flash[:notice]%>
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 			<div>
 				<label for="forgot_date">Date:</label>
