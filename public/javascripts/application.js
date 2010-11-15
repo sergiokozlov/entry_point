@@ -71,7 +71,7 @@ function expandDailyChart(user_id) {
 	var div_id =  'daily-bars-' + user_id
 	var x = $("#team_table").get(0).insertRow(row_number);
 
-	$(x).html("<td class='chart-container' colspan='6'><div id='"+div_id+"' class='graph'></div></td>");
+	$(x).html("<td class='chart' colspan='6'><div class='chart-container'><div id='"+div_id+"' class='graph'></div><img class='ajax-loader' src='/images/ajax-loader.gif' alt='' /></div></td>");
 
 	link.hide();
 	link.parents("td").children(".collapse_chart").show();
@@ -90,8 +90,8 @@ function showWeekByDay(direction, params) {
 	$.getJSON(url, params, function(data) {
       	dailychart("#daily-bars",data[0].data);
 		$("#week_shower").load("/dashboard/get_session_week");
-           $(".ajax-loader").hide();
-           $("#daily-bars").show();
+		   $(".ajax-loader").hide();
+           $("#daily-bars").fadeIn('fast');
      });
 	return false;
 }
@@ -176,7 +176,7 @@ $(document).ready( function () {
       }); 
 
 	// First group name highlighted
-		$("#group_line li:first-child").addClass('chosen_group');
+	$("#group_line li:first-child").addClass('chosen_group');
 	  
 	// Hover for table rows  
 	$("tr")
@@ -254,7 +254,7 @@ $(document).ready( function () {
 		duration: 'fast',
 		dateFormat: 'yy-mm-dd'
 	});
-	
+
 	
 }); 
 
