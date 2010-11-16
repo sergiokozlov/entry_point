@@ -13,7 +13,7 @@ class Homework < ActiveRecord::Base
   end  
   
   def check_in_string=(str)
-    self.check_in = DateTime.parse(str)
+    self.check_in = DateTime.strptime(str,'%Y-%m-%d %H:%M')
   rescue ArgumentError  
     @invalid_check_in = true
   end
@@ -24,19 +24,19 @@ class Homework < ActiveRecord::Base
   end  
   
   def check_out_string=(str)
-    self.check_out = DateTime.parse(str)
+    self.check_out = DateTime.strptime(str,'%Y-%m-%d %H:%M')
   rescue ArgumentError  
     @invalid_check_out = true
   end
 
   # Validation Logic
   def dates_are_valid?
-     errors.add(:check_in, "is invalid") if @invalid_check_in 
-     errors.add(:check_out, "is invalid") if @invalid_check_out
+     errors.add_to_base("Check in is invalid") if @invalid_check_in 
+     errors.add_to_base("Check out is invalid") if @invalid_check_out
   end
 
   def check_in_earlier_than_check_out
-     errors.add(:check_in, 'should be earlier than check out') if (check_out - check_in) <=0
+     errors.add_to_base('Check in should be earlier than check out') if (check_out - check_in) <=0
   end
 
   def check_in_out_cannot_be_too_far

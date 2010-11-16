@@ -31,18 +31,19 @@
 				or <a class="close" href="#">Cancel</a>
 			</div>
 		</form> <!-- end form#forgot -->
-		<form id="wfh">
+        <form action="homeworks" method="post" id="wfh">
+           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 			<div>
 				<label for="wfh_date">Date:</label>
-				<span class="date"><input id="wfh_date" name="wfh_date" size="30" type="text" class="text" title="dd/mm/yyyy" /></span>
+				<span class="date"><input id="wfh_date" name="homework[check_date]" size="30" type="text" class="text" title="dd/mm/yyyy" /></span>
 			</div>
 			<div>
 				<label for="wfh_checkin">Check-in:</label>
-				<span class="time-checkin"><input id="wfh_checkin" name="wfh_checkin" size="30" type="text" class="text" title="hh:mm" /></span>
+				<span class="time-checkin"><input id="wfh_checkin" name="homework[check_in_time]" size="30" type="text" class="text" title="hh:mm" /></span>
 			</div>
 			<div>
 				<label for="wfh_checkout">Check-out:</label>
-				<span class="time-checkout"><input id="wfh_checkout" name="wfh_checkin" size="30" type="text" class="text" title="hh:mm" /></span>
+				<span class="time-checkout"><input id="wfh_checkout" name="homework[check_out_time]" size="30" type="text" class="text" title="hh:mm" /></span>
 			</div>
 			<div class="btn">
 				<input id="wfh_submit" name="wfh_submit" type="submit" class="button" value="Submit" />

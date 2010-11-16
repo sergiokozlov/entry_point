@@ -8,13 +8,18 @@ class HomeworksController < ApplicationController
 
    def create
     @user = current_user
-    @homework = @user.homeworks.build(params[:homework])
+    @check_in_string = params[:homework][:check_date] + ' ' + params[:homework][:check_in_time]
+    @check_out_string = params[:homework][:check_date] + ' ' + params[:homework][:check_out_time]  
+
+    @homework = @user.homeworks.build({:check_in_string => @check_in_string, :check_out_string => @check_out_string})
        if @homework.valid?
           
           @homework.process
-          redirect_to :action => 'show'
+          flash[:checkin_notice] = "Thanks you we will check this homework record"
+          redirect_to :controller => 'dashboard'
        else
-          render :action => 'new'
+          flash[:checkin_error] = @homework.errors[:base].map {|e| e + ' <br/>'}
+          redirect_to :controller => 'dashboard', :action => 'index'
        end
    end
     
