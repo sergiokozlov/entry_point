@@ -7,10 +7,17 @@
 				<li><label><input id="why_forgot" name="why" size="30" type="radio" class="radio" checked="checked" /> I forgot to register</label></li>
 				<li><label><input id="why_wfh" name="why" size="30" type="radio" class="radio" /> I worked from home</label></li>
 			</ul>
-		</div> <!-- end .why -->
-		<form action="/records"  method="post" id="forgot">
-	<%= flash[:error] || flash[:notice]%>
-			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          </div> <!-- end .why -->
+         <!--Error or Notice about Login -->
+          <%if flash[:error]%>
+              <span class="checkin_error"> <%= flash[:error]%> </span>
+          <%elsif flash[:notice]%>    
+            <span class="checkin_notice"> <%= flash[:notice]%> </span>
+          <%else%>
+          <%end%>  
+
+        <form action="/records"  method="post" id="forgot">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 			<div>
 				<label for="forgot_date">Date:</label>
 				<span class="date"><input id="forgot_date" name="record[check_date]" size="30" type="text" class="text" title="yyyy-mm-dd" /></span>

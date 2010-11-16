@@ -1,9 +1,8 @@
 $(document).ready( function () {
-	
-	//When you click on a link with class of dialog-trigger and the href starts with a # 
-	$('a.dialog-trigger[href^=#]').click(function() {
-		var popID = $(this).attr('rel'); //Get Popup Name
-		var popURL = $(this).attr('href'); //Get Popup href to define size
+
+function showModalLayer(link) {
+    	var popID = link.attr('rel'); //Get Popup Name
+		var popURL = link.attr('href'); //Get Popup href to define size
 
 		//Pull Query & Variables from href URL
 		var query= popURL.split('?');
@@ -25,10 +24,22 @@ $(document).ready( function () {
 
 		//Show Background
 		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
-		$('#fade').css({'filter' : 'alpha(opacity=40)'}).show(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies 
+		$('#fade').css({'filter' : 'alpha(opacity=40)'}).show(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies
+}    
 
-		return false;
+
+  //When you click on a link with class of dialog-trigger and the href starts with a # 
+	$('a.dialog-trigger[href^=#]').click(function() {
+	  showModalLayer($(this));
+      return false;
 	});
+
+  //When there is flash[:notice] or flash[:error] show modal layer
+    if ($(".checkin_error,.checkin_notice").length>0) {
+      link = $('a.dialog-trigger[href^=#]');
+      showModalLayer(link);
+    }
+  
 
 	//Close Popups and Fade Layer
 	$('a.close').live('click', function() { //When clicking on the close or fade layer...
