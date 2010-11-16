@@ -9,10 +9,10 @@
 			</ul>
           </div> <!-- end .why -->
          <!--Error or Notice about Login -->
-          <%if flash[:error]%>
-              <span class="checkin_error"> <%= flash[:error]%> </span>
-          <%elsif flash[:notice]%>    
-            <span class="checkin_notice"> <%= flash[:notice]%> </span>
+          <%if flash[:checkin_error]%>
+              <span class="checkin_error"> <%= flash[:checkin_error]%> </span>
+          <%elsif flash[:checkin_notice]%>    
+            <span class="checkin_notice"> <%= flash[:checkin_notice]%> </span>
           <%else%>
           <%end%>  
 
