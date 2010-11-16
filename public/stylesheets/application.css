@@ -523,6 +523,14 @@ table {
 	background:#fff url(/images/header.png) center repeat-x ;
 	margin:-20px -20px 20px -20px;
 	border-bottom:1px solid #babdc1;
+	position:relative;
+	}
+	#group_line .time-range {
+		float:none;
+		position:absolute;
+		top:7px;
+		right:20px;
+		width: 200px;
 	}
 	#group_line ul {
 		padding:0 0 0 20px;
@@ -537,10 +545,9 @@ table {
 				margin-right:10px;
 				}
 			#group_line li a {
-
 				text-shadow:1px 1px #e9e9e9;
 				display:block;
-				padding:0 15px;
+				padding:0 12px;
 				color:#333;
 				}
 				#group_line li a:hover {
@@ -553,7 +560,6 @@ table {
 					background:#4576bb url(/images/group_line-active.png) top repeat-x;
 					color:#fff;
 					text-shadow:none;
-
 					}
 	
 /*----------------------------------------------------------
@@ -660,7 +666,18 @@ table {
 		border-top-left-radius:6px;
 		-moz-border-radius-topleft:6px;
 		-webkit-border-top-left-radius:6px;
+		position:relative;
 		}
+		.dialog h2 a.close {
+			display:block;
+			position:absolute;
+			top:-12px;
+			right:-15px;
+			height:30px;
+			width:30px;
+			background:url(/images/dialog-close.png) top left no-repeat;
+			z-index:181;
+			}
 	.dialog .inner {
 		padding:10px 20px 15px;
 		width:auto;
@@ -768,7 +785,6 @@ table {
 		
 	/* Check-in
 	---------------------------------------- */
-	#checkin {width:400px;}
 	
 	
 	/* Settings
@@ -778,7 +794,8 @@ table {
 		padding:0;
 		}
 		#settings form div {
-			padding-left:120px;
+			padding-left:150px;
+			margin-left:35px;
 			}
 			#settings form div.btn {
 				padding:15px 0 0 0;
@@ -786,7 +803,11 @@ table {
 				}
 			#settings form div label {
 				font-size:12px;
-				width:120px; 
+				display:block;
+				width:140px; 
+				height:25px;				
+				line-height:25px;
+				margin-left:-150px;
 				}
 	
 	

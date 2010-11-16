@@ -5,12 +5,12 @@ function showModalLayer(link) {
 		var popURL = link.attr('href'); //Get Popup href to define size
 
 		//Pull Query & Variables from href URL
-		var query= popURL.split('?');
+		/*var query= popURL.split('?');
 		var dim= query[1].split('&');
-		var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+		var popWidth = dim[0].split('=')[1];*/ //Gets the first query string value
 
 		//Fade in the Popup
-		$('#' + popID).show().css({ 'width': Number( popWidth ) });
+		$('#' + popID).show(); /*.css({ 'width': Number( popWidth ) });*/
 
 		//Define margin for center alignment (vertical   horizontal)
 		var popMargTop = ($('#' + popID).height() ) / 2;
@@ -29,16 +29,16 @@ function showModalLayer(link) {
 
 
   //When you click on a link with class of dialog-trigger and the href starts with a # 
-	$('a.dialog-trigger[href^=#]').click(function() {
+	$('a.dialog-trigger').click(function() {
 	  showModalLayer($(this));
       return false;
 	});
 
   //When there is flash[:notice] or flash[:error] show modal layer
     if ($(".checkin_error,.checkin_notice").length>0) {
-      link = $('a.dialog-trigger[href^=#]');
+      link = $('a.dialog-trigger');
       showModalLayer(link);
-    }
+	}
   
 
 	//Close Popups and Fade Layer
