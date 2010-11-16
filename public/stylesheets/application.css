@@ -337,11 +337,11 @@ a {
 		}
 		.chart-head {
 			background:#444 url(/images/button.png) repeat-x;
+			height:30px;
+			line-height:30px;
 			}
 			.chart-head h3 {
 				font-size:14px;
-				height:30px;
-				line-height:30px;
 				color:#fff;
 				text-align:center;
 				margin:0 auto;
