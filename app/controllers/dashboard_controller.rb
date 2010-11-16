@@ -76,7 +76,7 @@ class DashboardController < ApplicationController
   def user_data_for_range
     require_manager
     @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)
-    @dev = @selected_group.developers.find(:first, :conditions => {:id => params[:user].to_i})
+    @dev = @selected_group.developers.find(:first, :conditions => {:id => params[:user].to_i}) || @selected_group.manager
     @week_id  = params[:week].to_i
     @data = Array.new
 
