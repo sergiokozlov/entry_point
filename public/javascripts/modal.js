@@ -35,7 +35,7 @@ function showModalLayer(link) {
 	});
 
   //When there is flash[:notice] or flash[:error] show modal layer
-    if ($(".checkin_error,.checkin_notice").length>0) {
+    if ($(".alert").length>0) {
       link = $('a.dialog-trigger');
       showModalLayer(link);
 	}
@@ -43,7 +43,7 @@ function showModalLayer(link) {
 
 	//Close Popups and Fade Layer
 	$('a.close').live('click', function() { //When clicking on the close or fade layer...
-		$('#fade , .dialog').hide(/*function() { $('#fade, a.close').remove(); }*/);
+		$('#fade , .dialog, .alert').hide(/*function() { $('#fade, a.close').remove(); }*/);
 		return false;
 	});
 	

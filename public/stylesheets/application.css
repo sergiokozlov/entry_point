@@ -598,28 +598,59 @@ table {
 				}
 		
 /*----------------------------------------------------------
-                        @TOP ALERTS
+                            ALERTS
 -----------------------------------------------------------*/
-.alert {
-	padding:10px 12px;
-	font-size:24px;
-	font-weight:normal;
-	text-align:center;
-	color:#fff;
-	background:#df3b3b url(/images/alert.png) repeat-x top left;
-	border-bottom:1px solid #e4e5e6;
-	display:none;
-	}
-	.alert a:link,
-	.alert a:visited {
+
+	/* Alerts that slide from top
+	---------------------------------------- */
+	.top-alert {
+		padding:10px 12px;
+		font-size:24px;
+		font-weight:normal;
+		text-align:center;
 		color:#fff;
-		text-decoration:underline;
+		background:#df3b3b url(/images/alert.png) repeat-x top left;
+		border-bottom:1px solid #e4e5e6;
+		display:none;
 		}
-	div.error {background-color:#df3b3b;}
-	div.info {background-color:#618fb9;}
-	div.success {background-color:#83b452;}		
+		.top-alert a:link,
+		.top-alert a:visited {
+			color:#fff;
+			text-decoration:underline;
+			}
+		.top-error {background-color:#df3b3b;}
+		.top-info {background-color:#618fb9;}
+		.top-success {background-color:#83b452;}		
 
 
+	/* Regular alerts
+	---------------------------------------- */
+	.alert {
+		display:block;
+		padding:10px;
+		text-align:center;
+		font-weight:bold;
+		border-radius:6px;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		}
+		.alert span {
+			padding-left:20px;
+			background-position:center left;
+			background-repeat:no-repeat;
+			}
+		.error {
+			color:#b50007;
+			background:#f9e5e6;
+			border:1px solid #e8aaad;
+			}
+			.error span {background-image:url(/images/alert-error.png);}
+		.success {
+			color:#1c8400;
+			background:#e9f9e5;
+			border:1px solid #b4e8aa;
+			}
+			.success span {background-image:url(/images/alert-success.png);}
 
 /*----------------------------------------------------------
                          @DIALOGS
@@ -785,7 +816,9 @@ table {
 		
 	/* Check-in
 	---------------------------------------- */
-	
+	#checkin .alert {
+		margin:0 0 15px 0;
+		}
 	
 	/* Settings
 	---------------------------------------- */

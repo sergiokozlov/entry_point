@@ -15,7 +15,7 @@ class Record < ActiveRecord::Base
  
   # validation logic  
   def validate
-    errors.add_to_base("Date and Time provided are invalid") if @invalid
+    errors.add_to_base("Date or time provided are invalid") if @invalid
   end
 
   # assosiation logic
