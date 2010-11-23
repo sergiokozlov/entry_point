@@ -1,12 +1,13 @@
 <div id="settings" class="dialog">
-	<h2>Settings</h2>
+
+  <h2>Settings <a class="close" href="#"></a></h2>
     <div class="inner">
 
       <!--Error or Notice about Password Change -->
           <%if flash[:settings_error]%>
-              <span class="settings_error"> <%= flash[:settings_error]%> </span>
+              <span class="alert error"> <%= flash[:settings_error]%> </span>
           <%elsif flash[:settings_notice]%>    
-            <span class="settings_notice"> <%= flash[:settings_notice]%> </span>
+            <span class="alert success"> <%= flash[:settings_notice]%> </span>
           <%else%>
           <%end%>
 

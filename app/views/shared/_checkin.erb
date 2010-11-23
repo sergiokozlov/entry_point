@@ -1,5 +1,5 @@
 <div id="checkin" class="dialog">
-	<h2>Manual Check-In</h2>
+	<h2>Manual Check-In <a class="close" href="#"></a></h2>
 	<div class="inner">
 		<div class="why">
 			<label>Reason:</label>
@@ -7,16 +7,18 @@
 				<li><label><input id="why_forgot" name="why" size="30" type="radio" class="radio" checked="checked" /> I forgot to register</label></li>
 				<li><label><input id="why_wfh" name="why" size="30" type="radio" class="radio" /> I worked from home</label></li>
 			</ul>
-          </div> <!-- end .why -->
-         <!--Error or Notice about Login -->
-          <%if flash[:checkin_error]%>
-              <span class="checkin_error"> <%= flash[:checkin_error]%> </span>
-          <%elsif flash[:checkin_notice]%>    
-            <span class="checkin_notice"> <%= flash[:checkin_notice]%> </span>
-          <%else%>
-          <%end%>  
+          </div> <!-- end .why --> 
 
         <form action="/records"  method="post" id="forgot">
+		
+			<!-- Error or Notice about Login -->
+			<%if flash[:checkin_error]%>
+				<span class="alert error"> <span><%= flash[:checkin_error]%></span> </span>
+			<%elsif flash[:checkin_notice]%>    
+				<span class="alert success"> <span><%= flash[:checkin_notice]%></span> </span>
+			<%else%>
+			<%end%> 
+			
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 			<div>
 				<label for="forgot_date">Date:</label>

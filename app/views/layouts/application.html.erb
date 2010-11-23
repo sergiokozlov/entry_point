@@ -26,9 +26,9 @@
 			
             <ul id="tools">
               <%unless @user.director?%>
-                <li class="checkin"><a href="#?w=400" rel="checkin" class="dialog-trigger">Check-in</a></li>
+                <li class="checkin"><a href="#" rel="checkin" class="dialog-trigger">Check-in</a></li>
               <%end%>  
-				<li class="settings"><a href="#?w=500" rel="settings" class="dialog-trigger">Settings</a> <!-- <%= link_to "Settings", edit_user_path(:current) %> --> </li>
+				<li class="settings"><a href="#" rel="settings" class="dialog-trigger">Settings</a></li>
 				<li class="sign-out"><%= link_to "Sign out", logout_path %></li>
 			</ul> <!-- end #tools -->
 			<%if @user.manager?%>
@@ -58,7 +58,7 @@
 		
 		<div id="footer">
 			<p class="left">Created by <a href="mailto:sn.kozlov@yahoo.com">Sergey Kozlov</a> & <a href="http://www.ivanbabko.com">Ivan Babko</a>.</p>
-			<p class="right">Built with <a href="http://html5doctor.com">HTML5</a> | <a href="http://css3.info">CSS3</a> | <a href="http://jquery.com">jQuery</a> | <a href="http://rubyonrails.org">Ruby on Rails</a>. Stored on <a href="https://github.com/sergiokozlov/entry_point">GitHub</a>.</p>
+			<p class="right">Built with <!-- <a href="http://html5doctor.com">HTML5</a> |  --> <a href="http://css3.info">CSS3</a> | <a href="http://jquery.com">jQuery</a> | <a href="http://rubyonrails.org">Ruby on Rails</a>. Stored on <a href="https://github.com/sergiokozlov/entry_point">GitHub</a>.</p>
 		</div> <!-- end #footer -->
 		
 	</div> <!-- end #container -->
