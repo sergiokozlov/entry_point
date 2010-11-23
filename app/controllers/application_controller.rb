@@ -50,6 +50,12 @@ class ApplicationController < ActionController::Base
   def store_location
       session[:return_to] = request.request_uri
   end
+
+  def redirect_back
+      redirect_to(session[:return_to])
+      session[:return_to] = nil
+   end
+  
   
  # charts related
   def days_array(length,lag=0)

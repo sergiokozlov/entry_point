@@ -36,7 +36,13 @@ function showModalLayer(link) {
 
   //When there is flash[:notice] or flash[:error] show modal layer
     if ($(".checkin_error,.checkin_notice").length>0) {
-      link = $('a.dialog-trigger[href^=#]');
+      link = $('a.dialog-trigger[rel="checkin"]');
+      showModalLayer(link);
+    }
+
+  //When there is flash[:notice] or flash[:error] show modal layer
+    if ($(".settings_error,.settings_notice").length>0) {
+      link = $('a.dialog-trigger[rel="settings"]');
       showModalLayer(link);
     }
   

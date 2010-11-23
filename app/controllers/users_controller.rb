@@ -25,12 +25,19 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update_attributes( params[:user] || params[:manager]) #TODO: understand how to pass user here
-      flash[:notice] = "Account updated!"
-      redirect_to :controller => 'dashboard'
+    if @user.valid_password? (params[:old_password])
+    
+      if @user.update_attributes(params[:user])
+          flash[:settings_notice] = "Password was successfully updated"
+          redirect_back
+      else
+          flash[:settings_error] = "Password doesn't match with it's confirmation"
+          redirect_back
+      end
     else
-      render :action => :edit
-    end
+        flash[:settings_error] = "Old Password is incorrect"
+        redirect_back
+    end  
   end
 
 end

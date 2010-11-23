@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   helper ApplicationHelper # include all helpers, all the time
-
+  before_filter :store_location, :only => [:index, :manage, :overview]
 
   def index
     require_user
