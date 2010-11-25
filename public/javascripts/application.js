@@ -16,6 +16,11 @@ function dailychart(divId,returnedData) {
 	jQuery(divId).tufteBar({
 		data: returnedData,
 		barWidth: 0.8,
+        toolTip: function(index) { 
+          var msg = 'Office: '+this[3].check_in + ' &ndash; ' + this[3].check_out 
+          if (this[0] instanceof Array && this[0][1] > 0)  { return msg + '<br/>' + 'and ' + this[0][1] + ' minutes from home' }
+          else {return msg}
+        }, 
 		barLabel:  function(index) { return this[1].bar_label },
 		axisLabel: function(index) { return this[1].label },
 		color:     function(index, stackedIndex) { 

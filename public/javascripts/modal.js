@@ -41,12 +41,6 @@ function showModalLayer(link) {
       showModalLayer(link);
     }
 
-  //When there is flash[:notice] or flash[:error] show modal layer
-    if ($(".alert_password").length>0) {
-      link = $('a.dialog-trigger[rel="settings"]');
-      showModalLayer(link);
-	}
-  
 
 	//Close Popups and Fade Layer
 	$('a.close').live('click', function() { //When clicking on the close or fade layer...
