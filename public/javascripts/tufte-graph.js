@@ -17,7 +17,6 @@
   // handy (the colors, for instance)
   $.fn.tufteBar.defaults = {
     barWidth:  0.8,
-    toolTip: function(index) {return this[0]},
     colors:    ['#07093D', '#0C0F66', '#476FB2'],
     color:     function(index, stackedIndex, options) { return options.colors[stackedIndex % options.colors.length]; },
     barLabel:  function(index, stackedIndex) { 
@@ -28,7 +27,6 @@
       color: function(index, options) { return options.colors[index % options.colors.length]; },
       label: function(index) { return this; }
     },
-	showtooltip: true
   }
 
   $.tufteBar = {
@@ -135,8 +133,9 @@
         var coords = [t.X(left), t.Y(top), t.W(width), t.H(height)];
         var toolTip = optionResolver(options.toolTip);
         var r = ctx.rect(coords[0], coords[1], coords[2], coords[3]).attr({stroke: color, fill: color});
-
-             if (optionResolver(options.showtooltip)) {
+        
+        // adding tooltip
+             if (options.toolTip) {
                 $(r[0]).mousemove(function(e){
                    $("#tooltip").remove(); 
                    showBarToolTip(e.pageX,e.pageY,toolTip);
