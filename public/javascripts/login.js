@@ -13,14 +13,14 @@ $(function () {
 	$('#new_user_session').submit(function (){  
 		$.post($(this).attr('action'), $(this).serialize(), function(msg){
 			if (msg == 'Bad') {
-				if ( $('.alert').css('display')=='block' ) {
-					$('.alert').fadeOut('fast').fadeIn('fast').fadeOut('fast').fadeIn('fast'); 
+				if ( $('.top-alert').css('display')=='block' ) {
+					$('.top-alert').fadeOut('fast').fadeIn('fast').fadeOut('fast').fadeIn('fast'); 
 				} else {
-					$('.alert').slideDown('fast');
+					$('.top-alert').slideDown('fast');
 				}
 			} else {
-				if ( $('.alert').css('display')=='block' ) {
-					$('.alert').slideUp('fast'); 
+				if ( $('.top-alert').css('display')=='block' ) {
+					$('.top-alert').slideUp('fast'); 
 				}
 			}
 		});  
