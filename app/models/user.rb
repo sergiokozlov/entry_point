@@ -44,12 +44,18 @@ class User < ActiveRecord::Base
   # Aggregation logic
   def has_late_commings(last_x_days=14)
    lc = logged_working_days.select {|day| day.late_comming? and (Date.today - day.wday < last_x_days)}.length 
-   lc if lc > 1
+   message =  " came late #{lc} times" if lc > 1
+   #lc if lc > 1
   end
 
   def has_short_days(last_x_days=14)
-   sd = logged_working_days.select {|day| day.short_day? and (Date.today - day.wday < last_x_days)}.length 
-   sd if sd > 1
+   sd = logged_working_days.select {|day| day.short_day? and (Date.today - day.wday < last_x_days)}.length
+   message = "worked #{sd} short days" if sd > 1  
+   #sd if sd > 1
+  end
+
+  def label
+    [has_late_commings,has_short_days].select {|a| a}.inject() {|x,y| x + ' and ' + y}
   end
   
   # role validation logic
@@ -73,7 +79,7 @@ class Manager < User
   #has_many :developers, :through => :group, foreign_key => 'manager_id'
 
   def should_worry?
-    true unless group.developers.select { |dev| dev.has_late_commings or dev.has_short_days}.empty?
+    true unless group.labels.empty?
   end
 
   def worse_group

@@ -2,11 +2,11 @@
     <a href="#" class="hide"></a>
     <!-- TODO: Use Partials-->
     <% if @user.should_worry? then %>
+      <h3> During Last two weeks</h3>
+      <br/>
 	  <ul>
-      <%  @user.group.developers.each do |dev| %>
-        <%if line = green_message(dev)  then %>
-			<li><%= line %></li>
-        <%end%>
+      <%  @user.group.labels.each_pair do |dev_name, message| %>
+        <li><%= "<b> #{dev_name} </b> #{message} " %></li>
       <%end%>
 	  </ul>
     <%else%>

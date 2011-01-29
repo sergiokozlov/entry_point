@@ -10,5 +10,11 @@ class Group < ActiveRecord::Base
     end
     result.uniq.sort {|a,b| b<=> a}
   end
+
+  def labels
+     h = Hash.new
+     self.developers.select {|dev| dev.label}.each {|dev| h[dev.name]= dev.label}
+     h
+  end
   
 end
