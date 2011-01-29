@@ -1,20 +1,5 @@
 module DashboardHelper
 
-  # green_message
-  # TODO: Implement some chain method
-  def green_message(dev)
-    message =  case
-       when (dev.has_late_commings  and dev.has_short_days ) then " worked #{dev.has_short_days} short days and came late #{dev.has_late_commings} times"
-       when dev.has_late_commings then  " came late #{dev.has_late_commings} times"
-       when dev.has_short_days   then  "worked #{dev.has_short_days} short days"
-       else   nil
-     end
-     return  "<b> #{dev.name} </b> " + message +  " during last two weeks" if message
-  end
-
-  def string_chain(delim,strings_array)
-      strings_array.inject {|result,message| result + ' and ' + message}
-  end
 
   # Weekly Reports
   

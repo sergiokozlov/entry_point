@@ -11,9 +11,9 @@ class Group < ActiveRecord::Base
     result.uniq.sort {|a,b| b<=> a}
   end
 
-  def labels
+  def alerts
      h = Hash.new
-     self.developers.select {|dev| dev.label}.each {|dev| h[dev.name]= dev.label}
+     self.developers.select {|dev| dev.alert}.each {|dev| h[dev.name]= dev.alert}
      h
   end
   

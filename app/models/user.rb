@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
    #sd if sd > 1
   end
 
-  def label
+  def alert
     [has_late_commings,has_short_days].select {|a| a}.inject() {|x,y| x + ' and ' + y}
   end
   
@@ -79,7 +79,7 @@ class Manager < User
   #has_many :developers, :through => :group, foreign_key => 'manager_id'
 
   def should_worry?
-    true unless group.labels.empty?
+    true unless group.alerts.empty?
   end
 
   def worse_group
