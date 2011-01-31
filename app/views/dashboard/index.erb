@@ -7,6 +7,18 @@
 
 <div class="clear"></div>
 
+<div id="outliers">
+    <a href="#" class="hide"></a>
+    <!-- TODO: Use Partials-->
+    <% if @user.alert then %>
+	  <ul>
+        <li><%= "<b>You </b> #{@user.alert} during last two weeks" %></li>
+      </ul>
+    <%else%>
+      <%= "You are Working Great" %>
+    <%end%> 
+  </div> <!-- end #outliers -->
+
 <div class="report my-weekly">
 	<h2>My Weekly Stats </h2>
 	<table cellspacing="0">

@@ -11,6 +11,7 @@ class DashboardController < ApplicationController
   def manage
     require_manager
     @user = current_user
+    @group = @user.group
 
     @weeks  = @user.group.weeks_to_analyze
   end
