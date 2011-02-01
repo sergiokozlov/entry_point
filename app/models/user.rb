@@ -24,11 +24,15 @@ class User < ActiveRecord::Base
     self.password = self.password_confirmation = 'Password10' unless password
   end
 
-  # selection of working days
+  # selection of working days for week and month
   def logged_working_days
      self.working_days.find(:all, :order => 'wday desc')  
   end 
 
+  def month_working_days(month_number)
+     logged_working_days.select {|day| day.wday.month == month_number and day.total_duration > 0}
+  end
+  
   def weeked_working_days(week_number)
      logged_working_days.select {|day| day.wday.cweek == week_number and day.total_duration > 0} 
   end 
@@ -39,6 +43,10 @@ class User < ActiveRecord::Base
   
   def logged_working_weeks
     logged_working_days.map{|day| [day.wday.cweek,day.wday.year]}.uniq
+  end
+
+  def logged_working_months
+    logged_working_days.map{|day| [day.wday.month,day.wday.year]}.uniq
   end
 
   # Aggregation logic

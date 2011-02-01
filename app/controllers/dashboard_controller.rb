@@ -13,7 +13,8 @@ class DashboardController < ApplicationController
     @user = current_user
     @group = @user.group
 
-    @weeks  = @user.group.weeks_to_analyze
+    @weeks  = @group.weeks_to_analyze
+    @months = @group.months_to_analyze
   end
   
   def overview

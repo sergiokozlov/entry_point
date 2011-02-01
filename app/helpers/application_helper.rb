@@ -2,6 +2,7 @@
 module ApplicationHelper
   ABBR_DAYNAMES = %w(Sun Mon Tue Wed Thu Fri Sat)
   ABBR_MONTHNAMES = %w(Jan Feb Mar Apr May Jun July Aug Sep Oct Nov Dec)
+  ABBR_FULL_MONTHNAMES = %w(January February March April May June July August September October November December)
   # Hours and minutes arithmetics
   def h60  (i)
     i / 60
@@ -44,5 +45,9 @@ module ApplicationHelper
    
   def week_value(week)
     "#{day_value(week_first_day(week))} - #{day_value(week_last_day(week))}"
+  end
+
+  def month_value(month)
+    ABBR_FULL_MONTHNAMES[month-1]
   end
 end

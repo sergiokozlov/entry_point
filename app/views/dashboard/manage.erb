@@ -23,10 +23,15 @@
 
 	<div class="clear"></div>
 
-	<div class="time-range">
+	<div class="time-range" id="week_timerange">
 		<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
-		<label>Week:</label>
-	</div> <!-- end .time-range -->
+        <label>Week:</label>
+    </div>
+    <div class="time-range" id="month_timerange">
+        <%= select( "month", "id", @months.map {|m| [month_value(m[0]),'month_'+m[0].to_s]}) %>
+        <label>Month:</label>
+    </div>
+      <!-- end .time-range -->
 
 	<h2>My Team Stats</h2>
 
