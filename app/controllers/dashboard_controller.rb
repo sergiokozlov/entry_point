@@ -75,6 +75,23 @@ class DashboardController < ApplicationController
     render :layout => false 
   end
 
+    def team_data_by_month
+    require_manager
+    @user = current_user
+    @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
+    @month_id  = (params[:month] || (@selected_group.months_to_analyze)[0][0]).to_i
+    
+    case 
+    when @user.director?
+       @developers = [@selected_group.manager] + @selected_group.developers
+    else
+       @developers = @selected_group.developers
+    end
+ 
+
+    render :layout => false 
+  end
+
   def user_data_for_range
     require_manager
     @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)

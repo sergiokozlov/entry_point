@@ -1,0 +1,31 @@
+<div class="report team-weekly">
+	<table id="team_table" cellspacing="0">
+		<thead>
+			<tr>
+				<th class="column-name">Team Member</th>
+				<th class="column-week">Month</th>
+				<th>Daily Average</th>
+				<th># Working Days</th>
+				<th># Hours Spent</th>
+                <th><img src="/images/bar-chart.png" alt="" /></th>
+			</tr>
+		</thead>
+		<tbody>
+		<%  @developers.each do |dev| -%>
+			<tr class = "<%= cycle("white","alt") -%>">
+				<td> <%=dev.name %> </td>
+				<td> <%= month_value(@month_id) %></td>
+				<td> <%=to_time(month_average(@month_id,dev))%></td>
+				<td> <%=dev.month_working_days(@month_id).length%> </td>
+				<td> <%=to_time(month_completed(@month_id,dev))%> </td>
+                <td> <!--
+                  <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">&gt;</button>
+                  <button class="collapse_chart" type="button">&lt;</button>
+                  -->
+                </td>
+			</tr>
+		<% end -%>
+		</tbody>
+	</table>
+</div> <!-- end .report .team-weekly -->
+

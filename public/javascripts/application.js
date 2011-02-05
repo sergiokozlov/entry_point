@@ -55,9 +55,28 @@ function chosenWeek() {
 	return getId(week_id);
 }
 
+// This function returns number of month selected for analysis
+function chosenMonth() {
+	var month_id = $("#month_id").find("option:selected").val();
+	return getId(month_id);
+}
+
 // This function loads data table for selected week and group
 function loadWeek(params, ids, f) {
 	$('#ajax_week').load("/dashboard/team_data_by_week/", params, function() {
+		$(".collapse_chart").hide();
+         if (typeof f == "function"  && ids.length > 0) {
+         //alert(ids);
+          $.each(ids, function(index, value) {
+             f(value);
+          });
+         };
+	});
+}
+
+// This function loads data table for selected month and group
+function loadMonth(params, ids, f) {
+	$('#ajax_week').load("/dashboard/team_data_by_month/", params, function() {
 		$(".collapse_chart").hide();
          if (typeof f == "function"  && ids.length > 0) {
          //alert(ids);
@@ -154,6 +173,10 @@ $(document).ready( function () {
 	  loadWeek({week: chosenWeek, group: chosenGroup}, open_ids, expandDailyChart);
 	});
 
+    // On selector change update month 
+    $("#month_id").focus ( function() {
+        loadMonth();
+        });
 
 	$(".collapse_chart").live("click", function() {
 		var row_number = $(this).parents("tr").get(0).rowIndex + 1;
