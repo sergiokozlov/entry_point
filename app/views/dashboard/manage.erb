@@ -23,13 +23,18 @@
 
 	<div class="clear"></div>
 
-	<div class="time-range" id="week_timerange">
-		<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
-        <label>Week:</label>
+    <div class="range-labels">
+
     </div>
-    <div class="time-range" id="month_timerange">
+
+   
+    <div class="time-range" id="week_timerange">
+      <div class="select-range">
+        <input id="radio_week" type="radio" name="range" value="week" /> <b>Week </b>
+        <input id="radio_month" type="radio" name="range" value="month" /> <b>Month</b>
+      </div>
+        <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
         <%= select( "month", "id", @months.map {|m| [month_value(m[0]),'month_'+m[0].to_s]}) %>
-        <label>Month:</label>
     </div>
       <!-- end .time-range -->
 

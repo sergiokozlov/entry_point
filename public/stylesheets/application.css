@@ -482,9 +482,11 @@ table {
 	width: 200px;
 	}
 	.time-range label {float:right; font-weight:bold; color:#333;margin-right:5px;line-height:1.6;}
-	.time-range select {float:right; padding:1px 3px;cursor:pointer;}
-	
-	
+	.time-range select {float:right; padding:1px 3px;cursor:pointer;clear:right;}
+
+.select-range {
+    float:right;
+  }
 /*----------------------------------------------------------
                     @OUTLIERS NOTIFICATIONS
 -----------------------------------------------------------*/

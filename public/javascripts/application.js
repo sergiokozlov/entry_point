@@ -158,9 +158,35 @@ $(document).ready( function () {
 	var pm_id = 'week_'+$.url.param("id");
 	$('#week_id option[value='+pm_id+']').attr('selected', 'selected');
 
+    // hide month range
+    $("#month_id").hide();
 
-	// load last available week
+	// load last available week and check week radio button
+    $("#radio_week").attr("checked","checked");
 	loadWeek();
+
+    // On range update - update ajax_week
+    $('input[name=range]:radio').change ( function() {
+      var range = getId(this.id);
+      	switch (range)
+			{
+				case 'week':
+				  $("#month_id").hide();
+                  $("#week_id").show();
+                  loadWeek();
+				break;
+				case 'month':
+				  $("#week_id").hide();
+                  $("#month_id").show();
+                  loadMonth(); 
+				break;
+			}; 
+
+      //$("select").hide();
+     // $("#"+range+"_id").show();
+      //eval("load")
+        //alert(range);
+        });
 
 	// On selector change update week
 	$("#week_id").change ( function () {
@@ -174,7 +200,7 @@ $(document).ready( function () {
 	});
 
     // On selector change update month 
-    $("#month_id").focus ( function() {
+    $("#month_id").change ( function() {
         loadMonth();
         });
 
