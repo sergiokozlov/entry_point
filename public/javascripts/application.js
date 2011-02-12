@@ -181,11 +181,6 @@ $(document).ready( function () {
                   loadMonth(); 
 				break;
 			}; 
-
-      //$("select").hide();
-     // $("#"+range+"_id").show();
-      //eval("load")
-        //alert(range);
         });
 
 	// On selector change update week
@@ -201,7 +196,7 @@ $(document).ready( function () {
 
     // On selector change update month 
     $("#month_id").change ( function() {
-        loadMonth();
+        loadMonth({month: chosenMonth, group: chosenGroup});
         });
 
 	$(".collapse_chart").live("click", function() {

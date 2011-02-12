@@ -6,8 +6,7 @@
 				<th class="column-week">Month</th>
 				<th>Daily Average</th>
 				<th># Working Days</th>
-				<th># Hours Spent</th>
-                <th><img src="/images/bar-chart.png" alt="" /></th>
+			    <th><img src="/images/bar-chart.png" alt="" /></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,8 +16,7 @@
 				<td> <%= month_value(@month_id) %></td>
 				<td> <%=to_time(month_average(@month_id,dev))%></td>
 				<td> <%=dev.month_working_days(@month_id).length%> </td>
-				<td> <%=to_time(month_completed(@month_id,dev))%> </td>
-                <td> <!--
+			    <td> <!--
                   <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">&gt;</button>
                   <button class="collapse_chart" type="button">&lt;</button>
                   -->
