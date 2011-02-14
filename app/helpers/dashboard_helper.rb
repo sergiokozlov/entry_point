@@ -1,6 +1,6 @@
 module DashboardHelper
 
-
+#TODO: should be @user model attributes not a helpers
   # Weekly Reports
   
   def week_completed(number = Date.today.cweek,user = current_user)

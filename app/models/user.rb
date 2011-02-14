@@ -49,6 +49,19 @@ class User < ActiveRecord::Base
     logged_working_days.map{|day| [day.wday.month,day.wday.year]}.uniq
   end
 
+  # Statitics
+  def week_completed (number=Date.today.cweek)
+    weeked_working_days(number).map{|day| day.total_duration}.inject(0) {|x,y| x+y}
+  end
+
+  def week_average (number=Date.today.cweek)
+    if (l = weeked_working_days(number).length) > 0
+      week_completed(number)/l
+    else
+      0
+    end
+  end
+
   # Aggregation logic
   def has_late_commings(last_x_days=14)
    lc = logged_working_days.select {|day| day.late_comming? and (Date.today - day.wday < last_x_days)}.length 
