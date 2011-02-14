@@ -173,12 +173,12 @@ $(document).ready( function () {
 				case 'week':
 				  $("#month_id").hide();
                   $("#week_id").show();
-                  loadWeek();
+                  loadWeek({week: chosenWeek, group: chosenGroup});
 				break;
 				case 'month':
 				  $("#week_id").hide();
                   $("#month_id").show();
-                  loadMonth(); 
+                  loadMonth({month: chosenMonth, group: chosenGroup}); 
 				break;
 			}; 
         });
