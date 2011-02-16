@@ -38,4 +38,16 @@ class Group < ActiveRecord::Base
     0
    end 
   end 
+
+  def month_completed(number = Date.today.month)
+    self.developers.map{|dev| dev.month_completed(number)}.inject(0) {|x,y| x+y} 
+  end
+
+  def month_average(number = Date.today.month)
+   if (l = self.developers.map{|dev| dev.month_working_days(number).length}.inject(0) {|x,y| x+y}) > 0
+     month_completed(number)/l
+   else
+    0
+   end 
+  end 
 end

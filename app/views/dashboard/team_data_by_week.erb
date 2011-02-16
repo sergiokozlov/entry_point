@@ -3,7 +3,8 @@
 		<thead>
 			<tr>
 				<th class="column-name">Team Member</th>
-				<th class="column-week">Week</th>
+                <th class="column-week">Week</th>
+                <th>Team Average</th>
 				<th>Daily Average</th>
 				<th># Working Days</th>
 				<th># Hours Spent</th>
@@ -14,10 +15,11 @@
 		<%  @developers.each do |dev| -%>
 			<tr class = "<%= cycle("white","alt") -%>">
 				<td> <%=dev.name %> </td>
-				<td> <%= week_value(@week_id) %></td>
-				<td> <%=to_time(week_average(@week_id,dev))%></td>
+                <td> <%= week_value(@week_id) %></td>
+                <td> <%=to_time(@selected_group.week_average(@week_id)) %> </td>
+				<td> <%=to_time(dev.week_average(@week_id))%></td>
 				<td> <%=dev.weeked_working_days(@week_id).length%> </td>
-				<td> <%=to_time(week_completed(@week_id,dev))%> </td>
+				<td> <%=to_time(dev.week_completed(@week_id))%> </td>
                 <td> 
                   <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">&gt;</button>
                   <button class="collapse_chart" type="button">&lt;</button>

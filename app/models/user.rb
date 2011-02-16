@@ -62,6 +62,18 @@ class User < ActiveRecord::Base
     end
   end
 
+  def month_completed (number=Date.today.month)
+    month_working_days(number).map{|day| day.total_duration}.inject(0) {|x,y| x+y}
+  end
+
+  def month_average (number=Date.today.month)
+    if (l = month_working_days(number).length) > 0
+      month_completed(number)/l
+    else
+      0
+    end
+  end
+
   # Aggregation logic
   def has_late_commings(last_x_days=14)
    lc = logged_working_days.select {|day| day.late_comming? and (Date.today - day.wday < last_x_days)}.length 

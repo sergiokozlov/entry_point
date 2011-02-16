@@ -36,20 +36,6 @@ module DashboardHelper
     end    
   end
 
-  # Monthly Reports
-
-  def month_completed(number = Date.today.month,user = current_user)
-    user.month_working_days(number).map{|day| day.total_duration}.inject(0) {|x,y| x+y}  
-  end 
-  
-  def month_average(number = Date.today.month,user = current_user)
-    if (l = user.month_working_days(number).length) > 0
-      month_completed(number, user)/l
-    else
-      0
-    end  
-  end
-  
   
   # Daily Reports
   # Today:
