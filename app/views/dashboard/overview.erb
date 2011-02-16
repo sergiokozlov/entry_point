@@ -1,9 +1,13 @@
 <div id="group_line">
 
-	<div class="time-range">
-		<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
-		<label>Week:</label>
-	</div> <!-- end .time-range -->
+    <div class="time-range" id="week_timerange">
+      <div class="select-range">
+        <input id="radio_week" type="radio" name="range" value="week" /> <b>Week </b>
+        <input id="radio_month" type="radio" name="range" value="month" /> <b>Month</b>
+      </div>
+        <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
+        <%= select( "month", "id", @months.map {|m| [month_value(m[0]),'month_'+m[0].to_s]}) %>
+    </div> <!-- end .time-range -->
 
   <ul id="group_list">
   <% @user.groups.each do |group| -%>

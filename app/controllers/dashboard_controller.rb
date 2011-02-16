@@ -22,6 +22,7 @@ class DashboardController < ApplicationController
     @user = current_user
  
     @weeks = @user.groups.first.weeks_to_analyze
+    @months = @user.groups.first.months_to_analyze
   end
   
 
