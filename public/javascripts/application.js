@@ -13,7 +13,7 @@ function getId (input) {
 
 // This function draw bar char with daily data
 function dailychart(divId,returnedData) {
-	jQuery(divId).tufteBar({
+	jQuery(divId).tufteGraph('bar',{
 		data: returnedData,
 		barWidth: 0.8,
         toolTip: function(index) { 
