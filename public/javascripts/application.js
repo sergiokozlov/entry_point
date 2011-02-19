@@ -15,14 +15,16 @@ function getId (input) {
 function dailychart(divId,returnedData) {
 	jQuery(divId).tufteGraph('bar',{
 		data: returnedData,
-		barWidth: 0.8,
         toolTip: function(index) { 
           var msg = 'Office: '+this[3].check_in + ' &ndash; ' + this[3].check_out 
           if (this[0] instanceof Array && this[0][1] > 0)  { return msg + '<br/>' + 'and ' + this[0][1] + ' minutes from home' }
           else {return msg}
+        },
+        bar: {
+          barWidth:  0.8,
+          barLabel:  function(index) { return this[1].bar_label },
+		  axisLabel: function(index) { return this[1].label },
         }, 
-		barLabel:  function(index) { return this[1].bar_label },
-		axisLabel: function(index) { return this[1].label },
 		color:     function(index, stackedIndex) { 
 			switch (this[2].flag)
 			{
@@ -40,6 +42,27 @@ function dailychart(divId,returnedData) {
 			}; 
 		}
 	});
+}
+
+function dailytrend(divId,returnedData) {
+  $(divId).tufteGraph('line', {
+          data: returnedData,
+          line: {
+		    axisLabel: function(index) { return this[0]},
+          }, 
+          afterDraw: {
+          
+            stack: function(ctx, index) {
+              if (index % 2 == 0) {
+                ctx.rect(ctx.scale.X(index), 0, ctx.scale.X(1), ctx.axis.y.pixelLength).attr({
+                  stroke: 'none',
+                  fill: '#EEEEEE'
+                }).toBack();
+              }
+            }
+          }
+          
+        });
 }
 
 // This function returns id of group selected for analysis
@@ -129,6 +152,22 @@ $(document).ready( function () {
 
 // Actions on "DASHBOARD/INDEX" page for current_user
 	// show last loaded week daily chart for current_user, support "<< >>" moving, refresh week
+ commonTestData = [
+          [1000, {label: 'A'}],
+          [1300, {label: 'B'}],
+          [3600, {label: 'C'}],
+          [4000, {label: 'D'}],
+          [5200, {label: 'E'}],
+          [7000, {label: 'F', color: '#FFBE33'}],
+           [4000, {label: 'D'}],
+          [5200, {label: 'E'}],
+          [7000, {label: 'F', color: '#FFBE33'}]
+          [0,    {label: 'G'}]
+        ]
+
+    
+    dailytrend("#line_trend",commonTestData);
+
 	showWeekByDay();
 	
 	$("#scrollF").live("click", function() {

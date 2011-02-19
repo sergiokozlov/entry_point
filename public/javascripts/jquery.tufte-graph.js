@@ -188,12 +188,27 @@
 
         path.lineTo(coords[0], coords[1]);
       },
-      drawStack: function(index, stackedY) {
+      drawStack: function(index, stackedY,element) {
+       addLabel = function(klass, text, pos) {
+          html = '<div style="position:absolute;" class="label ' + klass + '">' + text + "</div>";
+          $(html).css(pos).appendTo( plot.target );
+        }
         if (index == options.data.length - 1) {
           $(toArray(options.data[index][0])).each(function(index) {
             paths[index].lineTo(plot.ctx.axis.x.pixelLength, plot.ctx.scale.Y(this));
           });
         }
+
+        var optionResolver = function(option) { // Curry resolveOption for convenience
+          return resolveOption(option, element, index, options);
+        };
+        var t = plot.ctx.scale;
+
+       addLabel('axis-label', optionResolver(options.line.axisLabel), {
+          left:  t.X(index+0.5),
+          top:   t.Y(0),
+          width: t.W(1)
+        });
       },
       drawGraph: function() {}
     });
