@@ -110,6 +110,20 @@ class DashboardController < ApplicationController
     render :layout => false
   end
 
+  def group_trend_for_range
+    require_manager
+    @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)
+    @week_id  = params[:week].to_i
+    @data = Array.new
+
+    days_array(10,@template.week_last_day(@week_id) - Date.today).each do |day|
+        @data << gj(day,@selected_group)
+    end
+    @jresult = JSON.generate(["data" => @data])
+
+    render :layout => false, :action  => 'user_data_for_range'
+  end
+
   private
 
   def pj(day,user)
@@ -121,6 +135,18 @@ class DashboardController < ApplicationController
       {"check_in" => '',"check_out" => ''}]
     end
   end
+
+  def gj(day,group)
+    @stack = Array.new
+    
+    group.developers.each do |dev|
+      lwd = dev.logged_working_days.select{|d| d.wday == day}[0]
+      @stack << ((lwd.duration if lwd) || 0)
+    end
+  
+    [@stack,  {"label" => @template.day_value(day)}]
+  end
+
 end
 
 

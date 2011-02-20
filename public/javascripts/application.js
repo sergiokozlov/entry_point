@@ -48,10 +48,18 @@ function dailytrend(divId,returnedData) {
   $(divId).tufteGraph('line', {
           data: returnedData,
           line: {
-		    axisLabel: function(index) { return this[0]},
+		    axisLabel: function(index) { return this[1].label},
           }, 
           afterDraw: {
-          
+            point: function(ctx, index, stackedIndex) {
+              var x = ctx.scale.X(index + 0.5);
+              var y = ctx.scale.Y(returnedData[index][0][stackedIndex]);
+              ctx.circle(x, y, 4).attr({
+                fill:   $.fn.tufteGraph.defaults.color(index, stackedIndex, $.fn.tufteGraph.defaults),
+                stroke: '#FFFFFF'
+              });
+            },
+              
             stack: function(ctx, index) {
               if (index % 2 == 0) {
                 ctx.rect(ctx.scale.X(index), 0, ctx.scale.X(1), ctx.axis.y.pixelLength).attr({
@@ -152,21 +160,10 @@ $(document).ready( function () {
 
 // Actions on "DASHBOARD/INDEX" page for current_user
 	// show last loaded week daily chart for current_user, support "<< >>" moving, refresh week
- commonTestData = [
-          [1000, {label: 'A'}],
-          [1300, {label: 'B'}],
-          [3600, {label: 'C'}],
-          [4000, {label: 'D'}],
-          [5200, {label: 'E'}],
-          [7000, {label: 'F', color: '#FFBE33'}],
-           [4000, {label: 'D'}],
-          [5200, {label: 'E'}],
-          [7000, {label: 'F', color: '#FFBE33'}]
-          [0,    {label: 'G'}]
-        ]
 
-    
-    dailytrend("#line_trend",commonTestData);
+    $.getJSON('/dashboard/group_trend_for_range/', {week:42}, function(data) {
+      	dailytrend("#line_trend",data[0].data);
+     });
 
 	showWeekByDay();
 	

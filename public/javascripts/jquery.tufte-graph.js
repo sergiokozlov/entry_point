@@ -205,7 +205,7 @@
         var t = plot.ctx.scale;
 
        addLabel('axis-label', optionResolver(options.line.axisLabel), {
-          left:  t.X(index+0.5),
+          left:  t.X(index+0.3),
           top:   t.Y(0),
           width: t.W(1)
         });
