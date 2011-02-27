@@ -206,11 +206,13 @@
 
        addLabel('axis-label', optionResolver(options.line.axisLabel), {
           left:  t.X(index+0.3),
-          top:   t.Y(0),
+          top:   t.Y(-100),
           width: t.W(1)
         });
       },
-      drawGraph: function() {}
+      drawGraph: function() {
+	   drawBacklines(plot,options);
+      }
     });
   }
 
@@ -224,6 +226,13 @@
       var scale = axis.pixelLength / (axis.max - axis.min);
       return function (value) {
         return (value - axis.min) * scale;
+      }
+    }
+
+    reverse_pixel_scaling_function = function(axis) {
+      var scale = axis.pixelLength / (axis.max - axis.min);
+      return function (value) {
+        return value/scale + axis.min
       }
     }
 
@@ -259,7 +268,7 @@
       });
 
       methods.drawStack(index, all_y, this, x);
-      options.afterDraw.stack(ctx, index);
+      //options.afterDraw.stack(ctx, index);
     });
     methods.drawGraph();
     options.afterDraw.graph(ctx);
@@ -311,6 +320,34 @@
         left: plot.width + 'px'
       }).appendTo( plot.target );
     }
+  }
+
+  // If backlines option is greater than 0  - draw number of lines with equal scaling on te plot
+  function drawBacklines(plot,options) {
+   	var ctx = plot.ctx;
+    var axis = plot.axis;
+	
+	// TODO: remove duplication with drawGraph
+
+    var rt = {}
+	rt.W = reverse_pixel_scaling_function(axis.x);
+    rt.H = reverse_pixel_scaling_function(axis.y);
+	rt.Y = function(y) { return axis.y.max/1.4 - rt.H(y) }; // deletion on 1.4 is bad - need to understand better
+
+	var backline = 5;
+	var y_step = Math.round(axis.y.pixelLength/(backline-1));
+	
+	var i=1;
+	while (i<= backline-2)
+	  {
+	  	var str = "M0 " + y_step*i + "L"+axis.x.pixelLength + " " + y_step*i;
+		console.log(str);
+		var c = ctx.path(str).attr({stroke: "blue", "stroke-width": 0.5, "stroke-dasharray": "- "});
+		ctx.text(10, y_step*i - 10, Math.round(rt.Y(y_step*i)));
+	  i++;
+	  }
+	
+	
   }
 
   // Calculates the range of the graph by looking for the
