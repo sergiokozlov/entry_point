@@ -180,26 +180,28 @@
       drawPoint: function(optionResolver, index, x, y) {
         var ctx = plot.ctx;
         var coords = [ctx.scale.X(x), ctx.scale.Y(y)];
+        var toolTip = optionResolver(options.toolTip);
 
        if (!paths[index])
           paths[index] = ctx.path().moveTo(0, coords[1]).attr({stroke: optionResolver(options.color), "stroke-width": 4, "stroke-linejoin": "round"});
 
+       // adding tooltip
+       if (options.toolTip) {
          var c = ctx.circle(coords[0], coords[1], 5).attr({
-                 fill: 'white',
-                 stroke: 'black',
-                 opacity: .0
-              });
+             fill: 'white',
+             stroke: 'black',
+             opacity: .0
+           });
 
-             c[0].onmousemove = function(e){
-                console.log('horray');
-                   $("#tooltip").remove(); 
-                   showBarToolTip(e.pageX,e.pageY,'hello!');
-                 }; 
+         c[0].onmousemove = function(e){
+           $("#tooltip").remove(); 
+           showBarToolTip(e.pageX,e.pageY,toolTip);
+         }; 
                   
-                 c[0].onmouseout = function() {
-                     $("#tooltip").remove();
-                 };
-
+         c[0].onmouseout = function() {
+           $("#tooltip").remove();
+         };
+       }
 
 
         var path = paths[index];

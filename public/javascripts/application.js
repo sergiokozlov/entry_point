@@ -47,6 +47,9 @@ function dailychart(divId,returnedData) {
 function dailytrend(divId,returnedData) {
   $(divId).tufteGraph('line', {
           data: returnedData,
+          toolTip: function(index,stackIndex) { 
+            return  Math.round(this[0][stackIndex]/6)/10 + 'h';
+          },
           line: {
 		    axisLabel: function(index) { return this[1].label},
           }, 
