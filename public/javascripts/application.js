@@ -54,10 +54,11 @@ function dailytrend(divId,returnedData) {
             point: function(ctx, index, stackedIndex) {
               var x = ctx.scale.X(index + 0.5);
               var y = ctx.scale.Y(returnedData[index][0][stackedIndex]);
-              ctx.circle(x, y, 4).attr({
+              var c = ctx.circle(x, y, 4).attr({
                 fill:   $.fn.tufteGraph.defaults.color(index, stackedIndex, $.fn.tufteGraph.defaults),
                 stroke: '#FFFFFF'
               });
+              c.toBack();
             },
               
             stack: function(ctx, index) {

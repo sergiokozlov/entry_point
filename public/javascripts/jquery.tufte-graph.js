@@ -181,8 +181,26 @@
         var ctx = plot.ctx;
         var coords = [ctx.scale.X(x), ctx.scale.Y(y)];
 
-        if (!paths[index])
+       if (!paths[index])
           paths[index] = ctx.path().moveTo(0, coords[1]).attr({stroke: optionResolver(options.color), "stroke-width": 4, "stroke-linejoin": "round"});
+
+         var c = ctx.circle(coords[0], coords[1], 5).attr({
+                 fill: 'white',
+                 stroke: 'black',
+                 opacity: .0
+              });
+
+             c[0].onmousemove = function(e){
+                console.log('horray');
+                   $("#tooltip").remove(); 
+                   showBarToolTip(e.pageX,e.pageY,'hello!');
+                 }; 
+                  
+                 c[0].onmouseout = function() {
+                     $("#tooltip").remove();
+                 };
+
+
 
         var path = paths[index];
 
@@ -334,7 +352,7 @@
     rt.H = reverse_pixel_scaling_function(axis.y);
 	rt.Y = function(y) { return axis.y.max/1.4 - rt.H(y) }; // deletion on 1.4 is bad - need to understand better
 
-	var backline = 5;
+	var backline = 8;
 	var y_step = Math.round(axis.y.pixelLength/(backline-1));
 	
 	var i=1;
@@ -343,7 +361,7 @@
 	  	var str = "M0 " + y_step*i + "L"+axis.x.pixelLength + " " + y_step*i;
 		console.log(str);
 		var c = ctx.path(str).attr({stroke: "blue", "stroke-width": 0.5, "stroke-dasharray": "- "});
-		ctx.text(10, y_step*i - 10, Math.round(rt.Y(y_step*i)));
+		ctx.text(10, y_step*i - 10, Math.round(rt.Y(y_step*i)/6)/10);
 	  i++;
 	  }
 	
