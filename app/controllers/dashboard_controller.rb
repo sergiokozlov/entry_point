@@ -117,7 +117,7 @@ class DashboardController < ApplicationController
     @week_id  = params[:week].to_i
     @data = Array.new
 
-    days_array(10,@template.week_last_day(@week_id) - Date.today).each do |day|
+    days_array(20,@template.week_last_day(@week_id) - Date.today).each do |day|
         @data << gj(day,@selected_group)
     end
     @jresult = JSON.generate(["data" => @data])
@@ -140,10 +140,11 @@ class DashboardController < ApplicationController
   def gj(day,group)
     @stack = Array.new
     
-    group.developers.each do |dev|
-      lwd = dev.logged_working_days.select{|d| d.wday == day}[0]
-      @stack << ((lwd.duration if lwd) || 0)
-    end
+    #group.developers.each do |dev|
+    #  lwd = dev.logged_working_days.select{|d| d.wday == day}[0]
+    #  @stack << ((lwd.duration if lwd) || 0)
+    #end
+    @stack << group.day_average(day)
   
     [@stack,  {"label" => @template.day_value(day)}]
   end
