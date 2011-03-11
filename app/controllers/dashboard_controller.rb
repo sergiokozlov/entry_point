@@ -114,11 +114,12 @@ class DashboardController < ApplicationController
   def group_trend_for_range
     require_manager
     @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)
+    @focus_user = User.find_by_id(params[:focususer])
     @week_id  = params[:week].to_i
     @data = Array.new
 
     days_array(20,@template.week_last_day(@week_id) - Date.today).each do |day|
-        @data << gj(day,@selected_group)
+        @data << gj(day,@selected_group,@focus_user.to_a)
     end
     @jresult = JSON.generate(["data" => @data])
 
@@ -137,14 +138,16 @@ class DashboardController < ApplicationController
     end
   end
 
-  def gj(day,group)
+  def gj(day,group,developers=[])
     @stack = Array.new
     
-    #group.developers.each do |dev|
-    #  lwd = dev.logged_working_days.select{|d| d.wday == day}[0]
-    #  @stack << ((lwd.duration if lwd) || 0)
-    #end
     @stack << group.day_average(day)
+
+    developers.each do |dev|
+      lwd = dev.logged_working_days.select{|d| d.wday == day}[0]
+      @stack << ((lwd.duration if lwd) || 0)
+    end
+    
   
     [@stack,  {"label" => @template.day_value(day)}]
   end

@@ -284,7 +284,7 @@
 
         methods.drawPoint(optionResolver, stackedIndex, x, this);
 
-        options.afterDraw.point(ctx, index, stackedIndex);
+        options.afterDraw.point(ctx, index, stackedIndex,options);
       });
 
       methods.drawStack(index, all_y, this, x);

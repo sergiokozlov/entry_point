@@ -44,21 +44,24 @@ function dailychart(divId,returnedData) {
 	});
 }
 
+// This function draws daily trend with data
 function dailytrend(divId,returnedData) {
   $(divId).tufteGraph('line', {
           data: returnedData,
           toolTip: function(index,stackIndex) { 
             return  Math.round(this[0][stackIndex]/6)/10 + 'h';
           },
+          colors:    ['red', '#07093D', 'green'],
+          color:     function(index, stackedIndex, options) { return options.colors[stackedIndex % options.colors.length]; },
           line: {
 		    axisLabel: function(index) { return this[1].label},
           }, 
           afterDraw: {
-            point: function(ctx, index, stackedIndex) {
+            point: function(ctx, index, stackedIndex, options) {
               var x = ctx.scale.X(index + 0.5);
               var y = ctx.scale.Y(returnedData[index][0][stackedIndex]);
               var c = ctx.circle(x, y, 4).attr({
-                fill:   $.fn.tufteGraph.defaults.color(index, stackedIndex, $.fn.tufteGraph.defaults),
+                fill:   options.color(index, stackedIndex, options),
                 stroke: '#FFFFFF'
               });
               c.toBack();
@@ -81,6 +84,13 @@ function dailytrend(divId,returnedData) {
 function chosenGroup() {
 	var group_id =  $('#group_list').children(".chosen_group").attr("id");
 		return getId(group_id);
+	
+}
+
+// This function returns id of user selected for analysis
+function chosenfocusUser() {
+	var user_id =  $('#focususer_id').find("option:selected").val();
+		return getId(user_id);
 	
 }
 
@@ -155,6 +165,13 @@ function showWeekByDay(direction, params) {
 	return false;
 }
 
+// This function shows comparison trend on Manage/Overview for a specified user id
+function showComparisonTrend(user_id) {
+    $.getJSON('/dashboard/group_trend_for_range/', {week:42, focususer: user_id}, function(data) {
+      	dailytrend("#line_trend",data[0].data);
+     });
+} 
+
 jQuery.ajaxSetup({  
 	'beforeSend': function (xhr) {xhr.setRequestHeader("Accept", "text/javascript")}  
 });
@@ -164,10 +181,6 @@ $(document).ready( function () {
 
 // Actions on "DASHBOARD/INDEX" page for current_user
 	// show last loaded week daily chart for current_user, support "<< >>" moving, refresh week
-
-    $.getJSON('/dashboard/group_trend_for_range/', {week:42}, function(data) {
-      	dailytrend("#line_trend",data[0].data);
-     });
 
 	showWeekByDay();
 	
@@ -253,14 +266,19 @@ $(document).ready( function () {
 		expandDailyChart(user_id); 
 	});
 
+    //On changing user to focus update trend
+    showComparisonTrend(chosenfocusUser);
+
+    $("#focususer_id").change ( function() {
+         showComparisonTrend(chosenfocusUser);
+        });
+
 	// Manage clicking on group update
 	$("a.group_link").click( function() {
 		//var group_id = $(this).parents("li").attr("id");
 		$(this).parents("li").siblings().removeClass('chosen_group');
 		$(this).parents("li").addClass('chosen_group');
 		loadWeek({week: chosenWeek, group: chosenGroup });
-        
- 
 		return false;
       }); 
 

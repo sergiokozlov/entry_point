@@ -43,6 +43,7 @@
     <h2>Daily Trend</h2>
     <br/>
     <div class="inner">
+      <%= select ("focususer", "id",@group.developers.map {|dev| [dev.name,'focususer_'+ dev.id.to_s]}) %>
       <!--TODO: Remove inline styling -->  
       <div id="line_trend" style="height: 260px; margin-bottom: -30px;"></div>
       	<ul class="legend">
