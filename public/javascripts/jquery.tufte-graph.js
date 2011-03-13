@@ -362,8 +362,10 @@
 	  {
 	  	var str = "M0 " + y_step*i + "L"+axis.x.pixelLength + " " + y_step*i;
 		console.log(str);
-		var c = ctx.path(str).attr({stroke: "blue", "stroke-width": 0.5, "stroke-dasharray": "- "});
-		ctx.text(10, y_step*i - 10, Math.round(rt.Y(y_step*i)/6)/10);
+		if (rt.Y(y_step*i) > 0) {
+			var c = ctx.path(str).attr({stroke: "dark grey", "stroke-width": 0.5, opacity: .9});
+			ctx.text(10, y_step*i - 10, Math.round(rt.Y(y_step*i)/6)/10);
+	    }
 	  i++;
 	  }
 	

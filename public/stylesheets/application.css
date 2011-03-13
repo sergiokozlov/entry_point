@@ -412,6 +412,8 @@ a {
 					.legend li.yellow div {background:#ffc000;}
 					.legend li.green div {background:#509721;}
 					.legend li.grey div {background:#ccc;}
+					.legend li.blue div {background:#07093D;}
+					.legend li.css_red div {background:red;}
 			
 	
 	/* Weekly Stats report (Weekly Table)
