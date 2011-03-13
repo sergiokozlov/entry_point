@@ -40,7 +40,7 @@
 	</div> <!-- end #ajax_week -->
     
     <br/>
-    <h2>Daily Trend</h2>
+    <h2>Daily Average Trend</h2>
     <br/>
     <div class="inner">
       <%= select ("focususer", "id",@group.developers.map {|dev| [dev.name,'focususer_'+ dev.id.to_s]}) %>

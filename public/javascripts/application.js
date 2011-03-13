@@ -93,6 +93,11 @@ function chosenfocusUser() {
 		return getId(user_id);
 	
 }
+// This function returns id of dashboard range
+function chosenRange() {
+	var range_id = $('input[name=range]:radio:checked').attr("id");
+	return getId(range_id);
+}
 
 // This function returns number of week selected for analysis
 function chosenWeek() {
@@ -166,8 +171,8 @@ function showWeekByDay(direction, params) {
 }
 
 // This function shows comparison trend on Manage/Overview for a specified user id
-function showComparisonTrend(user_id) {
-    $.getJSON('/dashboard/group_trend_for_range/', {week:42, focususer: user_id}, function(data) {
+function showComparisonTrend(params) {
+    $.getJSON('/dashboard/group_trend_for_range/', params, function(data) {
       	dailytrend("#line_trend",data[0].data);
      });
 } 
@@ -227,11 +232,13 @@ $(document).ready( function () {
 				  $("#month_id").hide();
                   $("#week_id").show();
                   loadWeek({week: chosenWeek, group: chosenGroup});
+ 				  showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
 				break;
 				case 'month':
 				  $("#week_id").hide();
                   $("#month_id").show();
                   loadMonth({month: chosenMonth, group: chosenGroup}); 
+ 				  showComparisonTrend({month: chosenMonth, focususer: chosenfocusUser});
 				break;
 			}; 
         });
@@ -245,11 +252,13 @@ $(document).ready( function () {
         });
       
 	  loadWeek({week: chosenWeek, group: chosenGroup}, open_ids, expandDailyChart);
+	  showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
 	});
 
     // On selector change update month 
     $("#month_id").change ( function() {
         loadMonth({month: chosenMonth, group: chosenGroup});
+		showComparisonTrend({month: chosenMonth, focususer: chosenfocusUser});
         });
 
 	$(".collapse_chart").live("click", function() {
@@ -267,10 +276,18 @@ $(document).ready( function () {
 	});
 
     //On changing user to focus update trend
-    showComparisonTrend(chosenfocusUser);
+    showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
 
     $("#focususer_id").change ( function() {
-         showComparisonTrend(chosenfocusUser);
+		switch (chosenRange())
+			{
+				case 'week':
+ 				  showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
+				break;
+				case 'month':
+ 				  showComparisonTrend({month: chosenMonth, focususer: chosenfocusUser});
+				break;
+			};
         });
 
 	// Manage clicking on group update

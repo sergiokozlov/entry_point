@@ -116,11 +116,19 @@ class DashboardController < ApplicationController
     @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)
     @focus_user = User.find_by_id(params[:focususer])
     @week_id  = params[:week].to_i
+    @month_id = params[:month].to_i
     @data = Array.new
-
-    days_array(20,@template.week_last_day(@week_id) - Date.today).each do |day|
-        @data << gj(day,@selected_group,@focus_user.to_a)
+    
+    if params[:week]
+      (@week_id-15..@week_id).each do |week|
+          @data << wj_trend(@selected_group, week, @focus_user.to_a)
+        end
+    else    
+      (@month_id-6..@month_id).each do |month|
+          @data << mj_trend(@selected_group, month, @focus_user.to_a)
+        end
     end
+    
     @jresult = JSON.generate(["data" => @data])
 
     render :layout => false, :action  => 'user_data_for_range'
@@ -150,6 +158,28 @@ class DashboardController < ApplicationController
     
   
     [@stack,  {"label" => @template.day_value(day)}]
+  end
+  
+  def wj_trend(group,week = Date.today.cweek,developers=[])
+    @stack = Array.new
+    @stack << group.week_average(week)
+    
+    developers.each do |dev|
+      @stack << dev.week_average(week)
+    end
+  
+    [@stack,  {"label" => @template.week_value(week)}]
+  end
+  
+  def mj_trend(group,month = Date.today.month,developers=[])
+    @stack = Array.new
+    @stack << group.month_average(month)
+    
+    developers.each do |dev|
+      @stack << dev.month_average(month)
+    end
+  
+    [@stack,  {"label" => @template.month_value(month)}]
   end
 
 end
