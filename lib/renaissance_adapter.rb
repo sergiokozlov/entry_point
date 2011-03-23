@@ -1,4 +1,4 @@
-# encoding: windows-1251
+# encoding windows-1251
 require 'fileutils'
 require 'rubygems'
 require 'russian'
@@ -31,7 +31,7 @@ module ProcessFile
 		File.open(csv_chunk) do |file|
 		puts "processing ... #{file.path}"
 			events = file.readlines
-			#events.delete_if { |x|   not(x =~ /Фактический вход/) }
+			#events.delete_if { |x|   not(x =~ /??????? }
 			
 			events.each do |record|
 				data = record.split("\t")
@@ -48,8 +48,9 @@ module ProcessFile
 				end 
 
 			end
-			users = names.uniq.map { |name| {:name => name.split(' ')[1] + name.split(' ')[0], :login => login_from_name(name)} }
+			users = names.uniq.map { |name| {:name => name.split(' ')[1] + ' ' + name.split(' ')[0], :login => login_from_name(name)} }
 			return [users,records]
+			#return users
 		end
 	end
 
@@ -61,4 +62,4 @@ module ProcessFile
 
 end
 
-#puts ProcessFile.process("отчет энката 1.txt")
+#puts ProcessFile.process("отчет.txt")
