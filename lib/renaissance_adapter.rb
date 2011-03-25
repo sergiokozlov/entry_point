@@ -3,6 +3,7 @@ require 'fileutils'
 require 'rubygems'
 require 'russian'
 require 'iconv'
+require 'hierarchy_lookup'
 
 
 module ProcessFile
@@ -40,7 +41,7 @@ module ProcessFile
                 #puts login_from_name(Russian.translit(ic.iconv(data[4])))
 
                 if dt = record_dt(data[0],data[1])
-                name = Russian.translit(ic.iconv(data[4]))
+                name = HierarchyLookup.lookup(Russian.translit(ic.iconv(data[4])))
                   if  login_from_name(name)
 					names << name
 					records << {:login => login_from_name(name), :click_date => dt }
