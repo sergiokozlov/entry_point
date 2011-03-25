@@ -8,17 +8,15 @@
  department: PM and Docs
  structure:
   -
-   group: PM
+   group: PM and Docs
    manager: Alexey Zhuk
    developers:
     - Raphael Egiazarian
     - Ivan Babko
     - Yuri Sanjiev
     - Julia Pivovarova
-  -    
-   group: Docs 
-   manager: Ekaterina Volodko
-   developers:
+    - Vitaly Kondratiev 
+    - Ekaterina Volodko
     - Julia Vasilkova
 # PSO
 -
@@ -36,13 +34,12 @@
     - Pavel Balakshin
     - Alexey Naumov
     - Alex Ognev
-    - Andery Pytkin
     - Kostya Serditov
   -    
    group: BA    
-   manager: Grigory Petrov
+   manager: Andrey Dudakov
    developers:
-    - Andrey Dudakov
+    - Alexander Butin
     - Marina Ishkhanova
 # Operations
 -
@@ -50,7 +47,6 @@
   - Dave Stamm
   - Alexandre Delarue
   - Alexey Lavrov
-  - Arkadiy Reznik
  department: Operations
  structure:
   -  
@@ -59,15 +55,13 @@
    developers:
     - Sergey Churbanov
     - Andrey Zolotuhin
-    - Leonid Yulenets
     - Sergey Mescheryakov
 # IT
 -
  directors:
   - Dave Stamm
-  - Alexandre Delarue
+  - Gerard Larios
   - Alexey Lavrov
-  - Arkadiy Reznik
  department: IT
  structure:
   -
@@ -87,7 +81,8 @@
    manager: GA Fake
    developers:
     - Marina Shatrova
-    - Ludmila Miroshnichenko  
+    - Ludmila Miroshnichenko
+    - Ekaterina Vorobyeva  
 # Engineering
 -
  directors:
@@ -100,35 +95,37 @@
    group: CCPM         
    manager: Peter Egorov
    developers:
-    - Alexey Raskin
+    - Alex Fyodorov
+    - Ivan Shumeiko
     - Denis Kuchugurov
+    - Pavel Polushkin
     - Nina Gracheva
     - Yuri Litvinov
+    - Alexey Inzhebeikin
+    - Andrey Yasinsky
+    - Anton Ivanov
+    - Demid Lupin
     - Kostya Barzakovsky
     - Olga Ukolova
-    - Alexey Razgulyaev   
-    - Raida Sitdikova
   -    
-   group: AT
+   group: AT & DA
    manager: Alex Godin
    developers:
-    - Anton Ivanov
+    - Sergey Kozlov
+    - Alexander Izumov
+    - Eugene Novikov
+    - Leonid Yulenets
+    - Vladimir Koblyakov
+    - Roman Mostyka
     - Alex Kravchenko
     - Sergey Lukayanov
-    - Alexey Inzhebeikin
-    - Roman Mostyka
-    - Pavel Polushkin
-    - Andrey Yasinsky   
-    - Igor Stolyarov
-    - Andrey Upadyshev
-    - Eugene Novikov
-    - Vladimir Koblyakov   
-    - Alex Fyodorov
+    - Dmitry Shadrin
   -    
-   group: Apps   
-   manager: Sergey Kozlov
+   group: Migration   
+   manager: Alexander Balandin
    developers:
-    - Alex Izumov  
-# question about
-#  - Demid Lupin
-#  - Alexey Zavarzin
+    - Alexey Raskin
+    - Alexey Razgulyaev   
+    - Raida Sitdikova
+    - Alexey Zavarzin
+    - Raida Sitdikova
