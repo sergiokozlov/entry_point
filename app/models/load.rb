@@ -1,4 +1,4 @@
-require 'enkata_adapter'
+require 'renaissance_adapter'
 
 
 class Load
@@ -32,13 +32,14 @@ class Load
           puts "Adding #{group['manager']}" 
 
           m = Manager.new(:name => group['manager'])
-          g = m.create_group(:name => group['group'], :department => department['department'])
-
           begin
             m.save!
-          rescue ActiveRecord::RecordInvalid
+		  rescue ActiveRecord::RecordInvalid
             puts "#{m.name} doesn't pass validation"
           end
+		  
+		  g = m.create_group(:name => group['group'], :department => department['department'])
+		  p g
         else
           g = m.group
         end
