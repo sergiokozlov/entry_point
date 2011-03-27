@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(:version => 20101015153012) do
     t.datetime "updated_at"
   end
 
+# Could not dump table "sqlite_stat1" because of following StandardError
+#   Unknown type '' for column 'tbl'
+
   create_table "users", :force => true do |t|
     t.string   "type"
     t.string   "login"
