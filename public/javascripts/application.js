@@ -145,7 +145,7 @@ function expandDailyChart(user_id) {
 	var div_id =  'daily-bars-' + user_id
 	var x = $("#team_table").get(0).insertRow(row_number);
 
-	$(x).html("<td class='chart' colspan='6'><div class='chart-container'><div id='"+div_id+"' class='graph'></div><img class='ajax-loader' src='/images/ajax-loader.gif' alt='' /></div></td>");
+	$(x).html("<td class='chart' colspan='7'><div class='chart-container'><div id='"+div_id+"' class='graph'></div><img class='ajax-loader' src='/images/ajax-loader.gif' alt='' /></div></td>");
 
 	link.hide();
 	link.parents("td").children(".collapse_chart").show();

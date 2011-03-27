@@ -21,8 +21,8 @@
 				<td> <%=dev.weeked_working_days(@week_id).length%> </td>
 				<td> <%=to_time(dev.week_completed(@week_id))%> </td>
                 <td> 
-                  <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">&gt;</button>
-                  <button class="collapse_chart" type="button">&lt;</button>
+                  <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">→</button>
+                  <button class="collapse_chart" type="button">←</button>
                 </td>
 			</tr>
 		<% end -%>

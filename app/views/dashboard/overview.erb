@@ -1,21 +1,26 @@
 <div id="group_line">
+	<ul id="group_list">
+		<% @user.groups.each do |group| -%>
+		<li  id=<%="group_"+group.id.to_s%>> <a href="#" class="group_link"><%= group.name%></a></li>
+		<% end-%>
+	</ul>
+</div> <!-- end #group_line -->
 
-    <div class="time-range" id="week_timerange">
-      <div class="select-range">
-        <input id="radio_week" type="radio" name="range" value="week" /> <b>Week </b>
-        <input id="radio_month" type="radio" name="range" value="month" /> <b>Month</b>
-      </div>
-        <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
-        <%= select( "month", "id", @months.map {|m| [month_value(m[0]),'month_'+m[0].to_s]}) %>
-    </div> <!-- end .time-range -->
-
-  <ul id="group_list">
-  <% @user.groups.each do |group| -%>
-    <li  id=<%="group_"+group.id.to_s%>> <a href="#" class="group_link"><%= group.name%></a></li>
-  <% end-%>
-  </ul>
-
-</div>
+<div class="time-range">
+	<%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
+	<%= select( "month", "id", @months.map {|m| [month_value(m[0]),'month_'+m[0].to_s]}) %>
+	<ul>
+		<li>
+			<input id="radio_week" type="radio" class="radio" name="range" value="week" />
+			<label for="radio_week">Week</label>
+		</li>
+		<li>
+			<input id="radio_month" type="radio"  class="radio" name="range" value="month" />
+			<label for="radio_month">Month</label>
+		</li>
+	</ul>
+	<img src="/images/ajax-loader-2.gif" alt="" />
+</div> <!-- end .time-range -->
 
 <div class="clear"></div>
 
