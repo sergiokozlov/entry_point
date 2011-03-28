@@ -41,8 +41,8 @@ module ProcessFile
                 #puts login_from_name(Russian.translit(ic.iconv(data[4])))
 
                 if dt = record_dt(data[0],data[1])
-                name = HierarchyLookup.lookup(Russian.translit(ic.iconv(data[4])))
-                  if  login_from_name(name)
+                name = HierarchyLookup.lookup(Russian.translit(ic.iconv(data[4])).strip)
+				if  login_from_name(name)
 					names << name
 					records << {:login => login_from_name(name), :click_date => dt }
                   end

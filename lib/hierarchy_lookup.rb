@@ -1,4 +1,4 @@
-require 'Yaml'
+#require 'Yaml'
 
 module HierarchyLookup
 
