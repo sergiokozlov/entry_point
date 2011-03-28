@@ -1,4 +1,4 @@
-<div class="report team-weekly">
+<div class="report team-monthly">
 	<table id="team_table" cellspacing="0">
 		<thead>
 			<tr>
@@ -7,7 +7,7 @@
                 <th>Team Average</th>
 				<th>Daily Average</th>
 				<th># Working Days</th>
-			    <th><img src="/images/bar-chart.png" alt="" /></th>
+			    <!-- <th><img src="/images/bar-chart.png" alt="" /></th> -->
 			</tr>
 		</thead>
 		<tbody>
@@ -18,11 +18,11 @@
                 <td> <%=to_time(@selected_group.month_average(@month_id))%> </td>
 				<td> <%=to_time(dev.month_average(@month_id))%></td>
 				<td> <%=dev.month_working_days(@month_id).length%> </td>
-			    <td> <!--
-                  <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">&gt;</button>
-                  <button class="collapse_chart" type="button">&lt;</button>
-                  -->
-                </td>
+			  <!--  <td> 
+                  <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">→</button>
+                  <button class="collapse_chart" type="button">←</button>
+                 
+                </td> -->
 			</tr>
 		<% end -%>
 		</tbody>

@@ -18,7 +18,9 @@ fieldset,img {border:0;}
 ul {list-style:none;}
 a:focus {outline:none;}
 html {overflow-y:scroll;}
-
+input,select {vertical-align:middle;}
+input.radio, input.checkbox {vertical-align:top;*vertical-align:text-bottom;*width:14px;*height:14px;}
+select,label {cursor:pointer;}
 /*----------------------------------------------------------
                           @GENERAL
 -----------------------------------------------------------*/
@@ -252,7 +254,7 @@ a {
 			color:#333;
 			letter-spacing:-1px;
 			line-height:1;
-			margin:0 0 5px;
+			margin:0 0 10px;
 			}
 			.info {
 				position:absolute;
@@ -418,14 +420,25 @@ a {
 	
 	/* Weekly Stats report (Weekly Table)
 	---------------------------------------- */
-	
-	/* Weekly report on personal dashboard */
-	.column-week {width:300px;}
+
+		/* Weekly report on personal dashboard */
+		.column-week {width:300px;}
+			
+		/* Weekly report on Manage/Overview */
+		.team-weekly {margin-bottom:0;}
+		.team-weekly th.column-week {width:100px;}
+		.team-weekly th.column-name {width:200px;}
+
 		
-	/* Weekly report on Manage/Overview */
-	.team-weekly {margin-bottom:0;}
-	.team-weekly th.column-week {width:100px;}
-	.team-weekly th.column-name {width:200px;}
+	/* Monthly Table
+	---------------------------------------- */
+		
+		/* Monthly report on Manage/Overview */
+		.team-monthly th.column-week {width:100px;}
+		.team-monthly th.column-name {width:300px;}
+		.team-monthly td {line-height:2;}
+	
+	
 	td.chart {
 		padding:40px 20px;
 		}
@@ -443,6 +456,8 @@ a {
 		display:block;
 		margin:0 auto;
 		}
+		
+	
 	
 /*----------------------------------------------------------
                        @TABLE STYLING
@@ -477,18 +492,34 @@ table {
 
 		
 /*----------------------------------------------------------
-                          @TIME RANGE
+                          @TIMERANGE
 -----------------------------------------------------------*/
 .time-range {
-	float: right;
-	width: 200px;
-	}
-	.time-range label {float:right; font-weight:bold; color:#333;margin-right:5px;line-height:1.6;}
-	.time-range select {float:right; padding:1px 3px;cursor:pointer;clear:right;}
+	padding:5px 0;
+	overflow:hidden;
+	}	
+	.time-range img {
+		float:right;
+		margin:3px 5px 0 0;
+		display:none;
+		}
+    .time-range ul {
+		float:right;
+		padding-top:2px;
+		}
+        .time-range li {
+            float:left;
+            margin-right:7px;
+            }
+            .time-range li label {
+                font-weight:bold;
+                }
+        .time-range select {
+            float:right;
+            width:120px;
+			}
 
-.select-range {
-    float:right;
-  }
+
 /*----------------------------------------------------------
                     @OUTLIERS NOTIFICATIONS
 -----------------------------------------------------------*/
@@ -501,6 +532,9 @@ table {
 	-webkit-border-radius:6px;
 	-moz-border-radius:6px;
 	}
+	#outliers h3 {
+		margin-bottom:5px;
+		}
 	#outliers li {
 		list-style-type:disc;
 		padding:2px 0;
@@ -525,7 +559,7 @@ table {
 	height:35px;
 	line-height:35px;
 	background:#fff url(/images/header.png) center repeat-x ;
-	margin:-20px -20px 20px -20px;
+	margin:-20px -20px 10px -20px;
 	border-bottom:1px solid #babdc1;
 	position:relative;
 	}
@@ -770,7 +804,6 @@ table {
 			width:80px; 
 			margin-left:-90px;
 			font-weight:bold;
-			cursor:pointer;
 			font-size:14px;
 			}
 			.dialog li label {

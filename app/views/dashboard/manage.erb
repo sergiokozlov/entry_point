@@ -2,8 +2,7 @@
     <a href="#" class="hide"></a>
     <!-- TODO: Use Partials-->
     <% if @user.should_worry? then %>
-      <h3> During Last two weeks</h3>
-      <br/>
+      <h3>During Last two weeks:</h3>
 	  <ul>
       <%  @group.alerts.each_pair do |dev_name, message| %>
         <li><%= "<b> #{dev_name} </b> #{message} " %></li>
@@ -22,18 +21,26 @@
 	-->
 
 	<div class="clear"></div>
-   
-    <div class="time-range" id="week_timerange">
-      <div class="select-range">
-        <input id="radio_week" type="radio" name="range" value="week" /> <b>Week </b>
-        <input id="radio_month" type="radio" name="range" value="month" /> <b>Month</b>
-      </div>
+
+	<h2 class="left">My Team Stats</h2>
+
+    <div class="time-range">
         <%= select( "week", "id", @weeks.map {|w| [week_value(w[0]),'week_'+w[0].to_s]}) %>
         <%= select( "month", "id", @months.map {|m| [month_value(m[0]),'month_'+m[0].to_s]}) %>
-    </div>
-      <!-- end .time-range -->
+        <ul>
+            <li>
+                <input id="radio_week" type="radio" class="radio" name="range" value="week" />
+                <label for="radio_week">Week</label>
+            </li>
+            <li>
+                <input id="radio_month" type="radio"  class="radio" name="range" value="month" />
+                <label for="radio_month">Month</label>
+            </li>
+        </ul>
+		<img src="/images/ajax-loader-2.gif" alt="" />
+    </div> <!-- end .time-range -->
 
-	<h2>My Team Stats</h2>
+    <div class="clear"></div>
 
 	<div id="ajax_week">
 	<!-- <p> My Team Data for the week </p> -->
