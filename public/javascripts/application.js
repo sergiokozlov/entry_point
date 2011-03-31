@@ -23,7 +23,7 @@ function dailychart(divId,returnedData) {
         bar: {
           barWidth:  0.8,
           barLabel:  function(index) { return this[1].bar_label },
-		  axisLabel: function(index) { return this[1].label },
+		  axisLabel: function(index) { return this[1].label }
         }, 
 		color:     function(index, stackedIndex) { 
 			switch (this[2].flag)
@@ -51,10 +51,10 @@ function dailytrend(divId,returnedData) {
           toolTip: function(index,stackIndex) { 
             return  Math.round(this[0][stackIndex]/6)/10 + 'h';
           },
-          colors:    ['red', '#07093D', 'green'],
+          colors:    ['#ff5a00', '#365f91', 'green'],
           color:     function(index, stackedIndex, options) { return options.colors[stackedIndex % options.colors.length]; },
           line: {
-		    axisLabel: function(index) { return this[1].label},
+		    axisLabel: function(index) { return this[1].label}
           }, 
           afterDraw: {
             point: function(ctx, index, stackedIndex, options) {

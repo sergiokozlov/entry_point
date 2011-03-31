@@ -183,21 +183,21 @@
         var toolTip = optionResolver(options.toolTip);
 
        if (!paths[index])
-          paths[index] = ctx.path().moveTo(0, coords[1]).attr({stroke: optionResolver(options.color), "stroke-width": 4, "stroke-linejoin": "round"});
+          paths[index] = ctx.path().moveTo(0, coords[1]).attr({"stroke": optionResolver(options.color), "stroke-width": 4, "stroke-linejoin": "round"});
 
        // adding tooltip
        if (options.toolTip) {
          var c = ctx.circle(coords[0], coords[1], 5).attr({
-             fill: 'white',
-             stroke: 'black',
+             fill: '#FFF',
+             stroke: '#000',
              opacity: .0
            });
 
-         c[0].onmousemove = function(e){
-           $("#tooltip").remove(); 
-           showBarToolTip(e.pageX,e.pageY,toolTip);
-         }; 
-                  
+         $(c[0]).mousemove(function(e){
+            $("#tooltip").remove(); 
+            showBarToolTip(e.pageX,e.pageY,toolTip);
+         }); 
+                 
          c[0].onmouseout = function() {
            $("#tooltip").remove();
          };
@@ -363,7 +363,7 @@
 	  	var str = "M0 " + y_step*i + "L"+axis.x.pixelLength + " " + y_step*i;
 		console.log(str);
 		if (rt.Y(y_step*i) > 0) {
-			var c = ctx.path(str).attr({stroke: "dark grey", "stroke-width": 0.5, opacity: .9});
+			var c = ctx.path(str).attr({stroke: "#4E5052", "stroke-width": 0.5, opacity: .9});
 			ctx.text(10, y_step*i - 10, Math.round(rt.Y(y_step*i)/6)/10);
 	    }
 	  i++;
