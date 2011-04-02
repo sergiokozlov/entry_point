@@ -361,7 +361,7 @@
 	while (i<= backline-2)
 	  {
 	  	var str = "M0 " + y_step*i + "L"+axis.x.pixelLength + " " + y_step*i;
-		console.log(str);
+
 		if (rt.Y(y_step*i) > 0) {
 			var c = ctx.path(str).attr({stroke: "#4E5052", "stroke-width": 0.5, opacity: .9});
 			ctx.text(10, y_step*i - 10, Math.round(rt.Y(y_step*i)/6)/10);

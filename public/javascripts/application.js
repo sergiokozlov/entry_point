@@ -17,7 +17,8 @@ function dailychart(divId,returnedData) {
 		data: returnedData,
         toolTip: function(index) { 
           var msg = 'Office: '+this[3].check_in + ' &ndash; ' + this[3].check_out 
-          if (this[0] instanceof Array && this[0][1] > 0)  { return msg + '<br/>' + 'and ' + this[0][1] + ' minutes from home' }
+          if (this[0] instanceof Array && this[0][1] > 0 && this[0][0] > 0)  { return msg + '<br/>' + 'and ' + this[0][1] + ' minutes from home' }
+		  else if (this[0] instanceof Array && this[0][1] > 0)  { return this[0][1] + ' minutes from home' }
           else {return msg}
         },
         bar: {
