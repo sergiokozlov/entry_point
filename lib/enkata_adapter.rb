@@ -1,6 +1,6 @@
 require 'fileutils'
 
-module ProcessFile
+module ProcessFile2
 # This module takes the input file, validates it and returns:
 # array of records: [dt,login]
 # array of users: [name,login]

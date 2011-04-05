@@ -1,4 +1,4 @@
-require 'enkata_adapter'
+#require 'enkata_adapter'
 
 class UploadController < ApplicationController
 

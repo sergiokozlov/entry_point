@@ -57,7 +57,7 @@ class Load
               puts "#{d.name} doesn't pass validation"
             end
           end
-          d.groups << g
+          d.groups = d.groups | [g]
         end
 
           # check developers and update position in hierarchy  
