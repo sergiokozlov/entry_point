@@ -43,7 +43,7 @@ module DashboardHelper
   def today_completed(user = current_user)
     if user.working_today
       tnow = Time.now
-      (tnow.to_i - user.working_today.check_in.to_i + tnow.utc_offset ).floor/60
+      (tnow.to_i - user.working_today.check_in.to_i - tnow.utc_offset - 180*60).floor/60
     else
       0
     end  
