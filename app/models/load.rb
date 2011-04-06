@@ -91,13 +91,14 @@ class Load
           puts "Adding #{u[:name]} that wasn't found in hierarchy"
 
           user = User.new(u)
-        end
-
+    
         begin
           user.save!
         rescue ActiveRecord::RecordInvalid
           puts "#{u[:name]} raw data doesn't pass validation"
         end
+		
+		end
       end
 
       records.each do |rec| 
