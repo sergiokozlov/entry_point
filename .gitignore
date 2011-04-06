@@ -3,6 +3,9 @@
 log/
 public/data/processed
 db/production.sqlite3
+db/development.sqlite3
+.idea/
+script/server.bat
 
 # Use wildcards as well
 *~
