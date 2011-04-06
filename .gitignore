@@ -1,4 +1,5 @@
 # Can ignore specific files
+.idea
 .DS_Store
 log/
 public/data/processed
