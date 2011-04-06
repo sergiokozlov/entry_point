@@ -21,7 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
     config.gem "authlogic"
     config.gem "ar-extensions"
-    config.gem "json"
+    config.gem "json_pure"
     config.gem "delorean"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
