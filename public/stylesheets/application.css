@@ -168,13 +168,15 @@ a {
 				
 				/*Highlight current button */
 				#index #nav li.dashboard a,
-				#manage #nav li.manage a {
+				#manage #nav li.manage a,
+				#overview #nav li.manage a {
 					color:#fff;
 					text-shadow:none;
 					cursor:default;
 					}
 					#index #nav li.dashboard a {background-position:bottom left;}
 					#manage #nav li.manage a {background-position:bottom right;}
+					#overview #nav li.manage a {background-position:bottom right;}
 										
 				
 				

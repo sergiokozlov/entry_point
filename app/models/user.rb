@@ -101,6 +101,12 @@ class User < ActiveRecord::Base
     false
     true if self.class == Director    
   end
+  
+  # sign-in validation logic
+  def person?
+    false
+    true unless working_days.empty?
+  end
 end  
 
 class Developer < User

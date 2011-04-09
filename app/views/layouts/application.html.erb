@@ -26,7 +26,7 @@
 			<h1><%="#{@user.name}"%></h1>
 			
             <ul id="tools">
-              <%unless @user.director?%>
+              <%unless @user.director? and not @user.person?%>
                 <li class="checkin"><a href="#" rel="checkin" class="dialog-trigger">Check-in</a></li>
               <%end%>  
 				<li class="settings"><a href="#" rel="settings" class="dialog-trigger">Settings</a></li>
@@ -37,18 +37,13 @@
 				<li class="dashboard"><%= link_to "Me", :controller => 'dashboard' %></li> 
 				<li class="manage"><%= link_to "My Team", :controller => 'dashboard', :action => 'manage' %></li>
 			</ul> <!-- end #nav -->
+			<%elsif @user.director? and @user.person?%>
+			<ul id="nav">
+				<li class="dashboard"><%= link_to "Me", :controller => 'dashboard' %></li> 
+				<li class="manage"><%= link_to "My Teams", :controller => 'dashboard', :action => 'overview' %></li>
+			</ul> <!-- end #nav -->
 			<%end%>
-			<!-- 
-			<ul id="menu">
-				<li><a href="#">Log</a> 
-					<ul> 
-						<li><%= link_to "Entry Record", :controller => 'records', :action =>'new' %></li> 
-						<li><%= link_to "Work From Home", :controller => 'homeworks', :action =>'new' %></li> 
-					</ul> 
-				</li>
-			</ul>
-			-->
-			
+
 		</div> <!-- end #header -->
 
 		<div id="main">
