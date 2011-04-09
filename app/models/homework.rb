@@ -2,7 +2,7 @@ class Homework < ActiveRecord::Base
   belongs_to :working_day
   belongs_to :user, :foreign_key => "login",:primary_key => "login"
   validate   :dates_are_valid?
-  validate :check_in_earlier_than_check_out, :check_in_out_cannot_be_too_far, :if => "check_in and check_out"
+  validate :check_in_earlier_than_check_out, :check_in_out_cannot_be_too_far,:correct_submit_window, :if => "check_in and check_out"
 
 
 
@@ -43,12 +43,16 @@ class Homework < ActiveRecord::Base
      errors.add(:check_out, "is more than 24 later than Check in") if  (check_in.next-check_out) <=0
   end
 
+  def correct_submit_window
+    errors.add_to_base("Home work earlier than 45 days from now cannot be added") if (Time.now - check_in)/3600/24 > 45
+    errors.add_to_base("Home work later than 14 days from now cannot be added") if (check_in - Time.now)/3600/24 > 14
+  end
 
  # processing logic
   def working_day_to_match
     WorkingDay.find(:first, :conditions => {:login => login,:wday => check_in.to_date})
   end
-
+ 
  
   def process 
      unless working_day_to_match

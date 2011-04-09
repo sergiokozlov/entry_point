@@ -1,6 +1,9 @@
 class Record < ActiveRecord::Base
   belongs_to :working_day
   belongs_to :user, :foreign_key => "login",:primary_key => "login"
+  validate   :dates_are_valid?
+  validate   :correct_submit_window, :if => "click_date"
+  
   
  # virtal attributes
   def click_date_string  
@@ -14,8 +17,13 @@ class Record < ActiveRecord::Base
   end 
  
   # validation logic  
-  def validate
+  def dates_are_valid?
     errors.add_to_base("Date or time provided are invalid") if @invalid
+  end
+  
+  def correct_submit_window
+    errors.add_to_base("Record earlier than 45 days from now cannot be added") if (Time.now - click_date)/3600/24 > 45
+    errors.add_to_base("Record later than 14 days from now cannot be added") if (click_date - Time.now)/3600/24 > 14
   end
 
   # assosiation logic
