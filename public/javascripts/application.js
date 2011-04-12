@@ -184,7 +184,16 @@ jQuery.ajaxSetup({
 
 
 $(document).ready( function () {
+	
+// Actions on DASHBOARD
+	$('a.hide').click ( function() {
+		$(this).parent("div").fadeOut('slow', function() {
+			$(this).remove();
+		});
+		return false;
+	});
 
+ 
 // Actions on "DASHBOARD/INDEX" page for current_user
 	// show last loaded week daily chart for current_user, support "<< >>" moving, refresh week
 
@@ -206,12 +215,6 @@ $(document).ready( function () {
 	})
 
 // Actions on "DASHBOARD/MANAGE" and "DASHBOARD/OVERVIEW" for the manager and director
-	$('a.hide').click ( function() {
-		$(this).parent("div").fadeOut('slow', function() {
-			$(this).remove();
-		});
-		return false;
-	});
 
 	// Select correct value for selector 
 	var pm_id = 'week_'+$.url.param("id");
@@ -296,7 +299,15 @@ $(document).ready( function () {
 		//var group_id = $(this).parents("li").attr("id");
 		$(this).parents("li").siblings().removeClass('chosen_group');
 		$(this).parents("li").addClass('chosen_group');
-		loadWeek({week: chosenWeek, group: chosenGroup });
+		switch (chosenRange())
+			{
+				case 'week':
+ 				  	loadWeek({week: chosenWeek, group: chosenGroup });
+				break;
+				case 'month':
+ 				  loadMonth({month: chosenMonth, group: chosenGroup}); 
+				break;
+			};
 		return false;
       }); 
 
