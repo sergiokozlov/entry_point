@@ -66,7 +66,7 @@ class DashboardController < ApplicationController
     @week_id  = (params[:week] || (@selected_group.weeks_to_analyze)[0][0]).to_i
     
     case 
-    when @user.director?
+    when (@user.director? and @selected_group.manager.person?)
        @developers = [@selected_group.manager] + @selected_group.developers
     else
        @developers = @selected_group.developers
@@ -83,7 +83,7 @@ class DashboardController < ApplicationController
     @month_id  = (params[:month] || (@selected_group.months_to_analyze)[0][0]).to_i
     
     case 
-    when @user.director?
+    when (@user.director? and @selected_group.manager.person?)
        @developers = [@selected_group.manager] + @selected_group.developers
     else
        @developers = @selected_group.developers
