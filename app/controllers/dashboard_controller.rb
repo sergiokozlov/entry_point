@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
   def index
     require_user
     @user = current_user
-    session[:week] = @week_id = @user.logged_working_weeks.first[0].to_i
+    session[:week] = @week_id = (params[:week] || @user.logged_working_weeks.first[0]).to_i
   end
 
   def manage

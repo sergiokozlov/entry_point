@@ -23,7 +23,7 @@ class RecordsController < ApplicationController
           @record.process
           @record.working_day.recalculate 
           flash[:checkin_notice] = "Thanks you we will check this record"
-          redirect_to :controller => 'dashboard'
+          redirect_to :controller => 'dashboard', :action => 'index', :week => @record.click_date.cweek
        else
           flash[:checkin_error] = @record.errors[:base]
           redirect_to :controller => 'dashboard', :action => 'index'
