@@ -26,23 +26,15 @@ class Record < ActiveRecord::Base
     errors.add_to_base("Record later than 14 days from now cannot be added") if (click_date - Time.now)/3600/24 > ACFG['submit_window_right']
   end
 
-  # assosiation logic
- # def first?
- #  if self.working_day.exists?(:login => self.login, :wday => click_date.to_date)
- #    true
- #  else
- #    false
- #  end
- # end
 
   def working_day_to_match
-    WorkingDay.find(:first, :conditions => {:login => login,:wday => click_date.to_date})
+    WorkingDay.find(:first, :conditions => {:login => login,:wday => (click_date - 60*ACFG['midnight_shift']).to_date})
   end
 
   # processing logic
   def process 
      unless working_day_to_match
-          @processed_day = create_working_day(:login => self.login,:wday => click_date.strftime("%m/%d/%Y"))
+          @processed_day = create_working_day(:login => self.login,:wday => (click_date - 60*ACFG['midnight_shift']).strftime("%m/%d/%Y"))
           self.working_day = @processed_day
           self.save
      else

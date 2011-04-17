@@ -1,8 +1,8 @@
 class WorkingDay < ActiveRecord::Base
   has_many :records
   has_one :homework
- # virtual attributes
 
+  # virtual attributes
   def wday_string  
     wday.strftime("%m/%d/%Y")
   end
