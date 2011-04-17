@@ -26,22 +26,33 @@ class WorkingDay < ActiveRecord::Base
     end 
   end
 
-  # properties 
-  def short_day?
-    true if total_duration < 480+30 and duration > 0
-  end
-
-  def hard_day?
-    true if total_duration > 540 and duration >0
-  end
- 
-  def late_comming?
-    true if check_in.strftime("%H:%M") > "11:45"
-  end
-
   def total_duration
     duration + homework_duration
   end
+
+  # properties
+  
+  def weekend?
+    true if [6,7].include?(check_in.wday) 
+  end 
+
+  def visit_day?
+    true if weekend? and total_duration < ACFG['visit_day_limit']
+  end
+
+  def short_day?
+    true if total_duration < 480+30 and duration > 0 and not visit_day?
+  end
+
+  def hard_day?
+    true if total_duration >= 540 and duration >0
+  end
+ 
+  def late_comming?
+    true if check_in.strftime("%H:%M") > "11:45" and not visit_day?
+  end
+
+
 
   # control javascript UI
   def color

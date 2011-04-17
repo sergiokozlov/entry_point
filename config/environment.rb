@@ -21,7 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
     config.gem "authlogic"
     config.gem "ar-extensions"
-    config.gem "json_pure"
+    config.gem "json"
     config.gem "delorean"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
@@ -43,5 +43,7 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
+  # Load default configuration
+  ACFG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")  
 
 end

@@ -51,11 +51,11 @@ class User < ActiveRecord::Base
 
   # Statitics
   def week_completed (number=Date.today.cweek)
-    weeked_working_days(number).map{|day| day.total_duration}.inject(0) {|x,y| x+y}
+    weeked_working_days(number).select{|day| not day.visit_day?}.map{|day| day.total_duration}.inject(0) {|x,y| x+y}
   end
 
   def week_average (number=Date.today.cweek)
-    if (l = weeked_working_days(number).length) > 0
+    if (l = weeked_working_days(number).select{|day| not day.visit_day?}.length) > 0
       week_completed(number)/l
     else
       0
@@ -63,11 +63,11 @@ class User < ActiveRecord::Base
   end
 
   def month_completed (number=Date.today.month)
-    month_working_days(number).map{|day| day.total_duration}.inject(0) {|x,y| x+y}
+    month_working_days(number).select{|day| not day.visit_day?}.map{|day| day.total_duration}.inject(0) {|x,y| x+y}
   end
 
   def month_average (number=Date.today.month)
-    if (l = month_working_days(number).length) > 0
+    if (l = month_working_days(number).select{|day| not day.visit_day?}.length) > 0
       month_completed(number)/l
     else
       0

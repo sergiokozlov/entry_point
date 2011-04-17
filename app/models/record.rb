@@ -22,8 +22,8 @@ class Record < ActiveRecord::Base
   end
   
   def correct_submit_window
-    errors.add_to_base("Record earlier than 45 days from now cannot be added") if (Time.now - click_date)/3600/24 > 45
-    errors.add_to_base("Record later than 14 days from now cannot be added") if (click_date - Time.now)/3600/24 > 14
+    errors.add_to_base("Record earlier than 45 days from now cannot be added") if (Time.now - click_date)/3600/24 > ACFG['submit_window_left']
+    errors.add_to_base("Record later than 14 days from now cannot be added") if (click_date - Time.now)/3600/24 > ACFG['submit_window_right']
   end
 
   # assosiation logic

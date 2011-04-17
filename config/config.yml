@@ -1,0 +1,7 @@
+# Manual input settings configuration 
+submit_window_right: 14
+submit_window_left: 45
+
+# Settings for day shift and day ignorance
+visit_day_limit: 180
+midnight_shift: 180
