@@ -3,5 +3,5 @@ submit_window_right: 14
 submit_window_left: 45
 
 # Settings for day shift and day ignorance
-visit_day_limit: 180
+visit_day_limit: 90
 midnight_shift: 180
