@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101015153012) do
+ActiveRecord::Schema.define(:version => 20110419101357) do
 
   create_table "directors_groups", :id => false, :force => true do |t|
     t.integer  "group_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20101015153012) do
     t.integer  "working_day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "submit_type",    :default => "auto"
   end
 
 # Could not dump table "sqlite_stat1" because of following StandardError

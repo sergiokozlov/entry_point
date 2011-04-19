@@ -17,7 +17,7 @@ class RecordsController < ApplicationController
     @click_date_string = params[:record][:check_date] + ' ' + params[:record][:check_time] 
     #render :action => 'show'
 
-    @record =  @user.records.build({:click_date_string => @click_date_string})
+    @record =  @user.records.build({:click_date_string => @click_date_string, :submit_type => 'manual'})
        if @record.save
 
           @record.process
