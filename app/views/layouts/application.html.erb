@@ -4,15 +4,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><%=(current_user.name + " | " if current_user) %> Enkata Entrypoint</title>
 	<%= stylesheet_link_tag 'application' %>
-	<%= stylesheet_link_tag 'datepicker' %>
+    <%= stylesheet_link_tag 'datepicker' %>
     <%= javascript_include_tag 'jquery'  %>
     <!--<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js' %>-->
 	<%= javascript_include_tag 'jquery.url'  %>
-	<%= javascript_include_tag 'enumerable'  %>
+    <%= javascript_include_tag 'enumerable'  %>
+    <%= javascript_include_tag 'modal'  %>
 	<%= javascript_include_tag 'jquery.tufte-graph'  %>
     <%= javascript_include_tag 'raphael-min' %>
     <%= javascript_include_tag 'raphael.path.methods.js' %>
-	<%= javascript_include_tag 'modal'  %>
+   
 	<%= javascript_include_tag 'datepicker'  %>
 	<%= javascript_include_tag 'application' %>
 	<%= yield(:head) %>
@@ -61,7 +62,9 @@
 	
 	<%= render (:partial => 'shared/checkin')%>
 
-	<%= render (:partial => 'shared/settings')%>
+    <%= render (:partial => 'shared/settings')%>
+
+    <%= render (:partial => 'shared/edit_wd')%>
 	
 </body>
 </html>

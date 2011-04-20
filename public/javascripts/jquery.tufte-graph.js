@@ -127,8 +127,9 @@
         var t = plot.ctx.scale;
         var coords = [t.X(left), t.Y(top), t.W(width), t.H(height)];
         var toolTip = optionResolver(options.toolTip);
+        var wd = optionResolver(options.bar.wdLabel);
         var r = plot.ctx.rect(coords[0], coords[1], coords[2], coords[3]).attr({stroke: color, fill: color});
-
+       
           // adding tooltip
              if (options.toolTip) {
                 $(r[0]).mousemove(function(e){
@@ -139,6 +140,13 @@
                  r[0].onmouseout = function() {
                      $("#tooltip").remove();
                  };
+             }
+
+             if (wd) {
+                $(r[0]).dblclick( function() {
+                  showModalLayer('edit_wd','#');  
+                  //alert(wd);
+                });
              }
         
         lastY = lastY + y;

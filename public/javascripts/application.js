@@ -24,7 +24,8 @@ function dailychart(divId,returnedData) {
         bar: {
           barWidth:  0.8,
           barLabel:  function(index) { return this[1].bar_label },
-		  axisLabel: function(index) { return this[1].label }
+		  axisLabel: function(index) { return this[1].label },
+          wdLabel: function(index) {return this[1].wd }
         }, 
 		color:     function(index, stackedIndex) { 
 			switch (this[2].flag)

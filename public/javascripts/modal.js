@@ -1,8 +1,4 @@
-$(document).ready( function () {
-
-function showModalLayer(link) {
-    	var popID = link.attr('rel'); //Get Popup Name
-		var popURL = link.attr('href'); //Get Popup href to define size
+function showModalLayer(popID,popURL) {
 
 		//Pull Query & Variables from href URL
 		/*var query= popURL.split('?');
@@ -25,12 +21,13 @@ function showModalLayer(link) {
 		//Show Background
 		$('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
 		$('#fade').css({'filter' : 'alpha(opacity=40)'}).show(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'}) is used to fix the IE Bug on fading transparencies
-}    
+}  
 
+$(document).ready( function () {
 
   //When you click on a link with class of dialog-trigger and the href starts with a # 
 	$('a.dialog-trigger').click(function() {
-	  showModalLayer($(this));
+	  showModalLayer($(this).attr('rel'),$(this).attr('href'));
       return false;
 	});
 
