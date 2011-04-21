@@ -42,6 +42,7 @@ $(document).ready( function () {
 	//Close Popups and Fade Layer
 	$('a.close').live('click', function() { //When clicking on the close or fade layer...
 		$('#fade , .dialog, .alert').hide(/*function() { $('#fade, a.close').remove(); }*/);
+        $('#edit_wd .inner').empty();
 		return false;
 	});
 	
