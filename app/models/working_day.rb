@@ -30,6 +30,12 @@ class WorkingDay < ActiveRecord::Base
     duration + homework_duration
   end
 
+  # manual entries identification
+  def has_manual_entries
+    false
+    self.id if (records.select {|r| r.submit_type == 'manual'} | homework.to_a).length > 0
+  end
+
   # properties
   
   def weekend?

@@ -35,7 +35,7 @@ $(document).ready( function () {
     if ($(".alert").length>0) {
       rel = $(".alert").parents("div.dialog");
       link = $('a.dialog-trigger[rel="'+rel.attr("id")+'"]');
-      showModalLayer(link);
+      showModalLayer(rel.attr("id"), '#');
     }
 
 

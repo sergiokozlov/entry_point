@@ -141,11 +141,16 @@
                      $("#tooltip").remove();
                  };
              }
-
+ 
              if (wd) {
-                $(r[0]).dblclick( function() {
-                  showModalLayer('edit_wd','#');  
-                  //alert(wd);
+                 $(r[0]).mouseover(function() {
+                    $(this).css("cursor","pointer");; 
+                 }); 
+
+                $(r[0]).click( function() {
+                  showModalLayer('edit_wd','#');
+                  $('#edit_wd .inner').load("/dashboard/my_manual_entries/", {id : wd})  
+                  console.log(wd);
                 });
              }
         
