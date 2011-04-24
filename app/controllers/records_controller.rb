@@ -46,7 +46,9 @@ class RecordsController < ApplicationController
        
   end
  
-  
+  def destroy
+    render :text => "#{params[:record]"
+  end
 
    
 end

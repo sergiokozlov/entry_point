@@ -2,11 +2,13 @@
 
   <h2>Perform Corrections <a class="close" href="#"></a></h2>
     <div class="inner">
+	<% form_tag '/records/destroy/', :method => :delete do %>
 
      	<div class="btn">
-			<input id="forgot_submit" name="forgot_submit" type="submit" class="button" value="Submit" />
+			<%= submit_tag "Submit", {:class => 'button'} %>
 			or <a class="close" href="#">Cancel</a>
 		</div>
+	<% end %>	
 	</div> <!-- end .inner -->
 	<div class="dialog-footer"></div>
 </div> <!-- end .dialog #settings -->

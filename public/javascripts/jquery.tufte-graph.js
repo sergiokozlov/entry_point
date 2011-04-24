@@ -150,7 +150,7 @@
                 $(r[0]).click( function() {
                   showModalLayer('edit_wd','#');
 				  $.get("/dashboard/my_manual_entries/", {id : wd}, function(data) {
-					$('#edit_wd .inner').prepend(data); 
+					$('#edit_wd .inner form').prepend(data); 
 					//console.log(data);
 				  });	
                    
