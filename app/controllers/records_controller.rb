@@ -47,7 +47,21 @@ class RecordsController < ApplicationController
   end
  
   def destroy
-    render :text => "#{params[:record]"
+    if params[:record]
+      @record = Record.find(params[:record].first)
+      @date = @record.click_date
+      params[:record].each { |r| Record.destroy(r) }
+      @record.working_day.recalculate
+    end
+    
+    if params[:homework]
+      @homework = Homework.find(params[:homework].first)
+      @date = @homework.check_in
+      params[:homework].each { |h| Homework.destroy(h) }
+    end
+
+    redirect_to :controller => 'dashboard', :action => 'index',:week => @date.to_date.cweek
+    #render :text => "#{params[:record]"
   end
 
    
