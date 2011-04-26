@@ -101,7 +101,18 @@ class WorkingDay < ActiveRecord::Base
     days.each { |day| day.recalculate  }
   end
   
-  
+ def recalculate!
+   if self.records.size > 0
+     self.recalculate
+     self.save
+   elsif h = self.homework
+     self.check_in = self.check_out =  h.check_in
+     self.duration = 0
+     self.save
+   else
+     self.destroy
+   end
+ end 
 end
 
 

@@ -47,20 +47,26 @@ class RecordsController < ApplicationController
   end
  
   def destroy
-    if params[:record]
-      @record = Record.find(params[:record].first)
-      @date = @record.click_date
-      params[:record].each { |r| Record.destroy(r) }
-      @record.working_day.recalculate
-    end
+    begin
+      if params[:record]
+        @record = Record.find(params[:record].first)
+        @date = @record.click_date
+        params[:record].each { |r| Record.destroy(r) }
+        @wd = @record.working_day
+      end
     
-    if params[:homework]
-      @homework = Homework.find(params[:homework].first)
-      @date = @homework.check_in
-      params[:homework].each { |h| Homework.destroy(h) }
+      if params[:homework]
+        @homework = Homework.find(params[:homework].first)
+        @date = @homework.check_in
+        params[:homework].each { |h| Homework.destroy(h) }
+        @wd = @record.working_day
+      end
+      @wd.recalculate!
+    rescue
+      flash[:correction_error] = 'Entries were not deleted - please try again'
     end
-
     redirect_to :controller => 'dashboard', :action => 'index',:week => @date.to_date.cweek
+    
     #render :text => "#{params[:record]"
   end
 
