@@ -62,10 +62,12 @@ class RecordsController < ApplicationController
         @wd = @record.working_day
       end
       @wd.recalculate!
+      redirect_to :controller => 'dashboard', :action => 'index',:week => @date.to_date.cweek
     rescue
-      flash[:correction_error] = 'Entries were not deleted - please try again'
+      flash[:correction_error] = 'Something went wrong - please try again'
+      redirect_to :controller => 'dashboard', :action => 'index'
     end
-    redirect_to :controller => 'dashboard', :action => 'index',:week => @date.to_date.cweek
+   
     
     #render :text => "#{params[:record]"
   end

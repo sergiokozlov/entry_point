@@ -3,7 +3,9 @@
   <h2>Perform Corrections <a class="close" href="#"></a></h2>
     <div class="inner">
 	<% form_tag '/records/destroy/', :method => :delete do %>
-
+      <%if flash[:correction_error]%>
+	   	<span class="alert error"> <span><%= flash[:correction_error]%></span> </span>
+      <%end%>
      	<div class="btn">
 			<%= submit_tag "Submit", {:class => 'button'} %>
 			or <a class="close" href="#">Cancel</a>
