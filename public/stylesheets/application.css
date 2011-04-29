@@ -32,7 +32,7 @@ body {
 	}
 
 a {
-	color:#666; 
+	color:#666;
 	text-decoration:none;
 	}
 	a:hover {color:#000;}
@@ -40,7 +40,7 @@ a {
 		position:relative;
 		top:1px;
 		}
-	
+
 .left	{float:left;}
 .right {float:right;}
 .clear {clear:both;}
@@ -50,7 +50,7 @@ a {
 	margin:20px auto 0;
 	text-align:left;
 	}
-	
+
 
 /*----------------------------------------------------------
                            @TOP
@@ -62,7 +62,7 @@ a {
 	margin:0 0 20px;
 	text-shadow:1px 1px #ddd;
 	}
-		
+
 
 	/* TOOLBAR (Settings, Sign out)
 	---------------------------------------- */
@@ -86,7 +86,7 @@ a {
 				#tools li.sign-out a {padding-left:17px; background:url(/images/sign-out.png) center left no-repeat;}
 
 
-	
+
 /*----------------------------------------------------------
                            @HEADER
 -----------------------------------------------------------*/
@@ -104,8 +104,8 @@ a {
 	border-top-left-radius:6px;
 	-moz-border-radius-topleft:6px;
 	-webkit-border-top-left-radius:6px;
-	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
-	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
+	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
 	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
 	border:1px solid #999b9e;
 	border-bottom:1px solid #babdc1;
@@ -124,9 +124,9 @@ a {
 		}
 
 	/* Navigation (My Attendance, My Team)
-	---------------------------------------- */	
+	---------------------------------------- */
 	#nav {
-		width:242px;
+		width:142px;
 		height:26px;
 		float:left;
 		margin:25px 0 0 20px;
@@ -144,9 +144,9 @@ a {
 				font-weight:bold;
 				background-image:url(/images/nav.png);
 				color:#444;
-				}	
+				}
 				#nav li a:hover {color:#111;}
-				
+
 				/* My Attendance button*/
 				#nav li.dashboard a {
 					background-position:top left;
@@ -155,7 +155,7 @@ a {
 						position:static;
 						background-position:center left;
 						}
-						
+
 				/* My Team button */
 				#nav li.manage a {
 					background-position:top right;
@@ -165,7 +165,7 @@ a {
 						position:static;
 						background-position:center right;
 						}
-				
+
 				/*Highlight current button */
 				#index #nav li.dashboard a,
 				#manage #nav li.manage a,
@@ -177,9 +177,9 @@ a {
 					#index #nav li.dashboard a {background-position:bottom left;}
 					#manage #nav li.manage a {background-position:bottom right;}
 					#overview #nav li.manage a {background-position:bottom right;}
-										
-				
-				
+
+
+
 /*----------------------------------------------------------
                   @MANUAL CHECK-IN BUTTON
 -----------------------------------------------------------*/
@@ -228,9 +228,9 @@ a {
 	-moz-border-radius-bottomleft:6px;
 	-webkit-border-bottom-left-radius:6px;
 	*/
-	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
-	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
-	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25); 
+	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
 	}
 	.wrap {
 		width:100%;
@@ -243,7 +243,7 @@ a {
 /*----------------------------------------------------------
                         @REPORT LAYOUT
 -----------------------------------------------------------*/
-	
+
 	/* General stuff
 	---------------------------------------- */
 	.report {
@@ -264,7 +264,7 @@ a {
 				right:0;
 				line-height:24px;
 			}
-	
+
 	/* Today and This Week reports
 	---------------------------------------- */
 	.box {
@@ -304,17 +304,17 @@ a {
 				.progress .red {background:#af2525 url(/images/progress-red.png) repeat-x;}
 				.progress .yellow {background:#f69d00 url(/images/progress-yellow.png) repeat-x;}
 				.progress .green {background:#4aa70c url(/images/progress-green.png) repeat-x;}
-	
+
 	.today,.this-week {width:366px;}
 	.today {float:left;}
 	.this-week {float:right;}
-	
+
 	.oops {
 		padding-top:40px;
 		padding-bottom:40px;
 		}
-	
-	/* General bar chart settings
+
+	/* General chart settings
 	---------------------------------------- */
 	.chart-container {
 		margin:0 auto;
@@ -333,8 +333,8 @@ a {
 		margin:-9px 0 0 -110px;
 		display:none;
 		}
-	
-	/* Daily Stats (bar chart) report on personal dashboard 
+
+	/* Daily Stats (bar chart) report on personal dashboard
 	---------------------------------------- */
 	.daily {
 		margin-bottom:0;
@@ -418,29 +418,41 @@ a {
 					.legend li.grey div {background:#ccc;}
 					.legend li.blue div {background:#07093D;}
 					.legend li.css_red div {background:red;}
-			
-	
+
+    /* Trend
+    ----------------------------------------- */
+    .trend {margin:20px 0 10px;}
+    .trend .inner {position:relative;}
+    .trend .chart-head label {color:#fff;font-weight:bold;padding:0 5px 0 10px;}
+    .trend .graph {border-bottom:0;height: 260px;margin-bottom:-35px; }
+    .trend .chart-container {border:1px solid #ccc;}
+    .trend .legend {width:265px;margin-top:40px}
+    .trend .legend li.blue div {background:#365f91;}
+    .trend .legend li.red div {background:#f75a06;}
+
+
 	/* Weekly Stats report (Weekly Table)
 	---------------------------------------- */
 
 		/* Weekly report on personal dashboard */
 		.column-week {width:300px;}
-			
+        .my-weekly {margin-bottom:20px}
+
 		/* Weekly report on Manage/Overview */
 		.team-weekly {margin-bottom:0;}
 		.team-weekly th.column-week {width:100px;}
 		.team-weekly th.column-name {width:200px;}
 
-		
+
 	/* Monthly Table
 	---------------------------------------- */
-		
+
 		/* Monthly report on Manage/Overview */
 		.team-monthly th.column-week {width:100px;}
 		.team-monthly th.column-name {width:300px;}
 		.team-monthly td {line-height:2;}
-	
-	
+
+
 	td.chart {
 		padding:40px 20px;
 		}
@@ -458,9 +470,9 @@ a {
 		display:block;
 		margin:0 auto;
 		}
-		
-	
-	
+
+
+
 /*----------------------------------------------------------
                        @TABLE STYLING
 -----------------------------------------------------------*/
@@ -476,7 +488,7 @@ table {
 		color:#fff;
 		background:#444 url(/images/button.png) repeat-x;
 		border-right:1px solid #444;
-		border-left:1px solid #666;  
+		border-left:1px solid #666;
 		}
 	td {
 		border: 1px solid #e5e5e5;
@@ -492,14 +504,14 @@ table {
 		cursor:pointer;
 		}
 
-		
+
 /*----------------------------------------------------------
                           @TIMERANGE
 -----------------------------------------------------------*/
 .time-range {
 	padding:5px 0;
 	overflow:hidden;
-	}	
+	}
 	.time-range img {
 		float:right;
 		margin:3px 5px 0 0;
@@ -521,38 +533,6 @@ table {
             width:120px;
 			}
 
-
-/*----------------------------------------------------------
-                    @OUTLIERS NOTIFICATIONS
------------------------------------------------------------*/
-#outliers {
-	margin:0 0 20px 0;
-	padding:15px;
-	border:1px solid #e2d0ae;
-	background:#fff6df url(/images/outliers-bg.png) repeat-x;
-	border-radius:6px;
-	-webkit-border-radius:6px;
-	-moz-border-radius:6px;
-	}
-	#outliers h3 {
-		margin-bottom:5px;
-		}
-	#outliers li {
-		list-style-type:disc;
-		padding:2px 0;
-		margin:0 15px;
-		}
-	#outliers a.hide {
-		display:block;
-		width:14px;
-		height:14px;
-		float:right;
-		background:url(/images/outliers-hide.png) top no-repeat;
-		}
-		#outliers a.hide:hover {
-			background-position:bottom;
-			}
-	
 
 /*----------------------------------------------------------
                 @TEAM SELECTOR for OVERVIEW
@@ -601,7 +581,7 @@ table {
 					color:#fff;
 					text-shadow:none;
 					}
-	
+
 /*----------------------------------------------------------
                           @FOOTER
 -----------------------------------------------------------*/
@@ -622,9 +602,9 @@ table {
 	border-bottom-left-radius:6px;
 	-moz-border-radius-bottomleft:6px;
 	-webkit-border-bottom-left-radius:6px;
-	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
-	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);  
-	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25); 
+	box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.25);
 	}
 	#footer p {
 		margin: 0 20px;
@@ -636,7 +616,7 @@ table {
 			#footer p a:hover {
 				color:#333;
 				}
-		
+
 /*----------------------------------------------------------
                             ALERTS
 -----------------------------------------------------------*/
@@ -660,48 +640,97 @@ table {
 			}
 		.top-error {background-color:#df3b3b;}
 		.top-info {background-color:#618fb9;}
-		.top-success {background-color:#83b452;}		
+		.top-success {background-color:#83b452;}
 
 
 	/* Regular alerts
 	---------------------------------------- */
 	.alert {
 		display:block;
-		padding:10px;
-		text-align:center;
-		font-weight:bold;
+		padding:10px 15px;
+        margin:0 0 20px 0;
 		border-radius:6px;
 		-moz-border-radius:6px;
 		-webkit-border-radius:6px;
 		}
 		.alert span {
-			padding-left:20px;
+			padding-left:25px;
 			background-position:center left;
 			background-repeat:no-repeat;
 			}
+        .alert a.hide {
+            display:block;
+            width:16px;
+            height:16px;
+            float:right;
+            background:url(/images/close.png) no-repeat;
+            opacity:0.7;
+            }
+            .alert a.hide:hover {
+                opacity:1;
+                }
 		.error {
-			color:#b50007;
-			background:#f9e5e6;
-			border:1px solid #e8aaad;
+			color:#ed302c;
+			background:#ffecce;
+			border:1px solid #e9c59b;
 			}
-			.error span {background-image:url(/images/alert-error.png);}
+			.error span {background-image:url(/images/alert-error.gif);}
 		.success {
-			color:#1c8400;
-			background:#e9f9e5;
-			border:1px solid #b4e8aa;
+			color:#508631;
+			background:#edfbd8;
+			border:1px solid #bfde84;
 			}
-			.success span {background-image:url(/images/alert-success.png);}
+			.success span {background-image:url(/images/alert-success.gif);}
+		.warning {
+			color:#666;
+			background:#fefde2;
+			border:1px solid #e5e181;
+			}
+			.warning span {background-image:url(/images/alert-warning.gif);}
+		.inform {
+			color:#0888ce;
+			background:#ecf9ff;
+			border:1px solid #bbdbe0;
+			}
+			.inform span {background-image:url(/images/alert-info.gif);}
+         .no-margin-btm {
+            margin-bottom:0;
+            }
+        /* Outliers alert
+        ---------------------------------------- */
+        #outliers {
+            /*margin:0 0 20px 0;
+            padding:15px;
+            border:1px solid #e2d0ae;
+            background:#fff6df url(/images/outliers-bg.png) repeat-x;
+            border-radius:6px;
+            -webkit-border-radius:6px;
+            -moz-border-radius:6px;
+            */
+            }
+            #outliers h3 {
+                margin-bottom:5px;
+                }
+            #outliers li {
+                list-style-type:disc;
+                padding:2px 0;
+                margin:0 15px;
+                }
+
+         /* Alerts in dialogs
+        ---------------------------------------- */
+        .dialog .alert {margin:0;}
 
 /*----------------------------------------------------------
                          @DIALOGS
 -----------------------------------------------------------*/
 #fade {
-	display:none; 
+	display:none;
 	background:#000;
-	position:fixed; 
-	left:0; 
+	position:fixed;
+	left:0;
 	top:0;
-	width:100%; 
+	width:100%;
 	height:100%;
 	opacity:.40;
 	z-index:9;
@@ -709,11 +738,11 @@ table {
 	}
 .dialog {
 	width:400px;
-	display:none; 
+	display:none;
 	background:#fff;
 	float:left;
 	position:fixed;
-	top:48%; 
+	top:48%;
 	left:52%;
 	z-index:99;
 	-webkit-box-shadow:0px 0px 10px #000;
@@ -803,7 +832,7 @@ table {
 			}
 		.dialog label {
 			float:left;
-			width:80px; 
+			width:80px;
 			margin-left:-90px;
 			font-weight:bold;
 			font-size:14px;
@@ -824,7 +853,7 @@ table {
 				.dialog form div span.date {background:#fff url(/images/date.png) right center no-repeat;}
 				.dialog form div span.time-checkin {background:#fff url(/images/time-checkin.png) right center no-repeat;}
 				.dialog form div span.time-checkout {background:#fff url(/images/time-checkout.png) right center no-repeat;}
-				
+
 					.dialog input.text {
 						width:110px;
 						height:20px;
@@ -837,7 +866,7 @@ table {
 						border-radius:6px;
 						-moz-border-radius:6px;
 						-webkit-border-radius:6px;
-						}				
+						}
 						 .dialog input.text:focus {
 							border:1px solid #6a6f7b;
 							color:#333;
@@ -847,18 +876,18 @@ table {
 			cursor:pointer;
 			padding:3px 8px;
 			font-size:16px;
-			}	
-		.dialog li {
-			margin:0 0 5px; 
 			}
-		
-		
+		.dialog li {
+			margin:0 0 5px;
+			}
+
+
 	/* Check-in
 	---------------------------------------- */
 	#checkin .alert {
 		margin:0 0 15px 0;
 		}
-	
+
 	/* Settings
 	---------------------------------------- */
 	#settings form {
@@ -876,52 +905,53 @@ table {
 			#settings form div label {
 				font-size:12px;
 				display:block;
-				width:140px; 
-				height:25px;				
+				width:140px;
+				height:25px;
 				line-height:25px;
 				margin-left:-150px;
 				}
-	
-	
+
+
 
 /*----------------------------------------------------------
                            @Sergio
 -----------------------------------------------------------*/
-#user_nav { 
-  float: right; 
+/*
+#user_nav {
+  float: right;
   font-size: 12px;
   margin-bottom: 30px;
 }
 
-/* menu */
-#menu a { color:#fff; text-decoration:none; } 
-#menu > li {background:#172322; cursor:pointer; float:left; position:relative; 
-    padding:0px 10px;} 
+
+#menu a { color:#fff; text-decoration:none; }
+#menu > li {background:#172322; cursor:pointer; float:left; position:relative;
+    padding:0px 10px;}
 #menu > li a:hover {color:#6C6;}
 
-/* submenu */
- 
-#menu ul { padding:0px; margin:0px; display:inline;} 
-#menu li ul { position:absolute; left:-80px; top:-10px; margin-top:45px; width:230px; line-height:16px; 
-    background-color:#172322; color:#0395CC; /* for IE */ display:none; z-index:5; border-radius: 25px;} 
-#menu li:hover ul { display:block;} 
-#menu li ul li{ display:block; margin:5px 15px; padding: 5px 0px; float:left; border-top: dotted 1px #606060; 
-    list-style-type:none; } 
-#menu li ul li a:hover { color:#6C6; } 
 
 
-/* form styling */
+#menu ul { padding:0px; margin:0px; display:inline;}
+#menu li ul { position:absolute; left:-80px; top:-10px; margin-top:45px; width:230px; line-height:16px;
+    background-color:#172322; color:#0395CC; display:none; z-index:5; border-radius: 25px;}
+#menu li:hover ul { display:block;}
+#menu li ul li{ display:block; margin:5px 15px; padding: 5px 0px; float:left; border-top: dotted 1px #606060;
+    list-style-type:none; }
+#menu li ul li a:hover { color:#6C6; }
+
+
+
 .input_form p {
 	margin: 10px;
 }
 
-.input_form input {  
-    padding: 5px;  
-    border: solid 1px #E5E5E5;  
+.input_form input {
+    padding: 5px;
+    border: solid 1px #E5E5E5;
  	font: normal 13px/100%;
     }
 
-.input_form input[type="submit"] {  
+.input_form input[type="submit"] {
 	    cursor: pointer;
 		border-radius: 5px;
 		margin-left: 10px;
@@ -938,7 +968,7 @@ table {
   border: solid 1px #CCC;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   width: 220px;
 }
 
@@ -947,13 +977,14 @@ table {
 }
 
 
-
+*/
 
 
 /*----------------------------------------------------------
                            @Rails
 -----------------------------------------------------------*/
 
+/*
 #flash_notice, #flash_error {
   padding: 5px 8px;
   margin: 10px 0;
@@ -1007,5 +1038,5 @@ table {
   list-style: disc;
 }
 
-
+*/
 

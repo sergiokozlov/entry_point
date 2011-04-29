@@ -1,17 +1,21 @@
-  <div id="outliers">
-    <a href="#" class="hide"></a>
+<% if @user.should_worry? then %>
     <!-- TODO: Use Partials-->
-    <% if @user.should_worry? then %>
-      <h3>During Last two weeks:</h3>
-	  <ul>
-      <%  @group.alerts.each_pair do |dev_name, message| %>
-        <li><%= "<b> #{dev_name} </b> #{message} " %></li>
-      <%end%>
-	  </ul>
-    <%else%>
-      <%= "Your team is Working Great" %>
-    <%end%> 
-  </div> <!-- end #outliers -->
+    <div id="outliers" class="alert warning">
+        <a href="#" class="hide"></a>
+        <h3>During last two weeks:</h3>
+        <ul>
+            <%  @group.alerts.each_pair do |dev_name, message| %>
+            <li><%= "<strong> #{dev_name} </strong> #{message} " %></li>
+            <%end%>
+        </ul>
+    </div> <!-- end #outliers -->
+<%else%>
+    <div id="outliers" class="alert success">
+        <a href="#" class="hide"></a>
+        <span><%= "Your team's attendance is great during last two weeks!" %></span>
+    </div> <!-- end #outliers -->
+<%end%>
+
 
 	<!-- 
 	<div class="red-message">
@@ -45,16 +49,20 @@
 	<div id="ajax_week">
 	<!-- <p> My Team Data for the week </p> -->
 	</div> <!-- end #ajax_week -->
-    
-    <br/>
-    <h2>Daily Average Trend</h2>
-    <br/>
-    <div class="inner">
-      <%= select ("focususer", "id",@group.developers.map {|dev| [dev.name,'focususer_'+ dev.id.to_s]}) %>
-      <!--TODO: Remove inline styling -->  
-      <div id="line_trend" style="height: 260px; margin-bottom: -30px;"></div>
-      	<ul class="legend">
-			<li class="css_red"><div></div>Team Average</li>
-			<li class="blue"><div></div>Daily Average</li>
-		</ul> <!-- end .legend -->
-    </div><!-- end .inner -->
+
+    <div class="report trend">
+      <h2>Daily Average Trend</h2>
+      	<div class="chart-head">
+            <label>Person:</label> <%= select ("focususer", "id",@group.developers.map {|dev| [dev.name,'focususer_'+ dev.id.to_s]}) %>
+	    </div> <!-- end .chart-head -->
+       <div class="inner">
+           <div class="chart-container">
+               <div id="line_trend" class="graph" style=""></div>
+               <img class="ajax-loader" src="/images/ajax-loader.gif" alt="" />
+           </div> <!-- end .chart-container -->
+           <ul class="legend">
+                <li class="red"><div></div>Team Daily Average</li>
+                <li class="blue last"><div></div>Person Daily Average</li>
+           </ul> <!-- end .legend -->
+       </div> <!-- end .inner -->
+    </div> <!-- end .report -->

@@ -1,25 +1,23 @@
-
-<div id="outliers">
-    <a href="#" class="hide"></a>
+<div id="load" class="alert inform" style="margin-bottom:7px">
     <!-- TODO: Use Partials-->
-    <% if @user.alert then %>
-	  <ul>
-        <li><%= "<b>You </b> #{@user.alert} during last two weeks" %></li>
-      </ul>
-    <%else%>
-      <%= "You are Working Great" %>
-    <%end%> 
-  </div> <!-- end #outliers -->
+    <a href="#" class="hide"></a>
+    <span>Last data load was performed on <strong>29 Apr 2011</strong> at <strong>14:54</strong></span>
+ </div> <!-- end #last_load -->
 
-
-<%= render(:partial => "week_report") %>
-
-<%= render (:partial => 'day_report')%>
-
+<% if @user.alert then %>
+    <!-- TODO: Use Partials-->
+    <div id="outliers" class="alert warning">
+        <a href="#" class="hide"></a>
+        <span><%= "You #{@user.alert} during last two weeks" %></span>
+    </div> <!-- end #outliers -->
+<%else%>
+    <div id="outliers" class="alert success">
+        <a href="#" class="hide"></a>
+        <span><%= "Your attendance is great during last two weeks!" %></span>
+     </div> <!-- end #outliers -->
+<%end%>
 
 <div class="clear"></div>
-
-
 
 <div class="report my-weekly">
 	<h2>My Weekly Stats </h2>
