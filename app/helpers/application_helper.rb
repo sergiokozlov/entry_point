@@ -43,6 +43,10 @@ module ApplicationHelper
      d.day.to_s + ' '+ ABBR_MONTHNAMES[d.month-1]
    end
    
+  def full_day_value(d)
+    "#{d.day} #{ABBR_FULL_MONTHNAMES[d.month-1]} #{d.year}" 
+  end 
+   
   def week_value(week)
     "#{day_value(week_first_day(week))} - #{day_value(week_last_day(week))}"
   end

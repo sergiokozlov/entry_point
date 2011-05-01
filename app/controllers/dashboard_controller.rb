@@ -6,6 +6,8 @@ class DashboardController < ApplicationController
     require_user
     @user = current_user
     session[:week] = @week_id = (params[:week] || @user.logged_working_weeks.first[0]).to_i
+    @last_load = Record.maximum('click_date', :conditions => {:submit_type => 'auto'})
+    
   end
 
   def manage
