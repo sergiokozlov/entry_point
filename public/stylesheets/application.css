@@ -499,9 +499,12 @@ table {
 		/*border-top:1px solid #ccc;
 		border-bottom:1px solid #ccc;*/
 		}
-	tr.hover td {
+	.hover td {
 		background:#dbecff;
 		cursor:pointer;
+		}
+	.selected td {
+		background:#ffffcc;
 		}
 
 
@@ -654,7 +657,7 @@ table {
 		-webkit-border-radius:6px;
 		}
 		.alert span {
-			padding-left:25px;
+			padding:2px 0 2px 25px;
 			background-position:center left;
 			background-repeat:no-repeat;
 			}
@@ -719,7 +722,7 @@ table {
 
          /* Alerts in dialogs
         ---------------------------------------- */
-        .dialog .alert {margin:0;}
+        .dialog .alert {margin:0; text-align:center;}
 
 /*----------------------------------------------------------
                          @DIALOGS
@@ -911,7 +914,12 @@ table {
 				margin-left:-150px;
 				}
 
-
+    /* Corrections
+	---------------------------------------- */
+    #edit_wd {width:500px;}
+    #edit_wd .inner {padding:0 10px 15px;}
+    #edit_wd div.btn {border:0; margin-top:10px; padding:0;}
+    #edit_wd form {border:0; margin:0; padding:0;}
 
 /*----------------------------------------------------------
                            @Sergio

@@ -314,12 +314,37 @@ $(document).ready( function () {
 
 	// First group name highlighted
 	$("#group_line li:first-child").addClass('chosen_group');
-	  
-	// Hover for table rows  
+
+
+	// Better usability for editing entries
+    /*
+    $("#edit_wd tr").live("mouseover", function() {
+      $(this).addClass("hover");
+    });
+    $("#edit_wd tr").live("mouseout", function() {
+      $(this).removeClass("hover");
+    });
+    */
+
+
+
+
+
+    // Hover for table rows
 	$("tr")
 	.mouseover(function() {$(this).addClass("hover");})
 	.mouseout(function()  {$(this).removeClass("hover");});
-	
+
+    /*
+    $("#edit_wd input").click(function() {
+        if ($(this).attr("checked")) {
+            $(this).parent().parent().addClass("selected");
+        }
+        else {
+            $(this).parent().parent().removeClass("selected");
+        }
+    });
+    */
 
 	
 	//**************** START HINTS IN INPUTS *******************//

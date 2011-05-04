@@ -1,27 +1,27 @@
 	<table id="manual_entries" cellspacing="0">
 		<thead>
 			<tr>
-				<th>Entry Type</th>
-                <th>Time</th>
                 <th></th>
-                <!-- <th><img src="/images/bar-chart.png" alt="" /></th> -->
+                <th>Date</th>
+                <th>Time</th>
+                <th>Entry Type</th>
 			</tr>
           </thead>
           <tbody>
               <%@wd.records.select {|r| r.submit_type == 'manual'}.each do |mr| %> 
               <tr class = "<%= cycle("white","alt") -%>">
-                  <td> Check-in or Check-out </td>
-                  <td> <%= mr.click_date.strftime("%m/%d/%Y %H:%M") %></td>
                   <td> <%= check_box_tag 'record[]', mr.id, false%> </td>
+                  <td> <%= mr.click_date.strftime("%m/%d/%Y") %></td>
+                  <td> <%= mr.click_date.strftime("%H:%M") %></td>
+                  <td> Check-in or Check-out </td>
               </tr>
              <%end %>
              <%@wd.homework.to_a.each do |h| %> 
               <tr class = "<%= cycle("white","alt") -%>">
-                  <td> Homework </td>
-                  <td> <%= h.check_in.strftime("%m/%d/%Y %H:%M") %> - <br/>
-                       <%= h.check_out.strftime("%m/%d/%Y %H:%M") %>
-                  </td>
                   <td> <%= check_box_tag 'homework[]', h.id, false%> </td>
+                  <td> <%= h.check_in.strftime("%m/%d/%Y") %> </td>
+                  <td> <%= h.check_in.strftime("%H:%M") %> - <%= h.check_out.strftime("%H:%M") %> </td>
+                  <td> Work From Home </td>
               </tr>
               <%end %>
           </tbody>
