@@ -3,7 +3,8 @@
 -
  directors:
   - Dave Stamm
-  - Ron Hhildebrandt
+  - Ron Hildebrandt
+  - Jessica Nobrega 
   - Alexey Lavrov
  department: PM and Docs
  structure:
@@ -18,11 +19,14 @@
     - Vitaly Kondratiev 
     - Ekaterina Volodko
     - Julia Vasilkova
+    - Eugene Kuznetsov
+    - Alexey Dzyubenko
 # PSO
 -
  directors:
   - Dave Stamm
-  - Ron Hhildebrandt
+  - Ron Hildebrandt
+  - Jessica Nobrega
   - Alexey Lavrov
   - David Hui
  department: PSO
@@ -39,12 +43,13 @@
    group: BA    
    manager: Andrey Dudakov
    developers:
-    - Alexander Butin
     - Marina Ishkhanova
 # Operations
 -
  directors:
   - Dave Stamm
+  - Ron Hildebrandt
+  - Jessica Nobrega
   - Alexandre Delarue
   - Alexey Lavrov
  department: Operations
@@ -60,6 +65,8 @@
 -
  directors:
   - Dave Stamm
+  - Ron Hildebrandt
+  - Jessica Nobrega
   - Gerard Larios
   - Alexey Lavrov
  department: IT
@@ -73,6 +80,8 @@
 -
  directors:
   - Dave Stamm
+  - Ron Hildebrandt
+  - Jessica Nobrega
   - Alexey Lavrov
  department: GA
  structure:
@@ -87,6 +96,8 @@
 -
  directors:
   - Dave Stamm
+  - Ron Hildebrandt
+  - Jessica Nobrega
   - Alexey Lavrov
   - Oleg Prikhodko
  department: Engineering
@@ -107,6 +118,7 @@
     - Demid Lupin
     - Kostya Barzakovsky
     - Olga Ukolova
+    - Alexander Butin
   -    
    group: AT & DA
    manager: Alex Godin

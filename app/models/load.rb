@@ -67,15 +67,15 @@ class Load
 
               user = Developer.new(:name => dev)
               user.group = g
-
+            else
+              user.group = g
+            end
               begin
                 user.save!
               rescue ActiveRecord::RecordInvalid
                 puts "#{dev.name} doesn't pass validation"
               end
-            else
-              user.group = g
-            end
+
           end
         end
       end 
