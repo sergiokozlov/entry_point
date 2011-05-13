@@ -65,17 +65,18 @@ class Load
             unless user = User.find(:first, :conditions => {:name => dev})
               puts "Adding #{dev}" 
 
-              user = Developer.new(:name => dev)
-              user.group = g
-            else
-              user.group = g
-            end
+              new_user = Developer.new(:name => dev)
+              new_user.group = g
+
               begin
-                user.save!
+                new_user.save!
               rescue ActiveRecord::RecordInvalid
                 puts "#{dev.name} doesn't pass validation"
               end
-
+            else
+              user.group = g
+              user.save!
+            end
           end
         end
       end 

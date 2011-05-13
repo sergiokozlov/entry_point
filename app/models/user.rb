@@ -1,13 +1,14 @@
 class User < ActiveRecord::Base
-  
-  before_validation :set_login_from_name, :set_email_from_name, :set_default_password, :on => :save
+  acts_as_authentic
+
+  before_validation_on_create :set_login_from_name, :set_email_from_name, :set_default_password
 
   has_many :records, :foreign_key => "login", :primary_key => "login"
   has_many :homeworks, :foreign_key => "login", :primary_key => "login"
   has_many :working_days, :foreign_key => "login", :primary_key => "login"
   belongs_to :group
 
-  acts_as_authentic
+
 
  
 
