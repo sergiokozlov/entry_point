@@ -26,13 +26,17 @@ class WorkingDay < ActiveRecord::Base
     end 
   end
 
-  def total_duration
-    td = duration + homework_duration
-    if td > ACFG['no_lunch_limit']
-      td - lunch_time
+  # lunch time and duration
+  def real_lunch_time
+    if duration + homework_duration > ACFG['no_lunch_limit']
+      lunch_time
     else
-      td
+      0
     end
+  end
+
+  def total_duration
+    td = duration + homework_duration - real_lunch_time
   end
 
   # manual entries identification
