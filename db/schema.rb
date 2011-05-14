@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110419101357) do
+ActiveRecord::Schema.define(:version => 20110514102243) do
 
   create_table "directors_groups", :id => false, :force => true do |t|
     t.integer  "group_id"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20110419101357) do
     t.date     "wday"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lunch_time", :default => 45
   end
 
 end

@@ -5,3 +5,11 @@ submit_window_left: 45
 # Settings for day shift and day ignorance
 visit_day_limit: 90
 midnight_shift: 180
+
+# Settings for day without lunch time
+no_lunch_limit: 270
+
+# Setting for short day and late day
+short_day_limit: 480
+hard_day_limit: 510
+late_time_limit: !str 11:45
