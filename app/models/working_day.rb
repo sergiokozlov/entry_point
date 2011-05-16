@@ -56,7 +56,7 @@ class WorkingDay < ActiveRecord::Base
   end
 
   def short_day?
-    true if total_duration <= ACFG['short_day_limit'] and duration > 0 and not visit_day?
+    true if total_duration < ACFG['short_day_limit'] and duration > 0 and not visit_day?
   end
 
   def hard_day?

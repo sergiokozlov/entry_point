@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20110514102243) do
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lunch_time_setting", :default => 45
   end
 
   create_table "working_days", :force => true do |t|
