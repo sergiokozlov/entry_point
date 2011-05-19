@@ -44,6 +44,7 @@
    manager: Andrey Dudakov
    developers:
     - Marina Ishkhanova
+    - Victoria Vasilyeva
 # Operations
 -
  directors:
@@ -133,6 +134,7 @@
     - Sergey Ilyinsky
     - Sergey Lukayanov
     - Dmitry Shadrin
+    - Vladislav Bilyk
   -    
    group: Migration   
    manager: Alexander Balandin
