@@ -50,22 +50,25 @@ class RecordsController < ApplicationController
     begin
       if params[:record]
         @record = Record.find(params[:record].first)
-        @date = @record.click_date
-        params[:record].each { |r| Record.destroy(r) }
         @wd = @record.working_day
+        @date = @record.click_date
+        
+        params[:record].each { |r| Record.destroy(r) }
       end
     
       if params[:homework]
         @homework = Homework.find(params[:homework].first)
+        @wd = @homework.working_day
         @date = @homework.check_in
+ 
         params[:homework].each { |h| Homework.destroy(h) }
-        @wd = @record.working_day
-      end
+       end
+      puts @wd
       @wd.recalculate!
       redirect_to :controller => 'dashboard', :action => 'index',:week => @date.to_date.cweek
-    rescue
-      flash[:correction_error] = 'Something went wrong - please try again'
-      redirect_to :controller => 'dashboard', :action => 'index'
+    #rescue
+    #  flash[:correction_error] = 'Something went wrong - please try again'
+    #  redirect_to :controller => 'dashboard', :action => 'index'
     end
    
     

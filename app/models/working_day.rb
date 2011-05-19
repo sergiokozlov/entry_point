@@ -1,6 +1,6 @@
 class WorkingDay < ActiveRecord::Base
   has_many :records
-  has_one :homework
+  has_many :homeworks
 
   # virtual attributes
   def wday_string  
@@ -9,9 +9,9 @@ class WorkingDay < ActiveRecord::Base
 
   # homework relationship
   def type
-   if duration > 0 and homework
+   if duration > 0 and homeworks.size > 0
      "normal with homework"
-   elsif duration == 0 and homework
+   elsif duration == 0 and homeworks.size > 0
      "just homework"
    else
       "normal"
@@ -19,8 +19,8 @@ class WorkingDay < ActiveRecord::Base
   end
 
    def homework_duration
-    if homework
-      homework.duration
+    if homeworks.size > 0
+      homeworks.map {|h| h.duration }.inject(0) {|x,y| x + y}
     else
      0
     end 
@@ -33,7 +33,7 @@ class WorkingDay < ActiveRecord::Base
   # manual entries identification
   def has_manual_entries
     false
-    self.id if (records.select {|r| r.submit_type == 'manual'} | homework.to_a).length > 0
+    self.id if (records.select {|r| r.submit_type == 'manual'} | homeworks).length > 0
   end
 
   # properties
@@ -105,8 +105,8 @@ class WorkingDay < ActiveRecord::Base
    if self.records.size > 0
      self.recalculate
      self.save
-   elsif h = self.homework
-     self.check_in = self.check_out =  h.check_in
+   elsif h = self.homeworks.size > 0
+     self.check_in = self.check_out =  h[0].check_in
      self.duration = 0
      self.save
    else

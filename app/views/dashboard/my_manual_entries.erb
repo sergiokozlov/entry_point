@@ -15,7 +15,7 @@
                   <td> <%= check_box_tag 'record[]', mr.id, false%> </td>
               </tr>
              <%end %>
-             <%@wd.homework.to_a.each do |h| %> 
+             <%@wd.homeworks.each do |h| %> 
               <tr class = "<%= cycle("white","alt") -%>">
                   <td> Homework </td>
                   <td> <%= h.check_in.strftime("%m/%d/%Y %H:%M") %> - <br/>
