@@ -356,9 +356,9 @@ a {
 				width:20px;
 				height:19px;
 				margin-top:5px;
+				position:relative;
 				}
 				.chart-head a:active {
-					position:relative;
 					top:1px;
 					}
 				#scrollF {
