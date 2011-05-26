@@ -1,7 +1,7 @@
 <div id="settings" class="dialog">
 
   <h2>Settings <a class="close" href="#"></a></h2>
-    <div class="inner">
+    <div id="personal_info" class="inner">
 
       <!--Error or Notice about Password Change -->
           <%if flash[:settings_error]%>
@@ -30,6 +30,44 @@
 				or <a class="close" href="#">Cancel</a>
 			</div>
 		</form> <!-- end form#forgot -->
+      </div> <!-- end .inner -->
+
+      <div id ="lunch_time" class="inner">
+		<div class="why">
+			<label>Action:</label>
+			<ul>
+				<li><label><input id="set_lunch_time" name="why" size="30" type="radio" class="radio" checked="checked" />I want to set my normal lunch time staring from particular date </label></li>
+				<li><label><input id="update_lunch_time" name="why" size="30" type="radio" class="radio" /> I want to update my lunch time for particular day/period</label></li>
+			</ul>
+          </div> <!-- end .why --> 
+
+        <form action="/lunch_time"  method="post" id="set_lunch_form">
+
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div>
+				<label for="trigger_date">From:</label>
+				<span class="date"><input id="trigger_date" name="lunch[trigger_date]" size="30" type="text" class="text" title="yyyy-mm-dd" /></span>
+			</div>
+			<div class="btn">
+				<input id="lunch_set" name="lunch_set" type="submit" class="button" value="Submit" />
+				or <a class="close" href="#">Cancel</a>
+			</div>
+		</form> <!-- end form#forgot -->
+        <form action="/lunch_time" method="post" id="update_lunch_form">
+           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div>
+				<label for="start_date">Start Date:</label>
+				<span class="date"><input id="start_date" name="lunch[start_date]" size="30" type="text" class="text" title="yyyy-mm-dd" /></span>
+			</div>
+			<div>
+              <label for="end_date">Start Date:</label>
+              <span class="date"><input id="end_date" name="lunch[end_date]" size="30" type="text" class="text" title="yyyy-mm-dd" /></span>
+			</div>
+			<div class="btn">
+				<input id="lunch_update" name="lunch_update" type="submit" class="button" value="Submit" />
+				or <a class="close" href="#">Cancel</a>
+			</div>
+		</form> <!-- end form#wfh -->
 	</div> <!-- end .inner -->
 	<div class="dialog-footer"></div>
 </div> <!-- end .dialog #settings -->
