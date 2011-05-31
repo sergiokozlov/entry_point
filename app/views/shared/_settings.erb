@@ -33,27 +33,32 @@
       </div> <!-- end .inner -->
 
       <div id ="lunch_time" class="inner">
-		<div class="why">
+ <!--		<div class="why">
 			<label>Action:</label>
 			<ul>
 				<li><label><input id="set_lunch_time" name="why" size="30" type="radio" class="radio" checked="checked" />I want to set my normal lunch time staring from particular date </label></li>
 				<li><label><input id="update_lunch_time" name="why" size="30" type="radio" class="radio" /> I want to update my lunch time for particular day/period</label></li>
 			</ul>
-          </div> <!-- end .why --> 
+          </div> --> <!-- end .why -->
 
-        <form action="/lunch_time"  method="post" id="set_lunch_form">
+        <form action="users/set_lunch_time"  method="post" id="set_lunch_form">
 
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-			<div>
-				<label for="trigger_date">From:</label>
-				<span class="date"><input id="trigger_date" name="lunch[trigger_date]" size="30" type="text" class="text" title="yyyy-mm-dd" /></span>
+            <div>
+                <label for="lunch_time">Lunch Time:</label>
+				<span><input id="l_period" name="user[lunch_time_setting]" size="10" type="text" class="text" title="in minutes" /></span>
+				<label for="from_date">Update From:</label>
+				<span class="date"><input id="lunch_from_date" name="lunch_update_from_date" size="30" type="text" class="text" title="yyyy-mm-dd" /></span>
 			</div>
 			<div class="btn">
 				<input id="lunch_set" name="lunch_set" type="submit" class="button" value="Submit" />
 				or <a class="close" href="#">Cancel</a>
 			</div>
-		</form> <!-- end form#forgot -->
-        <form action="/lunch_time" method="post" id="update_lunch_form">
+          </form> <!-- end form#set_lunch -->
+
+
+         
+    <!--    <form action="/lunch_time" method="post" id="update_lunch_form">
            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 			<div>
 				<label for="start_date">Start Date:</label>
@@ -67,7 +72,7 @@
 				<input id="lunch_update" name="lunch_update" type="submit" class="button" value="Submit" />
 				or <a class="close" href="#">Cancel</a>
 			</div>
-		</form> <!-- end form#wfh -->
+          </form> --> <!-- end form#wfh -->
 	</div> <!-- end .inner -->
 	<div class="dialog-footer"></div>
 </div> <!-- end .dialog #settings -->

@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   acts_as_authentic
-
+  
   before_validation_on_create :set_login_from_name, :set_email_from_name, :set_default_password
+  validates_numericality_of :lunch_time_setting, :only_integer => true, :message => "Lunch time should be Integer Number"
+
 
   has_many :records, :foreign_key => "login", :primary_key => "login"
   has_many :homeworks, :foreign_key => "login", :primary_key => "login"
@@ -9,7 +11,8 @@ class User < ActiveRecord::Base
   belongs_to :group
 
 
-
+  # validations
+  # lunch_time 
  
 
   # setting login and email from User Name and default password during initial user creation
