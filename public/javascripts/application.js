@@ -393,7 +393,18 @@ $(document).ready( function () {
 		dateFormat: 'yy-mm-dd'
 	});
 
-	
+	// Tabs
+	$('ul.tabNav li a').click(function () {
+		var tabContainers = $(this).parents('ul').siblings('div');
+		var tabWithAlert = $(this).parents('ul').siblings('div').children('span');
+		tabContainers.hide().filter(':first').show();
+		tabContainers.hide();
+		tabContainers.filter(this.hash).show();
+		$(this).parent().siblings().removeClass('active');
+		$(this).parent().addClass('active');
+		return false;
+	}).filter('ul.tabNav li:first-child a').click();
+
 }); 
 
 
