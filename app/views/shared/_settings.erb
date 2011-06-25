@@ -27,7 +27,7 @@
 				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 				<div>
 					<label>Current lunch time:</label>
-					<span class="regular">45 min</span>
+					<span class="regular"><%= @user.lunch_time_setting %> minutes</span>
 				</div>
 				<div>
 					<label for="l_period">New lunch time:</label>
