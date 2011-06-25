@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map| 
   map.resources :records
-  map.resources :users
+  map.resources :users, :member => {:set_lunch_time => :post}
   map.resources :user_sessions
   map.resources :homeworks
   map.login 'login', :controller => 'user_sessions', :action => 'new'  

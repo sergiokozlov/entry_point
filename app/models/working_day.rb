@@ -26,8 +26,17 @@ class WorkingDay < ActiveRecord::Base
     end 
   end
 
+  # lunch time and duration
+  def real_lunch_time
+    if duration + homework_duration > ACFG['no_lunch_limit']
+      lunch_time
+    else
+      0
+    end
+  end
+
   def total_duration
-    duration + homework_duration
+    td = duration + homework_duration - real_lunch_time
   end
 
   # manual entries identification
@@ -47,15 +56,15 @@ class WorkingDay < ActiveRecord::Base
   end
 
   def short_day?
-    true if total_duration < 480+30 and duration > 0 and not visit_day?
+    true if total_duration < ACFG['short_day_limit'] and duration > 0 and not visit_day?
   end
 
   def hard_day?
-    true if total_duration >= 540 and duration >0
+    true if total_duration > ACFG['hard_day_limit'] and duration >0
   end
  
   def late_comming?
-    true if check_in.strftime("%H:%M") > "11:45" and not visit_day?
+    true if check_in.strftime("%H:%M") > ACFG['late_time_limit'] and not visit_day?
   end
 
 
