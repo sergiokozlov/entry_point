@@ -24,6 +24,18 @@ function showModalLayer(popID,popURL) {
 }  
 
 $(document).ready( function () {
+	
+	// Tabs
+	$('ul.tabNav li a').click(function () {
+		var tabContainers = $(this).parents('ul').siblings('div');
+		var tabWithAlert = $(this).parents('ul').siblings('div').children('span');
+		tabContainers.hide().filter(':first').show();
+		tabContainers.hide();
+		tabContainers.filter(this.hash).show();
+		$(this).parent().siblings().removeClass('active');
+		$(this).parent().addClass('active');
+		return false;
+	}).filter('ul.tabNav li:first-child a').click();
 
   //When you click on a link with class of dialog-trigger and the href starts with a # 
 	$('a.dialog-trigger').click(function() {
@@ -36,6 +48,8 @@ $(document).ready( function () {
       rel = $(".alert").parents("div.dialog");
       link = $('a.dialog-trigger[rel="'+rel.attr("id")+'"]');
       showModalLayer(rel.attr("id"), '#');
+	  var tabWithAlertId = $('div.dialog div.tabs span[class ~="alert"]').parent().attr('id');
+	  $('ul.tabNav li a[href = "#'+ tabWithAlertId +'"]').click();
     }
 
 

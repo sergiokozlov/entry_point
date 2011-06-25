@@ -12,6 +12,12 @@
 		</ul>
 		
 		<div id="lunch_time">
+			<%if flash[:lunch_settings_error]%>
+				<span class="alert error"><span><%= flash[:lunch_settings_error]%></span></span>
+			<%elsif flash[:lunch_settings_notice]%>    
+				<span class="alert success"><span><%= flash[:lunch_settings_notice]%></span></span>
+			<%else%>
+			<%end%>
 		
 			<!--		
 			<div class="why">

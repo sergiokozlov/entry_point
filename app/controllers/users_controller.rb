@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     
     if @user.update_attributes(params[:user]) and @errors.empty?
         @new_lunch_time = params[:user][:lunch_time_setting]
-        flash[:settings_notice] = "Lunch Time was successfully updated"
+        flash[:lunch_settings_notice] = "Lunch Time was successfully updated"
 
         @user.working_days.select {|wd| wd.wday >= @from_date}.each do |wd|
           wd.lunch_time = @new_lunch_time
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
 
         redirect_back
     else
-        flash[:settings_error] =  @errors.map {|e| e + ' <br/>'} << @user.errors.on(:lunch_time_setting).to_s
+        flash[:lunch_settings_error] =  @errors.map {|e| e + ' <br/>'} << @user.errors.on(:lunch_time_setting).to_s
         redirect_back
     end 
 
