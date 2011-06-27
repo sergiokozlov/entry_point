@@ -34,7 +34,7 @@ class Record < ActiveRecord::Base
   # processing logic
   def process 
      unless working_day_to_match
-          @processed_day = create_working_day(:login => self.login,:wday => (click_date - 60*ACFG['midnight_shift']).strftime("%m/%d/%Y"))
+          @processed_day = create_working_day(:login => self.login,:wday => (click_date - 60*ACFG['midnight_shift']).strftime("%m/%d/%Y"), :lunch_time => self.user.lunch_time_setting)
           self.working_day = @processed_day
           self.save
      else

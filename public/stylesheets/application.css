@@ -356,9 +356,9 @@ a {
 				width:20px;
 				height:19px;
 				margin-top:5px;
+				position:relative;
 				}
 				.chart-head a:active {
-					position:relative;
 					top:1px;
 					}
 				#scrollF {
@@ -499,9 +499,12 @@ table {
 		/*border-top:1px solid #ccc;
 		border-bottom:1px solid #ccc;*/
 		}
-	tr.hover td {
+	.hover td {
 		background:#dbecff;
 		cursor:pointer;
+		}
+	.selected td {
+		background:#ffffcc;
 		}
 
 
@@ -654,7 +657,7 @@ table {
 		-webkit-border-radius:6px;
 		}
 		.alert span {
-			padding-left:25px;
+			padding:2px 0 2px 25px;
 			background-position:center left;
 			background-repeat:no-repeat;
 			}
@@ -719,7 +722,7 @@ table {
 
          /* Alerts in dialogs
         ---------------------------------------- */
-        .dialog .alert {margin:0;}
+        .dialog .alert {margin:0; text-align:center;}
 
 /*----------------------------------------------------------
                          @DIALOGS
@@ -828,7 +831,7 @@ table {
 			text-align:center;
 			padding:15px 0 0 0;
 			margin:15px 0 0 0;
-			border-top:1px solid #ccc;
+			/*border-top:1px solid #ccc;*/
 			}
 		.dialog label {
 			float:left;
@@ -899,8 +902,8 @@ table {
 			margin-left:35px;
 			}
 			#settings form div.btn {
-				padding:15px 0 0 0;
-				margin:15px 0 0 0;
+				padding:10px 0 0 0;
+				margin:0;
 				}
 			#settings form div label {
 				font-size:12px;
@@ -911,132 +914,48 @@ table {
 				margin-left:-150px;
 				}
 
-
-
-/*----------------------------------------------------------
-                           @Sergio
------------------------------------------------------------*/
-/*
-#user_nav {
-  float: right;
-  font-size: 12px;
-  margin-bottom: 30px;
-}
-
-
-#menu a { color:#fff; text-decoration:none; }
-#menu > li {background:#172322; cursor:pointer; float:left; position:relative;
-    padding:0px 10px;}
-#menu > li a:hover {color:#6C6;}
-
-
-
-#menu ul { padding:0px; margin:0px; display:inline;}
-#menu li ul { position:absolute; left:-80px; top:-10px; margin-top:45px; width:230px; line-height:16px;
-    background-color:#172322; color:#0395CC; display:none; z-index:5; border-radius: 25px;}
-#menu li:hover ul { display:block;}
-#menu li ul li{ display:block; margin:5px 15px; padding: 5px 0px; float:left; border-top: dotted 1px #606060;
-    list-style-type:none; }
-#menu li ul li a:hover { color:#6C6; }
-
-
-
-.input_form p {
-	margin: 10px;
-}
-
-.input_form input {
-    padding: 5px;
-    border: solid 1px #E5E5E5;
- 	font: normal 13px/100%;
-    }
-
-.input_form input[type="submit"] {
-	    cursor: pointer;
-		border-radius: 5px;
-		margin-left: 10px;
-	    }
-
-.input_form label {
-	margin-left:5px ;
-}
-
-
-.red-message {
-  float: right;
-  background-color: #FEE0C6;
-  border: solid 1px #CCC;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 20px;
-  width: 220px;
-}
-
-#daily-broadcast {
-  float: left;
-}
-
-
-*/
-
-
-/*----------------------------------------------------------
-                           @Rails
------------------------------------------------------------*/
-
-/*
-#flash_notice, #flash_error {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
-
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
-
-#flash_error {
-  background-color: #FCC;
-  border: solid 1px #C66;
-}
-
-.fieldWithErrors {
-  display: inline;
-}
-
-#errorExplanation {
-  width: 400px;
-  border: 2px solid #CF0000;
-  padding: 0px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: 0;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 8px;
-}
-
-#errorExplanation ul {
-  margin: 2px 24px;
-}
-
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: disc;
-}
-
-*/
-
+		#settings .alert {margin:-7px 0 13px 0;}		
+		#settings span.regular {
+			height:25px;
+			line-height:25px;
+			}
+		
+		
+	/* Tabs in Settings */
+	#settings .tabNav { 
+		font-weight: bold;
+		border-bottom: 1px solid #ccc; 
+		padding: 0 0 6px 0; /* THIRD number must change with respect to padding-top (X) below */
+		margin-bottom:17px;
+		}
+		#settings .tabNav li { 
+			display: inline;
+			margin: 0 -5px 0 5px;
+			}
+			#settings .tabNav li.active { 
+				border-bottom: 1px solid #fff; 
+				background-color: #fff; 
+				}
+				#settings .tabNav li.active a { 
+					background-color: #fff; 
+					color: #333; 
+					position: relative;
+					top: 1px;
+					padding-top: 7px; /* must change with respect to padding (X) above and below */
+					}
+					#settings .tabNav li.active a:hover {
+						color:#333;
+						cursor:default;
+						}
+			#settings .tabNav li a { 
+				padding: 6px 20px; 
+				border: 1px solid #ccc; 
+				background-color: #f0f0f0; 
+				color: #666; 
+				margin-left: 0; 
+				text-decoration: none;
+				border-bottom: none;
+				}		 
+				#settings .tabNav li a:hover {
+					color: #333;
+					}

@@ -1,6 +1,6 @@
 class WorkingDay < ActiveRecord::Base
   has_many :records
-  has_one :homework
+  has_many :homeworks
 
   # virtual attributes
   def wday_string  
@@ -9,9 +9,9 @@ class WorkingDay < ActiveRecord::Base
 
   # homework relationship
   def type
-   if duration > 0 and homework
+   if duration > 0 and homeworks.size > 0
      "normal with homework"
-   elsif duration == 0 and homework
+   elsif duration == 0 and homeworks.size > 0
      "just homework"
    else
       "normal"
@@ -19,21 +19,30 @@ class WorkingDay < ActiveRecord::Base
   end
 
    def homework_duration
-    if homework
-      homework.duration
+    if homeworks.size > 0
+      homeworks.map {|h| h.duration }.inject(0) {|x,y| x + y}
     else
      0
     end 
   end
 
+  # lunch time and duration
+  def real_lunch_time
+    if duration + homework_duration > ACFG['no_lunch_limit']
+      lunch_time
+    else
+      0
+    end
+  end
+
   def total_duration
-    duration + homework_duration
+    td = duration + homework_duration - real_lunch_time
   end
 
   # manual entries identification
   def has_manual_entries
     false
-    self.id if (records.select {|r| r.submit_type == 'manual'} | homework.to_a).length > 0
+    self.id if (records.select {|r| r.submit_type == 'manual'} | homeworks).length > 0
   end
 
   # properties
@@ -47,15 +56,15 @@ class WorkingDay < ActiveRecord::Base
   end
 
   def short_day?
-    true if total_duration < 480+30 and duration > 0 and not visit_day?
+    true if total_duration < ACFG['short_day_limit'] and duration > 0 and not visit_day?
   end
 
   def hard_day?
-    true if total_duration >= 540 and duration >0
+    true if total_duration > ACFG['hard_day_limit'] and duration >0
   end
  
   def late_comming?
-    true if check_in.strftime("%H:%M") > "11:45" and not visit_day?
+    true if check_in.strftime("%H:%M") > ACFG['late_time_limit'] and not visit_day?
   end
 
 
@@ -105,8 +114,8 @@ class WorkingDay < ActiveRecord::Base
    if self.records.size > 0
      self.recalculate
      self.save
-   elsif h = self.homework
-     self.check_in = self.check_out =  h.check_in
+   elsif h = self.homeworks.size > 0
+     self.check_in = self.check_out =  h[0].check_in
      self.duration = 0
      self.save
    else

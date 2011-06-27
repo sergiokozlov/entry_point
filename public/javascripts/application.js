@@ -17,9 +17,10 @@ function dailychart(divId,returnedData) {
 		data: returnedData,
         toolTip: function(index) { 
           var msg = 'Office: '+this[3].check_in + ' &ndash; ' + this[3].check_out 
-          if (this[0] instanceof Array && this[0][1] > 0 && this[0][0] > 0)  { return msg + '<br/>' + 'and ' + this[0][1] + ' minutes from home' }
-		  else if (this[0] instanceof Array && this[0][1] > 0)  { return this[0][1] + ' minutes from home' }
-          else {return msg}
+          if (this[0] instanceof Array && this[0][1] > 0 && this[0][0] > 0)  { msg = msg + '<br/>' + 'and ' + this[0][1] + ' minutes from home' }
+		  else if (this[0] instanceof Array && this[0][1] > 0)  { msg = this[0][1] + ' minutes from home' }
+          else {}
+          return msg + '<br/>' + 'Lunch Time: ' + this[1].lunch_time + ' minutes'
         },
         bar: {
           barWidth:  0.8,
@@ -314,12 +315,37 @@ $(document).ready( function () {
 
 	// First group name highlighted
 	$("#group_line li:first-child").addClass('chosen_group');
-	  
-	// Hover for table rows  
+
+
+	// Better usability for editing entries
+    /*
+    $("#edit_wd tr").live("mouseover", function() {
+      $(this).addClass("hover");
+    });
+    $("#edit_wd tr").live("mouseout", function() {
+      $(this).removeClass("hover");
+    });
+    */
+
+
+
+
+
+    // Hover for table rows
 	$("tr")
 	.mouseover(function() {$(this).addClass("hover");})
 	.mouseout(function()  {$(this).removeClass("hover");});
-	
+
+    /*
+    $("#edit_wd input").click(function() {
+        if ($(this).attr("checked")) {
+            $(this).parent().parent().addClass("selected");
+        }
+        else {
+            $(this).parent().parent().removeClass("selected");
+        }
+    });
+    */
 
 	
 	//**************** START HINTS IN INPUTS *******************//
@@ -392,7 +418,8 @@ $(document).ready( function () {
 		dateFormat: 'yy-mm-dd'
 	});
 
-	
+
+
 }); 
 
 

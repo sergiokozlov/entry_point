@@ -56,7 +56,7 @@ class Homework < ActiveRecord::Base
  
   def process 
      unless working_day_to_match
-          @processed_day = create_working_day(:login => self.login,:wday => (check_in - 60*ACFG['midnight_shift']).strftime("%m/%d/%Y"), :check_in => check_in, :check_out => check_in, :duration => 0)
+          @processed_day = create_working_day(:login => self.login,:wday => (check_in - 60*ACFG['midnight_shift']).strftime("%m/%d/%Y"), :check_in => check_in, :check_out => check_in, :duration => 0, :lunch_time => self.user.lunch_time_setting)
           self.working_day = @processed_day
      else
           self.working_day = working_day_to_match
