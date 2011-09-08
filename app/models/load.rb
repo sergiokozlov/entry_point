@@ -105,7 +105,7 @@ class Load
       records.each do |rec| 
         @record = Record.new(rec)
         print "."
-        processed_days << @record.process if @record.save
+        processed_days << @record.process if @record.save && @record.user
       end
       puts ''
       puts "Refreshing Daily Statistics"
