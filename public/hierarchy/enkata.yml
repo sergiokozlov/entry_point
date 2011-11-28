@@ -39,6 +39,7 @@
     - Alexey Naumov
     - Alex Ognev
     - Kostya Serditov
+    - Andrey Bushuev
   -    
    group: BA    
    manager: Andrey Dudakov
@@ -60,8 +61,9 @@
    manager: Andrey Bespalov
    developers:
     - Sergey Churbanov
-    - Andrey Zolotuhin
     - Sergey Mescheryakov
+    - Maria Bychkova
+    - Stanislav Smoltis
 # IT
 -
  directors:
@@ -92,7 +94,8 @@
    developers:
     - Marina Shatrova
     - Ludmila Miroshnichenko
-    - Ekaterina Vorobyeva  
+    - Ekaterina Vorobyeva
+    - Julia Shelina	
 # Engineering
 -
  directors:
@@ -111,16 +114,17 @@
     - Ivan Shumeiko
     - Denis Kuchugurov
     - Pavel Polushkin
-    - Nina Gracheva
-    - Yuri Litvinov
     - Alexey Inzhebeikin
     - Andrey Yasinskiy
-    - Anton Ivanov
-    - Demid Lupin
     - Kostya Barzakovsky
     - Olga Ukolova
-    - Alexander Butin
+    - Raida Sitdikova
     - Dmitry Dzuba
+    - Alexey Raskin
+    - Andrey Liventsev
+    - Anatoly Rybalchenko
+    - Alexey Kozlov
+    - Andrey Porokhin
   -    
    group: AT & DA
    manager: Alex Godin
@@ -128,23 +132,23 @@
     - Sergey Kozlov
     - Alexander Izumov
     - Eugene Novikov
-    - Leonid Yulenets
     - Vladimir Koblyakov
     - Eugene Samosenok
     - Alexey Medvedev
-    - Roman Mostyka
-    - Alex Kravchenko
-    - Sergey Ilyinsky
+    - Konstantin Khrebtov
     - Sergey Lukayanov
     - Dmitry Shadrin
     - Vladislav Bilyk
+    - Ivan Leonenko
   -    
-   group: Migration   
+   group: Migration
    manager: Alexander Balandin
    developers:
-    - Alexey Raskin
     - Alexey Razgulyaev   
-    - Raida Sitdikova
-    - Alexey Zavarzin
-    - Raida Sitdikova
     - Andrey Pytkin
+  -    
+   group: Productivity
+   manager: Roman Mostyka
+   developers:
+    - Alexey Zavarzin
+    - Alexander Butin
