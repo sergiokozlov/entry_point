@@ -6,6 +6,7 @@ class DashboardController < ApplicationController
     require_user
     @user = current_user
     session[:week] = @week_id = (params[:week] || @user.logged_working_weeks.first[0]).to_i
+    session[:year] = @year = (params[:year] || @user.logged_working_weeks.first[1]).to_i
     @last_load = Record.maximum('click_date', :conditions => {:submit_type => 'auto'})
     
   end
@@ -35,16 +36,28 @@ class DashboardController < ApplicationController
     @data = Array.new
     
     if params[:id] == 'forward'
-      session[:week] += 1
+      if session[:week] == 52
+        session[:week] = 1
+        session[:year] += 1
+      else
+        session[:week] += 1
+      end
     elsif params[:id] == 'backward'
-      session[:week] -= 1
-    elsif params[:week]
-      session[:week] = params[:week].to_i  
+      if session[:week] == 1
+        session[:week] = 52
+        session[:year] -= 1
+      else
+        session[:week] -= 1
+      end
+    elsif params[:week] and params[:year]
+      session[:week] = params[:week].to_i
+      session[:year] = params[:year].to_i  
     end
         
     @week_id = (params[:week] || session[:week]).to_i
+    @year = (params[:year] || session[:year]).to_i
     
-    days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
+    days_array(7,@template.week_last_day(@week_id, @year) - Date.today).each do |day|
       @data << pj(day,@user)
     end
 

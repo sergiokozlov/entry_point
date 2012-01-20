@@ -212,8 +212,9 @@ $(document).ready( function () {
 
 	// Week update by clicking on table row
 	$("tr").click (function() {
-		week_id = getId($(this).attr("id"));
- 	 	showWeekByDay('', {week : week_id});
+		week_id = getId($(this).attr("id")).split("-")[0];
+        year = getId($(this).attr("id")).split("-")[1]
+ 	 	showWeekByDay('', {week : week_id, year : year});
 	})
 
 // Actions on "DASHBOARD/MANAGE" and "DASHBOARD/OVERVIEW" for the manager and director

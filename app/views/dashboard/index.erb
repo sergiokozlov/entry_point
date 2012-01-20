@@ -31,8 +31,8 @@
         <tbody>
           <!--TODO: Performace optimization required -->
 			<% @user.logged_working_weeks.slice(0,5).each do |lww| %>
-			<tr id="<%='week_'+lww[0].to_s%>" class = "<%= cycle("white","alt") -%>" title="Click to update the chart below">
-                <td class="column-week"><%= "#{week_value(lww[0])}" %></td>
+			<tr id="<%='week_'+lww[0].to_s+'-'+lww[1].to_s%>" class = "<%= cycle("white","alt") -%>" title="Click to update the chart below">
+                <td class="column-week"><%= "#{week_value(lww[0], lww[1])}" %></td>
               	<td><%=to_time(@user.week_average(lww[0]))%></td>
                 <td><%=@user.weeked_working_days(lww[0]).select{|day| not day.visit_day?}.length%> </td>
 				<td><%=to_time(@user.week_completed(lww[0]))%> </td>
