@@ -75,9 +75,10 @@ class DashboardController < ApplicationController
   end
   
   def get_session_week
-    @a_result = @template.week_value(session[:week])
-    @first_week = current_user.logged_working_weeks.last[0].to_i
-    @last_week = current_user.logged_working_weeks.first[0].to_i
+    @a_result = @template.week_value(session[:week], session[:year])
+    
+    @first_week = current_user.logged_working_weeks.last
+    @last_week = current_user.logged_working_weeks.first
     
     render :ajax_result, :layout => false
   end

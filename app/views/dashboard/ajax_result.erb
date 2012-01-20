@@ -1,7 +1,7 @@
 
 
 <h3>
-  <%unless @first_week == session[:week] %> <a id="scrollB" href="#"></a> <%end%>
-    <span id=<%="crweek_"+session[:week].to_s%>> <%=@a_result%></span>
-  <%unless @last_week == session[:week] %> <a id="scrollF" href="#"></a> <%end%>
+  <%unless @first_week == [session[:week], session[:year]] %> <a id="scrollB" href="#"></a> <%end%>
+    <span id=<%="crweek_"+session[:week].to_s + "-"+session[:year].to_s%>> <%=@a_result%></span>
+  <%unless @last_week == [session[:week], session[:year]] %> <a id="scrollF" href="#"></a> <%end%>
 </h3>
