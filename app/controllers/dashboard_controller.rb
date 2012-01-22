@@ -88,6 +88,7 @@ class DashboardController < ApplicationController
     @user = current_user
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
     @week_id  = (params[:week] || (@selected_group.weeks_to_analyze)[0][0]).to_i
+    @year = (params[:year] || (@selected_group.weeks_to_analyze)[0][1]).to_i
     
     case 
     when (@user.director? and @selected_group.manager.person?)
@@ -104,6 +105,7 @@ class DashboardController < ApplicationController
     @user = current_user
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
     @month_id  = (params[:month] || (@selected_group.months_to_analyze)[0][0]).to_i
+    @year = (params[:year] || (@selected_group.months_to_analyze)[0][1]).to_i
     
     case 
     when (@user.director? and @selected_group.manager.person?)
@@ -120,10 +122,11 @@ class DashboardController < ApplicationController
     @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)
     @dev = @selected_group.developers.find(:first, :conditions => {:id => params[:user].to_i}) || @selected_group.manager
     @week_id  = params[:week].to_i
+    @year = params[:year].to_i
     @data = Array.new
 
     if @dev 
-      days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
+      days_array(7,@template.week_last_day(@week_id, @year) - Date.today).each do |day|
         @data << pj(day,@dev)
       end
       @jresult = JSON.generate(["data" => @data])
@@ -139,6 +142,7 @@ class DashboardController < ApplicationController
     @focus_user = User.find_by_id(params[:focususer])
     @week_id  = params[:week].to_i
     @month_id = params[:month].to_i
+    @year = params[:year].to_i
     @data = Array.new
     
     if params[:week]
@@ -181,23 +185,23 @@ class DashboardController < ApplicationController
     [@stack,  {"label" => @template.day_value(day)}]
   end
   
-  def wj_trend(group,week = Date.today.cweek,developers=[])
+  def wj_trend(group,week = Date.today.cweek, year = Date.today.year, developers=[])
     @stack = Array.new
-    @stack << group.week_average(week)
+    @stack << group.week_average(week, year)
     
     developers.each do |dev|
-      @stack << dev.week_average(week)
+      @stack << dev.week_average(week, year)
     end
   
-    [@stack,  {"label" => @template.week_value(week)}]
+    [@stack,  {"label" => @template.week_value(week, year)}]
   end
   
-  def mj_trend(group,month = Date.today.month,developers=[])
+  def mj_trend(group,month = Date.today.month, year = Date.today.year, developers=[])
     @stack = Array.new
-    @stack << group.month_average(month)
+    @stack << group.month_average(month, year)
     
     developers.each do |dev|
-      @stack << dev.month_average(month)
+      @stack << dev.month_average(month, year)
     end
   
     [@stack,  {"label" => @template.month_value(month)}]

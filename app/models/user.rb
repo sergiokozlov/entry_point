@@ -33,12 +33,12 @@ class User < ActiveRecord::Base
      self.working_days.find(:all, :order => 'wday desc')  
   end 
 
-  def month_working_days(month_number)
-     logged_working_days.select {|day| day.wday.month == month_number and day.total_duration > 0}
+  def month_working_days(month_number, year)
+     logged_working_days.select {|day| day.wday.month == month_number and day.wday.year == year and day.total_duration > 0}
   end
   
-  def weeked_working_days(week_number)
-     logged_working_days.select {|day| day.wday.cweek == week_number and day.total_duration > 0} 
+  def weeked_working_days(week_number, year)
+     logged_working_days.select {|day| day.wday.cweek == week_number and day.wday.year == year and day.total_duration > 0} 
   end 
   
   def working_today
@@ -54,25 +54,25 @@ class User < ActiveRecord::Base
   end
 
   # Statitics
-  def week_completed (number=Date.today.cweek)
-    weeked_working_days(number).select{|day| not day.visit_day?}.map{|day| day.total_duration}.inject(0) {|x,y| x+y}
+  def week_completed (number=Date.today.cweek, year = Date.today.year)
+    weeked_working_days(number, year).select{|day| not day.visit_day?}.map{|day| day.total_duration}.inject(0) {|x,y| x+y}
   end
 
-  def week_average (number=Date.today.cweek)
-    if (l = weeked_working_days(number).select{|day| not day.visit_day?}.length) > 0
-      week_completed(number)/l
+  def week_average (number=Date.today.cweek, year = Date.today.year)
+    if (l = weeked_working_days(number, year).select{|day| not day.visit_day?}.length) > 0
+      week_completed(number, year)/l
     else
       0
     end
   end
 
-  def month_completed (number=Date.today.month)
-    month_working_days(number).select{|day| not day.visit_day?}.map{|day| day.total_duration}.inject(0) {|x,y| x+y}
+  def month_completed (number=Date.today.month, year = Date.today.year)
+    month_working_days(number, year).select{|day| not day.visit_day?}.map{|day| day.total_duration}.inject(0) {|x,y| x+y}
   end
 
-  def month_average (number=Date.today.month)
-    if (l = month_working_days(number).select{|day| not day.visit_day?}.length) > 0
-      month_completed(number)/l
+  def month_average (number=Date.today.month, year = Date.today.year)
+    if (l = month_working_days(number, year).select{|day| not day.visit_day?}.length) > 0
+      month_completed(number, year)/l
     else
       0
     end

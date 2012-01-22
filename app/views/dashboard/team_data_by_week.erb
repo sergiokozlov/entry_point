@@ -15,11 +15,11 @@
 		<%  @developers.each do |dev| -%>
 			<tr class = "<%= cycle("white","alt") -%>">
 				<td> <%=dev.name %> </td>
-                <td> <%= week_value(@week_id) %></td>
-                <td> <%=to_time(@selected_group.week_average(@week_id)) %> </td>
-				<td> <%=to_time(dev.week_average(@week_id))%></td>
-				<td> <%=dev.weeked_working_days(@week_id).length%> </td>
-				<td> <%=to_time(dev.week_completed(@week_id))%> </td>
+                <td> <%= week_value(@week_id, @year) %></td>
+                <td> <%=to_time(@selected_group.week_average(@week_id, @year)) %> </td>
+				<td> <%=to_time(dev.week_average(@week_id, @year))%></td>
+				<td> <%=dev.weeked_working_days(@week_id, @year).length%> </td>
+				<td> <%=to_time(dev.week_completed(@week_id, @year))%> </td>
                 <td> 
                   <button id="<%='user_' + dev.id.to_s%>" class="link_to_chart" type="button">→</button>
                   <button class="collapse_chart" type="button">←</button>
