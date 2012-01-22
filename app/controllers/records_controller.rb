@@ -23,7 +23,7 @@ class RecordsController < ApplicationController
           @record.process
           @record.working_day.recalculate 
           flash[:checkin_notice] = "Thank you! Your record has been added."
-          redirect_to :controller => 'dashboard', :action => 'index', :week => @record.click_date.cweek
+          redirect_to :controller => 'dashboard', :action => 'index', :week => @record.click_date.cweek, :year => @record.click_date.year
        else
           flash[:checkin_error] = @record.errors[:base]
           redirect_to :controller => 'dashboard', :action => 'index'
@@ -65,7 +65,7 @@ class RecordsController < ApplicationController
        end
       puts @wd
       @wd.recalculate!
-      redirect_to :controller => 'dashboard', :action => 'index',:week => @date.to_date.cweek
+      redirect_to :controller => 'dashboard', :action => 'index',:week => @date.to_date.cweek, :year => @date.to_date.year
     #rescue
     #  flash[:correction_error] = 'Something went wrong - please try again'
     #  redirect_to :controller => 'dashboard', :action => 'index'

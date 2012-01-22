@@ -18,6 +18,6 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = false
 
 # Travel to the the date where data is present - in order to support calm development
-require 'delorean'
-past_date = Time.utc(2011,04,01,15,30)
-Delorean.time_travel_to past_date
+# require 'delorean'
+# past_date = Time.utc(2011,04,01,15,30)
+# Delorean.time_travel_to past_date
