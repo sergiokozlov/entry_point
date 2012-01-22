@@ -147,11 +147,11 @@ class DashboardController < ApplicationController
     
     if params[:week]
       (@week_id-15..@week_id).each do |week|
-          @data << wj_trend(@selected_group, week, @focus_user.to_a)
+          @data << wj_trend(@selected_group, week, @year, @focus_user.to_a)
         end
     else    
       (@month_id-6..@month_id).each do |month|
-          @data << mj_trend(@selected_group, month, @focus_user.to_a)
+          @data << mj_trend(@selected_group, month, @year, @focus_user.to_a)
         end
     end
     
@@ -185,7 +185,7 @@ class DashboardController < ApplicationController
     [@stack,  {"label" => @template.day_value(day)}]
   end
   
-  def wj_trend(group,week = Date.today.cweek, year = Date.today.year, developers=[])
+  def wj_trend(group, week = Date.today.cweek, year = Date.today.year, developers=[])
     @stack = Array.new
     @stack << group.week_average(week, year)
     
