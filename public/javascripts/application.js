@@ -290,7 +290,10 @@ $(document).ready( function () {
 	});
 
     //On changing user to focus update trend
-    showComparisonTrend({week: chosenWeek, year: chosenYear, focususer: chosenfocusUser});
+    // TBD rewrite
+    if ($("#week_id").length > 0) { 
+      showComparisonTrend({week: chosenWeek, year: chosenYear, focususer: chosenfocusUser});
+    }
 
     $("#focususer_id").change ( function() {
 		switch (chosenRange())
