@@ -16,7 +16,7 @@ class HomeworksController < ApplicationController
           
           @homework.process
           flash[:checkin_notice] = "Thanks you we will check this homework record"
-          redirect_to :controller => 'dashboard',:action => 'index', :week => @homework.check_in.cweek
+          redirect_to :controller => 'dashboard',:action => 'index', :week => @homework.check_in.cweek, :year => @homework.check_in.year
        else
           flash[:checkin_error] = @homework.errors[:base].map {|e| e + ' <br/>'}
           redirect_to :controller => 'dashboard', :action => 'index'

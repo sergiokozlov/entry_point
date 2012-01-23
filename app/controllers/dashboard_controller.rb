@@ -6,6 +6,7 @@ class DashboardController < ApplicationController
     require_user
     @user = current_user
     session[:week] = @week_id = (params[:week] || @user.logged_working_weeks.first[0]).to_i
+    session[:year] = @year = (params[:year] || @user.logged_working_weeks.first[1]).to_i
     @last_load = Record.maximum('click_date', :conditions => {:submit_type => 'auto'})
     
   end
@@ -35,16 +36,28 @@ class DashboardController < ApplicationController
     @data = Array.new
     
     if params[:id] == 'forward'
-      session[:week] += 1
+      if session[:week] == 52
+        session[:week] = 1
+        session[:year] += 1
+      else
+        session[:week] += 1
+      end
     elsif params[:id] == 'backward'
-      session[:week] -= 1
-    elsif params[:week]
-      session[:week] = params[:week].to_i  
+      if session[:week] == 1
+        session[:week] = 52
+        session[:year] -= 1
+      else
+        session[:week] -= 1
+      end
+    elsif params[:week] and params[:year]
+      session[:week] = params[:week].to_i
+      session[:year] = params[:year].to_i  
     end
         
     @week_id = (params[:week] || session[:week]).to_i
+    @year = (params[:year] || session[:year]).to_i
     
-    days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
+    days_array(7,@template.week_last_day(@week_id, @year) - Date.today).each do |day|
       @data << pj(day,@user)
     end
 
@@ -62,9 +75,10 @@ class DashboardController < ApplicationController
   end
   
   def get_session_week
-    @a_result = @template.week_value(session[:week])
-    @first_week = current_user.logged_working_weeks.last[0].to_i
-    @last_week = current_user.logged_working_weeks.first[0].to_i
+    @a_result = @template.week_value(session[:week], session[:year])
+    
+    @first_week = current_user.logged_working_weeks.last
+    @last_week = current_user.logged_working_weeks.first
     
     render :ajax_result, :layout => false
   end
@@ -74,6 +88,7 @@ class DashboardController < ApplicationController
     @user = current_user
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
     @week_id  = (params[:week] || (@selected_group.weeks_to_analyze)[0][0]).to_i
+    @year = (params[:year] || (@selected_group.weeks_to_analyze)[0][1]).to_i
     
     case 
     when (@user.director? and @selected_group.manager.person?)
@@ -90,6 +105,7 @@ class DashboardController < ApplicationController
     @user = current_user
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
     @month_id  = (params[:month] || (@selected_group.months_to_analyze)[0][0]).to_i
+    @year = (params[:year] || (@selected_group.months_to_analyze)[0][1]).to_i
     
     case 
     when (@user.director? and @selected_group.manager.person?)
@@ -106,10 +122,11 @@ class DashboardController < ApplicationController
     @selected_group = (Group.find_by_id(params[:group]) || current_user.worse_group)
     @dev = @selected_group.developers.find(:first, :conditions => {:id => params[:user].to_i}) || @selected_group.manager
     @week_id  = params[:week].to_i
+    @year = params[:year].to_i
     @data = Array.new
 
     if @dev 
-      days_array(7,@template.week_last_day(@week_id) - Date.today).each do |day|
+      days_array(7,@template.week_last_day(@week_id, @year) - Date.today).each do |day|
         @data << pj(day,@dev)
       end
       @jresult = JSON.generate(["data" => @data])
@@ -125,15 +142,17 @@ class DashboardController < ApplicationController
     @focus_user = User.find_by_id(params[:focususer])
     @week_id  = params[:week].to_i
     @month_id = params[:month].to_i
+    @year = params[:year].to_i
     @data = Array.new
     
+    # build week, year and month, year pairs
     if params[:week]
-      (@week_id-15..@week_id).each do |week|
-          @data << wj_trend(@selected_group, week, @focus_user.to_a)
+      @template.recent_weeks(@week_id, @year, 15).each do |week, year|
+          @data << wj_trend(@selected_group, week, year, @focus_user.to_a)
         end
     else    
-      (@month_id-6..@month_id).each do |month|
-          @data << mj_trend(@selected_group, month, @focus_user.to_a)
+      @template.recent_months(@month_id, @year, 6).each do |month, year|
+          @data << mj_trend(@selected_group, month, year, @focus_user.to_a)
         end
     end
     
@@ -167,23 +186,23 @@ class DashboardController < ApplicationController
     [@stack,  {"label" => @template.day_value(day)}]
   end
   
-  def wj_trend(group,week = Date.today.cweek,developers=[])
+  def wj_trend(group, week = Date.today.cweek, year = Date.today.year, developers=[])
     @stack = Array.new
-    @stack << group.week_average(week)
+    @stack << group.week_average(week, year)
     
     developers.each do |dev|
-      @stack << dev.week_average(week)
+      @stack << dev.week_average(week, year)
     end
   
-    [@stack,  {"label" => @template.week_value(week)}]
+    [@stack,  {"label" => @template.week_value(week, year)}]
   end
   
-  def mj_trend(group,month = Date.today.month,developers=[])
+  def mj_trend(group,month = Date.today.month, year = Date.today.year, developers=[])
     @stack = Array.new
-    @stack << group.month_average(month)
+    @stack << group.month_average(month, year)
     
     developers.each do |dev|
-      @stack << dev.month_average(month)
+      @stack << dev.month_average(month, year)
     end
   
     [@stack,  {"label" => @template.month_value(month)}]

@@ -42,25 +42,25 @@ class Group < ActiveRecord::Base
    end  
   end
   
-  def week_completed(number = Date.today.cweek)
-    self.developers.map{|dev| dev.week_completed(number)}.inject(0) {|x,y| x+y} 
+  def week_completed(number = Date.today.cweek, year = Date.today.year)
+    self.developers.map{|dev| dev.week_completed(number, year)}.inject(0) {|x,y| x+y} 
   end
 
-  def week_average(number = Date.today.cweek)
-   if (l = self.developers.map{|dev| dev.weeked_working_days(number).length}.inject(0) {|x,y| x+y}) > 0
-     week_completed(number)/l
+  def week_average(number = Date.today.cweek, year = Date.today.year)
+   if (l = self.developers.map{|dev| dev.weeked_working_days(number, year).length}.inject(0) {|x,y| x+y}) > 0
+     week_completed(number, year)/l
    else
     0
    end 
   end 
 
-  def month_completed(number = Date.today.month)
-    self.developers.map{|dev| dev.month_completed(number)}.inject(0) {|x,y| x+y} 
+  def month_completed(number = Date.today.month, year = Date.today.year)
+    self.developers.map{|dev| dev.month_completed(number, year)}.inject(0) {|x,y| x+y} 
   end
 
-  def month_average(number = Date.today.month)
-   if (l = self.developers.map{|dev| dev.month_working_days(number).length}.inject(0) {|x,y| x+y}) > 0
-     month_completed(number)/l
+  def month_average(number = Date.today.month, year = Date.today.year)
+   if (l = self.developers.map{|dev| dev.month_working_days(number, year).length}.inject(0) {|x,y| x+y}) > 0
+     month_completed(number, year)/l
    else
     0
    end 

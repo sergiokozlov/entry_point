@@ -105,13 +105,20 @@ function chosenRange() {
 // This function returns number of week selected for analysis
 function chosenWeek() {
 	var week_id = $("#week_id").find("option:selected").val();
-	return getId(week_id);
+	return getId(week_id).split("-")[0];
 }
 
 // This function returns number of month selected for analysis
 function chosenMonth() {
 	var month_id = $("#month_id").find("option:selected").val();
-	return getId(month_id);
+	return getId(month_id).split("-")[0];
+}
+
+// This function returns number of month selected for analysis
+function chosenYear() {
+	var period = $('input[name=range]:radio:checked').attr("value")
+	var period_id = $('#'+period+"_id").find("option:selected").val();
+	return getId(period_id).split("-")[1];
 }
 
 // This function loads data table for selected week and group
@@ -153,7 +160,7 @@ function expandDailyChart(user_id) {
 	link.hide();
 	link.parents("td").children(".collapse_chart").show();
 		
-	$.getJSON("/dashboard/user_data_for_range", {week : chosenWeek, user : user_id, group : chosenGroup}, function(data) {
+	$.getJSON("/dashboard/user_data_for_range", {week : chosenWeek, year: chosenYear, user : user_id, group : chosenGroup}, function(data) {
 		dailychart('#'+div_id,data[0].data);
 	});
 }
@@ -212,8 +219,9 @@ $(document).ready( function () {
 
 	// Week update by clicking on table row
 	$("tr").click (function() {
-		week_id = getId($(this).attr("id"));
- 	 	showWeekByDay('', {week : week_id});
+		week_id = getId($(this).attr("id")).split("-")[0];
+        year = getId($(this).attr("id")).split("-")[1]
+ 	 	showWeekByDay('', {week : week_id, year : year});
 	})
 
 // Actions on "DASHBOARD/MANAGE" and "DASHBOARD/OVERVIEW" for the manager and director
@@ -237,14 +245,14 @@ $(document).ready( function () {
 				case 'week':
 				  $("#month_id").hide();
                   $("#week_id").show();
-                  loadWeek({week: chosenWeek, group: chosenGroup});
- 				  showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
+                  loadWeek({week: chosenWeek, group: chosenGroup, year: chosenYear});
+ 				  showComparisonTrend({week: chosenWeek, year: chosenYear, focususer: chosenfocusUser});
 				break;
 				case 'month':
 				  $("#week_id").hide();
                   $("#month_id").show();
-                  loadMonth({month: chosenMonth, group: chosenGroup}); 
- 				  showComparisonTrend({month: chosenMonth, focususer: chosenfocusUser});
+                  loadMonth({month: chosenMonth, group: chosenGroup, year: chosenYear}); 
+ 				  showComparisonTrend({month: chosenMonth, year: chosenYear, focususer: chosenfocusUser});
 				break;
 			}; 
         });
@@ -257,14 +265,14 @@ $(document).ready( function () {
           return getId($(hb).attr("id"));
         });
       
-	  loadWeek({week: chosenWeek, group: chosenGroup}, open_ids, expandDailyChart);
-	  showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
+	  loadWeek({week: chosenWeek, year: chosenYear, group: chosenGroup}, open_ids, expandDailyChart);
+	  showComparisonTrend({week: chosenWeek, year: chosenYear, focususer: chosenfocusUser});
 	});
 
     // On selector change update month 
     $("#month_id").change ( function() {
-        loadMonth({month: chosenMonth, group: chosenGroup});
-		showComparisonTrend({month: chosenMonth, focususer: chosenfocusUser});
+        loadMonth({month: chosenMonth, year: chosenYear, group: chosenGroup});
+		showComparisonTrend({month: chosenMonth, year: chosenYear, focususer: chosenfocusUser});
         });
 
 	$(".collapse_chart").live("click", function() {
@@ -282,16 +290,16 @@ $(document).ready( function () {
 	});
 
     //On changing user to focus update trend
-    showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
+    showComparisonTrend({week: chosenWeek, year: chosenYear, focususer: chosenfocusUser});
 
     $("#focususer_id").change ( function() {
 		switch (chosenRange())
 			{
 				case 'week':
- 				  showComparisonTrend({week: chosenWeek, focususer: chosenfocusUser});
+ 				  showComparisonTrend({week: chosenWeek, year: chosenYear, focususer: chosenfocusUser});
 				break;
 				case 'month':
- 				  showComparisonTrend({month: chosenMonth, focususer: chosenfocusUser});
+ 				  showComparisonTrend({month: chosenMonth, year: chosenYear, focususer: chosenfocusUser});
 				break;
 			};
         });
@@ -304,10 +312,10 @@ $(document).ready( function () {
 		switch (chosenRange())
 			{
 				case 'week':
- 				  	loadWeek({week: chosenWeek, group: chosenGroup });
+ 				  	loadWeek({week: chosenWeek, year: chosenYear, group: chosenGroup });
 				break;
 				case 'month':
- 				  loadMonth({month: chosenMonth, group: chosenGroup}); 
+ 				  loadMonth({month: chosenMonth, year: chosenYear, group: chosenGroup}); 
 				break;
 			};
 		return false;
