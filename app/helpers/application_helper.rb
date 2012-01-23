@@ -54,4 +54,32 @@ module ApplicationHelper
   def month_value(month)
     ABBR_FULL_MONTHNAMES[month-1]
   end
+
+  def recent_weeks(week, year, number)
+    result = Array.new
+  
+  (0..number-1).each do |i|
+    if week - i > 0
+      result << [week - i, year]
+    else
+      result << [52 + week - i, year - 1]
+    end
+  end
+
+  result.reverse
+  end
+
+  def recent_months(month, year, number)
+    result = Array.new
+  
+  (0..number-1).each do |i|
+    if month - i > 0
+      result << [month - i, year]
+    else
+      result << [12 + month - i, year - 1]
+    end
+  end
+
+  result.reverse
+  end
 end

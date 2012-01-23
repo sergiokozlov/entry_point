@@ -145,13 +145,14 @@ class DashboardController < ApplicationController
     @year = params[:year].to_i
     @data = Array.new
     
+    # build week, year and month, year pairs
     if params[:week]
-      (@week_id-15..@week_id).each do |week|
-          @data << wj_trend(@selected_group, week, @year, @focus_user.to_a)
+      @template.recent_weeks(@week_id, @year, 15).each do |week, year|
+          @data << wj_trend(@selected_group, week, year, @focus_user.to_a)
         end
     else    
-      (@month_id-6..@month_id).each do |month|
-          @data << mj_trend(@selected_group, month, @year, @focus_user.to_a)
+      @template.recent_months(@month_id, @year, 6).each do |month, year|
+          @data << mj_trend(@selected_group, month, year, @focus_user.to_a)
         end
     end
     
