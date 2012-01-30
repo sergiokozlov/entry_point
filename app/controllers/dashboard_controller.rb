@@ -89,6 +89,9 @@ class DashboardController < ApplicationController
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
     @week_id  = (params[:week] || (@selected_group.weeks_to_analyze)[0][0]).to_i
     @year = (params[:year] || (@selected_group.weeks_to_analyze)[0][1]).to_i
+
+    
+    @group_average = @selected_group.week_average(@week_id, @year)
     
     case 
     when (@user.director? and @selected_group.manager.person?)
@@ -106,6 +109,8 @@ class DashboardController < ApplicationController
     @selected_group = (Group.find_by_id(params[:group]) || @user.worse_group)
     @month_id  = (params[:month] || (@selected_group.months_to_analyze)[0][0]).to_i
     @year = (params[:year] || (@selected_group.months_to_analyze)[0][1]).to_i
+    
+    @group_average = @selected_group.month_average(@month_id, @year)
     
     case 
     when (@user.director? and @selected_group.manager.person?)

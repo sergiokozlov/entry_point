@@ -15,7 +15,7 @@
 			<tr class = "<%= cycle("white","alt") -%>">
 				<td> <%=dev.name %> </td>
                 <td> <%= month_value(@month_id) %></td>
-                <td> <%=to_time(@selected_group.month_average(@month_id, @year))%> </td>
+                <td> <%=to_time(@group_average)%> </td>
 				<td> <%=to_time(dev.month_average(@month_id, @year))%></td>
 				<td> <%=dev.month_working_days(@month_id, @year).length%> </td>
 			  <!--  <td> 

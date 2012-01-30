@@ -19,11 +19,11 @@ class WorkingDay < ActiveRecord::Base
   end
 
    def homework_duration
-    if homeworks.size > 0
+   # if homeworks.size > 0
       homeworks.map {|h| h.duration }.inject(0) {|x,y| x + y}
-    else
-     0
-    end 
+   # else
+   #  0
+   # end 
   end
 
   # lunch time and duration
