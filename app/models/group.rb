@@ -28,13 +28,13 @@ class Group < ActiveRecord::Base
  
  # Group Statistics
   def day_completed(day = Date.today)
-    self.developers.map {|dev| l=dev.logged_working_days.select{|d| d.wday == day}[0]
+    self.developers.map {|dev| l=dev.working_days.select{|d| d.wday == day}[0]
       (l.duration if l) || 0}.inject(0) {|x,y| x+y} 
   end  
 
   def day_average(day = Date.today)
    i=0
-   self.developers.each{ |dev| i+=1 if dev.logged_working_days.select{|d| d.wday == day}}
+   self.developers.each{ |dev| i+=1 if dev.working_days.select{|d| d.wday == day}}
    if i > 0
      day_completed(day)/i
    else
@@ -52,7 +52,8 @@ class Group < ActiveRecord::Base
    else
     0
    end 
-  end 
+  end
+
 
   def month_completed(number = Date.today.month, year = Date.today.year)
     self.developers.map{|dev| dev.month_completed(number, year)}.inject(0) {|x,y| x+y} 

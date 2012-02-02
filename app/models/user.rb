@@ -30,15 +30,15 @@ class User < ActiveRecord::Base
 
   # selection of working days for week and month
   def logged_working_days
-     self.working_days.find(:all, :order => 'wday desc')  
+     self.working_days 
   end 
 
   def month_working_days(month_number, year)
-     logged_working_days.select {|day| day.wday.month == month_number and day.wday.year == year and day.total_duration > 0}
+     self.working_days.select {|day| day.wday.month == month_number and day.wday.year == year and day.total_duration > 0}
   end
   
   def weeked_working_days(week_number, year)
-     logged_working_days.select {|day| day.wday.cweek == week_number and day.wday.year == year and day.total_duration > 0} 
+     self.working_days.select {|day| day.wday.cweek == week_number and day.wday.year == year and day.total_duration > 0} 
   end 
   
   def working_today
@@ -46,11 +46,11 @@ class User < ActiveRecord::Base
   end
   
   def logged_working_weeks
-    logged_working_days.map{|day| [day.wday.cweek,day.wday.year]}.uniq
+    self.working_days.map{|day| [day.wday.cweek,day.wday.year]}.uniq.sort {|a,b| b.reverse <=> a.reverse }
   end
 
   def logged_working_months
-    logged_working_days.map{|day| [day.wday.month,day.wday.year]}.uniq
+    self.working_days.map{|day| [day.wday.month,day.wday.year]}.uniq {|a,b| b.reverse <=> a.reverse }
   end
 
   # Statitics
@@ -60,6 +60,7 @@ class User < ActiveRecord::Base
 
   def week_average (number=Date.today.cweek, year = Date.today.year)
     if (l = weeked_working_days(number, year).select{|day| not day.visit_day?}.length) > 0
+  #  if week_completed(number,year) > 0  
       week_completed(number, year)/l
     else
       0
@@ -80,13 +81,13 @@ class User < ActiveRecord::Base
 
   # Aggregation logic
   def has_late_commings(last_x_days=14)
-   lc = logged_working_days.select {|day| day.late_comming? and (Date.today - day.wday < last_x_days)}.length 
+   lc = self.working_days.select {|day| day.late_comming? and (Date.today - day.wday < last_x_days)}.length 
    message =  "came late #{lc} times" if lc > 1
    #lc if lc > 1
   end
 
   def has_short_days(last_x_days=14)
-   sd = logged_working_days.select {|day| day.short_day? and (Date.today - day.wday < last_x_days)}.length
+   sd = self.working_days.select {|day| day.short_day? and (Date.today - day.wday < last_x_days)}.length
    message = "had #{sd} short days" if sd > 1
    #sd if sd > 1
   end

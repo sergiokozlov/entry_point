@@ -169,7 +169,7 @@ class DashboardController < ApplicationController
   private
 
   def pj(day,user)
-    if lwd = user.logged_working_days.select{|d| d.wday == day}[0]
+    if lwd = user.working_days.select{|d| d.wday == day}[0]
       return [[lwd.duration,lwd.homework_duration], {"label" => lwd.label, "bar_label" => lwd.bar_label, "wd" => lwd.has_manual_entries, "lunch_time" => lwd.real_lunch_time}, {"flag" => lwd.color},{"check_in" => lwd.check_in.strftime("%H:%M"),"check_out" =>lwd.check_out.strftime("%H:%M")}]
     else
       return ['', {"label" => @template.day_value(day),  "bar_label" => ''}, {"flag" => "White"},
@@ -183,7 +183,7 @@ class DashboardController < ApplicationController
     @stack << group.day_average(day)
 
     developers.each do |dev|
-      lwd = dev.logged_working_days.select{|d| d.wday == day}[0]
+      lwd = dev.working_days.select{|d| d.wday == day}[0]
       @stack << ((lwd.duration if lwd) || 0)
     end
     
